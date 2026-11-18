@@ -1,0 +1,5 @@
+AUTH_MODE=development
+LOCAL_AUTH_BYPASS=true
+APP_ORIGIN=http://127.0.0.1:5173
+OWNER_EMAIL=student@localhost.test
+EMAIL_FROM=login@localhost.test

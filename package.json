@@ -1,0 +1,52 @@
+{
+  "name": "cs50track",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "course:import": "node scripts/import-course.mjs",
+    "course:refresh": "node scripts/import-course.mjs --refresh",
+    "test:course-import": "node --test scripts/import-course.test.mjs",
+    "deploy": "node scripts/production.mjs deploy",
+    "db:local": "wrangler d1 migrations apply cs50track --local",
+    "db:remote": "wrangler d1 migrations apply cs50track --env production --remote",
+    "build:production": "node scripts/production.mjs build",
+    "deploy:check": "node scripts/production.mjs dry-run",
+    "test:e2e": "playwright test",
+    "format": "prettier --write src tests scripts *.ts *.json *.jsonc",
+    "check": "npm run build && npm run typecheck && npm test",
+    "course:flow": "node scripts/build-flow.mjs"
+  },
+  "dependencies": {
+    "@agentic-ui/design-system": "^2.3.1",
+    "@tanstack/react-query": "^5.107.1",
+    "@tanstack/react-router": "^1.170.46",
+    "@tanstack/react-start": "^1.169.5",
+    "lucide-react": "^1.73.0",
+    "mermaid": "^12.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.69.1",
+    "@cloudflare/workers-types": "^5.20261116.1",
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "cheerio": "^1.2.0",
+    "jsonc-parser": "^3.3.1",
+    "miniflare": "^5.20261110.0-beta",
+    "prettier": "^3.10.1",
+    "sanitize-html": "^2.18.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0",
+    "wrangler": "^4.163.0"
+  }
+}

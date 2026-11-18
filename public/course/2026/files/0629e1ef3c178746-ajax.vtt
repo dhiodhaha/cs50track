@@ -1,0 +1,1339 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.400
+[MUSIC PLAYING]
+
+2
+00:00:02.400 --> 00:00:05.847
+
+
+3
+00:00:05.847 --> 00:00:08.430
+DOUG LLOYD: So as you continue
+your exploration of JavaScript,
+
+4
+00:00:08.430 --> 00:00:10.304
+there's one other
+technique that really might
+
+5
+00:00:10.304 --> 00:00:13.530
+come in handy as you begin to
+build more complex websites,
+
+6
+00:00:13.530 --> 00:00:16.890
+and that is using something called Ajax.
+
+7
+00:00:16.890 --> 00:00:20.031
+So, so far, in our
+exploration of JavaScript,
+
+8
+00:00:20.031 --> 00:00:22.530
+we've been limited to doing a
+couple of really simple things
+
+9
+00:00:22.530 --> 00:00:24.510
+for the purpose of illustration,
+like you click a button,
+
+10
+00:00:24.510 --> 00:00:25.426
+and something happens.
+
+11
+00:00:25.426 --> 00:00:29.040
+Maybe the color changes on your site,
+or maybe a couple of words change.
+
+12
+00:00:29.040 --> 00:00:32.479
+But the catch is everything we've been
+doing so far has been client side.
+
+13
+00:00:32.479 --> 00:00:34.170
+It's all happening on our computer.
+
+14
+00:00:34.170 --> 00:00:37.050
+We're never really talking
+to the outside world.
+
+15
+00:00:37.050 --> 00:00:41.190
+We can, however, talk to the outside
+world and make changes on our website,
+
+16
+00:00:41.190 --> 00:00:44.320
+have something happen that
+interact with the server,
+
+17
+00:00:44.320 --> 00:00:46.305
+but maybe it doesn't
+reload our entire page.
+
+18
+00:00:46.305 --> 00:00:49.200
+We want to create a more
+pleasant user experience.
+
+19
+00:00:49.200 --> 00:00:51.390
+Ajax allows us to do that.
+
+20
+00:00:51.390 --> 00:00:54.870
+Ajax used to stand for something
+called Asynchronous JavaScript in XML.
+
+21
+00:00:54.870 --> 00:00:56.180
+That's a backronym.
+
+22
+00:00:56.180 --> 00:00:58.710
+That's not really what
+it's called anymore.
+
+23
+00:00:58.710 --> 00:01:03.120
+And actually, most commonly now,
+instead of XML, we use JSON.
+
+24
+00:01:03.120 --> 00:01:07.200
+But Ajax has just been the name that's
+kind of stuck for the technique.
+
+25
+00:01:07.200 --> 00:01:11.130
+And what Ajax allows us to do is
+to refresh, basically, sections
+
+26
+00:01:11.130 --> 00:01:13.220
+of our page without the entire page.
+
+27
+00:01:13.220 --> 00:01:17.260
+And if you're, for example, somebody
+who follows sports, for instance,
+
+28
+00:01:17.260 --> 00:01:21.030
+you might see this if
+you're on a sports website
+
+29
+00:01:21.030 --> 00:01:24.760
+where scores of games that are going
+on currently are being updated,
+
+30
+00:01:24.760 --> 00:01:26.460
+but the whole page doesn't refresh.
+
+31
+00:01:26.460 --> 00:01:29.400
+That means that the page is
+basically taking advantage of Ajax
+
+32
+00:01:29.400 --> 00:01:32.880
+to just update small
+portions of the page.
+
+33
+00:01:32.880 --> 00:01:36.005
+The techniques that you can do
+with Ajax are pretty limitless.
+
+34
+00:01:36.005 --> 00:01:37.880
+You can do a lot of
+different things with it.
+
+35
+00:01:37.880 --> 00:01:40.200
+And we're going to focus on a very
+specific example where, again, we're
+
+36
+00:01:40.200 --> 00:01:42.480
+clicking a button,
+and something happens.
+
+37
+00:01:42.480 --> 00:01:45.821
+But the difference is this
+time when something happens,
+
+38
+00:01:45.821 --> 00:01:47.070
+we're making a server request.
+
+39
+00:01:47.070 --> 00:01:49.050
+We're making an outbound
+request from a page.
+
+40
+00:01:49.050 --> 00:01:51.970
+It's not just happening on our machine.
+
+41
+00:01:51.970 --> 00:01:56.200
+But you can do things like
+updating, for example,
+
+42
+00:01:56.200 --> 00:02:00.360
+the sports scores on a website that
+tracks that information or your email.
+
+43
+00:02:00.360 --> 00:02:03.300
+You might notice that sometimes
+when you get a new email,
+
+44
+00:02:03.300 --> 00:02:05.894
+your entire body of your
+page refreshes to put
+
+45
+00:02:05.894 --> 00:02:09.060
+that new email at the top of your inbox,
+but the whole page doesn't refresh.
+
+46
+00:02:09.060 --> 00:02:10.710
+That's happening with Ajax as well.
+
+47
+00:02:10.710 --> 00:02:13.339
+But it's constantly
+running all the time.
+
+48
+00:02:13.339 --> 00:02:14.880
+It's just basically querying forever.
+
+49
+00:02:14.880 --> 00:02:17.713
+We're, again, just going to focus
+on clicking a button and something
+
+50
+00:02:17.713 --> 00:02:22.110
+happening, but that something being
+not just local to our machine anymore.
+
+51
+00:02:22.110 --> 00:02:24.060
+So, in order to do
+this, we have to create
+
+52
+00:02:24.060 --> 00:02:28.860
+another special kind of JavaScript
+object called an XMLHttpRequest.
+
+53
+00:02:28.860 --> 00:02:31.500
+And what this does is
+it allows us to make it
+
+54
+00:02:31.500 --> 00:02:35.592
+asynchronous, so not at the same
+time as the refresh of the page
+
+55
+00:02:35.592 --> 00:02:38.800
+or loading the page, but sometime there
+after while we still are on the page.
+
+56
+00:02:38.800 --> 00:02:40.940
+That's what we mean when
+we say asynchronous.
+
+57
+00:02:40.940 --> 00:02:43.950
+it allows us to make
+an asynchronous request
+
+58
+00:02:43.950 --> 00:02:45.954
+to a server to get more information.
+
+59
+00:02:45.954 --> 00:02:48.120
+It's actually very easy to
+create this, fortunately.
+
+60
+00:02:48.120 --> 00:02:52.440
+This line for example would create
+a new x amount HTTP request object.
+
+61
+00:02:52.440 --> 00:02:55.230
+And in this case, I'm
+just calling that xhttp,
+
+62
+00:02:55.230 --> 00:03:00.450
+and assigning it to just a random,
+local variable in JavaScript.
+
+63
+00:03:00.450 --> 00:03:03.720
+Once you have the object,
+so once you've created it,
+
+64
+00:03:03.720 --> 00:03:09.480
+the first thing you have to do is
+define an onreadystatechange behavior.
+
+65
+00:03:09.480 --> 00:03:13.650
+Onreadystatechange is
+really just a wordy way
+
+66
+00:03:13.650 --> 00:03:17.290
+to describe the steps that are
+happening when you visit a page.
+
+67
+00:03:17.290 --> 00:03:20.640
+So, for example, you click on--
+
+68
+00:03:20.640 --> 00:03:21.510
+you're on a page.
+
+69
+00:03:21.510 --> 00:03:22.410
+You refresh the page.
+
+70
+00:03:22.410 --> 00:03:24.951
+It sort of all goes blank for
+a second, then some of the data
+
+71
+00:03:24.951 --> 00:03:25.782
+starts to populate.
+
+72
+00:03:25.782 --> 00:03:27.990
+And then it stops refreshing,
+and you're ready to go.
+
+73
+00:03:27.990 --> 00:03:30.073
+That's going through a
+series of different states,
+
+74
+00:03:30.073 --> 00:03:33.510
+where it goes from the request
+hasn't been initiated to your sending
+
+75
+00:03:33.510 --> 00:03:37.004
+the request to the request is
+received to the request is on its way
+
+76
+00:03:37.004 --> 00:03:38.920
+back to you, and then
+the request is complete.
+
+77
+00:03:38.920 --> 00:03:41.460
+Those are, for example, a couple
+of different state changes
+
+78
+00:03:41.460 --> 00:03:43.950
+that might take place when
+you're visiting a site.
+
+79
+00:03:43.950 --> 00:03:45.930
+And it will also be the
+kinds of state changes
+
+80
+00:03:45.930 --> 00:03:47.638
+that will take place
+when you're updating
+
+81
+00:03:47.638 --> 00:03:50.070
+a smaller section of your site.
+
+82
+00:03:50.070 --> 00:03:52.515
+Typically, we define
+something that is supposed
+
+83
+00:03:52.515 --> 00:03:55.140
+to happen when the state change
+is using an anonymous function.
+
+84
+00:03:55.140 --> 00:03:58.400
+And we're going to see an
+example of this in just a moment.
+
+85
+00:03:58.400 --> 00:03:59.370
+We don't have to give
+that function a name,
+
+86
+00:03:59.370 --> 00:04:01.161
+we just want it to do
+something whenever it
+
+87
+00:04:01.161 --> 00:04:06.370
+detects some change in the
+status of loading the site.
+
+88
+00:04:06.370 --> 00:04:09.420
+There are five different states.
+
+89
+00:04:09.420 --> 00:04:10.680
+They go from 0 to 4.
+
+90
+00:04:10.680 --> 00:04:14.210
+That is the readyState property, so
+that's part of the onreadystate change.
+
+91
+00:04:14.210 --> 00:04:15.603
+It's clearly related.
+
+92
+00:04:15.603 --> 00:04:17.519
+And those are what I
+basically just described,
+
+93
+00:04:17.519 --> 00:04:19.644
+where 0 is the request has
+not yet been initialized
+
+94
+00:04:19.644 --> 00:04:22.170
+and, 4, which is the end,
+which is the ultimate goal
+
+95
+00:04:22.170 --> 00:04:27.300
+of a an onreadystate state
+change request or an Ajax request
+
+96
+00:04:27.300 --> 00:04:29.580
+is to get that readyState
+to 4, which basically
+
+97
+00:04:29.580 --> 00:04:31.290
+means the entire them has loaded.
+
+98
+00:04:31.290 --> 00:04:33.965
+And hopefully, the status
+that we get back is 200.
+
+99
+00:04:33.965 --> 00:04:36.090
+Those are the two things
+we're really caring about.
+
+100
+00:04:36.090 --> 00:04:39.420
+We want to make sure that when
+our Ajax request is completed,
+
+101
+00:04:39.420 --> 00:04:42.750
+that the readyState is 4, so
+the data has been received,
+
+102
+00:04:42.750 --> 00:04:44.760
+and the data was received OK.
+
+103
+00:04:44.760 --> 00:04:49.800
+You may recall 200 being
+the HTTP code for OK.
+
+104
+00:04:49.800 --> 00:04:51.870
+That was the one we,
+fortunately, never saw.
+
+105
+00:04:51.870 --> 00:04:55.240
+We didn't go to a website and get a--
+you don't go to website and get a 200,
+
+106
+00:04:55.240 --> 00:04:57.725
+like you get a 404, for example.
+
+107
+00:04:57.725 --> 00:04:59.850
+So we want, ultimately,
+for the readyState to be 4,
+
+108
+00:04:59.850 --> 00:05:01.410
+and the status to be 200.
+
+109
+00:05:01.410 --> 00:05:05.980
+When that's the case, we
+can then update our site.
+
+110
+00:05:05.980 --> 00:05:10.167
+Once we have that, we just need to
+open the request and send the request.
+
+111
+00:05:10.167 --> 00:05:11.500
+And then, our site will refresh.
+
+112
+00:05:11.500 --> 00:05:13.120
+Again, we're going to see
+a very concrete example
+
+113
+00:05:13.120 --> 00:05:14.420
+of this in just a minute.
+
+114
+00:05:14.420 --> 00:05:16.270
+So if it doesn't make sense
+just now, hopefully, it
+
+115
+00:05:16.270 --> 00:05:18.103
+will when we start to
+see some code, and you
+
+116
+00:05:18.103 --> 00:05:23.020
+see how that interaction takes
+place for real on a website.
+
+117
+00:05:23.020 --> 00:05:25.780
+There is, I want to point out
+again, a very slightly different way
+
+118
+00:05:25.780 --> 00:05:27.820
+to do this syntactically using jQuery.
+
+119
+00:05:27.820 --> 00:05:30.880
+And, in fact, you will
+very commonly see nowadays
+
+120
+00:05:30.880 --> 00:05:34.270
+Ajax requests made using jQuery.
+
+121
+00:05:34.270 --> 00:05:37.900
+We're explicitly showing you the
+pure JavaScript version of this
+
+122
+00:05:37.900 --> 00:05:38.950
+just so you see it.
+
+123
+00:05:38.950 --> 00:05:42.220
+But as you become more comfortable
+using jQuery for client-side scripting,
+
+124
+00:05:42.220 --> 00:05:45.640
+for example, for using DOM
+manipulation or for Ajax request,
+
+125
+00:05:45.640 --> 00:05:50.510
+you'll probably see the syntax
+of this slightly differently.
+
+126
+00:05:50.510 --> 00:05:55.000
+So here is a JavaScript function
+that is preparing, opening,
+
+127
+00:05:55.000 --> 00:05:57.580
+and sending an Ajax request.
+
+128
+00:05:57.580 --> 00:06:00.779
+So the first thing I would do is
+I'd create my new XMLHttpRequest,
+
+129
+00:06:00.779 --> 00:06:03.070
+and I'm going to, again,
+assigned to a random variable,
+
+130
+00:06:03.070 --> 00:06:05.830
+this time called aj for Ajax.
+
+131
+00:06:05.830 --> 00:06:08.710
+Then, I'm going to define
+a function that is going
+
+132
+00:06:08.710 --> 00:06:11.850
+to execute on the readyState changing.
+
+133
+00:06:11.850 --> 00:06:15.241
+So every time the readyState
+changes, this function will execute.
+
+134
+00:06:15.241 --> 00:06:16.990
+But as you can see,
+it's only really going
+
+135
+00:06:16.990 --> 00:06:22.080
+to do something, eventually, once the
+readyState is 4, and the status is 200.
+
+136
+00:06:22.080 --> 00:06:24.760
+So it's going to--
+
+137
+00:06:24.760 --> 00:06:27.880
+this function will get executed
+every time the state changes,
+
+138
+00:06:27.880 --> 00:06:33.880
+but it's only going to have a meaningful
+thing to do once the readyState is 4,
+
+139
+00:06:33.880 --> 00:06:35.230
+and the status is 200.
+
+140
+00:06:35.230 --> 00:06:37.810
+And we'll see a concrete
+example of that in a second
+
+141
+00:06:37.810 --> 00:06:40.180
+where we're going to be
+updating a section of our site
+
+142
+00:06:40.180 --> 00:06:43.420
+with different photos and information.
+
+143
+00:06:43.420 --> 00:06:51.090
+Once that is done, we're then going to
+open our XML requests or Ajax request.
+
+144
+00:06:51.090 --> 00:06:53.380
+This is just a simple way to do this.
+
+145
+00:06:53.380 --> 00:06:57.527
+We're basically creating a GET
+request of a particular URL.
+
+146
+00:06:57.527 --> 00:06:59.110
+Don't worry about what the true means.
+
+147
+00:06:59.110 --> 00:07:02.080
+And then, we're just going
+to send that request.
+
+148
+00:07:02.080 --> 00:07:08.140
+So, again, you'll usually see
+this written in jQuery, instead of
+
+149
+00:07:08.140 --> 00:07:10.314
+in pure JavaScript.
+
+150
+00:07:10.314 --> 00:07:12.730
+So if you want to learn a
+little bit about how to do that,
+
+151
+00:07:12.730 --> 00:07:14.830
+you can take a look at this URL here.
+
+152
+00:07:14.830 --> 00:07:19.690
+But for now, let's head into the
+IDE and see this example in action,
+
+153
+00:07:19.690 --> 00:07:22.030
+making Ajax requests of a
+server, where the server
+
+154
+00:07:22.030 --> 00:07:24.502
+happens to be running
+locally on my machine,
+
+155
+00:07:24.502 --> 00:07:26.460
+to see how we can change
+a page asynchronously.
+
+156
+00:07:26.460 --> 00:07:30.250
+So if you download the source
+code that comes with this short
+
+157
+00:07:30.250 --> 00:07:34.330
+and you open up the
+index.html within there,
+
+158
+00:07:34.330 --> 00:07:37.060
+you'll find a page that looks
+like this called Ajax test.
+
+159
+00:07:37.060 --> 00:07:40.167
+There's a dropdown menu in the section
+that says Information Goes Here.
+
+160
+00:07:40.167 --> 00:07:41.750
+We'll see what that means in a second.
+
+161
+00:07:41.750 --> 00:07:42.580
+I'm not going to tinker with that yet.
+
+162
+00:07:42.580 --> 00:07:45.330
+I want to show you what's behind
+the scenes before we take a look.
+
+163
+00:07:45.330 --> 00:07:47.850
+So here is the source code for that.
+
+164
+00:07:47.850 --> 00:07:49.600
+At the top here, I'm
+just loading a couple
+
+165
+00:07:49.600 --> 00:07:50.950
+of [? scripts. ?] I'm
+loading jQuery because I
+
+166
+00:07:50.950 --> 00:07:53.116
+will use a little bit of
+jQuery in this as well just
+
+167
+00:07:53.116 --> 00:07:54.760
+to give you a little taste of it.
+
+168
+00:07:54.760 --> 00:08:00.070
+I have my own JavaScript scripts
+that I wrote called Ajax.js we're
+
+169
+00:08:00.070 --> 00:08:02.060
+going to take a look at just a second.
+
+170
+00:08:02.060 --> 00:08:03.820
+You'll see that the
+information goes here
+
+171
+00:08:03.820 --> 00:08:11.230
+that we were just looking at on the
+site is in a div whose ID is infodiv.
+
+172
+00:08:11.230 --> 00:08:13.610
+That will be really
+important in just a minute.
+
+173
+00:08:13.610 --> 00:08:17.380
+And then I have a form where I
+have a couple of different options.
+
+174
+00:08:17.380 --> 00:08:21.730
+And when something happens,
+particularly when the value changes,
+
+175
+00:08:21.730 --> 00:08:24.910
+when I select a different
+options from the list,
+
+176
+00:08:24.910 --> 00:08:28.330
+I'm going to call this
+function, cs50info
+
+177
+00:08:28.330 --> 00:08:31.840
+and then I pass in the
+parameter this.value.
+
+178
+00:08:31.840 --> 00:08:33.850
+You may recall from
+our video on JavaScript
+
+179
+00:08:33.850 --> 00:08:39.370
+that this is a way to
+self-refer to the event that
+
+180
+00:08:39.370 --> 00:08:44.910
+triggered the JavaScript function
+being called in the first place.
+
+181
+00:08:44.910 --> 00:08:48.820
+So this is another form of an event
+handler as opposed to on click,
+
+182
+00:08:48.820 --> 00:08:50.071
+it's on change.
+
+183
+00:08:50.071 --> 00:08:51.820
+And what this is going
+to do is it's going
+
+184
+00:08:51.820 --> 00:08:56.725
+to allow me to figure out which one
+of the options triggered the change.
+
+185
+00:08:56.725 --> 00:09:02.170
+And I'm going to capture this.value,
+so this is what I mean with value,
+
+186
+00:09:02.170 --> 00:09:04.580
+is I'm going to get this
+piece of information.
+
+187
+00:09:04.580 --> 00:09:07.000
+So if I choose Rob
+Bowden from this list,
+
+188
+00:09:07.000 --> 00:09:09.036
+basically, I'm passing in CS50 info.
+
+189
+00:09:09.036 --> 00:09:12.160
+And then, the value that actually gets
+passed into that function is bowden.
+
+190
+00:09:12.160 --> 00:09:15.730
+They're all in lowercase-- chan,
+[? mailand, ?] and [? zaclova. ?] So
+
+191
+00:09:15.730 --> 00:09:20.150
+those are the different things that will
+be passed into that CS50 info function.
+
+192
+00:09:20.150 --> 00:09:22.000
+What does that CS50 info function do?
+
+193
+00:09:22.000 --> 00:09:24.610
+Well, let's take a look at Ajax.js.
+
+194
+00:09:24.610 --> 00:09:29.555
+Here's CS50 info, if the name is empty,
+so if I didn't choose one of the actual
+
+195
+00:09:29.555 --> 00:09:31.930
+options, if I just choose the
+default option at the top--
+
+196
+00:09:31.930 --> 00:09:33.670
+you might be familiar with
+this from using dropdowns,
+
+197
+00:09:33.670 --> 00:09:36.330
+where there's a blank thing and you
+have to actually pick something--
+
+198
+00:09:36.330 --> 00:09:36.710
+I return.
+
+199
+00:09:36.710 --> 00:09:37.543
+I don't do anything.
+
+200
+00:09:37.543 --> 00:09:39.640
+I don't want to try
+and do anything fancy.
+
+201
+00:09:39.640 --> 00:09:42.850
+Otherwise, I create an XMLHttpRequest.
+
+202
+00:09:42.850 --> 00:09:45.730
+We just saw this in the
+slides a moment ago.
+
+203
+00:09:45.730 --> 00:09:49.010
+And I define a function that is going
+to wait for the readyState to be 4,
+
+204
+00:09:49.010 --> 00:09:51.070
+and the status to be 200.
+
+205
+00:09:51.070 --> 00:09:54.730
+And when it does, when it's
+there, what do I want to do?
+
+206
+00:09:54.730 --> 00:09:59.650
+I want to update the HTML
+inside of the infodiv.
+
+207
+00:09:59.650 --> 00:10:01.410
+This is the jQuery way to describe this.
+
+208
+00:10:01.410 --> 00:10:03.951
+This is the line of jQuery that
+you're going to see in this--
+
+209
+00:10:03.951 --> 00:10:06.160
+the rest of it is
+JavaScript, this is jQuery--
+
+210
+00:10:06.160 --> 00:10:10.200
+to whatever I get back
+from my Ajax request.
+
+211
+00:10:10.200 --> 00:10:12.700
+Remember, I haven't made the
+Ajax request entirely just yet.
+
+212
+00:10:12.700 --> 00:10:15.850
+That's going to be right down
+here with the open and send.
+
+213
+00:10:15.850 --> 00:10:17.830
+But when I do, I'm
+going to get data back,
+
+214
+00:10:17.830 --> 00:10:22.330
+and I'm going to update whatever the
+HTML of infodiv, which at the beginning
+
+215
+00:10:22.330 --> 00:10:26.420
+was information goes here-- that was
+what was in between the div tags.
+
+216
+00:10:26.420 --> 00:10:29.567
+I'm going to to change that to
+whatever I get back in my request.
+
+217
+00:10:29.567 --> 00:10:31.900
+But I'm going to do it without
+updating the entire page.
+
+218
+00:10:31.900 --> 00:10:35.500
+I'm going to refresh, so
+to speak, just that div,
+
+219
+00:10:35.500 --> 00:10:38.668
+just that section of the page.
+
+220
+00:10:38.668 --> 00:10:40.600
+So what file am I opening?
+
+221
+00:10:40.600 --> 00:10:44.520
+Well, I'm sending a GET
+request for name plus .HTML.
+
+222
+00:10:44.520 --> 00:10:47.950
+Remember, that name is just the name
+of the value, the variable that's
+
+223
+00:10:47.950 --> 00:10:49.450
+being passed in as a parameter here.
+
+224
+00:10:49.450 --> 00:10:50.860
+So that's what name is.
+
+225
+00:10:50.860 --> 00:10:56.350
+So name is going to be bowden or chan,
+[? mailand, ?] or [? zaclova. ?] And
+
+226
+00:10:56.350 --> 00:10:58.810
+apparently, I'm going to
+add .HTML at the end of it.
+
+227
+00:10:58.810 --> 00:10:59.890
+Well, what does one of these look like?
+
+228
+00:10:59.890 --> 00:11:02.150
+Well, it looks like just
+kind of a snippet of HTML.
+
+229
+00:11:02.150 --> 00:11:06.480
+It's clearly not entirely
+correct HTML because I don't have
+
+230
+00:11:06.480 --> 00:11:08.236
+HTML tags on the top and bottom of it.
+
+231
+00:11:08.236 --> 00:11:09.610
+I don't have body tags around it.
+
+232
+00:11:09.610 --> 00:11:12.030
+But it's some little bit of HTML.
+
+233
+00:11:12.030 --> 00:11:15.460
+It has a paragraph with
+a name, an image tag,
+
+234
+00:11:15.460 --> 00:11:19.670
+and a couple of other paragraphs
+with some information.
+
+235
+00:11:19.670 --> 00:11:22.940
+So let's see this actually in
+action and see what it does.
+
+236
+00:11:22.940 --> 00:11:24.760
+So right now, I have Ajax tests.
+
+237
+00:11:24.760 --> 00:11:27.970
+And remember, when I choose
+an option, that function
+
+238
+00:11:27.970 --> 00:11:31.180
+is going to execute that CS50 info
+function passing in whatever one
+
+239
+00:11:31.180 --> 00:11:32.020
+I choose.
+
+240
+00:11:32.020 --> 00:11:35.196
+So let's choose Zamyla.
+
+241
+00:11:35.196 --> 00:11:36.320
+So notice what it did here.
+
+242
+00:11:36.320 --> 00:11:39.150
+It popped in all of that
+information from our page.
+
+243
+00:11:39.150 --> 00:11:41.020
+There's that Zamyla tag.
+
+244
+00:11:41.020 --> 00:11:43.310
+So I'll pop back to the ID for a second.
+
+245
+00:11:43.310 --> 00:11:47.940
+We have a paragraph with her
+name, an image, class of 2014,
+
+246
+00:11:47.940 --> 00:11:49.260
+and Winthrop House.
+
+247
+00:11:49.260 --> 00:11:52.287
+Indeed, all of that
+information is now here.
+
+248
+00:11:52.287 --> 00:11:53.620
+But what happens if I change it?
+
+249
+00:11:53.620 --> 00:11:56.170
+I don't want my entire
+page to refresh, but I do
+
+250
+00:11:56.170 --> 00:11:58.610
+want the content of that div to change.
+
+251
+00:11:58.610 --> 00:12:01.110
+So let's try and switch
+it to, for example, Rob.
+
+252
+00:12:01.110 --> 00:12:03.068
+And if you look really
+carefully, and depending
+
+253
+00:12:03.068 --> 00:12:05.230
+on if my computer is a
+little bit slower or faster,
+
+254
+00:12:05.230 --> 00:12:10.480
+you might quickly see all of the
+content get deleted and then replaced.
+
+255
+00:12:10.480 --> 00:12:14.240
+That is the asynchronous
+request happening very quickly.
+
+256
+00:12:14.240 --> 00:12:16.660
+So let's see if we can see it.
+
+257
+00:12:16.660 --> 00:12:20.486
+You might have noticed right there that
+everything deleted and then everything
+
+258
+00:12:20.486 --> 00:12:22.360
+came back, but now, I
+have new data because I
+
+259
+00:12:22.360 --> 00:12:25.000
+chose a new option from the list.
+
+260
+00:12:25.000 --> 00:12:27.570
+Remember if I choose Select
+Someone, nothing happens.
+
+261
+00:12:27.570 --> 00:12:29.650
+I returned immediately,
+so it doesn't go back
+
+262
+00:12:29.650 --> 00:12:32.440
+to information goes here,
+although I could have written
+
+263
+00:12:32.440 --> 00:12:34.930
+the function differently to do that.
+
+264
+00:12:34.930 --> 00:12:37.440
+But I can just make these
+different asynchronous requests,
+
+265
+00:12:37.440 --> 00:12:40.480
+and it's going to keep updating the
+information that I see on the page
+
+266
+00:12:40.480 --> 00:12:46.520
+without refreshing the entire page,
+just the section that I care about.
+
+267
+00:12:46.520 --> 00:12:47.570
+So this is pretty cool.
+
+268
+00:12:47.570 --> 00:12:49.990
+Now, we can, not only
+change things locally
+
+269
+00:12:49.990 --> 00:12:52.660
+on our machine, simple
+things like colors,
+
+270
+00:12:52.660 --> 00:12:55.304
+but we can also now send
+outbound requests to servers.
+
+271
+00:12:55.304 --> 00:12:57.970
+And they don't even have to be
+servers that are running locally.
+
+272
+00:12:57.970 --> 00:13:01.150
+I could be maybe sourcing
+information from Yahoo Finance
+
+273
+00:13:01.150 --> 00:13:04.330
+if I want to pull data from
+Yahoo Finance asynchronously.
+
+274
+00:13:04.330 --> 00:13:06.519
+Maybe I'll do that and
+load that into my page
+
+275
+00:13:06.519 --> 00:13:08.560
+and have that be some
+information that constantly
+
+276
+00:13:08.560 --> 00:13:11.560
+gets updated because maybe I have a
+different way of displaying the data
+
+277
+00:13:11.560 --> 00:13:12.110
+or something.
+
+278
+00:13:12.110 --> 00:13:17.110
+So it's an interesting new strategy
+that we have at our disposal.
+
+279
+00:13:17.110 --> 00:13:18.520
+We can send requests locally.
+
+280
+00:13:18.520 --> 00:13:21.610
+We can send requests
+outbound to other servers
+
+281
+00:13:21.610 --> 00:13:27.020
+and really take advantage of creating
+a better user experience using Ajax.
+
+282
+00:13:27.020 --> 00:13:28.270
+I'm Doug Lloyd.
+
+283
+00:13:28.270 --> 00:13:30.220
+This is CS50.
+
+284
+00:13:30.220 --> 00:13:32.000

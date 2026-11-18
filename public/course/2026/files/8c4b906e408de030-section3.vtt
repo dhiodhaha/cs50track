@@ -1,0 +1,8369 @@
+WEBVTT
+
+0
+00:00:02.559 --> 00:00:03.359
+All right,
+
+1
+00:00:03.519 --> 00:00:03.640
+well,
+
+2
+00:00:03.680 --> 00:00:04.349
+it's 120,
+
+3
+00:00:04.400 --> 00:00:06.610
+so we'll get started here.
+
+4
+00:00:07.159 --> 00:00:09.760
+So welcome to CS 50 week 3.
+
+5
+00:00:10.000 --> 00:00:12.420
+This week we're gonna be talking about algorithms,
+
+6
+00:00:12.630 --> 00:00:13.600
+recursion,
+
+7
+00:00:13.800 --> 00:00:14.659
+structs,
+
+8
+00:00:14.960 --> 00:00:16.879
+and um let's dive in.
+
+9
+00:00:18.959 --> 00:00:22.620
+So I'm Kelly as um if you've seen me
+
+10
+00:00:22.879 --> 00:00:23.500
+in
+
+11
+00:00:23.719 --> 00:00:26.159
+last week's section or in lectures,
+
+12
+00:00:26.239 --> 00:00:28.010
+I'm the preceptor here at Harvard
+
+13
+00:00:28.280 --> 00:00:31.299
+uh here's my email if you ever feel like you need to contact me
+
+14
+00:00:31.879 --> 00:00:33.979
+and excited to be running this section.
+
+15
+00:00:36.150 --> 00:00:38.909
+So today we're gonna be talking a little bit about
+
+16
+00:00:38.909 --> 00:00:40.630
+some of the things we saw in lecture this week.
+
+17
+00:00:41.020 --> 00:00:41.340
+First,
+
+18
+00:00:41.590 --> 00:00:42.779
+what are structs?
+
+19
+00:00:42.900 --> 00:00:44.770
+What are these things that we can create?
+
+20
+00:00:45.470 --> 00:00:45.630
+What,
+
+21
+00:00:45.720 --> 00:00:47.369
+how does recursion work?
+
+22
+00:00:47.990 --> 00:00:50.409
+And that's the basis of one of the searching
+
+23
+00:00:50.509 --> 00:00:51.500
+or sorting techniques,
+
+24
+00:00:51.509 --> 00:00:52.650
+techniques we saw
+
+25
+00:00:52.830 --> 00:00:53.689
+merge sort.
+
+26
+00:00:54.509 --> 00:00:56.409
+So how can we search and sort efficiently?
+
+27
+00:00:57.389 --> 00:01:00.069
+And how can we measure that efficiency?
+
+28
+00:01:00.310 --> 00:01:02.349
+So what is big O notation?
+
+29
+00:01:02.990 --> 00:01:07.050
+So you heard about these things in lecture today we're gonna go a little bit,
+
+30
+00:01:07.230 --> 00:01:07.660
+uh,
+
+31
+00:01:07.669 --> 00:01:09.470
+more in depth and review them
+
+32
+00:01:09.709 --> 00:01:10.970
+in a more hands-on way.
+
+33
+00:01:13.160 --> 00:01:14.980
+So first we're going to start with structs.
+
+34
+00:01:16.790 --> 00:01:17.550
+Basically
+
+35
+00:01:17.870 --> 00:01:20.150
+we're coming at this with the question of
+
+36
+00:01:20.470 --> 00:01:23.610
+how can we group different types of related data
+
+37
+00:01:23.910 --> 00:01:25.050
+into a single
+
+38
+00:01:25.190 --> 00:01:26.010
+unit
+
+39
+00:01:26.790 --> 00:01:27.190
+so
+
+40
+00:01:27.389 --> 00:01:29.319
+I have different kinds of data
+
+41
+00:01:29.589 --> 00:01:32.550
+and it would be nice to have them grouped
+
+42
+00:01:32.830 --> 00:01:35.669
+in a unit that I can use over and over again.
+
+43
+00:01:36.639 --> 00:01:38.269
+So an example of this might be
+
+44
+00:01:38.569 --> 00:01:38.910
+if
+
+45
+00:01:39.190 --> 00:01:42.910
+we're tracking the candidates in an election per se.
+
+46
+00:01:43.269 --> 00:01:43.989
+And so
+
+47
+00:01:44.190 --> 00:01:47.169
+this is an example of what a struct could look like.
+
+48
+00:01:47.709 --> 00:01:50.580
+It starts with the keywords type destruct
+
+49
+00:01:50.959 --> 00:01:52.949
+and it's called candidate.
+
+50
+00:01:53.650 --> 00:01:55.160
+In this candidate tru
+
+51
+00:01:55.650 --> 00:01:57.190
+we have two
+
+52
+00:01:58.080 --> 00:01:59.680
+pieces of data that we're storing,
+
+53
+00:01:59.779 --> 00:02:02.150
+so the first being a string called name
+
+54
+00:02:02.489 --> 00:02:04.029
+and then the second being
+
+55
+00:02:04.209 --> 00:02:07.169
+an integer storing the number of votes.
+
+56
+00:02:08.919 --> 00:02:11.929
+So type deaf here is just saying
+
+57
+00:02:12.199 --> 00:02:15.699
+like we're gonna create a new definition here or a new type.
+
+58
+00:02:17.240 --> 00:02:20.899
+And candidate is the name of this new type.
+
+59
+00:02:22.149 --> 00:02:24.130
+Within those curly braces we have
+
+60
+00:02:24.429 --> 00:02:27.710
+grouping the new kinds of data that we want included,
+
+61
+00:02:27.789 --> 00:02:28.130
+so
+
+62
+00:02:28.270 --> 00:02:29.169
+this could be
+
+63
+00:02:29.350 --> 00:02:29.779
+many,
+
+64
+00:02:29.949 --> 00:02:30.710
+more than 2,
+
+65
+00:02:30.830 --> 00:02:31.830
+less than 2,
+
+66
+00:02:31.910 --> 00:02:32.770
+it could be 1,
+
+67
+00:02:33.389 --> 00:02:33.809
+but
+
+68
+00:02:34.029 --> 00:02:37.690
+it's likely going to be helpful if you're trying to group many pieces
+
+69
+00:02:37.869 --> 00:02:38.809
+of data
+
+70
+00:02:39.110 --> 00:02:39.759
+together.
+
+71
+00:02:41.949 --> 00:02:44.809
+So if we want to create an instance of this
+
+72
+00:02:45.149 --> 00:02:45.550
+type,
+
+73
+00:02:45.750 --> 00:02:46.160
+so
+
+74
+00:02:46.350 --> 00:02:47.389
+we've created the type,
+
+75
+00:02:47.589 --> 00:02:48.669
+say like an integer,
+
+76
+00:02:48.830 --> 00:02:50.610
+now it's called a candidate.
+
+77
+00:02:51.479 --> 00:02:52.750
+And then we wanna create
+
+78
+00:02:53.119 --> 00:02:56.029
+um one candidate and we're gonna call it
+
+79
+00:02:56.529 --> 00:02:57.360
+safe president.
+
+80
+00:02:58.270 --> 00:02:59.910
+If I want to give the president
+
+81
+00:03:00.190 --> 00:03:02.649
+the attributes that I showed here.
+
+82
+00:03:03.970 --> 00:03:05.190
+Notation looks
+
+83
+00:03:05.440 --> 00:03:06.869
+a little bit like
+
+84
+00:03:07.570 --> 00:03:08.320
+this.
+
+85
+00:03:10.770 --> 00:03:11.679
+So
+
+86
+00:03:12.380 --> 00:03:14.580
+just like before we have president,
+
+87
+00:03:14.820 --> 00:03:17.399
+which is the name of the variable,
+
+88
+00:03:17.740 --> 00:03:20.039
+and then we're getting the name,
+
+89
+00:03:20.539 --> 00:03:22.479
+so dot name and setting that to
+
+90
+00:03:22.750 --> 00:03:24.080
+Alice in this case
+
+91
+00:03:24.380 --> 00:03:26.279
+and then the same way we're doing
+
+92
+00:03:26.619 --> 00:03:29.160
+dot votes and setting that equal to 10.
+
+93
+00:03:32.429 --> 00:03:33.039
+OK,
+
+94
+00:03:33.389 --> 00:03:36.520
+so I'll pause here for any questions so far about structs,
+
+95
+00:03:36.839 --> 00:03:39.740
+feel free to drop them in the chat if so.
+
+96
+00:03:47.210 --> 00:03:47.490
+If not,
+
+97
+00:03:47.529 --> 00:03:48.270
+I'll move on.
+
+98
+00:03:48.490 --> 00:03:50.940
+Feel free to continue to put things in the chat
+
+99
+00:03:51.449 --> 00:03:51.860
+if
+
+100
+00:03:52.169 --> 00:03:52.970
+they come up.
+
+101
+00:03:54.679 --> 00:03:56.820
+So we're gonna first
+
+102
+00:03:57.000 --> 00:03:58.419
+start out with a little exercise,
+
+103
+00:03:58.979 --> 00:03:59.279
+um,
+
+104
+00:03:59.440 --> 00:04:02.899
+trying out the things that we just saw here.
+
+105
+00:04:04.110 --> 00:04:07.850
+So we're gonna try to create a struct that represents a candidate in an election
+
+106
+00:04:08.350 --> 00:04:11.220
+that includes the candidate's name,
+
+107
+00:04:11.669 --> 00:04:13.139
+the number of votes
+
+108
+00:04:13.509 --> 00:04:14.289
+as an integer,
+
+109
+00:04:14.589 --> 00:04:15.850
+and we're gonna
+
+110
+00:04:16.029 --> 00:04:19.329
+add those attributes to a candidate and print that out
+
+111
+00:04:19.510 --> 00:04:20.350
+to the user.
+
+112
+00:04:21.289 --> 00:04:21.878
+So
+
+113
+00:04:22.688 --> 00:04:23.748
+if you're watching this,
+
+114
+00:04:23.769 --> 00:04:24.148
+uh,
+
+115
+00:04:24.158 --> 00:04:25.178
+asynchronously,
+
+116
+00:04:25.209 --> 00:04:27.498
+feel free to pause here and try this out for yourself,
+
+117
+00:04:27.848 --> 00:04:30.748
+but we're gonna go ahead and move to VS code
+
+118
+00:04:31.009 --> 00:04:32.569
+and try it out.
+
+119
+00:04:33.369 --> 00:04:33.839
+OK,
+
+120
+00:04:34.369 --> 00:04:37.239
+and would love to have participation in the chat,
+
+121
+00:04:37.390 --> 00:04:38.559
+so feel free
+
+122
+00:04:39.100 --> 00:04:39.529
+to,
+
+123
+00:04:39.739 --> 00:04:40.920
+to write your thoughts,
+
+124
+00:04:41.320 --> 00:04:41.329
+uh,
+
+125
+00:04:41.339 --> 00:04:42.929
+and I'm gonna be asking you a lot of questions.
+
+126
+00:04:43.019 --> 00:04:43.399
+So
+
+127
+00:04:43.720 --> 00:04:45.320
+we're first gonna start out by
+
+128
+00:04:46.059 --> 00:04:46.619
+coding,
+
+129
+00:04:47.019 --> 00:04:48.880
+creating a struct.c file,
+
+130
+00:04:49.660 --> 00:04:50.269
+and
+
+131
+00:04:50.500 --> 00:04:52.989
+first thing we're gonna do is import some libraries.
+
+132
+00:04:53.230 --> 00:04:53.739
+So
+
+133
+00:04:54.179 --> 00:04:58.320
+we drop in the chat what libraries might I need to import here.
+
+134
+00:05:11.010 --> 00:05:11.570
+Standard IO,
+
+135
+00:05:11.649 --> 00:05:11.859
+yeah,
+
+136
+00:05:12.059 --> 00:05:12.380
+great.
+
+137
+00:05:14.299 --> 00:05:15.839
+Standard IO.H.
+
+138
+00:05:17.149 --> 00:05:19.869
+So it says string.h CS 50.h. OK,
+
+139
+00:05:19.950 --> 00:05:21.489
+great so I'm gonna start out with
+
+140
+00:05:22.350 --> 00:05:23.029
+including.
+
+141
+00:05:24.089 --> 00:05:25.510
+Maybe just these two for now
+
+142
+00:05:25.850 --> 00:05:28.510
+and we'll see if we need string each later
+
+143
+00:05:28.850 --> 00:05:31.609
+and then we start out with mate it may void.
+
+144
+00:05:33.369 --> 00:05:34.040
+OK.
+
+145
+00:05:35.339 --> 00:05:37.720
+So I know I'm going to need to create
+
+146
+00:05:38.140 --> 00:05:38.959
+a struct.
+
+147
+00:05:40.269 --> 00:05:42.369
+And so does anyone remember where
+
+148
+00:05:42.510 --> 00:05:44.290
+in my code that goes?
+
+149
+00:05:45.589 --> 00:05:47.220
+My like type destruct.
+
+150
+00:05:50.190 --> 00:05:51.260
+Perhaps which
+
+151
+00:05:51.649 --> 00:05:54.279
+line of code should that be on?
+
+152
+00:05:58.220 --> 00:05:58.820
+Before Maine,
+
+153
+00:05:58.940 --> 00:05:59.220
+yeah,
+
+154
+00:05:59.500 --> 00:05:59.820
+exactly,
+
+155
+00:05:59.929 --> 00:06:01.239
+so we want to define this
+
+156
+00:06:02.140 --> 00:06:02.820
+before Maine,
+
+157
+00:06:03.299 --> 00:06:05.640
+so we're gonna start out with type destruct like we saw earlier.
+
+158
+00:06:07.320 --> 00:06:08.670
+And this is going to be called.
+
+159
+00:06:09.649 --> 00:06:10.720
+Candidate.
+
+160
+00:06:12.420 --> 00:06:14.559
+Within this we're gonna have two
+
+161
+00:06:15.380 --> 00:06:17.899
+pieces of information like we saw earlier,
+
+162
+00:06:18.299 --> 00:06:20.079
+a string called name
+
+163
+00:06:20.779 --> 00:06:22.339
+and then an integer
+
+164
+00:06:22.540 --> 00:06:23.119
+called
+
+165
+00:06:23.700 --> 00:06:24.309
+votes.
+
+166
+00:06:25.429 --> 00:06:25.649
+OK,
+
+167
+00:06:25.730 --> 00:06:25.910
+great,
+
+168
+00:06:26.089 --> 00:06:27.149
+so now we have that.
+
+169
+00:06:29.929 --> 00:06:31.440
+We want to
+
+170
+00:06:32.209 --> 00:06:34.390
+add these attributes to a candidate,
+
+171
+00:06:34.529 --> 00:06:35.670
+so say Alice
+
+172
+00:06:35.989 --> 00:06:37.019
+with 5 votes.
+
+173
+00:06:37.950 --> 00:06:41.450
+So how would I go about creating
+
+174
+00:06:41.630 --> 00:06:43.309
+an instance of this candidate?
+
+175
+00:06:51.890 --> 00:06:54.019
+So I know I want it to be a candidate type.
+
+176
+00:06:55.140 --> 00:06:56.750
+And maybe I give it a name.
+
+177
+00:06:58.350 --> 00:07:00.170
+So I'm just gonna say A for now.
+
+178
+00:07:02.079 --> 00:07:02.369
+OK,
+
+179
+00:07:02.450 --> 00:07:04.790
+and now I'm gonna give it its attributes.
+
+180
+00:07:05.750 --> 00:07:07.420
+So I called this candidate A.
+
+181
+00:07:09.299 --> 00:07:12.480
+And then how do I go about adding
+
+182
+00:07:12.739 --> 00:07:13.720
+the name?
+
+183
+00:07:14.019 --> 00:07:15.910
+What do I type after this dot?
+
+184
+00:07:27.369 --> 00:07:28.380
+Someone says president.
+
+185
+00:07:29.470 --> 00:07:29.630
+Ah,
+
+186
+00:07:29.709 --> 00:07:29.980
+OK,
+
+187
+00:07:30.190 --> 00:07:30.309
+yes,
+
+188
+00:07:30.480 --> 00:07:31.769
+dot name exactly.
+
+189
+00:07:33.510 --> 00:07:35.070
+So that name is Alice.
+
+190
+00:07:36.980 --> 00:07:39.880
+And I'm gonna set 8 votes in the same way
+
+191
+00:07:40.019 --> 00:07:40.880
+to
+
+192
+00:07:41.459 --> 00:07:42.059
+5.
+
+193
+00:07:43.700 --> 00:07:45.679
+Now I can go ahead and print this out.
+
+194
+00:07:47.260 --> 00:07:48.630
+So I'm gonna do.
+
+195
+00:07:49.910 --> 00:07:50.880
+percent S
+
+196
+00:07:51.279 --> 00:07:51.940
+for
+
+197
+00:07:52.130 --> 00:07:52.959
+Alice
+
+198
+00:07:53.600 --> 00:07:56.010
+has a has um
+
+199
+00:07:56.450 --> 00:07:58.359
+percent I number of.
+
+200
+00:07:59.299 --> 00:08:00.279
+Votes.
+
+201
+00:08:00.859 --> 00:08:01.299
+OK.
+
+202
+00:08:02.359 --> 00:08:03.070
+And then
+
+203
+00:08:04.500 --> 00:08:07.450
+What do I put in here for my placeholders?
+
+204
+00:08:10.059 --> 00:08:11.230
+I want to substitute,
+
+205
+00:08:11.970 --> 00:08:13.820
+Alice has 5 votes.
+
+206
+00:08:30.209 --> 00:08:30.470
+OK,
+
+207
+00:08:30.549 --> 00:08:32.130
+I'll do a name.
+
+208
+00:08:33.359 --> 00:08:34.198
+And then A
+
+209
+00:08:35.268 --> 00:08:36.039
+votes.
+
+210
+00:08:37.808 --> 00:08:39.229
+So a name will give us Alice.
+
+211
+00:08:41.609 --> 00:08:43.159
+A votes will give us.
+
+212
+00:08:44.090 --> 00:08:44.489
+5,
+
+213
+00:08:44.650 --> 00:08:45.950
+so that will substitute.
+
+214
+00:08:47.250 --> 00:08:47.979
+OK,
+
+215
+00:08:48.179 --> 00:08:49.760
+so let's try making this.
+
+216
+00:08:49.859 --> 00:08:50.380
+Oops,
+
+217
+00:08:50.659 --> 00:08:51.159
+OK,
+
+218
+00:08:51.619 --> 00:08:52.190
+makes truck.
+
+219
+00:08:54.049 --> 00:08:54.250
+OK,
+
+220
+00:08:54.409 --> 00:08:55.570
+dot slash struct,
+
+221
+00:08:55.929 --> 00:08:58.349
+and then we get Alice has 5 votes.
+
+222
+00:08:59.070 --> 00:08:59.619
+OK,
+
+223
+00:09:02.549 --> 00:09:05.760
+Any questions about this code so far?
+
+224
+00:09:12.590 --> 00:09:12.890
+OK,
+
+225
+00:09:13.010 --> 00:09:13.130
+well,
+
+226
+00:09:13.210 --> 00:09:14.809
+feel free to drop in the chat if you do.
+
+227
+00:09:17.000 --> 00:09:19.330
+For this next part of this exercise,
+
+228
+00:09:19.830 --> 00:09:22.090
+we're gonna make this a little bit more interactive.
+
+229
+00:09:23.059 --> 00:09:25.640
+And we're going to create your own get candidate function
+
+230
+00:09:25.979 --> 00:09:29.840
+that prompts the user to input attributes for a candidate.
+
+231
+00:09:30.650 --> 00:09:32.010
+You may rely on get string,
+
+232
+00:09:32.169 --> 00:09:32.609
+get float,
+
+233
+00:09:32.690 --> 00:09:33.200
+etc.
+
+234
+00:09:33.349 --> 00:09:35.590
+and your function should return a candidate.
+
+235
+00:09:37.130 --> 00:09:37.140
+So
+
+236
+00:09:39.080 --> 00:09:43.200
+My current function I'm writing I'm setting these values myself
+
+237
+00:09:43.380 --> 00:09:45.479
+that's maybe not as fun,
+
+238
+00:09:45.739 --> 00:09:46.109
+uh,
+
+239
+00:09:46.119 --> 00:09:46.960
+as getting
+
+240
+00:09:47.099 --> 00:09:48.840
+that information from
+
+241
+00:09:49.150 --> 00:09:49.659
+the
+
+242
+00:09:49.940 --> 00:09:50.960
+user,
+
+243
+00:09:51.539 --> 00:09:52.119
+so.
+
+244
+00:09:53.729 --> 00:09:55.909
+We're going to create a get candidate function.
+
+245
+00:09:57.429 --> 00:09:59.919
+So I'm gonna set that up here.
+
+246
+00:10:01.169 --> 00:10:01.869
+So
+
+247
+00:10:03.239 --> 00:10:03.359
+Well,
+
+248
+00:10:03.440 --> 00:10:04.979
+first I should ask,
+
+249
+00:10:05.260 --> 00:10:05.989
+um,
+
+250
+00:10:06.520 --> 00:10:09.669
+what is this get candidate function returning?
+
+251
+00:10:09.880 --> 00:10:11.659
+So what's the return type?
+
+252
+00:10:12.909 --> 00:10:14.460
+Of this function.
+
+253
+00:10:16.780 --> 00:10:19.080
+So I know that I want to take in
+
+254
+00:10:19.419 --> 00:10:19.979
+um.
+
+255
+00:10:21.349 --> 00:10:22.450
+Someone says string,
+
+256
+00:10:22.710 --> 00:10:23.349
+not quite right.
+
+257
+00:10:23.429 --> 00:10:24.770
+We want to return
+
+258
+00:10:24.989 --> 00:10:26.809
+uh a candidate with those
+
+259
+00:10:27.229 --> 00:10:27.750
+attributes,
+
+260
+00:10:27.789 --> 00:10:28.650
+so something like.
+
+261
+00:10:29.479 --> 00:10:30.140
+Um,
+
+262
+00:10:30.270 --> 00:10:31.250
+a here
+
+263
+00:10:31.510 --> 00:10:31.919
+candidate,
+
+264
+00:10:32.150 --> 00:10:32.390
+exactly,
+
+265
+00:10:32.500 --> 00:10:32.590
+yeah,
+
+266
+00:10:32.700 --> 00:10:33.229
+so it's,
+
+267
+00:10:33.469 --> 00:10:35.890
+we're gonna be returning something of candidate type
+
+268
+00:10:36.549 --> 00:10:38.229
+call this function get candidate,
+
+269
+00:10:38.780 --> 00:10:38.989
+um,
+
+270
+00:10:39.070 --> 00:10:40.570
+we're not gonna take any inputs.
+
+271
+00:10:41.599 --> 00:10:43.700
+Since we're gonna be prompting the user.
+
+272
+00:10:45.679 --> 00:10:46.200
+OK.
+
+273
+00:10:47.710 --> 00:10:48.469
+So
+
+274
+00:10:50.349 --> 00:10:50.950
+First,
+
+275
+00:10:51.229 --> 00:10:53.250
+I'm gonna ask for.
+
+276
+00:10:54.210 --> 00:10:56.320
+The um attributes,
+
+277
+00:10:56.330 --> 00:10:56.530
+right?
+
+278
+00:10:56.609 --> 00:10:56.969
+So
+
+279
+00:10:57.169 --> 00:10:58.030
+we're gonna do.
+
+280
+00:10:59.619 --> 00:11:00.679
+Like new
+
+281
+00:11:01.820 --> 00:11:02.359
+or
+
+282
+00:11:02.539 --> 00:11:02.619
+yeah,
+
+283
+00:11:02.700 --> 00:11:03.520
+we can say
+
+284
+00:11:03.900 --> 00:11:04.640
+the
+
+285
+00:11:05.260 --> 00:11:05.799
+name.
+
+286
+00:11:08.469 --> 00:11:09.609
+is going to be
+
+287
+00:11:10.210 --> 00:11:11.429
+We're going to get that from
+
+288
+00:11:11.690 --> 00:11:12.049
+the user,
+
+289
+00:11:12.169 --> 00:11:12.750
+so name.
+
+290
+00:11:15.059 --> 00:11:17.729
+And then we're gonna ask for votes.
+
+291
+00:11:18.770 --> 00:11:19.419
+And
+
+292
+00:11:21.070 --> 00:11:21.710
+Oats.
+
+293
+00:11:27.359 --> 00:11:27.969
+All right.
+
+294
+00:11:28.820 --> 00:11:32.799
+And then how am I going to declare a candidate down here?
+
+295
+00:11:36.789 --> 00:11:38.659
+It's gonna be similar to
+
+296
+00:11:39.340 --> 00:11:42.770
+what I did up here when I hard coded these values in right?
+
+297
+00:11:43.239 --> 00:11:43.619
+so.
+
+298
+00:11:45.010 --> 00:11:48.200
+Maybe I'll make a new candidate variable,
+
+299
+00:11:48.739 --> 00:11:49.460
+call it
+
+300
+00:11:49.900 --> 00:11:50.710
+new candidate.
+
+301
+00:11:53.760 --> 00:11:57.489
+And now that I have these values from the user.
+
+302
+00:11:59.070 --> 00:12:04.950
+I can sett name to name and I can set new candidate.votes.
+
+303
+00:12:06.080 --> 00:12:06.590
+2
+
+304
+00:12:06.729 --> 00:12:07.599
+votes.
+
+305
+00:12:08.659 --> 00:12:09.140
+OK,
+
+306
+00:12:09.400 --> 00:12:10.500
+I'm gonna pause here.
+
+307
+00:12:10.739 --> 00:12:14.640
+Does anyone see anything that I could potentially
+
+308
+00:12:15.380 --> 00:12:17.099
+improve on with this code?
+
+309
+00:12:18.419 --> 00:12:21.440
+Are there any variables that are not necessary?
+
+310
+00:12:23.859 --> 00:12:25.340
+How could I improve the design?
+
+311
+00:12:33.320 --> 00:12:35.030
+Feel free to write in the chat.
+
+312
+00:12:36.489 --> 00:12:37.830
+Do you have an idea?
+
+313
+00:12:46.929 --> 00:12:48.039
+Someone says add comments.
+
+314
+00:12:48.090 --> 00:12:48.789
+That's a good idea
+
+315
+00:12:49.090 --> 00:12:49.429
+actually.
+
+316
+00:12:49.489 --> 00:12:50.450
+We should add some comments,
+
+317
+00:12:50.530 --> 00:12:51.409
+so maybe I'll say.
+
+318
+00:12:52.809 --> 00:12:55.570
+This is a function to.
+
+319
+00:12:57.099 --> 00:12:58.479
+Get a new candidate.
+
+320
+00:13:02.059 --> 00:13:02.520
+So
+
+321
+00:13:03.669 --> 00:13:06.090
+This name and votes variable.
+
+322
+00:13:06.950 --> 00:13:07.679
+are
+
+323
+00:13:07.989 --> 00:13:09.289
+not necessarily
+
+324
+00:13:09.510 --> 00:13:10.190
+needed here.
+
+325
+00:13:10.270 --> 00:13:11.210
+Like I could
+
+326
+00:13:11.710 --> 00:13:13.270
+just take this.
+
+327
+00:13:13.919 --> 00:13:14.679
+And move it here,
+
+328
+00:13:14.799 --> 00:13:15.200
+right?
+
+329
+00:13:16.239 --> 00:13:17.719
+So I was just using that name
+
+330
+00:13:18.039 --> 00:13:19.979
+very well to store it temporarily
+
+331
+00:13:20.200 --> 00:13:21.390
+um but
+
+332
+00:13:21.799 --> 00:13:23.330
+that's precious memory that
+
+333
+00:13:23.580 --> 00:13:25.820
+we don't necessarily need to be spending
+
+334
+00:13:25.960 --> 00:13:26.919
+since I can just.
+
+335
+00:13:27.809 --> 00:13:28.869
+Um,
+
+336
+00:13:29.450 --> 00:13:31.630
+store it right in the new candidate here.
+
+337
+00:13:32.469 --> 00:13:35.109
+So already we've shortened up our shortened our code a little bit,
+
+338
+00:13:35.150 --> 00:13:35.890
+which is nice.
+
+339
+00:13:37.039 --> 00:13:37.609
+OK,
+
+340
+00:13:38.090 --> 00:13:39.489
+and someone also mentioned the return,
+
+341
+00:13:39.580 --> 00:13:39.849
+yeah,
+
+342
+00:13:39.979 --> 00:13:40.429
+so
+
+343
+00:13:40.809 --> 00:13:42.059
+once I've actually.
+
+344
+00:13:43.080 --> 00:13:44.840
+Created my new candidate and
+
+345
+00:13:45.020 --> 00:13:46.919
+given it the name and the votes
+
+346
+00:13:47.500 --> 00:13:49.760
+and I can return new candidate.
+
+347
+00:13:51.820 --> 00:13:52.210
+OK,
+
+348
+00:13:52.349 --> 00:13:53.489
+so that's our function.
+
+349
+00:13:54.309 --> 00:13:56.830
+Now let's go back to our main function and
+
+350
+00:13:57.049 --> 00:13:57.890
+actually
+
+351
+00:13:58.669 --> 00:13:59.849
+use it.
+
+352
+00:14:01.380 --> 00:14:01.979
+OK.
+
+353
+00:14:02.820 --> 00:14:03.729
+So
+
+354
+00:14:04.340 --> 00:14:05.500
+we're going to say.
+
+355
+00:14:07.390 --> 00:14:08.130
+Maybe
+
+356
+00:14:08.390 --> 00:14:09.030
+um.
+
+357
+00:14:10.909 --> 00:14:11.929
+We're going to create a candidate.
+
+358
+00:14:13.789 --> 00:14:15.539
+Perhaps I also call a new candidate.
+
+359
+00:14:16.500 --> 00:14:17.210
+And then
+
+360
+00:14:17.539 --> 00:14:22.039
+I'm gonna store it or the value that I want for this new candidate.
+
+361
+00:14:22.679 --> 00:14:24.260
+Is going to be coming from
+
+362
+00:14:24.440 --> 00:14:25.340
+this function.
+
+363
+00:14:26.760 --> 00:14:28.049
+So I'm gonna do.
+
+364
+00:14:29.630 --> 00:14:31.179
+Get candidate like so.
+
+365
+00:14:32.330 --> 00:14:32.530
+Right,
+
+366
+00:14:32.650 --> 00:14:33.039
+so
+
+367
+00:14:33.349 --> 00:14:36.669
+basically I've created a new variable called new candidate
+
+368
+00:14:37.330 --> 00:14:38.409
+of candidate type.
+
+369
+00:14:39.390 --> 00:14:41.090
+And it's going to be equal
+
+370
+00:14:41.349 --> 00:14:43.169
+to the return value
+
+371
+00:14:43.750 --> 00:14:45.070
+of this function.
+
+372
+00:14:45.859 --> 00:14:47.400
+So it's going to run this function,
+
+373
+00:14:47.859 --> 00:14:49.640
+going to ask for a name of votes,
+
+374
+00:14:49.700 --> 00:14:51.179
+and then return to me.
+
+375
+00:14:52.179 --> 00:14:53.780
+A candidate with that information.
+
+376
+00:14:54.919 --> 00:14:55.950
+So once I have that,
+
+377
+00:14:56.320 --> 00:14:57.880
+then just like before,
+
+378
+00:14:58.159 --> 00:14:59.580
+I might want to print
+
+379
+00:14:59.760 --> 00:15:00.700
+that information.
+
+380
+00:15:02.159 --> 00:15:02.169
+So
+
+381
+00:15:02.960 --> 00:15:03.780
+I could say.
+
+382
+00:15:05.030 --> 00:15:08.000
+Candidate has is named.
+
+383
+00:15:09.520 --> 00:15:10.859
+And then the name
+
+384
+00:15:11.400 --> 00:15:12.739
+and has.
+
+385
+00:15:14.039 --> 00:15:15.840
+Some number of.
+
+386
+00:15:16.840 --> 00:15:17.440
+Uh,
+
+387
+00:15:17.679 --> 00:15:18.700
+votes.
+
+388
+00:15:22.460 --> 00:15:23.140
+OK.
+
+389
+00:15:24.940 --> 00:15:27.200
+I'm gonna substitute here just like we did before new candidates.name.
+
+390
+00:15:31.200 --> 00:15:32.039
+And then
+
+391
+00:15:32.440 --> 00:15:33.659
+for the votes.
+
+392
+00:15:35.179 --> 00:15:38.280
+New candidates votes.
+
+393
+00:15:40.119 --> 00:15:40.840
+OK.
+
+394
+00:15:41.940 --> 00:15:43.119
+So let's make again
+
+395
+00:15:45.900 --> 00:15:46.159
+OK,
+
+396
+00:15:46.270 --> 00:15:47.630
+what happened here?
+
+397
+00:15:49.900 --> 00:15:53.729
+So we have error at call to undeclared function get candidate.
+
+398
+00:15:55.330 --> 00:15:56.000
+Does anyone
+
+399
+00:15:56.400 --> 00:15:57.219
+know
+
+400
+00:15:57.659 --> 00:15:58.789
+what is going on here?
+
+401
+00:15:58.900 --> 00:16:00.440
+Why am I getting this error?
+
+402
+00:16:16.549 --> 00:16:17.710
+Someone said no prototype,
+
+403
+00:16:17.789 --> 00:16:18.020
+yes,
+
+404
+00:16:18.200 --> 00:16:18.929
+exactly,
+
+405
+00:16:19.270 --> 00:16:19.549
+yeah,
+
+406
+00:16:19.710 --> 00:16:20.169
+so
+
+407
+00:16:20.270 --> 00:16:22.010
+if we recall a prototype
+
+408
+00:16:22.270 --> 00:16:23.710
+we're prototyping a function
+
+409
+00:16:24.070 --> 00:16:24.770
+means
+
+410
+00:16:25.109 --> 00:16:26.570
+to take this function.
+
+411
+00:16:28.710 --> 00:16:29.580
+In the first,
+
+412
+00:16:29.739 --> 00:16:30.179
+um,
+
+413
+00:16:30.280 --> 00:16:31.320
+this first line of it.
+
+414
+00:16:32.770 --> 00:16:35.549
+And make sure that we declare it before the main function
+
+415
+00:16:35.969 --> 00:16:40.099
+so otherwise we get to the main function and the parlor gets to this
+
+416
+00:16:40.409 --> 00:16:43.130
+line and it's like I don't know what this function is.
+
+417
+00:16:43.169 --> 00:16:44.309
+I haven't seen this before
+
+418
+00:16:44.969 --> 00:16:45.349
+so
+
+419
+00:16:45.809 --> 00:16:47.270
+by prototyping it here.
+
+420
+00:16:48.280 --> 00:16:50.590
+We can be sure that the compiler knows,
+
+421
+00:16:50.799 --> 00:16:51.119
+OK,
+
+422
+00:16:51.239 --> 00:16:52.179
+there's gonna be a function
+
+423
+00:16:52.559 --> 00:16:53.719
+that's named this.
+
+424
+00:16:55.590 --> 00:16:55.799
+OK,
+
+425
+00:16:55.919 --> 00:16:58.419
+so I'm going to clear and make again.
+
+426
+00:16:59.679 --> 00:17:00.049
+OK,
+
+427
+00:17:00.169 --> 00:17:01.409
+what happened here?
+
+428
+00:17:03.390 --> 00:17:03.630
+Oh,
+
+429
+00:17:03.710 --> 00:17:04.550
+I just
+
+430
+00:17:04.989 --> 00:17:05.770
+had a typo.
+
+431
+00:17:06.150 --> 00:17:06.579
+OK,
+
+432
+00:17:06.829 --> 00:17:07.510
+new candidate,
+
+433
+00:17:07.630 --> 00:17:08.108
+new candidate,
+
+434
+00:17:08.189 --> 00:17:09.839
+so that should match with this.
+
+435
+00:17:13.108 --> 00:17:13.550
+OK.
+
+436
+00:17:14.848 --> 00:17:15.780
+So
+
+437
+00:17:16.250 --> 00:17:17.368
+I have dot slash instruct.
+
+438
+00:17:17.380 --> 00:17:18.160
+I'm gonna run it.
+
+439
+00:17:18.319 --> 00:17:19.390
+I'm gonna give it a name.
+
+440
+00:17:19.489 --> 00:17:20.290
+Alice,
+
+441
+00:17:20.810 --> 00:17:22.310
+maybe she has 10 votes,
+
+442
+00:17:22.810 --> 00:17:25.368
+and we see candidate is named Alice and has 10 votes.
+
+443
+00:17:26.280 --> 00:17:26.760
+Perfect.
+
+444
+00:17:28.189 --> 00:17:28.790
+OK.
+
+445
+00:17:30.180 --> 00:17:31.540
+So I'll pause here again,
+
+446
+00:17:31.939 --> 00:17:35.280
+see if anyone has any questions about the code we just
+
+447
+00:17:35.859 --> 00:17:36.540
+created.
+
+448
+00:17:43.810 --> 00:17:44.099
+OK,
+
+449
+00:17:44.729 --> 00:17:47.599
+someone said they're still having trouble with calling functions.
+
+450
+00:17:48.229 --> 00:17:48.510
+Yeah,
+
+451
+00:17:48.660 --> 00:17:49.439
+so I'll
+
+452
+00:17:49.900 --> 00:17:51.640
+try to go over that a little bit here.
+
+453
+00:17:52.599 --> 00:17:53.839
+So in this main function.
+
+454
+00:17:54.780 --> 00:17:57.930
+We're creating a new variable and we're setting it equal to
+
+455
+00:17:58.390 --> 00:17:59.530
+the return
+
+456
+00:17:59.819 --> 00:18:00.410
+of
+
+457
+00:18:00.670 --> 00:18:02.369
+this function that we've created,
+
+458
+00:18:02.790 --> 00:18:03.469
+get candidate,
+
+459
+00:18:03.949 --> 00:18:04.270
+right?
+
+460
+00:18:04.550 --> 00:18:07.410
+And so this function that we've created separately
+
+461
+00:18:08.150 --> 00:18:08.890
+we know
+
+462
+00:18:09.069 --> 00:18:09.729
+calls,
+
+463
+00:18:09.790 --> 00:18:10.099
+uh,
+
+464
+00:18:10.109 --> 00:18:12.650
+get string and get in to get that input
+
+465
+00:18:12.869 --> 00:18:14.329
+and then it returns
+
+466
+00:18:15.109 --> 00:18:17.410
+a variable of candidate type
+
+467
+00:18:17.630 --> 00:18:18.709
+called new candidate.
+
+468
+00:18:19.640 --> 00:18:19.760
+Right,
+
+469
+00:18:19.839 --> 00:18:20.530
+and so
+
+470
+00:18:20.839 --> 00:18:23.339
+that candidate that's being generated in this function
+
+471
+00:18:23.959 --> 00:18:24.540
+then.
+
+472
+00:18:25.630 --> 00:18:29.170
+Gets uh stored as new candidate here.
+
+473
+00:18:31.079 --> 00:18:32.959
+So hopefully that helps
+
+474
+00:18:33.319 --> 00:18:36.420
+and feel free to write more questions in the chat if you have them,
+
+475
+00:18:36.880 --> 00:18:38.140
+but we're gonna continue.
+
+476
+00:18:40.510 --> 00:18:41.050
+OK,
+
+477
+00:18:41.430 --> 00:18:45.089
+so that was if we just had one candidate that we were storing
+
+478
+00:18:45.349 --> 00:18:46.609
+and we were returning,
+
+479
+00:18:46.829 --> 00:18:51.089
+but what if we have multiple candidates as you usually do
+
+480
+00:18:51.349 --> 00:18:51.949
+in
+
+481
+00:18:52.150 --> 00:18:52.829
+an election?
+
+482
+00:18:54.079 --> 00:18:56.040
+What might I use?
+
+483
+00:18:56.479 --> 00:18:56.599
+Yeah,
+
+484
+00:18:56.719 --> 00:18:58.660
+someone says we might need to use a raise.
+
+485
+00:19:00.030 --> 00:19:03.280
+So we can imagine we have an array like this.
+
+486
+00:19:05.530 --> 00:19:08.729
+Called candidates plural of type candidate.
+
+487
+00:19:09.510 --> 00:19:11.010
+And we're going to store 3
+
+488
+00:19:11.310 --> 00:19:12.750
+candidates inside of this array.
+
+489
+00:19:13.859 --> 00:19:13.869
+So
+
+490
+00:19:14.780 --> 00:19:19.800
+with each candidate we know we are also storing a name and number of votes.
+
+491
+00:19:20.739 --> 00:19:22.209
+And so if we
+
+492
+00:19:22.949 --> 00:19:23.550
+have
+
+493
+00:19:23.750 --> 00:19:24.890
+the first,
+
+494
+00:19:25.209 --> 00:19:25.969
+um,
+
+495
+00:19:26.709 --> 00:19:26.869
+yeah,
+
+496
+00:19:26.989 --> 00:19:28.449
+the first candidate here
+
+497
+00:19:28.890 --> 00:19:32.150
+it's gonna be referred to as candidates at index 0 right?
+
+498
+00:19:32.229 --> 00:19:32.770
+so we're
+
+499
+00:19:33.089 --> 00:19:34.969
+going back to our array indexing
+
+500
+00:19:35.109 --> 00:19:36.069
+and the first.
+
+501
+00:19:36.800 --> 00:19:39.459
+It's always going to be at index 0.
+
+502
+00:19:40.040 --> 00:19:41.729
+If I wanted to give it a name.
+
+503
+00:19:42.569 --> 00:19:45.670
+Then I do a similar notation here with the dot name
+
+504
+00:19:46.209 --> 00:19:47.989
+and set that equal to Alice.
+
+505
+00:19:49.000 --> 00:19:50.020
+Same thing with votes.
+
+506
+00:19:50.280 --> 00:19:53.859
+I can do candidates at index 0.votes set that equal
+
+507
+00:19:54.160 --> 00:19:54.900
+to 2.
+
+508
+00:19:56.520 --> 00:19:57.000
+OK,
+
+509
+00:19:57.209 --> 00:19:58.910
+so you can do that same thing
+
+510
+00:19:59.609 --> 00:20:00.189
+for,
+
+511
+00:20:00.369 --> 00:20:00.640
+uh,
+
+512
+00:20:00.650 --> 00:20:02.290
+candidates at bracket 1,
+
+513
+00:20:02.410 --> 00:20:03.410
+at bracket 2.
+
+514
+00:20:04.020 --> 00:20:05.079
+And fill those
+
+515
+00:20:05.260 --> 00:20:06.199
+values in
+
+516
+00:20:06.459 --> 00:20:07.219
+the same way.
+
+517
+00:20:08.550 --> 00:20:09.079
+OK,
+
+518
+00:20:09.329 --> 00:20:11.369
+so we're gonna see this in
+
+519
+00:20:11.689 --> 00:20:12.369
+practice,
+
+520
+00:20:12.479 --> 00:20:14.890
+but any questions about that?
+
+521
+00:20:19.819 --> 00:20:19.829
+OK,
+
+522
+00:20:20.619 --> 00:20:22.619
+let's try this out here.
+
+523
+00:20:22.739 --> 00:20:23.880
+So we're gonna see.
+
+524
+00:20:24.630 --> 00:20:24.760
+Uh,
+
+525
+00:20:24.839 --> 00:20:25.199
+someone says,
+
+526
+00:20:25.239 --> 00:20:27.619
+is it possible to store arrays inside of
+
+527
+00:20:28.109 --> 00:20:28.800
+arrays?
+
+528
+00:20:29.810 --> 00:20:30.010
+Yes,
+
+529
+00:20:30.170 --> 00:20:32.189
+so we have like two dimensional
+
+530
+00:20:32.729 --> 00:20:35.189
+um arrays so you can have arrays of
+
+531
+00:20:35.719 --> 00:20:36.550
+arrays,
+
+532
+00:20:36.969 --> 00:20:37.750
+good question,
+
+533
+00:20:38.170 --> 00:20:38.359
+um,
+
+534
+00:20:38.369 --> 00:20:40.390
+and you're gonna see that in a few weeks.
+
+535
+00:20:42.760 --> 00:20:43.310
+OK,
+
+536
+00:20:43.560 --> 00:20:44.359
+so.
+
+537
+00:20:45.920 --> 00:20:49.979
+We're gonna keep building on our original program
+
+538
+00:20:50.119 --> 00:20:50.699
+and
+
+539
+00:20:51.219 --> 00:20:55.150
+use our get candidate function to create an array of 3 candidates,
+
+540
+00:20:55.520 --> 00:20:57.819
+each of which should have attributes input
+
+541
+00:20:57.930 --> 00:20:59.359
+by the user.
+
+542
+00:21:01.479 --> 00:21:01.719
+OK,
+
+543
+00:21:01.839 --> 00:21:03.219
+so we're gonna come back here.
+
+544
+00:21:03.680 --> 00:21:05.880
+So right now we're calling this once
+
+545
+00:21:06.199 --> 00:21:07.609
+to store 1 new candidate,
+
+546
+00:21:08.079 --> 00:21:10.290
+but now we know we want 3.
+
+547
+00:21:11.790 --> 00:21:12.569
+So
+
+548
+00:21:13.689 --> 00:21:14.319
+Like before,
+
+549
+00:21:14.329 --> 00:21:15.329
+we were using a raise,
+
+550
+00:21:15.530 --> 00:21:16.349
+so I'm gonna make.
+
+551
+00:21:17.290 --> 00:21:18.579
+A new array
+
+552
+00:21:19.290 --> 00:21:19.680
+candidate.
+
+553
+00:21:22.589 --> 00:21:23.959
+And I'm gonna call it
+
+554
+00:21:24.060 --> 00:21:24.819
+um
+
+555
+00:21:25.319 --> 00:21:26.420
+candidates
+
+556
+00:21:26.680 --> 00:21:27.339
+plural.
+
+557
+00:21:28.660 --> 00:21:30.430
+And I know I'm going to be strong 3,
+
+558
+00:21:30.750 --> 00:21:31.459
+so I'm going to
+
+559
+00:21:31.660 --> 00:21:33.290
+set the size of that to 3.
+
+560
+00:21:35.910 --> 00:21:36.359
+OK,
+
+561
+00:21:36.560 --> 00:21:38.420
+so now if I want to go over each
+
+562
+00:21:39.280 --> 00:21:39.930
+candidate
+
+563
+00:21:40.150 --> 00:21:43.239
+and fill that with the information from
+
+564
+00:21:43.439 --> 00:21:44.359
+the user.
+
+565
+00:21:45.099 --> 00:21:45.270
+Yeah,
+
+566
+00:21:45.430 --> 00:21:46.869
+someone already beat me to the punch,
+
+567
+00:21:46.949 --> 00:21:47.869
+so making a loop,
+
+568
+00:21:47.949 --> 00:21:48.689
+we should make
+
+569
+00:21:48.989 --> 00:21:49.849
+a loop here
+
+570
+00:21:50.270 --> 00:21:51.530
+to do that 3 times.
+
+571
+00:21:54.689 --> 00:21:57.709
+So I'm gonna repeat from I equals 0
+
+572
+00:21:58.219 --> 00:21:59.089
+to I less than 3,
+
+573
+00:21:59.170 --> 00:22:00.670
+so that it repeats 3 times.
+
+574
+00:22:03.189 --> 00:22:05.069
+And then within that loop.
+
+575
+00:22:06.750 --> 00:22:08.400
+I want to,
+
+576
+00:22:08.719 --> 00:22:09.310
+um,
+
+577
+00:22:09.739 --> 00:22:11.239
+get a new candidate.
+
+578
+00:22:13.339 --> 00:22:14.750
+So I'm gonna do.
+
+579
+00:22:16.160 --> 00:22:17.160
+Candidates,
+
+580
+00:22:17.589 --> 00:22:20.079
+I wanna go into the array at index
+
+581
+00:22:20.430 --> 00:22:22.020
+of what here?
+
+582
+00:22:24.010 --> 00:22:25.880
+If I want to first do
+
+583
+00:22:26.420 --> 00:22:28.430
+the yeah so we wanna do the 1st,
+
+584
+00:22:29.219 --> 00:22:29.819
+the 0th,
+
+585
+00:22:29.910 --> 00:22:30.400
+the
+
+586
+00:22:30.780 --> 00:22:31.300
+1,
+
+587
+00:22:31.619 --> 00:22:32.959
+and then the 2nd,
+
+588
+00:22:33.540 --> 00:22:35.349
+so I'm gonna use I here
+
+589
+00:22:35.619 --> 00:22:36.800
+do candidates I.
+
+590
+00:22:37.969 --> 00:22:39.359
+And then I'm just gonna call
+
+591
+00:22:39.819 --> 00:22:40.709
+get candidate.
+
+592
+00:22:41.819 --> 00:22:43.430
+So that way we're calling this function
+
+593
+00:22:43.800 --> 00:22:44.869
+3 times
+
+594
+00:22:45.250 --> 00:22:49.310
+and each time it's going to create um or it's gonna fill up
+
+595
+00:22:50.089 --> 00:22:50.699
+this
+
+596
+00:22:50.930 --> 00:22:52.390
+index in our array
+
+597
+00:22:52.630 --> 00:22:53.989
+so that we have 3 candidates.
+
+598
+00:22:55.250 --> 00:22:55.530
+OK,
+
+599
+00:22:55.650 --> 00:22:56.010
+great.
+
+600
+00:22:57.560 --> 00:22:57.839
+OK,
+
+601
+00:22:57.959 --> 00:22:59.459
+so now that I have
+
+602
+00:22:59.839 --> 00:23:00.660
+3
+
+603
+00:23:01.319 --> 00:23:02.680
+candidates in my array,
+
+604
+00:23:02.790 --> 00:23:04.020
+how do I go about
+
+605
+00:23:04.439 --> 00:23:05.280
+printing them?
+
+606
+00:23:11.719 --> 00:23:12.989
+So I could print out
+
+607
+00:23:13.569 --> 00:23:14.680
+just like candidate 0,
+
+608
+00:23:14.810 --> 00:23:15.729
+candidate 1,
+
+609
+00:23:15.890 --> 00:23:16.130
+yeah,
+
+610
+00:23:16.410 --> 00:23:17.569
+people are saying a loop,
+
+611
+00:23:17.930 --> 00:23:18.010
+yeah,
+
+612
+00:23:18.050 --> 00:23:19.449
+we're gonna do another loop here.
+
+613
+00:23:20.239 --> 00:23:21.130
+And
+
+614
+00:23:21.810 --> 00:23:23.750
+It's also going to repeat 3 times.
+
+615
+00:23:27.839 --> 00:23:28.310
+OK,
+
+616
+00:23:28.609 --> 00:23:30.270
+and then I'm going to have a print function
+
+617
+00:23:30.400 --> 00:23:30.910
+just
+
+618
+00:23:31.130 --> 00:23:32.469
+uh similar to this.
+
+619
+00:23:33.520 --> 00:23:34.739
+And so we're going to say candidate.
+
+620
+00:23:36.790 --> 00:23:39.900
+Is named the name and then has
+
+621
+00:23:40.219 --> 00:23:41.369
+some number of votes
+
+622
+00:23:41.900 --> 00:23:42.439
+and then
+
+623
+00:23:42.739 --> 00:23:44.560
+what am I gonna be
+
+624
+00:23:44.699 --> 00:23:45.680
+putting here?
+
+625
+00:23:46.780 --> 00:23:47.670
+For the name.
+
+626
+00:23:48.770 --> 00:23:48.780
+If
+
+627
+00:23:49.010 --> 00:23:51.310
+I want the first candidate's name,
+
+628
+00:23:52.000 --> 00:23:52.880
+candidate at.
+
+629
+00:23:54.109 --> 00:23:55.430
+Index 0.
+
+630
+00:24:01.920 --> 00:24:03.439
+So I have candidates.
+
+631
+00:24:06.530 --> 00:24:06.729
+Yeah,
+
+632
+00:24:06.930 --> 00:24:08.130
+index I,
+
+633
+00:24:08.650 --> 00:24:09.150
+exactly.
+
+634
+00:24:10.680 --> 00:24:11.939
+And dot name.
+
+635
+00:24:13.589 --> 00:24:14.060
+OK,
+
+636
+00:24:14.339 --> 00:24:14.670
+cool.
+
+637
+00:24:16.050 --> 00:24:17.390
+And then we can do the same thing.
+
+638
+00:24:19.050 --> 00:24:20.699
+For votes for candidates.
+
+639
+00:24:22.920 --> 00:24:25.319
+At indexi.votes.
+
+640
+00:24:27.150 --> 00:24:28.050
+OK.
+
+641
+00:24:29.250 --> 00:24:32.109
+And maybe honestly it might be nice to know
+
+642
+00:24:32.650 --> 00:24:34.969
+which candidate I'm on so I could say like
+
+643
+00:24:35.209 --> 00:24:36.349
+candidate 0
+
+644
+00:24:36.729 --> 00:24:37.979
+or candidate 1.
+
+645
+00:24:38.930 --> 00:24:39.829
+Is on
+
+646
+00:24:40.140 --> 00:24:42.530
+uh has this name and has this vote,
+
+647
+00:24:42.650 --> 00:24:43.589
+so maybe I could say.
+
+648
+00:24:44.750 --> 00:24:45.670
+Candidate I
+
+649
+00:24:46.540 --> 00:24:46.939
+Here.
+
+650
+00:24:49.550 --> 00:24:50.530
+And then
+
+651
+00:24:51.069 --> 00:24:52.579
+print out I.
+
+652
+00:24:54.739 --> 00:24:55.619
+So that I have,
+
+653
+00:24:55.939 --> 00:24:56.060
+yeah,
+
+654
+00:24:56.219 --> 00:24:56.800
+someone's saying
+
+655
+00:24:56.939 --> 00:24:59.439
+maybe it's kind of weird to do candidate zero
+
+656
+00:25:00.030 --> 00:25:01.430
+so I could do I + 1
+
+657
+00:25:01.660 --> 00:25:02.829
+so that it starts with.
+
+658
+00:25:04.800 --> 00:25:06.599
+Candidate 1 is named blank.
+
+659
+00:25:06.760 --> 00:25:08.069
+Candidate two is named blank.
+
+660
+00:25:08.540 --> 00:25:09.119
+Candidate 3,
+
+661
+00:25:09.280 --> 00:25:09.880
+etc.
+
+662
+00:25:10.949 --> 00:25:11.199
+OK,
+
+663
+00:25:11.359 --> 00:25:11.839
+great.
+
+664
+00:25:12.119 --> 00:25:13.260
+So let's
+
+665
+00:25:13.920 --> 00:25:14.199
+try this,
+
+666
+00:25:14.239 --> 00:25:14.719
+oops.
+
+667
+00:25:15.819 --> 00:25:17.030
+Let's try this out here,
+
+668
+00:25:17.410 --> 00:25:18.500
+bring my terminal back.
+
+669
+00:25:21.069 --> 00:25:21.390
+OK,
+
+670
+00:25:21.550 --> 00:25:22.729
+so I'm gonna make struct.
+
+671
+00:25:24.199 --> 00:25:24.459
+Nice,
+
+672
+00:25:24.479 --> 00:25:25.199
+no errors.
+
+673
+00:25:25.319 --> 00:25:25.959
+That's good.
+
+674
+00:25:27.609 --> 00:25:27.900
+OK,
+
+675
+00:25:28.020 --> 00:25:28.920
+so we have
+
+676
+00:25:29.420 --> 00:25:30.530
+first name,
+
+677
+00:25:30.859 --> 00:25:32.280
+say Alice has 5 votes.
+
+678
+00:25:33.510 --> 00:25:34.300
+Second one,
+
+679
+00:25:34.310 --> 00:25:35.329
+Saint Bob
+
+680
+00:25:35.510 --> 00:25:36.770
+has 9 votes
+
+681
+00:25:37.189 --> 00:25:39.489
+and then we could say Charlie
+
+682
+00:25:39.729 --> 00:25:40.530
+has
+
+683
+00:25:40.829 --> 00:25:41.949
+2 votes.
+
+684
+00:25:43.150 --> 00:25:43.400
+OK,
+
+685
+00:25:43.479 --> 00:25:45.680
+so we have candidate one is named Alice has 5 votes.
+
+686
+00:25:45.880 --> 00:25:47.099
+Candidate two is named Bob.
+
+687
+00:25:47.869 --> 00:25:48.859
+Candidate 3 has
+
+688
+00:25:48.959 --> 00:25:49.979
+2 votes.
+
+689
+00:25:50.520 --> 00:25:51.160
+OK.
+
+690
+00:25:53.119 --> 00:25:54.349
+So any questions about
+
+691
+00:25:54.489 --> 00:25:55.520
+this code?
+
+692
+00:26:02.959 --> 00:26:03.359
+Someone says,
+
+693
+00:26:03.400 --> 00:26:04.859
+can we combine these two loops?
+
+694
+00:26:05.160 --> 00:26:05.319
+Yeah,
+
+695
+00:26:05.400 --> 00:26:06.560
+that's a great instinct,
+
+696
+00:26:06.640 --> 00:26:06.780
+right?
+
+697
+00:26:06.880 --> 00:26:07.040
+We,
+
+698
+00:26:07.160 --> 00:26:09.040
+we're kind of seeing this repetition here.
+
+699
+00:26:09.400 --> 00:26:10.420
+What if I just
+
+700
+00:26:11.040 --> 00:26:12.020
+moved this.
+
+701
+00:26:12.939 --> 00:26:13.420
+Here,
+
+702
+00:26:14.619 --> 00:26:15.170
+OK,
+
+703
+00:26:15.569 --> 00:26:16.869
+so how does this change
+
+704
+00:26:17.209 --> 00:26:18.589
+the
+
+705
+00:26:18.760 --> 00:26:18.819
+the
+
+706
+00:26:19.420 --> 00:26:20.989
+the way that our program runs?
+
+707
+00:26:22.209 --> 00:26:23.609
+It does make it a little bit different,
+
+708
+00:26:23.689 --> 00:26:24.130
+right?
+
+709
+00:26:24.449 --> 00:26:25.000
+So
+
+710
+00:26:25.410 --> 00:26:25.530
+yeah,
+
+711
+00:26:25.650 --> 00:26:27.369
+someone says it's gonna become jumbled.
+
+712
+00:26:27.449 --> 00:26:28.089
+What does that mean?
+
+713
+00:26:28.209 --> 00:26:28.510
+So.
+
+714
+00:26:29.250 --> 00:26:30.459
+When I first ran it this time,
+
+715
+00:26:30.540 --> 00:26:33.560
+I inputted these 3 things first
+
+716
+00:26:33.699 --> 00:26:34.900
+and then it printed out.
+
+717
+00:26:35.839 --> 00:26:36.859
+The 3
+
+718
+00:26:37.359 --> 00:26:38.040
+candidates.
+
+719
+00:26:39.280 --> 00:26:40.069
+But if I
+
+720
+00:26:40.209 --> 00:26:41.089
+make this again.
+
+721
+00:26:42.609 --> 00:26:43.579
+And I do struct.
+
+722
+00:26:44.109 --> 00:26:45.810
+I do Alice has 5 votes.
+
+723
+00:26:47.130 --> 00:26:49.449
+It's going to print that out to me immediately now.
+
+724
+00:26:50.750 --> 00:26:52.349
+So I could say Bob has 10 votes,
+
+725
+00:26:52.630 --> 00:26:54.449
+Charlie has 2 votes.
+
+726
+00:26:56.010 --> 00:26:56.589
+So it's,
+
+727
+00:26:56.660 --> 00:26:57.869
+so the function does.
+
+728
+00:26:58.900 --> 00:27:01.670
+Act a little bit differently than it did before.
+
+729
+00:27:02.510 --> 00:27:05.630
+So really in this case it is up to the programmer
+
+730
+00:27:06.250 --> 00:27:09.280
+uh to decide what is the intended function
+
+731
+00:27:09.619 --> 00:27:10.119
+of
+
+732
+00:27:10.540 --> 00:27:11.199
+these
+
+733
+00:27:11.500 --> 00:27:12.699
+um of your program.
+
+734
+00:27:16.390 --> 00:27:16.920
+OK.
+
+735
+00:27:18.260 --> 00:27:18.630
+Someone says,
+
+736
+00:27:18.750 --> 00:27:20.030
+don't the values print themselves?
+
+737
+00:27:20.109 --> 00:27:21.839
+Why do we need to print them?
+
+738
+00:27:22.430 --> 00:27:22.689
+So
+
+739
+00:27:23.030 --> 00:27:24.900
+anytime you want something to print to the terminal,
+
+740
+00:27:25.030 --> 00:27:26.689
+you have to use the print F function.
+
+741
+00:27:28.459 --> 00:27:28.780
+Yeah,
+
+742
+00:27:28.900 --> 00:27:29.400
+otherwise,
+
+743
+00:27:29.699 --> 00:27:30.030
+um,
+
+744
+00:27:30.180 --> 00:27:30.599
+these
+
+745
+00:27:30.969 --> 00:27:32.400
+values are just stored
+
+746
+00:27:32.699 --> 00:27:33.760
+in our variables,
+
+747
+00:27:34.060 --> 00:27:34.380
+um,
+
+748
+00:27:34.500 --> 00:27:36.319
+but they're not necessarily gonna be printed.
+
+749
+00:27:37.160 --> 00:27:37.699
+Out.
+
+750
+00:27:38.239 --> 00:27:40.030
+Hopefully that answers your question.
+
+751
+00:27:41.930 --> 00:27:42.420
+OK,
+
+752
+00:27:42.630 --> 00:27:46.449
+so feel free to write any questions if you have any about this function,
+
+753
+00:27:47.069 --> 00:27:48.170
+but we're gonna move on.
+
+754
+00:27:50.630 --> 00:27:52.810
+So next we're gonna talk a little bit about.
+
+755
+00:27:54.310 --> 00:27:55.869
+But it doesn't get string print too.
+
+756
+00:27:56.109 --> 00:27:56.229
+Yeah,
+
+757
+00:27:56.310 --> 00:27:56.650
+it does,
+
+758
+00:27:56.859 --> 00:27:57.030
+yeah,
+
+759
+00:27:57.189 --> 00:27:59.709
+so part of the get string and get in.
+
+760
+00:28:01.069 --> 00:28:01.800
+Function
+
+761
+00:28:02.130 --> 00:28:02.709
+um
+
+762
+00:28:03.109 --> 00:28:05.640
+the way that it's programmed is that if you
+
+763
+00:28:05.900 --> 00:28:08.489
+pass in a certain string here it's gonna print that
+
+764
+00:28:09.229 --> 00:28:09.790
+before.
+
+765
+00:28:10.719 --> 00:28:11.270
+And putting
+
+766
+00:28:11.500 --> 00:28:12.609
+this here.
+
+767
+00:28:12.849 --> 00:28:13.130
+Someone says,
+
+768
+00:28:13.209 --> 00:28:15.209
+couldn't we put the print outside of the loop?
+
+769
+00:28:19.699 --> 00:28:21.410
+So you could put it
+
+770
+00:28:21.739 --> 00:28:22.359
+out here.
+
+771
+00:28:24.349 --> 00:28:26.680
+But then you wouldn't be able to use um
+
+772
+00:28:27.040 --> 00:28:27.849
+the index
+
+773
+00:28:27.979 --> 00:28:28.680
+eye
+
+774
+00:28:29.119 --> 00:28:30.719
+here since it's not in a loop,
+
+775
+00:28:30.839 --> 00:28:31.040
+right?
+
+776
+00:28:31.119 --> 00:28:31.739
+And so
+
+777
+00:28:32.079 --> 00:28:34.040
+if we were to use it outside of a loop we'd have
+
+778
+00:28:34.040 --> 00:28:37.839
+to have this 3 times for each of our candidates which isn't
+
+779
+00:28:38.069 --> 00:28:39.569
+the most efficient here.
+
+780
+00:28:42.890 --> 00:28:43.349
+OK,
+
+781
+00:28:43.729 --> 00:28:45.180
+so we're going to move on to recursion.
+
+782
+00:28:46.630 --> 00:28:47.800
+And recursion
+
+783
+00:28:48.050 --> 00:28:48.540
+is
+
+784
+00:28:48.680 --> 00:28:51.400
+the basis of one of our sort algorithms,
+
+785
+00:28:51.469 --> 00:28:52.359
+but it's also
+
+786
+00:28:52.630 --> 00:28:54.339
+just a general technique
+
+787
+00:28:54.599 --> 00:28:57.140
+for solving problems.
+
+788
+00:28:57.760 --> 00:28:58.619
+Someone else said
+
+789
+00:28:58.959 --> 00:28:59.489
+in the chat,
+
+790
+00:28:59.599 --> 00:29:01.969
+can the 4 loop inside of another 4 loops
+
+791
+00:29:02.219 --> 00:29:04.680
+do the same work as you did before.
+
+792
+00:29:08.439 --> 00:29:08.829
+OK,
+
+793
+00:29:08.989 --> 00:29:09.430
+so.
+
+794
+00:29:10.449 --> 00:29:12.729
+When you have a 4 loop inside of another 4 loop
+
+795
+00:29:13.050 --> 00:29:14.729
+that's going to loop,
+
+796
+00:29:14.969 --> 00:29:15.430
+um.
+
+797
+00:29:16.479 --> 00:29:18.819
+More times than so like if I had
+
+798
+00:29:19.640 --> 00:29:22.140
+another 4 loop that loops 3 times within this
+
+799
+00:29:22.479 --> 00:29:24.319
+it's gonna print out like 9 times,
+
+800
+00:29:24.359 --> 00:29:24.719
+right?
+
+801
+00:29:25.459 --> 00:29:27.619
+And so what we had before here was just.
+
+802
+00:29:28.719 --> 00:29:29.900
+Another 4 loop
+
+803
+00:29:30.040 --> 00:29:30.719
+of 3.
+
+804
+00:29:32.569 --> 00:29:33.579
+Like so.
+
+805
+00:29:40.510 --> 00:29:40.880
+Yeah,
+
+806
+00:29:41.040 --> 00:29:41.750
+and so.
+
+807
+00:29:43.119 --> 00:29:46.160
+We would like to have two separate 4 loops that are.
+
+808
+00:29:47.520 --> 00:29:48.369
+At the same intent,
+
+809
+00:29:48.449 --> 00:29:48.650
+right,
+
+810
+00:29:48.770 --> 00:29:49.439
+so that
+
+811
+00:29:49.810 --> 00:29:51.630
+we're not repeating ourselves
+
+812
+00:29:52.369 --> 00:29:53.410
+more than we need to.
+
+813
+00:29:54.390 --> 00:29:54.670
+OK,
+
+814
+00:29:54.770 --> 00:29:56.900
+so hopefully that answers your question here,
+
+815
+00:29:56.989 --> 00:29:57.310
+but
+
+816
+00:29:57.709 --> 00:29:58.760
+we're gonna move on to recursion.
+
+817
+00:29:58.829 --> 00:30:00.209
+So what is recursion?
+
+818
+00:30:00.790 --> 00:30:04.410
+Basically it's solving a problem by first solving a smaller version
+
+819
+00:30:05.109 --> 00:30:06.609
+of that same problem.
+
+820
+00:30:07.189 --> 00:30:10.349
+So a recursive function is gonna have a base case that tells us
+
+821
+00:30:10.750 --> 00:30:12.770
+when are we gonna stop running this function
+
+822
+00:30:13.390 --> 00:30:15.750
+and then it's also gonna have a recursive case
+
+823
+00:30:15.949 --> 00:30:17.609
+which includes a call
+
+824
+00:30:17.989 --> 00:30:19.290
+to the function itself
+
+825
+00:30:19.670 --> 00:30:21.770
+to solve a smaller version of that.
+
+826
+00:30:22.589 --> 00:30:23.729
+So it's kind of a
+
+827
+00:30:24.030 --> 00:30:25.670
+thing you have to wrap your head around and
+
+828
+00:30:25.670 --> 00:30:28.449
+it's not immediately obvious so let's go through an example
+
+829
+00:30:29.030 --> 00:30:32.349
+and hopefully that makes this idea a little bit more clear.
+
+830
+00:30:34.030 --> 00:30:35.250
+So we have an example
+
+831
+00:30:35.739 --> 00:30:36.569
+here of
+
+832
+00:30:37.020 --> 00:30:37.699
+factorials.
+
+833
+00:30:37.790 --> 00:30:40.050
+So if you've heard of factorials before,
+
+834
+00:30:40.670 --> 00:30:41.530
+basically,
+
+835
+00:30:41.790 --> 00:30:42.089
+uh,
+
+836
+00:30:42.109 --> 00:30:42.709
+for example,
+
+837
+00:30:42.829 --> 00:30:44.250
+the factorial of 5
+
+838
+00:30:44.550 --> 00:30:47.949
+is 5 times 4 times 3 times 2 times 1.
+
+839
+00:30:49.619 --> 00:30:51.849
+Factorial factorial of 0 is also 1.
+
+840
+00:30:52.229 --> 00:30:53.650
+And so basically
+
+841
+00:30:54.270 --> 00:30:57.290
+the factorial of any number is going to be that number
+
+842
+00:30:57.430 --> 00:31:00.569
+multiplied by every other number less than it until
+
+843
+00:31:01.260 --> 00:31:01.810
+1
+
+844
+00:31:02.030 --> 00:31:02.709
+or 0.
+
+845
+00:31:03.729 --> 00:31:03.739
+OK,
+
+846
+00:31:04.599 --> 00:31:05.270
+and so
+
+847
+00:31:05.449 --> 00:31:07.790
+we're gonna think about how we could create a function
+
+848
+00:31:08.489 --> 00:31:09.550
+called factorial
+
+849
+00:31:09.729 --> 00:31:11.329
+that takes an integer N
+
+850
+00:31:11.729 --> 00:31:12.750
+and then prints out
+
+851
+00:31:13.050 --> 00:31:14.540
+the factorial of N.
+
+852
+00:31:16.109 --> 00:31:19.890
+So let's walk through some of the logic behind this first
+
+853
+00:31:20.349 --> 00:31:21.349
+before we dive into the code.
+
+854
+00:31:22.609 --> 00:31:26.339
+So let's say we're looking for the factorial of 3,
+
+855
+00:31:26.930 --> 00:31:30.219
+so we can write that out as 1 times 2 times 3,
+
+856
+00:31:30.489 --> 00:31:30.910
+right?
+
+857
+00:31:31.290 --> 00:31:34.160
+The factorial of 2 is 1 times 2,
+
+858
+00:31:34.550 --> 00:31:36.229
+factorial of 1 is 1,
+
+859
+00:31:36.439 --> 00:31:38.410
+factorial of 0 is
+
+860
+00:31:38.640 --> 00:31:39.280
+also 1.
+
+861
+00:31:40.400 --> 00:31:40.979
+So
+
+862
+00:31:41.609 --> 00:31:43.359
+if you're kind of seeing a pattern here.
+
+863
+00:31:44.239 --> 00:31:45.880
+You could also write this.
+
+864
+00:31:47.030 --> 00:31:47.489
+As
+
+865
+00:31:48.939 --> 00:31:49.839
+3 times
+
+866
+00:31:50.420 --> 00:31:54.270
+the factor of 2 equals the factorial of 3.
+
+867
+00:31:55.239 --> 00:31:58.989
+2 factorial is equal to 2 times the factorial of 1.
+
+868
+00:32:00.089 --> 00:32:01.469
+And etc.
+
+869
+00:32:02.209 --> 00:32:02.489
+right?
+
+870
+00:32:04.180 --> 00:32:04.979
+And so,
+
+871
+00:32:05.180 --> 00:32:07.560
+if we're thinking about this in a recursive way,
+
+872
+00:32:07.979 --> 00:32:08.680
+we have,
+
+873
+00:32:09.219 --> 00:32:09.920
+um,
+
+874
+00:32:10.339 --> 00:32:11.010
+the call,
+
+875
+00:32:11.180 --> 00:32:11.800
+maybe
+
+876
+00:32:12.060 --> 00:32:13.969
+F is our factorial call.
+
+877
+00:32:14.569 --> 00:32:16.640
+So calling F of 3.
+
+878
+00:32:17.760 --> 00:32:21.660
+It's going to give us 3 multiplied by the factor of 2.
+
+879
+00:32:22.369 --> 00:32:23.239
+And then we want
+
+880
+00:32:23.810 --> 00:32:25.569
+2 to be equal to
+
+881
+00:32:25.869 --> 00:32:27.650
+2 times a factorial of 1.
+
+882
+00:32:28.520 --> 00:32:32.079
+1 is going to be equal to 1 times the factorial of 0,
+
+883
+00:32:32.560 --> 00:32:34.619
+and factorial of 0 is 1.
+
+884
+00:32:35.780 --> 00:32:37.560
+So when we're actually computing this,
+
+885
+00:32:37.739 --> 00:32:39.880
+we kind of go down this loop
+
+886
+00:32:40.020 --> 00:32:42.479
+or not loop we go down recursively
+
+887
+00:32:43.020 --> 00:32:43.880
+each call
+
+888
+00:32:44.579 --> 00:32:46.880
+and then we can start computing those values back up,
+
+889
+00:32:47.140 --> 00:32:47.280
+right?
+
+890
+00:32:47.339 --> 00:32:48.040
+So we have
+
+891
+00:32:48.400 --> 00:32:48.949
+um.
+
+892
+00:32:49.979 --> 00:32:51.640
+Factorial of 0 computes to 1.
+
+893
+00:32:53.380 --> 00:32:54.900
+And then 1 times 1 is 1,
+
+894
+00:32:55.219 --> 00:32:57.020
+so a factorial of 1 is 1.
+
+895
+00:32:58.170 --> 00:33:00.369
+And then 2 times 1 is 2,
+
+896
+00:33:00.650 --> 00:33:03.469
+so a factorial of 2 computes to 2.
+
+897
+00:33:04.839 --> 00:33:06.329
+3 times 2 is 6,
+
+898
+00:33:06.439 --> 00:33:09.260
+and then we have finally factorial of 3
+
+899
+00:33:09.560 --> 00:33:11.180
+computes to 6.
+
+900
+00:33:13.400 --> 00:33:13.719
+Yeah,
+
+901
+00:33:13.920 --> 00:33:15.939
+so we're calling this function recursively
+
+902
+00:33:16.319 --> 00:33:16.979
+until we reach,
+
+903
+00:33:17.239 --> 00:33:17.719
+uh,
+
+904
+00:33:18.079 --> 00:33:19.420
+back up to the top
+
+905
+00:33:19.719 --> 00:33:21.219
+with our final value.
+
+906
+00:33:22.780 --> 00:33:23.310
+OK.
+
+907
+00:33:25.670 --> 00:33:28.010
+So in this scenario,
+
+908
+00:33:28.349 --> 00:33:29.810
+what is our base case?
+
+909
+00:33:31.109 --> 00:33:32.969
+What's the case where we
+
+910
+00:33:33.290 --> 00:33:35.290
+should stop calling recursively?
+
+911
+00:33:38.660 --> 00:33:38.790
+Yeah,
+
+912
+00:33:38.979 --> 00:33:40.069
+so it says a factorial of 0,
+
+913
+00:33:40.229 --> 00:33:40.420
+exactly.
+
+914
+00:33:40.510 --> 00:33:42.089
+So we know a factorial of 0
+
+915
+00:33:42.630 --> 00:33:43.329
+is 1,
+
+916
+00:33:43.630 --> 00:33:44.469
+and we can say,
+
+917
+00:33:44.589 --> 00:33:45.410
+we can say that
+
+918
+00:33:45.589 --> 00:33:46.180
+is the stop.
+
+919
+00:33:46.229 --> 00:33:47.189
+You could also do 1,
+
+920
+00:33:47.270 --> 00:33:47.530
+yeah,
+
+921
+00:33:47.910 --> 00:33:50.430
+because we know that factorial of 1 is also equal to 1.
+
+922
+00:33:51.609 --> 00:33:53.770
+And then what's the recursive case?
+
+923
+00:33:54.170 --> 00:33:55.310
+So if it's not.
+
+924
+00:33:56.270 --> 00:33:57.560
+If we're not at 0,
+
+925
+00:33:57.880 --> 00:33:59.180
+what should we be doing?
+
+926
+00:34:10.958 --> 00:34:11.208
+Yeah,
+
+927
+00:34:11.368 --> 00:34:12.208
+so I'm saying like.
+
+928
+00:34:13.958 --> 00:34:16.029
+Going to the factorial of the previous number,
+
+929
+00:34:16.158 --> 00:34:16.398
+yeah,
+
+930
+00:34:16.648 --> 00:34:17.079
+exactly,
+
+931
+00:34:17.319 --> 00:34:17.638
+exactly,
+
+932
+00:34:17.697 --> 00:34:18.539
+so it's gonna be
+
+933
+00:34:18.839 --> 00:34:19.299
+calling
+
+934
+00:34:19.559 --> 00:34:21.217
+the factorial function again,
+
+935
+00:34:21.678 --> 00:34:22.458
+but now with.
+
+936
+00:34:23.320 --> 00:34:25.120
+The number below.
+
+937
+00:34:26.188 --> 00:34:27.070
+So N minus 1,
+
+938
+00:34:27.110 --> 00:34:27.688
+I guess.
+
+939
+00:34:28.590 --> 00:34:28.879
+OK,
+
+940
+00:34:29.000 --> 00:34:31.500
+so let's actually try to see what this looks like in code.
+
+941
+00:34:34.070 --> 00:34:35.330
+So I'm going to make a new
+
+942
+00:34:36.280 --> 00:34:39.199
+program called Factorial.c.
+
+943
+00:34:40.268 --> 00:34:40.989
+OK.
+
+944
+00:34:43.370 --> 00:34:44.168
+We're gonna
+
+945
+00:34:44.810 --> 00:34:45.708
+copy over.
+
+946
+00:34:46.978 --> 00:34:48.050
+Our header files here.
+
+947
+00:34:49.540 --> 00:34:50.429
+In Maine void
+
+948
+00:34:52.780 --> 00:34:53.389
+OK,
+
+949
+00:34:53.750 --> 00:34:54.239
+cool.
+
+950
+00:34:54.478 --> 00:34:55.409
+And so
+
+951
+00:34:56.149 --> 00:34:57.949
+we know that we want to
+
+952
+00:34:58.389 --> 00:35:00.290
+first prompt the user for some,
+
+953
+00:35:00.550 --> 00:35:01.389
+some number
+
+954
+00:35:01.750 --> 00:35:03.770
+that we can then get the factorial of
+
+955
+00:35:04.159 --> 00:35:04.810
+so I'm just gonna say in and.
+
+956
+00:35:07.030 --> 00:35:07.929
+Get in
+
+957
+00:35:08.669 --> 00:35:10.169
+and we're gonna say factorial.
+
+958
+00:35:11.229 --> 00:35:11.689
+Of
+
+959
+00:35:11.989 --> 00:35:12.790
+what number
+
+960
+00:35:13.070 --> 00:35:13.540
+and the
+
+961
+00:35:13.899 --> 00:35:15.389
+user can input it there.
+
+962
+00:35:17.800 --> 00:35:18.399
+OK.
+
+963
+00:35:19.570 --> 00:35:20.469
+And now
+
+964
+00:35:21.209 --> 00:35:24.010
+we want to set up a factorial function.
+
+965
+00:35:24.449 --> 00:35:24.969
+So
+
+966
+00:35:25.409 --> 00:35:26.050
+just like before,
+
+967
+00:35:26.129 --> 00:35:27.790
+what is going to be the.
+
+968
+00:35:28.939 --> 00:35:29.879
+Return type
+
+969
+00:35:30.300 --> 00:35:31.379
+of this function.
+
+970
+00:35:34.439 --> 00:35:34.879
+It,
+
+971
+00:35:35.000 --> 00:35:35.120
+yeah,
+
+972
+00:35:35.330 --> 00:35:35.780
+exactly,
+
+973
+00:35:36.040 --> 00:35:37.260
+so it's gonna return an integer.
+
+974
+00:35:37.600 --> 00:35:39.340
+What is the input
+
+975
+00:35:39.919 --> 00:35:40.320
+type?
+
+976
+00:35:41.830 --> 00:35:42.969
+What should it take in?
+
+977
+00:35:46.870 --> 00:35:47.850
+Not quite void
+
+978
+00:35:48.719 --> 00:35:50.040
+Since we want to be doing something,
+
+979
+00:35:50.199 --> 00:35:50.399
+yeah,
+
+980
+00:35:50.560 --> 00:35:52.659
+and so we also wanna be taking in
+
+981
+00:35:52.800 --> 00:35:54.570
+an integer and we're gonna call it in
+
+982
+00:35:55.280 --> 00:35:55.979
+just for
+
+983
+00:35:56.280 --> 00:35:56.949
+the sake.
+
+984
+00:35:58.070 --> 00:35:58.689
+OK.
+
+985
+00:35:59.110 --> 00:35:59.889
+And so
+
+986
+00:36:00.229 --> 00:36:01.929
+I know we want to have our base case,
+
+987
+00:36:01.949 --> 00:36:03.389
+and we also are going to have.
+
+988
+00:36:04.250 --> 00:36:05.610
+Are recursive.
+
+989
+00:36:07.350 --> 00:36:07.949
+Case
+
+990
+00:36:09.689 --> 00:36:09.969
+OK,
+
+991
+00:36:10.169 --> 00:36:11.469
+so in the base case,
+
+992
+00:36:12.810 --> 00:36:13.820
+We're going to have
+
+993
+00:36:14.780 --> 00:36:15.439
+We're going to check
+
+994
+00:36:15.939 --> 00:36:18.979
+um what we said before if N is.
+
+995
+00:36:20.080 --> 00:36:20.899
+0
+
+996
+00:36:23.500 --> 00:36:24.439
+Then what should I return?
+
+997
+00:36:28.429 --> 00:36:28.709
+1,
+
+998
+00:36:28.949 --> 00:36:29.310
+exactly.
+
+999
+00:36:29.429 --> 00:36:30.530
+Return 1,
+
+1000
+00:36:30.909 --> 00:36:31.439
+that's,
+
+1001
+00:36:31.560 --> 00:36:31.989
+uh,
+
+1002
+00:36:32.070 --> 00:36:33.469
+what 0 factorial is.
+
+1003
+00:36:33.989 --> 00:36:34.350
+OK?
+
+1004
+00:36:34.550 --> 00:36:36.310
+So if I haven't reached 0 yet,
+
+1005
+00:36:36.350 --> 00:36:37.610
+if N is not 0.
+
+1006
+00:36:38.879 --> 00:36:39.260
+Then
+
+1007
+00:36:39.639 --> 00:36:40.979
+I should be returning.
+
+1008
+00:36:42.689 --> 00:36:43.870
+What here?
+
+1009
+00:36:50.270 --> 00:36:51.969
+I know it's going to be recursive,
+
+1010
+00:36:52.110 --> 00:36:54.770
+so it's going to call factorial again.
+
+1011
+00:36:56.870 --> 00:36:58.010
+With the previous number,
+
+1012
+00:36:58.389 --> 00:36:58.510
+yeah,
+
+1013
+00:36:58.709 --> 00:36:58.899
+exactly,
+
+1014
+00:36:58.989 --> 00:37:00.290
+so N minus 1.
+
+1015
+00:37:01.620 --> 00:37:02.719
+And it's going to be
+
+1016
+00:37:03.699 --> 00:37:07.659
+The factorial of like 5 per se is going to be 5,
+
+1017
+00:37:08.020 --> 00:37:08.729
+which is N.
+
+1018
+00:37:10.149 --> 00:37:11.110
+Times
+
+1019
+00:37:11.629 --> 00:37:13.270
+the factorial of.
+
+1020
+00:37:14.429 --> 00:37:16.459
+The lower the number right below it,
+
+1021
+00:37:16.510 --> 00:37:17.250
+which should be
+
+1022
+00:37:17.590 --> 00:37:18.429
+like say 4,
+
+1023
+00:37:18.750 --> 00:37:19.110
+right?
+
+1024
+00:37:20.010 --> 00:37:20.600
+OK,
+
+1025
+00:37:22.379 --> 00:37:23.550
+So once I get,
+
+1026
+00:37:23.780 --> 00:37:24.889
+once I have that set up,
+
+1027
+00:37:25.020 --> 00:37:26.360
+I'm also going to make sure that.
+
+1028
+00:37:27.149 --> 00:37:28.449
+I prototype it up here.
+
+1029
+00:37:30.250 --> 00:37:32.030
+And then we can print out.
+
+1030
+00:37:33.459 --> 00:37:35.000
+The factorial of N.
+
+1031
+00:37:35.260 --> 00:37:35.679
+So
+
+1032
+00:37:35.860 --> 00:37:37.360
+you could say factorial
+
+1033
+00:37:37.860 --> 00:37:38.520
+of
+
+1034
+00:37:42.639 --> 00:37:43.389
+I
+
+1035
+00:37:43.959 --> 00:37:44.479
+I.
+
+1036
+00:37:45.260 --> 00:37:46.120
+Is
+
+1037
+00:37:48.439 --> 00:37:49.100
+percent I,
+
+1038
+00:37:49.179 --> 00:37:50.479
+so we're gonna have two integers here,
+
+1039
+00:37:50.820 --> 00:37:52.020
+the first one being N,
+
+1040
+00:37:52.179 --> 00:37:54.679
+which is just the number that was inputted to me.
+
+1041
+00:37:55.770 --> 00:37:56.429
+And then
+
+1042
+00:37:56.570 --> 00:37:59.469
+the refactorial of blank is.
+
+1043
+00:38:00.500 --> 00:38:02.399
+I'm gonna call factorial
+
+1044
+00:38:02.729 --> 00:38:03.300
+on
+
+1045
+00:38:03.620 --> 00:38:03.760
+and
+
+1046
+00:38:04.659 --> 00:38:05.600
+and that's gonna be.
+
+1047
+00:38:06.830 --> 00:38:08.070
+The result here,
+
+1048
+00:38:08.610 --> 00:38:08.909
+OK.
+
+1049
+00:38:10.340 --> 00:38:12.100
+So I'm gonna make this.
+
+1050
+00:38:14.870 --> 00:38:15.699
+Factorial.
+
+1051
+00:38:17.489 --> 00:38:17.770
+OK,
+
+1052
+00:38:17.929 --> 00:38:19.550
+so it's just a factor of
+
+1053
+00:38:19.850 --> 00:38:21.550
+0 should be 1.
+
+1054
+00:38:22.989 --> 00:38:23.139
+Oh,
+
+1055
+00:38:23.219 --> 00:38:24.439
+I forgot a new line here.
+
+1056
+00:38:24.659 --> 00:38:24.790
+OK,
+
+1057
+00:38:24.899 --> 00:38:25.800
+so I'm gonna add that.
+
+1058
+00:38:27.439 --> 00:38:28.639
+Recompile.
+
+1059
+00:38:32.340 --> 00:38:32.580
+OK,
+
+1060
+00:38:32.689 --> 00:38:34.320
+factorial of 0 should be 1.
+
+1061
+00:38:34.959 --> 00:38:35.379
+Great.
+
+1062
+00:38:36.189 --> 00:38:37.889
+Factorial of one should also be one.
+
+1063
+00:38:38.989 --> 00:38:41.250
+And then let's say maybe factorial 5
+
+1064
+00:38:41.439 --> 00:38:42.709
+is 120.
+
+1065
+00:38:43.300 --> 00:38:43.320
+OK,
+
+1066
+00:38:43.399 --> 00:38:44.850
+so it looks like it works.
+
+1067
+00:38:45.790 --> 00:38:48.050
+Feel free to write in the chat if you have any questions
+
+1068
+00:38:48.310 --> 00:38:49.300
+um about
+
+1069
+00:38:49.800 --> 00:38:50.320
+this.
+
+1070
+00:38:50.679 --> 00:38:50.989
+Someone says,
+
+1071
+00:38:51.040 --> 00:38:52.040
+how does this work?
+
+1072
+00:38:52.429 --> 00:38:54.159
+Can't we just use a loop instead?
+
+1073
+00:38:54.250 --> 00:38:54.399
+Yeah,
+
+1074
+00:38:54.639 --> 00:38:54.860
+exactly.
+
+1075
+00:38:55.000 --> 00:38:55.300
+So
+
+1076
+00:38:55.679 --> 00:38:57.770
+any time we have a recursive function,
+
+1077
+00:38:57.800 --> 00:38:59.560
+you can also do it iteratively.
+
+1078
+00:38:59.679 --> 00:39:00.659
+Like those are two
+
+1079
+00:39:01.080 --> 00:39:03.020
+different ways of solving the same problem,
+
+1080
+00:39:03.040 --> 00:39:05.379
+and by iteratively I just mean by
+
+1081
+00:39:05.560 --> 00:39:06.080
+using a loop,
+
+1082
+00:39:06.189 --> 00:39:07.080
+doing it one by one,
+
+1083
+00:39:07.239 --> 00:39:07.479
+right?
+
+1084
+00:39:07.790 --> 00:39:10.500
+So we could totally write a version of this
+
+1085
+00:39:10.719 --> 00:39:11.739
+that uses a loop
+
+1086
+00:39:12.159 --> 00:39:12.899
+instead of,
+
+1087
+00:39:13.280 --> 00:39:13.590
+uh,
+
+1088
+00:39:13.600 --> 00:39:14.300
+doing this
+
+1089
+00:39:14.469 --> 00:39:15.500
+recursion here.
+
+1090
+00:39:16.580 --> 00:39:17.020
+But
+
+1091
+00:39:17.350 --> 00:39:20.129
+um just to like break down how this is working
+
+1092
+00:39:20.510 --> 00:39:21.439
+I can say
+
+1093
+00:39:21.669 --> 00:39:22.169
+um
+
+1094
+00:39:22.270 --> 00:39:23.969
+in this 5 example
+
+1095
+00:39:24.909 --> 00:39:25.689
+we have
+
+1096
+00:39:26.389 --> 00:39:27.209
+first asking
+
+1097
+00:39:27.750 --> 00:39:31.050
+you know what what number do you want and then I said 5 in this case
+
+1098
+00:39:31.750 --> 00:39:32.520
+so N
+
+1099
+00:39:32.699 --> 00:39:34.310
+now is equal to 5,
+
+1100
+00:39:34.629 --> 00:39:35.060
+right?
+
+1101
+00:39:35.590 --> 00:39:39.409
+And then I print out factorial of 5 is
+
+1102
+00:39:40.070 --> 00:39:41.120
+factorial N.
+
+1103
+00:39:42.270 --> 00:39:43.050
+So it's calling
+
+1104
+00:39:44.850 --> 00:39:46.050
+this function where N is 5.
+
+1105
+00:39:47.139 --> 00:39:48.000
+And so
+
+1106
+00:39:48.419 --> 00:39:49.340
+we run through,
+
+1107
+00:39:49.419 --> 00:39:50.620
+it's not equal to 0,
+
+1108
+00:39:50.780 --> 00:39:51.639
+so then I call.
+
+1109
+00:39:52.370 --> 00:39:53.010
+I say that,
+
+1110
+00:39:53.020 --> 00:39:53.550
+OK,
+
+1111
+00:39:54.090 --> 00:39:56.510
+I'm actually gonna be returning 5 times
+
+1112
+00:39:57.030 --> 00:39:58.300
+factorial 4.
+
+1113
+00:39:58.850 --> 00:39:59.969
+So this calls again
+
+1114
+00:40:00.129 --> 00:40:01.399
+and then we go through this again and say,
+
+1115
+00:40:01.409 --> 00:40:01.790
+OK,
+
+1116
+00:40:02.080 --> 00:40:05.030
+actually factorial 4 is 4 times
+
+1117
+00:40:05.370 --> 00:40:06.610
+factorial of 3.
+
+1118
+00:40:07.790 --> 00:40:10.129
+So then we are at this function again,
+
+1119
+00:40:10.639 --> 00:40:11.600
+it's not zero,
+
+1120
+00:40:11.750 --> 00:40:12.810
+so I go to this
+
+1121
+00:40:13.020 --> 00:40:13.830
+recursive case,
+
+1122
+00:40:13.989 --> 00:40:15.209
+say 3 is
+
+1123
+00:40:16.459 --> 00:40:19.469
+time or factorial of 3 is actually 3 times factorial of 2,
+
+1124
+00:40:20.110 --> 00:40:21.330
+so on until we get
+
+1125
+00:40:21.709 --> 00:40:22.729
+N equals
+
+1126
+00:40:22.949 --> 00:40:23.510
+0,
+
+1127
+00:40:23.629 --> 00:40:23.750
+right?
+
+1128
+00:40:23.870 --> 00:40:24.409
+So we're calling.
+
+1129
+00:40:25.719 --> 00:40:26.570
+If N is 0,
+
+1130
+00:40:26.689 --> 00:40:27.949
+then we return 1,
+
+1131
+00:40:28.530 --> 00:40:28.810
+OK?
+
+1132
+00:40:28.889 --> 00:40:32.580
+And so then we're computing that those values back up the chain.
+
+1133
+00:40:34.149 --> 00:40:35.649
+Just like we had in this.
+
+1134
+00:40:36.860 --> 00:40:38.159
+Diagram here.
+
+1135
+00:40:39.129 --> 00:40:39.290
+Right,
+
+1136
+00:40:39.409 --> 00:40:39.709
+so
+
+1137
+00:40:39.889 --> 00:40:40.669
+this F
+
+1138
+00:40:41.080 --> 00:40:42.590
+here is our factorial function.
+
+1139
+00:40:43.320 --> 00:40:44.620
+And it's returning one
+
+1140
+00:40:45.000 --> 00:40:46.179
+and then it's returning.
+
+1141
+00:40:46.830 --> 00:40:47.729
+Um,
+
+1142
+00:40:48.179 --> 00:40:49.620
+then we get this value computed,
+
+1143
+00:40:49.820 --> 00:40:49.989
+right?
+
+1144
+00:40:50.060 --> 00:40:50.719
+And so
+
+1145
+00:40:51.100 --> 00:40:52.159
+that computes to one.
+
+1146
+00:40:53.449 --> 00:40:55.409
+And it computes up to.
+
+1147
+00:40:56.100 --> 00:40:58.139
+The first thing that we asked for,
+
+1148
+00:40:58.219 --> 00:40:58.929
+which was
+
+1149
+00:40:59.060 --> 00:40:59.959
+in our case,
+
+1150
+00:41:00.179 --> 00:41:01.120
+factorial 5.
+
+1151
+00:41:02.290 --> 00:41:04.399
+So hopefully that makes a little bit of sense.
+
+1152
+00:41:08.330 --> 00:41:10.889
+How can you call the function in the definition of the function itself?
+
+1153
+00:41:10.969 --> 00:41:11.270
+Yeah,
+
+1154
+00:41:11.649 --> 00:41:12.280
+that is,
+
+1155
+00:41:12.370 --> 00:41:12.840
+um,
+
+1156
+00:41:12.969 --> 00:41:13.989
+the definition of
+
+1157
+00:41:14.090 --> 00:41:15.090
+like a recursive function,
+
+1158
+00:41:15.159 --> 00:41:15.370
+yeah,
+
+1159
+00:41:15.489 --> 00:41:15.870
+so,
+
+1160
+00:41:16.169 --> 00:41:16.510
+um,
+
+1161
+00:41:16.610 --> 00:41:20.250
+in recursive functions we're allowed to call the function itself.
+
+1162
+00:41:20.580 --> 00:41:21.989
+The reason why it
+
+1163
+00:41:22.110 --> 00:41:24.790
+doesn't go on forever is because we have
+
+1164
+00:41:25.010 --> 00:41:26.290
+this base case,
+
+1165
+00:41:26.620 --> 00:41:26.770
+right?
+
+1166
+00:41:26.810 --> 00:41:28.830
+And so if we didn't have this,
+
+1167
+00:41:29.290 --> 00:41:33.110
+then indeed my program would just go on forever and forever
+
+1168
+00:41:33.340 --> 00:41:33.909
+going
+
+1169
+00:41:34.570 --> 00:41:35.229
+to like
+
+1170
+00:41:35.370 --> 00:41:36.370
+N equals -1,
+
+1171
+00:41:36.399 --> 00:41:36.850
+-2,
+
+1172
+00:41:36.889 --> 00:41:37.830
+-3.
+
+1173
+00:41:38.550 --> 00:41:40.010
+Into infinity,
+
+1174
+00:41:40.389 --> 00:41:43.530
+but because we have this base case that does actually return
+
+1175
+00:41:43.830 --> 00:41:45.189
+something at some point.
+
+1176
+00:41:46.169 --> 00:41:46.689
+Um,
+
+1177
+00:41:46.820 --> 00:41:49.520
+that is the reason we're able to
+
+1178
+00:41:50.060 --> 00:41:50.820
+have this
+
+1179
+00:41:50.979 --> 00:41:53.340
+recursive function actually end at some point.
+
+1180
+00:41:55.320 --> 00:41:55.330
+OK.
+
+1181
+00:41:59.520 --> 00:41:59.530
+The
+
+1182
+00:41:59.879 --> 00:42:00.899
+function is defined.
+
+1183
+00:42:01.659 --> 00:42:02.139
+Yeah,
+
+1184
+00:42:02.860 --> 00:42:02.870
+on,
+
+1185
+00:42:03.040 --> 00:42:03.649
+on line 12,
+
+1186
+00:42:03.699 --> 00:42:04.760
+as someone said here.
+
+1187
+00:42:08.399 --> 00:42:08.780
+Yeah,
+
+1188
+00:42:08.899 --> 00:42:09.219
+OK.
+
+1189
+00:42:11.000 --> 00:42:12.959
+So that's recursive functions.
+
+1190
+00:42:13.070 --> 00:42:15.060
+We're going to show another example of this.
+
+1191
+00:42:16.129 --> 00:42:17.610
+And work through it
+
+1192
+00:42:17.969 --> 00:42:18.370
+here.
+
+1193
+00:42:22.110 --> 00:42:22.469
+So again,
+
+1194
+00:42:22.540 --> 00:42:24.989
+if you're watching this asynchronously,
+
+1195
+00:42:25.070 --> 00:42:27.649
+feel free to pause and try this out for yourself,
+
+1196
+00:42:28.310 --> 00:42:30.389
+we're gonna do this live together.
+
+1197
+00:42:30.600 --> 00:42:30.969
+So
+
+1198
+00:42:31.189 --> 00:42:32.770
+we're gonna write a recursive function
+
+1199
+00:42:33.389 --> 00:42:33.989
+fib
+
+1200
+00:42:34.389 --> 00:42:38.610
+that takes an integer n and then prints out the nth Fibonacci number.
+
+1201
+00:42:39.879 --> 00:42:40.479
+So
+
+1202
+00:42:41.120 --> 00:42:41.959
+if you're unfamiliar,
+
+1203
+00:42:42.040 --> 00:42:44.580
+the Fibonacci sequence is a sequence in which
+
+1204
+00:42:44.879 --> 00:42:45.659
+the element,
+
+1205
+00:42:45.800 --> 00:42:48.679
+each element is the sum of the two elements that precede it.
+
+1206
+00:42:49.080 --> 00:42:51.580
+So this is the exam an example of
+
+1207
+00:42:51.719 --> 00:42:52.820
+Fibonacci sequence.
+
+1208
+00:42:52.959 --> 00:42:53.699
+So we can see
+
+1209
+00:42:53.919 --> 00:42:55.110
+it starts with 0 and 1,
+
+1210
+00:42:55.120 --> 00:42:56.659
+and then the next one is
+
+1211
+00:42:56.800 --> 00:42:57.860
+0 + 1,
+
+1212
+00:42:58.120 --> 00:42:58.800
+which is 1.
+
+1213
+00:42:59.739 --> 00:43:01.510
+The next one is 1 + 1,
+
+1214
+00:43:01.659 --> 00:43:02.449
+which is 2.
+
+1215
+00:43:03.030 --> 00:43:04.629
+The next element is 1 + 2,
+
+1216
+00:43:04.709 --> 00:43:05.570
+which is 3,
+
+1217
+00:43:06.030 --> 00:43:06.489
+etc.
+
+1218
+00:43:07.679 --> 00:43:09.659
+So let's try this out pretty quickly
+
+1219
+00:43:10.159 --> 00:43:10.570
+here,
+
+1220
+00:43:10.600 --> 00:43:11.620
+so I'm gonna code.
+
+1221
+00:43:12.669 --> 00:43:13.020
+Fib.
+
+1222
+00:43:13.449 --> 00:43:13.909
+C.
+
+1223
+00:43:15.330 --> 00:43:15.620
+OK,
+
+1224
+00:43:15.679 --> 00:43:16.340
+I'm gonna.
+
+1225
+00:43:17.419 --> 00:43:18.800
+Copy these over.
+
+1226
+00:43:21.070 --> 00:43:21.780
+In Maine void.
+
+1227
+00:43:24.399 --> 00:43:25.080
+OK,
+
+1228
+00:43:25.560 --> 00:43:28.020
+so I'm gonna do a similar thing where I ask for.
+
+1229
+00:43:29.860 --> 00:43:30.899
+Some integer.
+
+1230
+00:43:32.520 --> 00:43:34.939
+Say like which Fibonacci number do you want?
+
+1231
+00:43:41.129 --> 00:43:41.679
+OK.
+
+1232
+00:43:42.399 --> 00:43:43.669
+And then I'm gonna print
+
+1233
+00:43:44.290 --> 00:43:45.969
+something eventually we'll get to that.
+
+1234
+00:43:47.860 --> 00:43:48.100
+OK,
+
+1235
+00:43:48.189 --> 00:43:49.570
+my Fibonacci.
+
+1236
+00:43:51.239 --> 00:43:53.860
+Function here is also going to take in a number.
+
+1237
+00:43:56.139 --> 00:43:57.330
+Except also.
+
+1238
+00:43:58.110 --> 00:44:00.129
+I guess how many inputs should it be taking
+
+1239
+00:44:00.429 --> 00:44:01.429
+is the question.
+
+1240
+00:44:03.449 --> 00:44:04.679
+How many pieces of information
+
+1241
+00:44:05.060 --> 00:44:06.850
+do I need to know to calculate that
+
+1242
+00:44:07.060 --> 00:44:08.320
+2 is the next one?
+
+1243
+00:44:08.820 --> 00:44:08.939
+Yeah,
+
+1244
+00:44:09.020 --> 00:44:10.179
+so I need 2 pieces.
+
+1245
+00:44:10.260 --> 00:44:11.000
+I need like
+
+1246
+00:44:11.419 --> 00:44:14.560
+the element before it and also the element that was
+
+1247
+00:44:15.219 --> 00:44:15.800
+before
+
+1248
+00:44:16.060 --> 00:44:16.780
+that.
+
+1249
+00:44:19.370 --> 00:44:19.929
+OK.
+
+1250
+00:44:21.530 --> 00:44:24.120
+And so that gives us a hint to
+
+1251
+00:44:24.330 --> 00:44:26.030
+what our recursive case is going to be,
+
+1252
+00:44:26.449 --> 00:44:26.639
+um,
+
+1253
+00:44:26.689 --> 00:44:28.090
+but let's maybe just say that.
+
+1254
+00:44:28.949 --> 00:44:29.889
+This function.
+
+1255
+00:44:30.949 --> 00:44:32.330
+It takes in
+
+1256
+00:44:32.790 --> 00:44:33.189
+like.
+
+1257
+00:44:33.870 --> 00:44:36.649
+Which then the the number of the
+
+1258
+00:44:37.030 --> 00:44:38.600
+Fibonacci sequence that you want,
+
+1259
+00:44:38.709 --> 00:44:39.110
+so like.
+
+1260
+00:44:40.189 --> 00:44:41.209
+Takes which.
+
+1261
+00:44:42.399 --> 00:44:43.570
+Ibonacci
+
+1262
+00:44:44.310 --> 00:44:45.330
+Number you
+
+1263
+00:44:45.550 --> 00:44:45.929
+want
+
+1264
+00:44:46.139 --> 00:44:47.169
+and then returns.
+
+1265
+00:44:48.459 --> 00:44:49.250
+That
+
+1266
+00:44:50.050 --> 00:44:50.550
+OK.
+
+1267
+00:44:52.149 --> 00:44:54.780
+So again we're gonna have a base case we're gonna have.
+
+1268
+00:44:55.540 --> 00:44:56.719
+Recursive case.
+
+1269
+00:44:57.929 --> 00:44:59.310
+And so like we said
+
+1270
+00:44:59.530 --> 00:45:00.639
+just a second ago,
+
+1271
+00:45:00.709 --> 00:45:01.989
+I know that I'm going to need.
+
+1272
+00:45:02.979 --> 00:45:03.439
+Like
+
+1273
+00:45:05.669 --> 00:45:07.169
+The Fibonacci number
+
+1274
+00:45:07.669 --> 00:45:11.229
+that was right before it and also the Fibonacci number
+
+1275
+00:45:11.629 --> 00:45:12.699
+that was before that.
+
+1276
+00:45:15.030 --> 00:45:15.510
+OK.
+
+1277
+00:45:17.320 --> 00:45:17.939
+So
+
+1278
+00:45:20.070 --> 00:45:22.469
+This is like this cursive case for saying that.
+
+1279
+00:45:23.820 --> 00:45:26.040
+The Fibonacci number of n is going to be.
+
+1280
+00:45:26.919 --> 00:45:29.340
+The Fibonacci number of N minus 1
+
+1281
+00:45:29.520 --> 00:45:30.260
+plus
+
+1282
+00:45:30.439 --> 00:45:31.209
+Fibonacci
+
+1283
+00:45:31.479 --> 00:45:33.520
+number of N minus 2.
+
+1284
+00:45:34.520 --> 00:45:36.899
+Then what is our base case going to be?
+
+1285
+00:45:38.590 --> 00:45:39.800
+When should this
+
+1286
+00:45:40.010 --> 00:45:41.439
+recursive case not run?
+
+1287
+00:45:43.169 --> 00:45:43.449
+Yeah,
+
+1288
+00:45:43.570 --> 00:45:43.989
+so
+
+1289
+00:45:44.610 --> 00:45:45.909
+someone says 0.
+
+1290
+00:45:47.120 --> 00:45:47.850
+So if N
+
+1291
+00:45:49.969 --> 00:45:51.080
+Equals 0.
+
+1292
+00:45:52.500 --> 00:45:53.899
+Then I should return.
+
+1293
+00:45:56.649 --> 00:45:57.709
+What is the
+
+1294
+00:45:57.929 --> 00:45:59.010
+Fibonacci number?
+
+1295
+00:45:59.800 --> 00:45:59.810
+Of
+
+1296
+00:46:01.120 --> 00:46:02.750
+or the 0 with Fibonacci number,
+
+1297
+00:46:02.760 --> 00:46:03.659
+I don't know if that,
+
+1298
+00:46:04.239 --> 00:46:04.639
+yeah.
+
+1299
+00:46:06.449 --> 00:46:06.689
+OK,
+
+1300
+00:46:06.939 --> 00:46:07.320
+return.
+
+1301
+00:46:08.699 --> 00:46:09.879
+Should be 0.
+
+1302
+00:46:12.580 --> 00:46:13.459
+OK.
+
+1303
+00:46:14.600 --> 00:46:15.760
+What about?
+
+1304
+00:46:17.199 --> 00:46:17.209
+This
+
+1305
+00:46:18.719 --> 00:46:20.080
+And -2 case,
+
+1306
+00:46:20.199 --> 00:46:20.360
+right?
+
+1307
+00:46:20.449 --> 00:46:21.000
+So like.
+
+1308
+00:46:21.929 --> 00:46:22.750
+If I ran
+
+1309
+00:46:23.760 --> 00:46:24.379
+And
+
+1310
+00:46:24.689 --> 00:46:25.810
+of one.
+
+1311
+00:46:27.280 --> 00:46:27.290
+Then
+
+1312
+00:46:28.080 --> 00:46:29.080
+this would return.
+
+1313
+00:46:30.090 --> 00:46:30.899
+Fib of 0,
+
+1314
+00:46:31.060 --> 00:46:32.709
+which I have to find a 0
+
+1315
+00:46:33.040 --> 00:46:33.679
+plus.
+
+1316
+00:46:34.750 --> 00:46:35.610
+Fibonacci
+
+1317
+00:46:35.790 --> 00:46:36.409
+of
+
+1318
+00:46:36.590 --> 00:46:37.770
+-1.
+
+1319
+00:46:38.790 --> 00:46:40.780
+Which doesn't seem quite right here.
+
+1320
+00:46:46.020 --> 00:46:46.530
+Yeah,
+
+1321
+00:46:46.699 --> 00:46:47.179
+so someone's saying,
+
+1322
+00:46:47.219 --> 00:46:47.879
+what if
+
+1323
+00:46:48.379 --> 00:46:50.399
+it doesn't and minus 2 doesn't exist.
+
+1324
+00:46:51.699 --> 00:46:52.860
+So we've defined
+
+1325
+00:46:53.139 --> 00:46:54.540
+and is 0.
+
+1326
+00:46:55.820 --> 00:46:58.550
+So what I might need to do here is actually also define.
+
+1327
+00:47:00.800 --> 00:47:02.419
+And equals 1.
+
+1328
+00:47:04.939 --> 00:47:05.639
+Say
+
+1329
+00:47:06.139 --> 00:47:07.520
+what is the
+
+1330
+00:47:08.290 --> 00:47:08.469
+warmth
+
+1331
+00:47:09.260 --> 00:47:10.209
+Fibonacci number?
+
+1332
+00:47:10.379 --> 00:47:10.600
+Yeah,
+
+1333
+00:47:10.699 --> 00:47:11.139
+1.
+
+1334
+00:47:12.530 --> 00:47:14.860
+So if we're saying this sequence is 0 index,
+
+1335
+00:47:14.939 --> 00:47:15.100
+right,
+
+1336
+00:47:15.219 --> 00:47:15.560
+so
+
+1337
+00:47:15.820 --> 00:47:16.939
+the 0 is 0,
+
+1338
+00:47:17.139 --> 00:47:18.379
+the 1 is 1.
+
+1339
+00:47:19.550 --> 00:47:21.219
+Then the next 12,
+
+1340
+00:47:21.469 --> 00:47:22.070
+2nd.
+
+1341
+00:47:22.909 --> 00:47:23.669
+Is
+
+1342
+00:47:25.370 --> 00:47:27.169
+And 0,
+
+1343
+00:47:27.449 --> 00:47:29.610
+like Fib Fibonacci of 0
+
+1344
+00:47:29.919 --> 00:47:31.649
+plus Fibonacci of 1.
+
+1345
+00:47:33.209 --> 00:47:33.610
+OK.
+
+1346
+00:47:35.229 --> 00:47:37.870
+So now this is gonna cover the case that I just described,
+
+1347
+00:47:37.949 --> 00:47:38.070
+right?
+
+1348
+00:47:38.110 --> 00:47:38.689
+If I call
+
+1349
+00:47:39.229 --> 00:47:40.709
+Fibonacci of 1,
+
+1350
+00:47:40.860 --> 00:47:44.860
+it's not gonna go to this case and try to return Fibonacci of -1
+
+1351
+00:47:45.050 --> 00:47:47.449
+because that just we have not defined that as
+
+1352
+00:47:47.750 --> 00:47:48.239
+existing.
+
+1353
+00:47:49.340 --> 00:47:49.959
+OK,
+
+1354
+00:47:50.290 --> 00:47:51.649
+so now I can
+
+1355
+00:47:51.929 --> 00:47:53.510
+go back here and print out.
+
+1356
+00:47:55.199 --> 00:47:55.699
+Say.
+
+1357
+00:47:56.389 --> 00:47:57.540
+Um,
+
+1358
+00:47:57.959 --> 00:47:58.399
+the.
+
+1359
+00:48:01.419 --> 00:48:02.280
+I
+
+1360
+00:48:05.590 --> 00:48:06.709
+Fibonacci number.
+
+1361
+00:48:07.580 --> 00:48:08.689
+Is
+
+1362
+00:48:10.379 --> 00:48:10.989
+I
+
+1363
+00:48:12.449 --> 00:48:13.229
+New line.
+
+1364
+00:48:14.199 --> 00:48:14.899
+I say that
+
+1365
+00:48:15.840 --> 00:48:17.419
+Return end here and then return.
+
+1366
+00:48:18.600 --> 00:48:19.100
+Fib
+
+1367
+00:48:19.439 --> 00:48:20.320
+of and.
+
+1368
+00:48:21.189 --> 00:48:23.239
+I'm also gonna prototype prototype this.
+
+1369
+00:48:24.060 --> 00:48:25.030
+So don't forget here.
+
+1370
+00:48:25.129 --> 00:48:25.449
+OK.
+
+1371
+00:48:26.169 --> 00:48:27.030
+So that's our code.
+
+1372
+00:48:28.850 --> 00:48:30.129
+Pick it up semicolon.
+
+1373
+00:48:30.629 --> 00:48:32.270
+I'm gonna make this
+
+1374
+00:48:32.770 --> 00:48:33.810
+dot slash fib.
+
+1375
+00:48:35.500 --> 00:48:36.419
+And then we see,
+
+1376
+00:48:36.620 --> 00:48:36.979
+OK,
+
+1377
+00:48:37.179 --> 00:48:38.060
+I want.
+
+1378
+00:48:38.879 --> 00:48:39.459
+The 0,
+
+1379
+00:48:39.570 --> 00:48:40.479
+that should be 0.
+
+1380
+00:48:40.860 --> 00:48:41.149
+Cool.
+
+1381
+00:48:41.560 --> 00:48:42.429
+Next one should be 1.
+
+1382
+00:48:43.620 --> 00:48:45.080
+The second should be
+
+1383
+00:48:45.580 --> 00:48:46.780
+also 1,
+
+1384
+00:48:47.459 --> 00:48:48.060
+nice.
+
+1385
+00:48:49.080 --> 00:48:49.360
+Oh yeah,
+
+1386
+00:48:49.409 --> 00:48:50.350
+I guess this.
+
+1387
+00:48:51.570 --> 00:48:54.610
+TH is not always gonna work for like a second.
+
+1388
+00:48:56.530 --> 00:48:57.080
+OK.
+
+1389
+00:49:00.550 --> 00:49:02.429
+And then let's say like the 5th 1.
+
+1390
+00:49:03.620 --> 00:49:04.629
+Fifth Fibonacci is 5,
+
+1391
+00:49:04.709 --> 00:49:05.250
+is that true?
+
+1392
+00:49:05.899 --> 00:49:07.639
+012345,
+
+1393
+00:49:07.669 --> 00:49:07.750
+yeah,
+
+1394
+00:49:07.840 --> 00:49:08.389
+that looks right.
+
+1395
+00:49:09.179 --> 00:49:09.939
+OK,
+
+1396
+00:49:10.419 --> 00:49:10.820
+cool.
+
+1397
+00:49:12.199 --> 00:49:16.290
+So feel free to write any questions in the chat
+
+1398
+00:49:16.429 --> 00:49:17.560
+about this program,
+
+1399
+00:49:17.989 --> 00:49:21.409
+but this is just another example of how recursive functions
+
+1400
+00:49:21.629 --> 00:49:22.270
+can work.
+
+1401
+00:49:23.610 --> 00:49:25.270
+And how we can call
+
+1402
+00:49:25.489 --> 00:49:26.350
+the function itself
+
+1403
+00:49:27.090 --> 00:49:28.649
+inside of the function.
+
+1404
+00:49:29.659 --> 00:49:30.060
+OK.
+
+1405
+00:49:31.969 --> 00:49:32.919
+So we're gonna move on
+
+1406
+00:49:33.260 --> 00:49:35.439
+to searching and sorting.
+
+1407
+00:49:38.250 --> 00:49:40.889
+So I'm going to first pose this question.
+
+1408
+00:49:41.800 --> 00:49:44.469
+If you had like this array of.
+
+1409
+00:49:45.250 --> 00:49:46.310
+Integers,
+
+1410
+00:49:46.330 --> 00:49:48.469
+but you don't know what's in each one,
+
+1411
+00:49:48.850 --> 00:49:51.469
+how would you go about searching for 6
+
+1412
+00:49:51.870 --> 00:49:53.510
+if I told you you should look for 6?
+
+1413
+00:49:53.810 --> 00:49:54.389
+What's your,
+
+1414
+00:49:55.050 --> 00:49:55.520
+uh,
+
+1415
+00:49:55.530 --> 00:49:56.229
+approach
+
+1416
+00:49:56.689 --> 00:49:57.760
+or your algorithm
+
+1417
+00:49:57.889 --> 00:49:58.449
+per se?
+
+1418
+00:50:03.760 --> 00:50:04.750
+Someone says sort first.
+
+1419
+00:50:04.800 --> 00:50:04.949
+OK,
+
+1420
+00:50:05.040 --> 00:50:07.100
+what if I can't sort for sort it?
+
+1421
+00:50:08.679 --> 00:50:10.060
+Someone says search linearly,
+
+1422
+00:50:10.139 --> 00:50:10.399
+yeah,
+
+1423
+00:50:10.530 --> 00:50:11.260
+so like
+
+1424
+00:50:11.879 --> 00:50:12.860
+maybe I just
+
+1425
+00:50:13.479 --> 00:50:14.419
+go through them
+
+1426
+00:50:14.550 --> 00:50:15.399
+one by one
+
+1427
+00:50:15.600 --> 00:50:17.899
+from like left to right or right to left
+
+1428
+00:50:18.520 --> 00:50:19.060
+and
+
+1429
+00:50:19.439 --> 00:50:20.060
+check
+
+1430
+00:50:20.639 --> 00:50:21.659
+is this 6.
+
+1431
+00:50:22.840 --> 00:50:25.050
+So I could say I'm gonna open the first one,
+
+1432
+00:50:25.239 --> 00:50:26.260
+it's not 6.
+
+1433
+00:50:26.800 --> 00:50:28.370
+Next one is also not 6,
+
+1434
+00:50:28.879 --> 00:50:29.419
+keep going,
+
+1435
+00:50:29.639 --> 00:50:30.800
+this is not 6 yet,
+
+1436
+00:50:31.040 --> 00:50:31.399
+OK,
+
+1437
+00:50:31.520 --> 00:50:32.620
+and then I found 6.
+
+1438
+00:50:34.169 --> 00:50:34.949
+OK.
+
+1439
+00:50:36.050 --> 00:50:39.689
+So we're gonna talk a little bit about this fancy word called runtime analysis,
+
+1440
+00:50:39.770 --> 00:50:41.270
+but really this just means
+
+1441
+00:50:41.850 --> 00:50:43.669
+how long did it take to do
+
+1442
+00:50:44.010 --> 00:50:49.189
+what I just did this algorithm that I implemented that was called linear search.
+
+1443
+00:50:50.770 --> 00:50:52.159
+How many checks
+
+1444
+00:50:52.780 --> 00:50:55.310
+are needed to search for 6
+
+1445
+00:50:55.659 --> 00:50:56.020
+here?
+
+1446
+00:50:57.479 --> 00:50:58.879
+So I think when I just did it,
+
+1447
+00:50:58.989 --> 00:51:00.379
+it took 4 checks
+
+1448
+00:51:00.600 --> 00:51:00.800
+about,
+
+1449
+00:51:00.879 --> 00:51:01.209
+but.
+
+1450
+00:51:02.330 --> 00:51:02.760
+Someone saying,
+
+1451
+00:51:02.810 --> 00:51:03.350
+and
+
+1452
+00:51:03.489 --> 00:51:03.780
+yeah,
+
+1453
+00:51:03.929 --> 00:51:06.010
+so like the length of this list.
+
+1454
+00:51:08.060 --> 00:51:09.179
+I don't know which one it could be,
+
+1455
+00:51:09.320 --> 00:51:10.820
+so it could be 8 checks.
+
+1456
+00:51:12.239 --> 00:51:12.479
+OK,
+
+1457
+00:51:12.600 --> 00:51:13.290
+what about
+
+1458
+00:51:13.399 --> 00:51:14.159
+this list?
+
+1459
+00:51:24.719 --> 00:51:24.959
+Yeah,
+
+1460
+00:51:25.040 --> 00:51:25.600
+and again,
+
+1461
+00:51:25.639 --> 00:51:26.459
+it's going to take
+
+1462
+00:51:26.719 --> 00:51:27.699
+however many
+
+1463
+00:51:28.030 --> 00:51:28.590
+um
+
+1464
+00:51:28.919 --> 00:51:31.100
+inputs I have in this array.
+
+1465
+00:51:32.080 --> 00:51:32.649
+To check,
+
+1466
+00:51:32.929 --> 00:51:34.449
+so I'm gonna have to check every single one.
+
+1467
+00:51:35.590 --> 00:51:37.540
+Which is not super efficient,
+
+1468
+00:51:38.149 --> 00:51:38.209
+um,
+
+1469
+00:51:38.360 --> 00:51:40.610
+but we call this a big O of N.
+
+1470
+00:51:41.580 --> 00:51:43.659
+And basically this is saying that
+
+1471
+00:51:43.899 --> 00:51:44.379
+I need,
+
+1472
+00:51:44.459 --> 00:51:47.399
+I need to do as many as N steps
+
+1473
+00:51:48.100 --> 00:51:49.870
+for an input of size N.
+
+1474
+00:51:51.250 --> 00:51:52.669
+So however long my
+
+1475
+00:51:53.010 --> 00:51:53.959
+input is,
+
+1476
+00:51:54.290 --> 00:51:55.870
+I need to do that many steps.
+
+1477
+00:51:57.060 --> 00:51:58.719
+You can also think of this as
+
+1478
+00:51:59.379 --> 00:52:01.959
+the way that the algorithm's
+
+1479
+00:52:02.810 --> 00:52:04.120
+time that it takes
+
+1480
+00:52:04.659 --> 00:52:05.770
+grows over time,
+
+1481
+00:52:06.090 --> 00:52:06.540
+so.
+
+1482
+00:52:07.979 --> 00:52:10.760
+It scales linearly with the size of our input,
+
+1483
+00:52:11.060 --> 00:52:11.199
+right?
+
+1484
+00:52:11.300 --> 00:52:14.439
+So for each new item that's added to my algorithm's input,
+
+1485
+00:52:14.659 --> 00:52:16.320
+the algorithm needs to do
+
+1486
+00:52:16.699 --> 00:52:18.719
+a fixed number of new steps.
+
+1487
+00:52:20.340 --> 00:52:20.540
+Yeah,
+
+1488
+00:52:20.610 --> 00:52:23.239
+and it looks a little bit like this linear graph as someone said
+
+1489
+00:52:23.659 --> 00:52:24.399
+because if I
+
+1490
+00:52:24.860 --> 00:52:26.800
+say double my input I make it a
+
+1491
+00:52:27.060 --> 00:52:28.800
+double the size of the list,
+
+1492
+00:52:29.100 --> 00:52:31.760
+then it's also gonna take like double the size
+
+1493
+00:52:32.020 --> 00:52:33.919
+or double the amount of time
+
+1494
+00:52:34.459 --> 00:52:35.540
+to search that list.
+
+1495
+00:52:37.500 --> 00:52:38.149
+OK,
+
+1496
+00:52:38.429 --> 00:52:40.889
+any initial questions about searching?
+
+1497
+00:52:47.040 --> 00:52:47.530
+OK,
+
+1498
+00:52:47.649 --> 00:52:48.189
+if there are,
+
+1499
+00:52:48.449 --> 00:52:49.610
+you can put them in the chat.
+
+1500
+00:52:50.510 --> 00:52:51.949
+And we're gonna move on to sorting,
+
+1501
+00:52:52.040 --> 00:52:53.040
+so some people said like,
+
+1502
+00:52:53.110 --> 00:52:53.439
+oh,
+
+1503
+00:52:53.679 --> 00:52:55.500
+you should just sort the list first
+
+1504
+00:52:55.840 --> 00:52:56.800
+before searching it
+
+1505
+00:52:56.959 --> 00:52:57.340
+and
+
+1506
+00:52:57.719 --> 00:52:59.100
+how are we gonna do that?
+
+1507
+00:52:59.590 --> 00:53:03.139
+We have 3 different sorting algorithms that we're gonna go over.
+
+1508
+00:53:04.000 --> 00:53:05.199
+And first we're gonna talk about
+
+1509
+00:53:05.580 --> 00:53:06.840
+selection sort.
+
+1510
+00:53:07.830 --> 00:53:07.840
+OK,
+
+1511
+00:53:08.750 --> 00:53:09.370
+so
+
+1512
+00:53:10.000 --> 00:53:11.649
+we have a little animation here
+
+1513
+00:53:11.899 --> 00:53:13.050
+to show you.
+
+1514
+00:53:14.320 --> 00:53:15.760
+What um
+
+1515
+00:53:16.199 --> 00:53:17.600
+selection source is looking for.
+
+1516
+00:53:17.659 --> 00:53:18.159
+OK,
+
+1517
+00:53:18.639 --> 00:53:19.860
+we have a few questions.
+
+1518
+00:53:21.060 --> 00:53:23.379
+How do you figure out what approach to use in searching?
+
+1519
+00:53:23.669 --> 00:53:24.000
+Yeah,
+
+1520
+00:53:24.260 --> 00:53:27.820
+so the only one that we've really talked about here is linear search,
+
+1521
+00:53:28.100 --> 00:53:29.379
+but it could also,
+
+1522
+00:53:29.620 --> 00:53:32.159
+it always depends on the context that
+
+1523
+00:53:32.419 --> 00:53:34.179
+you're using this in,
+
+1524
+00:53:34.300 --> 00:53:34.489
+right?
+
+1525
+00:53:34.620 --> 00:53:35.000
+So
+
+1526
+00:53:35.620 --> 00:53:36.879
+you could also just
+
+1527
+00:53:37.179 --> 00:53:40.639
+open up doors randomly per se like we just check
+
+1528
+00:53:40.780 --> 00:53:43.560
+random indexes until we find the one we're looking for,
+
+1529
+00:53:43.899 --> 00:53:44.179
+um,
+
+1530
+00:53:44.300 --> 00:53:44.699
+but
+
+1531
+00:53:45.020 --> 00:53:45.919
+depending on.
+
+1532
+00:53:46.459 --> 00:53:49.239
+How often you're going to need to be doing the searching
+
+1533
+00:53:49.500 --> 00:53:53.159
+and what the data is that you're searching among
+
+1534
+00:53:53.939 --> 00:53:55.600
+that might help you choose
+
+1535
+00:53:55.979 --> 00:53:57.760
+a certain approach over another.
+
+1536
+00:53:59.100 --> 00:53:59.310
+But yeah,
+
+1537
+00:53:59.389 --> 00:54:00.270
+that's a great question.
+
+1538
+00:54:01.250 --> 00:54:01.600
+Someone says,
+
+1539
+00:54:01.610 --> 00:54:04.969
+what about the average run time instead of an upper and lower bound?
+
+1540
+00:54:05.050 --> 00:54:05.250
+Yeah,
+
+1541
+00:54:05.370 --> 00:54:06.510
+so I think you're referring to
+
+1542
+00:54:06.800 --> 00:54:08.540
+um theta which
+
+1543
+00:54:08.770 --> 00:54:11.070
+was brought up yesterday in lecture
+
+1544
+00:54:11.370 --> 00:54:13.689
+and so that is used when
+
+1545
+00:54:13.929 --> 00:54:16.350
+the upper and lower bound are the same.
+
+1546
+00:54:17.110 --> 00:54:17.750
+So
+
+1547
+00:54:18.110 --> 00:54:19.010
+like in
+
+1548
+00:54:19.629 --> 00:54:22.340
+the upper bound case and the lower bound case,
+
+1549
+00:54:22.750 --> 00:54:24.570
+both of those runtime will be the same but
+
+1550
+00:54:24.790 --> 00:54:25.889
+yeah usually
+
+1551
+00:54:26.100 --> 00:54:28.810
+this big O and big omega that we'll see
+
+1552
+00:54:29.030 --> 00:54:31.409
+are typically used to describe
+
+1553
+00:54:31.899 --> 00:54:32.489
+um
+
+1554
+00:54:33.199 --> 00:54:35.090
+to give you an idea of like how
+
+1555
+00:54:35.310 --> 00:54:37.250
+much time it's gonna take in.
+
+1556
+00:54:38.239 --> 00:54:39.270
+In upper bound
+
+1557
+00:54:39.770 --> 00:54:41.040
+and then lower bound terms.
+
+1558
+00:54:43.540 --> 00:54:43.879
+OK,
+
+1559
+00:54:44.020 --> 00:54:45.459
+so let's look at selection sort.
+
+1560
+00:54:46.870 --> 00:54:48.110
+So I have this list here.
+
+1561
+00:54:48.229 --> 00:54:50.129
+It's unsorted as we can see,
+
+1562
+00:54:50.550 --> 00:54:53.010
+and the approach we're gonna take with selection sort
+
+1563
+00:54:53.709 --> 00:54:55.689
+is we're gonna look for
+
+1564
+00:54:55.989 --> 00:54:57.209
+the the minimum
+
+1565
+00:54:58.709 --> 00:55:00.169
+a value in this list,
+
+1566
+00:55:00.550 --> 00:55:02.889
+and we're gonna store it in this minimum
+
+1567
+00:55:03.219 --> 00:55:03.790
+variable.
+
+1568
+00:55:04.030 --> 00:55:04.790
+So I'm gonna go through,
+
+1569
+00:55:04.870 --> 00:55:05.689
+I'm gonna check.
+
+1570
+00:55:07.199 --> 00:55:07.479
+OK,
+
+1571
+00:55:07.560 --> 00:55:08.179
+5.
+
+1572
+00:55:08.370 --> 00:55:08.520
+OK,
+
+1573
+00:55:08.600 --> 00:55:09.889
+3 is my current minimum.
+
+1574
+00:55:10.120 --> 00:55:11.899
+Let's look for something lower than 3.
+
+1575
+00:55:12.590 --> 00:55:12.870
+OK,
+
+1576
+00:55:12.949 --> 00:55:13.949
+2 is lower than that,
+
+1577
+00:55:14.030 --> 00:55:14.969
+so I'm going to update it,
+
+1578
+00:55:15.389 --> 00:55:16.679
+and 1 is lower than that.
+
+1579
+00:55:17.600 --> 00:55:18.169
+OK,
+
+1580
+00:55:18.479 --> 00:55:18.719
+great.
+
+1581
+00:55:18.879 --> 00:55:21.219
+So because I now have this minimum,
+
+1582
+00:55:21.520 --> 00:55:22.659
+I know that that's going to go
+
+1583
+00:55:22.959 --> 00:55:23.500
+at the beginning.
+
+1584
+00:55:23.560 --> 00:55:25.080
+So I'm going to swap 1 and 5.
+
+1585
+00:55:26.409 --> 00:55:27.129
+Which is great.
+
+1586
+00:55:27.879 --> 00:55:29.770
+And then we're gonna do that again
+
+1587
+00:55:30.209 --> 00:55:31.149
+for as many,
+
+1588
+00:55:31.229 --> 00:55:31.679
+uh,
+
+1589
+00:55:31.689 --> 00:55:32.350
+as,
+
+1590
+00:55:32.850 --> 00:55:35.560
+as many integers we have in this list.
+
+1591
+00:55:35.830 --> 00:55:37.209
+So I know that the first one's sorted
+
+1592
+00:55:37.489 --> 00:55:39.550
+now I can focus on the second
+
+1593
+00:55:40.209 --> 00:55:41.169
+value in the list.
+
+1594
+00:55:42.820 --> 00:55:44.399
+So 3 is my current minimum.
+
+1595
+00:55:44.860 --> 00:55:46.419
+I'm going to look for something lower than that,
+
+1596
+00:55:46.729 --> 00:55:47.510
+which is 2.
+
+1597
+00:55:48.370 --> 00:55:50.530
+And then there's nothing left lower than 2,
+
+1598
+00:55:50.639 --> 00:55:52.620
+so I'm going to switch 2 and 3.
+
+1599
+00:55:54.070 --> 00:55:54.560
+OK,
+
+1600
+00:55:54.729 --> 00:55:56.840
+we're gonna start at 44 is my minimum.
+
+1601
+00:55:57.010 --> 00:55:58.239
+Look for something lower than that,
+
+1602
+00:55:58.280 --> 00:55:59.020
+it's 3,
+
+1603
+00:55:59.409 --> 00:56:00.459
+and there's nothing
+
+1604
+00:56:00.689 --> 00:56:01.520
+else to,
+
+1605
+00:56:01.800 --> 00:56:02.379
+uh,
+
+1606
+00:56:02.399 --> 00:56:02.879
+lower than that,
+
+1607
+00:56:03.000 --> 00:56:03.840
+so I'm gonna switch it.
+
+1608
+00:56:04.659 --> 00:56:06.659
+And we're going to do that process again.
+
+1609
+00:56:07.510 --> 00:56:09.409
+Switching and finding the minimum
+
+1610
+00:56:09.989 --> 00:56:10.330
+until
+
+1611
+00:56:10.790 --> 00:56:11.590
+we have
+
+1612
+00:56:11.830 --> 00:56:12.709
+a sorted list.
+
+1613
+00:56:13.709 --> 00:56:14.250
+Like so
+
+1614
+00:56:16.830 --> 00:56:17.129
+Go ahead.
+
+1615
+00:56:18.770 --> 00:56:19.139
+OK,
+
+1616
+00:56:19.300 --> 00:56:22.000
+so what was that process that we just did here
+
+1617
+00:56:22.149 --> 00:56:22.879
+in
+
+1618
+00:56:23.780 --> 00:56:25.199
+sort of pseudo code.
+
+1619
+00:56:26.870 --> 00:56:27.330
+So
+
+1620
+00:56:27.590 --> 00:56:28.729
+for every element
+
+1621
+00:56:28.979 --> 00:56:31.010
+in our list except for the last one.
+
+1622
+00:56:32.379 --> 00:56:35.989
+So we didn't do it at the end because we knew that that was going to be sorted.
+
+1623
+00:56:38.000 --> 00:56:38.600
+Um,
+
+1624
+00:56:38.729 --> 00:56:39.250
+or
+
+1625
+00:56:39.489 --> 00:56:40.750
+I should say if we're
+
+1626
+00:56:40.889 --> 00:56:41.189
+doing
+
+1627
+00:56:41.530 --> 00:56:42.669
+0 indexing,
+
+1628
+00:56:42.770 --> 00:56:44.459
+then we're not going to include the nth
+
+1629
+00:56:45.370 --> 00:56:45.669
+element.
+
+1630
+00:56:46.649 --> 00:56:49.169
+Assume the element at this position is the smallest,
+
+1631
+00:56:49.290 --> 00:56:49.449
+right?
+
+1632
+00:56:49.570 --> 00:56:50.070
+So I
+
+1633
+00:56:50.479 --> 00:56:51.229
+started at
+
+1634
+00:56:51.810 --> 00:56:52.469
+the first
+
+1635
+00:56:52.889 --> 00:56:53.889
+element and just assumed,
+
+1636
+00:56:53.929 --> 00:56:54.090
+OK,
+
+1637
+00:56:54.169 --> 00:56:55.929
+that's the smallest one I've seen.
+
+1638
+00:56:56.629 --> 00:56:58.850
+And then for every element to the right of that,
+
+1639
+00:56:59.110 --> 00:56:59.649
+if it's
+
+1640
+00:56:59.810 --> 00:57:01.139
+less than our current smallest,
+
+1641
+00:57:01.189 --> 00:57:03.090
+we're gonna update the current smallest
+
+1642
+00:57:03.669 --> 00:57:05.129
+and then once we get to the end,
+
+1643
+00:57:05.830 --> 00:57:06.810
+we're gonna swap
+
+1644
+00:57:07.270 --> 00:57:10.000
+the current element we're on with the current smallest.
+
+1645
+00:57:10.689 --> 00:57:10.699
+OK,
+
+1646
+00:57:11.780 --> 00:57:13.979
+if we use some of our indexing
+
+1647
+00:57:14.239 --> 00:57:15.239
+language here
+
+1648
+00:57:15.479 --> 00:57:18.659
+we can rewrite this sort of like so
+
+1649
+00:57:19.219 --> 00:57:19.679
+so
+
+1650
+00:57:19.959 --> 00:57:25.360
+we have for I from 0 ton minus 1 or N minus 2,
+
+1651
+00:57:25.600 --> 00:57:25.709
+right,
+
+1652
+00:57:25.760 --> 00:57:27.020
+so we're not gonna do that
+
+1653
+00:57:27.679 --> 00:57:28.860
+step for the last
+
+1654
+00:57:29.040 --> 00:57:29.699
+um.
+
+1655
+00:57:31.050 --> 00:57:32.209
+Element in the list.
+
+1656
+00:57:33.229 --> 00:57:35.139
+So we can see that once I was here
+
+1657
+00:57:35.560 --> 00:57:37.379
+we already know that 8 was gonna be sorted.
+
+1658
+00:57:39.179 --> 00:57:39.600
+Right
+
+1659
+00:57:41.840 --> 00:57:42.820
+And so we're going to set
+
+1660
+00:57:43.199 --> 00:57:45.159
+some minimum value to I.
+
+1661
+00:57:46.100 --> 00:57:49.050
+Which is that first element or the current element
+
+1662
+00:57:49.590 --> 00:57:51.409
+and then we're gonna loop from
+
+1663
+00:57:51.679 --> 00:57:52.760
+1 + 1,
+
+1664
+00:57:53.310 --> 00:57:54.340
+which is the next one,
+
+1665
+00:57:54.669 --> 00:57:55.790
+to n minus 1,
+
+1666
+00:57:55.830 --> 00:57:56.370
+which is
+
+1667
+00:57:56.510 --> 00:57:58.169
+the the end of the array.
+
+1668
+00:57:58.669 --> 00:57:59.449
+And if
+
+1669
+00:58:00.149 --> 00:58:02.270
+that value is lower than our minimum,
+
+1670
+00:58:02.340 --> 00:58:03.530
+we're gonna update that
+
+1671
+00:58:03.909 --> 00:58:04.669
+once we get to the end,
+
+1672
+00:58:04.750 --> 00:58:05.969
+we're gonna then swap
+
+1673
+00:58:06.469 --> 00:58:06.969
+the
+
+1674
+00:58:07.899 --> 00:58:09.729
+I element with our minimum
+
+1675
+00:58:10.030 --> 00:58:10.550
+element.
+
+1676
+00:58:12.270 --> 00:58:12.830
+OK.
+
+1677
+00:58:13.899 --> 00:58:16.719
+So what does the run time look like for this?
+
+1678
+00:58:17.649 --> 00:58:19.649
+We've N squared.
+
+1679
+00:58:20.709 --> 00:58:23.209
+Someone want to explain maybe why we're,
+
+1680
+00:58:23.389 --> 00:58:23.669
+why,
+
+1681
+00:58:23.760 --> 00:58:25.429
+why is this end squared.
+
+1682
+00:58:26.979 --> 00:58:31.219
+Why am I going to need to do as many as N2 steps if my input size is N?
+
+1683
+00:58:40.929 --> 00:58:41.010
+Well,
+
+1684
+00:58:41.020 --> 00:58:42.239
+you can kind of see.
+
+1685
+00:58:43.189 --> 00:58:45.229
+When I was showing you this example.
+
+1686
+00:58:47.709 --> 00:58:48.219
+Yeah.
+
+1687
+00:58:49.149 --> 00:58:49.649
+So
+
+1688
+00:58:50.030 --> 00:58:50.989
+I had 8,
+
+1689
+00:58:51.870 --> 00:58:53.030
+elements in this list,
+
+1690
+00:58:53.110 --> 00:58:53.469
+right?
+
+1691
+00:58:54.929 --> 00:58:55.770
+And so
+
+1692
+00:58:58.409 --> 00:59:00.070
+In this first pass here
+
+1693
+00:59:00.239 --> 00:59:02.100
+when I was looking for the first minimum,
+
+1694
+00:59:02.610 --> 00:59:03.550
+I looped over
+
+1695
+00:59:04.010 --> 00:59:05.479
+every single element in this list,
+
+1696
+00:59:05.570 --> 00:59:05.689
+right?
+
+1697
+00:59:05.770 --> 00:59:07.350
+So any number of times
+
+1698
+00:59:07.810 --> 00:59:09.530
+to find that one was
+
+1699
+00:59:09.810 --> 00:59:10.489
+the minimum.
+
+1700
+00:59:11.280 --> 00:59:11.679
+Right.
+
+1701
+00:59:12.659 --> 00:59:14.939
+And then I do this sort of thing again.
+
+1702
+00:59:15.050 --> 00:59:17.919
+I guess now I'm not looking through N number
+
+1703
+00:59:18.459 --> 00:59:19.139
+of elements,
+
+1704
+00:59:19.219 --> 00:59:21.139
+but I'm still N minus 1,
+
+1705
+00:59:21.300 --> 00:59:21.419
+right?
+
+1706
+00:59:21.540 --> 00:59:23.040
+So it's still on the order of
+
+1707
+00:59:23.219 --> 00:59:23.540
+N.
+
+1708
+00:59:25.610 --> 00:59:27.620
+And so I do that searching
+
+1709
+00:59:28.209 --> 00:59:31.840
+a number of times because I need to sort every element of this list.
+
+1710
+00:59:33.129 --> 00:59:33.340
+OK,
+
+1711
+00:59:33.459 --> 00:59:34.649
+so eventually we get
+
+1712
+00:59:34.939 --> 00:59:35.459
+to.
+
+1713
+00:59:36.800 --> 00:59:39.649
+And squared as our upper bound
+
+1714
+00:59:39.750 --> 00:59:42.030
+because it could take we need to see each element
+
+1715
+00:59:42.419 --> 00:59:42.929
+um
+
+1716
+00:59:43.629 --> 00:59:44.969
+within each pass
+
+1717
+00:59:45.550 --> 00:59:46.250
+and then
+
+1718
+00:59:46.649 --> 00:59:47.909
+and number of passes.
+
+1719
+00:59:49.239 --> 00:59:49.250
+OK,
+
+1720
+00:59:50.639 --> 00:59:51.479
+our omega,
+
+1721
+00:59:51.669 --> 00:59:52.870
+which is lower bound,
+
+1722
+00:59:53.360 --> 00:59:54.520
+is also N2,
+
+1723
+00:59:55.330 --> 00:59:55.340
+right,
+
+1724
+00:59:55.350 --> 00:59:58.100
+so in the best case I'm still gonna approximately do
+
+1725
+00:59:59.310 --> 01:00:00.219
+N2 steps.
+
+1726
+01:00:01.469 --> 01:00:04.830
+And because of and the reason for that is because if in my best case,
+
+1727
+01:00:04.909 --> 01:00:08.050
+which is like if this the list is already sorted for me,
+
+1728
+01:00:08.229 --> 01:00:10.250
+I'm still gonna do all of these steps.
+
+1729
+01:00:10.669 --> 01:00:12.449
+I have no way of like
+
+1730
+01:00:13.110 --> 01:00:14.409
+checking early
+
+1731
+01:00:14.629 --> 01:00:16.649
+that this list is actually sorted
+
+1732
+01:00:16.830 --> 01:00:18.449
+and I don't need to be doing all this work.
+
+1733
+01:00:19.989 --> 01:00:20.229
+OK,
+
+1734
+01:00:20.310 --> 01:00:22.010
+we're gonna move on now to bubble sort,
+
+1735
+01:00:22.590 --> 01:00:23.120
+which is
+
+1736
+01:00:23.389 --> 01:00:25.449
+slightly similar in some ways
+
+1737
+01:00:25.590 --> 01:00:26.550
+but different in others.
+
+1738
+01:00:26.669 --> 01:00:27.050
+So
+
+1739
+01:00:27.909 --> 01:00:30.050
+basically with bubble sort we go through
+
+1740
+01:00:30.340 --> 01:00:31.729
+the list checking
+
+1741
+01:00:32.489 --> 01:00:33.389
+2 by 2,
+
+1742
+01:00:33.510 --> 01:00:34.550
+are these out of order?
+
+1743
+01:00:34.709 --> 01:00:36.429
+We're gonna ask that question over and over again.
+
+1744
+01:00:36.709 --> 01:00:37.340
+If they are,
+
+1745
+01:00:37.429 --> 01:00:38.550
+then we're gonna swap them,
+
+1746
+01:00:38.949 --> 01:00:39.270
+right?
+
+1747
+01:00:39.590 --> 01:00:41.110
+So then I'm gonna look at 5 and 4.
+
+1748
+01:00:41.370 --> 01:00:42.350
+These are out of order,
+
+1749
+01:00:42.429 --> 01:00:43.590
+so I'm gonna swap them
+
+1750
+01:00:44.070 --> 01:00:45.010
+and so on
+
+1751
+01:00:45.709 --> 01:00:48.250
+until I get to the end of the list.
+
+1752
+01:00:49.290 --> 01:00:51.969
+And now we can see that the largest value,
+
+1753
+01:00:52.090 --> 01:00:53.120
+in this case 8,
+
+1754
+01:00:53.370 --> 01:00:57.219
+has bubbled its way to the top or to the end of the list,
+
+1755
+01:00:57.250 --> 01:00:58.229
+so we now know
+
+1756
+01:00:58.449 --> 01:00:59.969
+that 8 is in the right spot.
+
+1757
+01:01:00.949 --> 01:01:03.409
+So basically now we just repeat that process
+
+1758
+01:01:03.719 --> 01:01:05.840
+for the rest of the list,
+
+1759
+01:01:06.330 --> 01:01:06.520
+right?
+
+1760
+01:01:06.639 --> 01:01:07.780
+So we're gonna go through
+
+1761
+01:01:08.080 --> 01:01:09.260
+this first pass is now complete,
+
+1762
+01:01:09.320 --> 01:01:11.179
+we know that 8's in the right place.
+
+1763
+01:01:12.340 --> 01:01:12.659
+OK,
+
+1764
+01:01:12.820 --> 01:01:13.179
+then
+
+1765
+01:01:13.340 --> 01:01:14.540
+we go through 2 by 2,
+
+1766
+01:01:14.620 --> 01:01:16.370
+we see that 2 and 5 are out of place,
+
+1767
+01:01:16.459 --> 01:01:17.620
+so we swap them,
+
+1768
+01:01:18.120 --> 01:01:19.760
+and then 7 and 6
+
+1769
+01:01:19.919 --> 01:01:20.709
+or 1 and 5,
+
+1770
+01:01:20.780 --> 01:01:21.120
+yeah,
+
+1771
+01:01:21.899 --> 01:01:22.959
+then 7 and 6.
+
+1772
+01:01:24.010 --> 01:01:25.360
+And that's our second pass.
+
+1773
+01:01:25.580 --> 01:01:27.239
+Now we know 7's in the right place,
+
+1774
+01:01:28.370 --> 01:01:28.379
+OK?
+
+1775
+01:01:28.419 --> 01:01:30.489
+And then we know that 6 is also in the right place.
+
+1776
+01:01:30.580 --> 01:01:31.179
+I don't have to,
+
+1777
+01:01:31.459 --> 01:01:33.560
+but I'm gonna make the swap between
+
+1778
+01:01:34.090 --> 01:01:34.800
+2 and
+
+1779
+01:01:35.379 --> 01:01:35.699
+or.
+
+1780
+01:01:36.699 --> 01:01:36.830
+Yeah,
+
+1781
+01:01:36.949 --> 01:01:37.409
+2 and,
+
+1782
+01:01:37.469 --> 01:01:38.810
+so if we have 3 and 4 in the right place,
+
+1783
+01:01:38.870 --> 01:01:39.409
+2 and the 4,
+
+1784
+01:01:39.469 --> 01:01:40.290
+we're gonna have to switch.
+
+1785
+01:01:40.830 --> 01:01:41.340
+4 and 1,
+
+1786
+01:01:41.350 --> 01:01:42.120
+we switch.
+
+1787
+01:01:42.550 --> 01:01:43.629
+The rest are good.
+
+1788
+01:01:44.399 --> 01:01:47.300
+So I know for sure that 6 is up in the right place.
+
+1789
+01:01:48.969 --> 01:01:50.050
+So on and so forth.
+
+1790
+01:01:50.060 --> 01:01:52.080
+We're going to keep making those swaps
+
+1791
+01:01:52.929 --> 01:01:54.800
+until we have a fully sorted list.
+
+1792
+01:01:56.570 --> 01:01:57.120
+OK.
+
+1793
+01:01:57.580 --> 01:01:59.719
+So our pseudo code for this looks a little bit like
+
+1794
+01:01:59.840 --> 01:02:00.300
+this.
+
+1795
+01:02:00.500 --> 01:02:02.199
+For every element in our list,
+
+1796
+01:02:02.760 --> 01:02:04.120
+except the last one.
+
+1797
+01:02:05.060 --> 01:02:06.949
+We're going to look at each element
+
+1798
+01:02:07.510 --> 01:02:09.850
+from 1st to 2nd last.
+
+1799
+01:02:10.689 --> 01:02:12.479
+If the current element,
+
+1800
+01:02:12.820 --> 01:02:14.500
+if the current and the next elements are out of order,
+
+1801
+01:02:14.610 --> 01:02:15.580
+we should swap them.
+
+1802
+01:02:15.899 --> 01:02:17.719
+And if no two elements were swapped
+
+1803
+01:02:18.050 --> 01:02:19.659
+in our past,
+
+1804
+01:02:20.060 --> 01:02:20.899
+then we should quit.
+
+1805
+01:02:22.409 --> 01:02:22.929
+OK.
+
+1806
+01:02:24.399 --> 01:02:26.429
+In our indexing language,
+
+1807
+01:02:26.439 --> 01:02:27.479
+it looks a little bit like this,
+
+1808
+01:02:27.610 --> 01:02:27.729
+right?
+
+1809
+01:02:27.810 --> 01:02:28.399
+So we have,
+
+1810
+01:02:28.889 --> 01:02:30.949
+we're going to repeat this N minus 1 times.
+
+1811
+01:02:32.270 --> 01:02:32.729
+Set
+
+1812
+01:02:32.909 --> 01:02:33.770
+some variable
+
+1813
+01:02:34.250 --> 01:02:36.530
+swaps to keep track of how many swaps we're doing
+
+1814
+01:02:36.669 --> 01:02:37.189
+to none.
+
+1815
+01:02:38.050 --> 01:02:39.560
+And then for
+
+1816
+01:02:39.820 --> 01:02:40.719
+um
+
+1817
+01:02:41.500 --> 01:02:43.229
+Jay from 0,
+
+1818
+01:02:43.780 --> 01:02:45.100
+so Jay's gonna start at 0.
+
+1819
+01:02:45.739 --> 01:02:47.820
+And go to N minus 2.
+
+1820
+01:02:49.530 --> 01:02:49.850
+Yeah,
+
+1821
+01:02:50.010 --> 01:02:51.629
+why is it n minus 2?
+
+1822
+01:02:52.879 --> 01:02:52.959
+Well,
+
+1823
+01:02:53.010 --> 01:02:53.669
+if we look at
+
+1824
+01:02:54.370 --> 01:02:55.909
+our first pass here.
+
+1825
+01:02:57.270 --> 01:02:57.290
+This is
+
+1826
+01:02:58.729 --> 01:02:59.689
+N minus 1,
+
+1827
+01:02:59.889 --> 01:03:00.050
+right?
+
+1828
+01:03:00.159 --> 01:03:01.459
+This is N minus 2.
+
+1829
+01:03:01.969 --> 01:03:03.479
+If I were to go to N minus 1,
+
+1830
+01:03:03.689 --> 01:03:05.169
+then I'd be comparing with
+
+1831
+01:03:05.649 --> 01:03:07.149
+some value here that doesn't exist.
+
+1832
+01:03:08.149 --> 01:03:09.780
+So we just want to be careful about
+
+1833
+01:03:10.020 --> 01:03:11.419
+that indexing.
+
+1834
+01:03:12.169 --> 01:03:12.179
+OK,
+
+1835
+01:03:12.929 --> 01:03:14.250
+so if those elements are out of order,
+
+1836
+01:03:14.290 --> 01:03:15.229
+we should swap them,
+
+1837
+01:03:15.530 --> 01:03:16.909
+and if no swaps are made,
+
+1838
+01:03:16.929 --> 01:03:18.030
+then I should quit.
+
+1839
+01:03:18.899 --> 01:03:20.840
+Why are we quitting if no swaps were made?
+
+1840
+01:03:21.659 --> 01:03:21.739
+Well,
+
+1841
+01:03:21.780 --> 01:03:22.659
+if no swaps are made,
+
+1842
+01:03:22.699 --> 01:03:23.719
+then we know that
+
+1843
+01:03:24.260 --> 01:03:28.239
+we have everything in the right order and so we can just stop.
+
+1844
+01:03:30.449 --> 01:03:30.780
+OK,
+
+1845
+01:03:30.939 --> 01:03:32.780
+so similar to selection sort.
+
+1846
+01:03:34.100 --> 01:03:37.189
+Our upper bound for bubble sort is N2,
+
+1847
+01:03:37.310 --> 01:03:39.570
+so I need to do as many as N2 steps
+
+1848
+01:03:39.979 --> 01:03:41.290
+if my input size is N.
+
+1849
+01:03:42.129 --> 01:03:42.139
+So
+
+1850
+01:03:43.409 --> 01:03:45.040
+like we saw before we're gonna have
+
+1851
+01:03:45.320 --> 01:03:46.870
+a number of passes
+
+1852
+01:03:47.050 --> 01:03:48.270
+to make sure that
+
+1853
+01:03:48.729 --> 01:03:49.340
+the
+
+1854
+01:03:49.850 --> 01:03:50.550
+um
+
+1855
+01:03:51.090 --> 01:03:53.489
+top value is correct and then
+
+1856
+01:03:53.800 --> 01:03:55.310
+the next one and the next one
+
+1857
+01:03:55.610 --> 01:03:56.110
+and then
+
+1858
+01:03:56.489 --> 01:04:00.870
+during each pass we're also going through the whole list to do to make those swaps.
+
+1859
+01:04:04.330 --> 01:04:06.560
+Same way we talked about the linear scaling,
+
+1860
+01:04:06.610 --> 01:04:07.750
+this one scales,
+
+1861
+01:04:08.090 --> 01:04:08.469
+um,
+
+1862
+01:04:09.090 --> 01:04:10.610
+in an exponential way,
+
+1863
+01:04:10.689 --> 01:04:10.870
+right?
+
+1864
+01:04:10.969 --> 01:04:11.629
+So for every
+
+1865
+01:04:11.929 --> 01:04:13.510
+new item that's added,
+
+1866
+01:04:13.889 --> 01:04:16.030
+I need to do 1 more steps
+
+1867
+01:04:16.370 --> 01:04:17.350
+approximately.
+
+1868
+01:04:19.889 --> 01:04:21.370
+So for a big list,
+
+1869
+01:04:21.489 --> 01:04:24.030
+this gets time consuming pretty fast.
+
+1870
+01:04:26.600 --> 01:04:27.909
+A key difference between
+
+1871
+01:04:28.350 --> 01:04:31.510
+bubble sort and selection sort here though is the lower bound.
+
+1872
+01:04:31.610 --> 01:04:33.030
+So we saw in selection sort
+
+1873
+01:04:33.169 --> 01:04:34.790
+the lower bound was n squared,
+
+1874
+01:04:35.129 --> 01:04:35.290
+right?
+
+1875
+01:04:35.370 --> 01:04:36.909
+There was no way to like stop it
+
+1876
+01:04:37.010 --> 01:04:37.429
+early,
+
+1877
+01:04:38.010 --> 01:04:40.669
+but with bubble sort because we have this checking
+
+1878
+01:04:41.120 --> 01:04:41.949
+uh if we did
+
+1879
+01:04:42.239 --> 01:04:43.350
+the right swaps
+
+1880
+01:04:43.489 --> 01:04:44.870
+or if we've made any swaps
+
+1881
+01:04:45.169 --> 01:04:46.629
+and stopping if we did,
+
+1882
+01:04:47.409 --> 01:04:49.270
+the lower bound in this case
+
+1883
+01:04:49.530 --> 01:04:50.620
+is going to be N,
+
+1884
+01:04:51.330 --> 01:04:51.439
+right?
+
+1885
+01:04:51.449 --> 01:04:52.709
+So in the best case,
+
+1886
+01:04:53.330 --> 01:04:54.070
+which is if
+
+1887
+01:04:54.600 --> 01:04:56.030
+my list is already sorted.
+
+1888
+01:04:56.479 --> 01:04:58.100
+I'm gonna go through
+
+1889
+01:04:58.739 --> 01:04:59.340
+and each
+
+1890
+01:05:00.189 --> 01:05:00.860
+pair
+
+1891
+01:05:01.080 --> 01:05:04.219
+and see that no swaps have to be made and then I get to the end of that
+
+1892
+01:05:04.719 --> 01:05:07.100
+it says if no swaps are made then I just
+
+1893
+01:05:07.399 --> 01:05:09.020
+end the program and so
+
+1894
+01:05:09.560 --> 01:05:10.820
+the best case here we see
+
+1895
+01:05:11.070 --> 01:05:11.540
+a
+
+1896
+01:05:12.280 --> 01:05:13.239
+lower bound of n.
+
+1897
+01:05:15.280 --> 01:05:15.290
+OK,
+
+1898
+01:05:16.560 --> 01:05:18.879
+finally we're going to get to merge sort which kind
+
+1899
+01:05:18.879 --> 01:05:21.620
+of takes this idea of recursion that we saw earlier.
+
+1900
+01:05:22.600 --> 01:05:23.360
+And
+
+1901
+01:05:23.590 --> 01:05:24.159
+um
+
+1902
+01:05:24.489 --> 01:05:26.629
+makes the sorting a little bit more
+
+1903
+01:05:26.889 --> 01:05:30.889
+um efficient or at least more efficient than selection and bubble sort.
+
+1904
+01:05:32.429 --> 01:05:32.750
+OK,
+
+1905
+01:05:32.949 --> 01:05:35.729
+so let's say we have this same list here.
+
+1906
+01:05:36.770 --> 01:05:38.570
+And the technique with bubble sort
+
+1907
+01:05:38.969 --> 01:05:39.389
+or
+
+1908
+01:05:39.570 --> 01:05:40.510
+merge sort
+
+1909
+01:05:41.050 --> 01:05:42.790
+is that we're going to be splitting this
+
+1910
+01:05:43.409 --> 01:05:44.350
+in half
+
+1911
+01:05:45.090 --> 01:05:48.330
+and we're gonna say sort the left half and then sort the right half,
+
+1912
+01:05:48.840 --> 01:05:49.340
+OK?
+
+1913
+01:05:50.280 --> 01:05:51.580
+So now that I'm sorting the left half,
+
+1914
+01:05:51.649 --> 01:05:52.929
+how do I sort this list?
+
+1915
+01:05:53.389 --> 01:05:53.469
+Well,
+
+1916
+01:05:53.520 --> 01:05:54.510
+I split it up again.
+
+1917
+01:05:56.820 --> 01:05:58.879
+And now I have 2 lists.
+
+1918
+01:05:59.429 --> 01:06:01.100
+I'm gonna say let's sort this,
+
+1919
+01:06:01.189 --> 01:06:02.030
+this left half.
+
+1920
+01:06:02.310 --> 01:06:03.540
+How do I sort this list?
+
+1921
+01:06:03.870 --> 01:06:04.229
+Well,
+
+1922
+01:06:04.350 --> 01:06:05.790
+I split it in half,
+
+1923
+01:06:06.270 --> 01:06:06.590
+right?
+
+1924
+01:06:07.439 --> 01:06:10.080
+That's kind of the recursive call.
+
+1925
+01:06:11.629 --> 01:06:14.850
+And then once I have these two lists of size 1,
+
+1926
+01:06:15.429 --> 01:06:17.250
+my base case here,
+
+1927
+01:06:17.590 --> 01:06:20.250
+I know that a list of only one thing
+
+1928
+01:06:20.550 --> 01:06:21.830
+is already sorted,
+
+1929
+01:06:22.350 --> 01:06:23.030
+so that's great.
+
+1930
+01:06:24.050 --> 01:06:26.879
+And then we get to the part of uh merging.
+
+1931
+01:06:28.469 --> 01:06:29.139
+So
+
+1932
+01:06:30.050 --> 01:06:31.800
+I know that 5 is sorted.
+
+1933
+01:06:32.209 --> 01:06:34.030
+I know that 3 is sorted because they're only
+
+1934
+01:06:34.489 --> 01:06:34.780
+uh
+
+1935
+01:06:35.010 --> 01:06:36.310
+a list with one
+
+1936
+01:06:36.419 --> 01:06:37.209
+thing in it.
+
+1937
+01:06:38.399 --> 01:06:38.409
+OK,
+
+1938
+01:06:39.239 --> 01:06:40.760
+and so with sorting it,
+
+1939
+01:06:40.879 --> 01:06:42.080
+I'm going to look at
+
+1940
+01:06:42.280 --> 01:06:43.639
+these two lists that I have.
+
+1941
+01:06:43.800 --> 01:06:44.879
+I know that they're sorted.
+
+1942
+01:06:45.550 --> 01:06:46.919
+And I'm just going to compare
+
+1943
+01:06:47.110 --> 01:06:49.030
+the first value in both of them.
+
+1944
+01:06:50.270 --> 01:06:51.300
+And whichever one's lower,
+
+1945
+01:06:51.520 --> 01:06:52.320
+I'm going to put in first.
+
+1946
+01:06:52.439 --> 01:06:53.750
+So 3 in this case,
+
+1947
+01:06:54.199 --> 01:06:54.939
+5
+
+1948
+01:06:55.239 --> 01:06:56.000
+after that.
+
+1949
+01:06:57.459 --> 01:06:57.469
+OK,
+
+1950
+01:06:58.260 --> 01:07:00.709
+then I'm gonna do the same thing with my right half.
+
+1951
+01:07:01.199 --> 01:07:01.979
+So I'm gonna look at,
+
+1952
+01:07:02.260 --> 01:07:03.179
+I'm gonna have 4 and 8.
+
+1953
+01:07:03.280 --> 01:07:05.800
+I know that now this is sorted because it's only 1
+
+1954
+01:07:06.239 --> 01:07:07.120
+thing long
+
+1955
+01:07:07.500 --> 01:07:08.919
+and then 8 is sorted.
+
+1956
+01:07:09.260 --> 01:07:10.500
+I'm gonna compare these two,
+
+1957
+01:07:10.560 --> 01:07:11.239
+which one's,
+
+1958
+01:07:11.739 --> 01:07:12.360
+um,
+
+1959
+01:07:12.979 --> 01:07:13.459
+smaller.
+
+1960
+01:07:14.949 --> 01:07:16.280
+And we put them in the right order.
+
+1961
+01:07:17.659 --> 01:07:18.429
+OK,
+
+1962
+01:07:18.810 --> 01:07:20.909
+so we do this again and again here.
+
+1963
+01:07:21.290 --> 01:07:23.969
+Now I have a list of two on each side,
+
+1964
+01:07:24.050 --> 01:07:25.449
+but I know that both of them are sorted,
+
+1965
+01:07:25.530 --> 01:07:26.429
+which is a very
+
+1966
+01:07:26.689 --> 01:07:29.050
+crucial piece of information to have,
+
+1967
+01:07:29.300 --> 01:07:29.600
+right?
+
+1968
+01:07:29.929 --> 01:07:32.149
+So I can look at the first two,
+
+1969
+01:07:32.570 --> 01:07:33.149
+the first
+
+1970
+01:07:33.370 --> 01:07:35.699
+value in each of these lists
+
+1971
+01:07:35.850 --> 01:07:36.439
+and compare them,
+
+1972
+01:07:36.489 --> 01:07:37.310
+which one's lower,
+
+1973
+01:07:37.560 --> 01:07:38.100
+3 or 4?
+
+1974
+01:07:38.209 --> 01:07:39.040
+I know 3 is lower,
+
+1975
+01:07:39.129 --> 01:07:40.469
+so I'm gonna put that in my list
+
+1976
+01:07:41.129 --> 01:07:41.530
+then.
+
+1977
+01:07:42.050 --> 01:07:43.830
+I'm comparing the next
+
+1978
+01:07:44.129 --> 01:07:45.239
+two heads of the list,
+
+1979
+01:07:45.330 --> 01:07:45.469
+right?
+
+1980
+01:07:45.570 --> 01:07:47.409
+So I'm checking 5 and 4.
+
+1981
+01:07:47.570 --> 01:07:48.419
+Which one's lower?
+
+1982
+01:07:48.810 --> 01:07:49.370
+5.
+
+1983
+01:07:50.229 --> 01:07:51.439
+So then I can say
+
+1984
+01:07:51.659 --> 01:07:53.020
+I'm checking between 5 and 8.
+
+1985
+01:07:53.100 --> 01:07:54.270
+I know 5 is lower,
+
+1986
+01:07:54.500 --> 01:07:56.060
+and then I can put 8 in.
+
+1987
+01:07:57.719 --> 01:07:58.080
+OK,
+
+1988
+01:07:58.199 --> 01:08:00.979
+and so we do the same thing on the right side.
+
+1989
+01:08:02.649 --> 01:08:03.709
+I break this up
+
+1990
+01:08:04.580 --> 01:08:05.429
+And then I sort
+
+1991
+01:08:06.090 --> 01:08:06.979
+2 and 1.
+
+1992
+01:08:08.270 --> 01:08:08.699
+I saw
+
+1993
+01:08:09.270 --> 01:08:10.250
+7 and 6.
+
+1994
+01:08:11.510 --> 01:08:12.260
+And then
+
+1995
+01:08:12.800 --> 01:08:15.260
+I compare 1 and 61 is lower,
+
+1996
+01:08:15.840 --> 01:08:17.399
+then I'm comparing 2 and 6,
+
+1997
+01:08:17.509 --> 01:08:18.259
+I know 2 is lower.
+
+1998
+01:08:19.200 --> 01:08:20.620
+And then because that
+
+1999
+01:08:20.839 --> 01:08:21.299
+left
+
+2000
+01:08:21.520 --> 01:08:22.390
+list is already empty,
+
+2001
+01:08:22.439 --> 01:08:25.830
+I know I can just put this list in since it's already sorted.
+
+2002
+01:08:27.318 --> 01:08:28.028
+OK.
+
+2003
+01:08:28.679 --> 01:08:29.698
+And then finally,
+
+2004
+01:08:29.917 --> 01:08:30.639
+we do the long,
+
+2005
+01:08:30.719 --> 01:08:31.337
+the big
+
+2006
+01:08:31.679 --> 01:08:32.538
+full list,
+
+2007
+01:08:32.837 --> 01:08:34.258
+and we are checking
+
+2008
+01:08:34.957 --> 01:08:37.957
+the heads of each of these lists that we know are sorted.
+
+2009
+01:08:38.779 --> 01:08:40.500
+So I can say 1 is lower than 3.
+
+2010
+01:08:40.620 --> 01:08:41.560
+Let's put that in.
+
+2011
+01:08:41.660 --> 01:08:43.549
+Now I'm checking 2 versus 3.
+
+2012
+01:08:44.349 --> 01:08:45.368
+Put 2 in
+
+2013
+01:08:45.948 --> 01:08:47.118
+3 versus 6,
+
+2014
+01:08:47.229 --> 01:08:47.337
+well,
+
+2015
+01:08:47.389 --> 01:08:48.188
+3 is lower,
+
+2016
+01:08:48.269 --> 01:08:49.929
+4 versus 64 is lower,
+
+2017
+01:08:50.269 --> 01:08:51.889
+5 versus 65 is lower,
+
+2018
+01:08:52.508 --> 01:08:54.328
+8 versus 66 is lower,
+
+2019
+01:08:54.667 --> 01:08:55.229
+then 7,
+
+2020
+01:08:55.309 --> 01:08:56.368
+then 8,
+
+2021
+01:08:56.788 --> 01:09:00.469
+and then we have our final sorted list with merge swords.
+
+2022
+01:09:02.189 --> 01:09:02.790
+OK.
+
+2023
+01:09:03.740 --> 01:09:05.399
+What if merge sort is already sorted?
+
+2024
+01:09:05.649 --> 01:09:06.589
+That's a great question.
+
+2025
+01:09:06.930 --> 01:09:08.350
+So that's our lower
+
+2026
+01:09:08.500 --> 01:09:08.930
+bound,
+
+2027
+01:09:08.990 --> 01:09:09.169
+right?
+
+2028
+01:09:09.290 --> 01:09:11.350
+So let's look at the runtime,
+
+2029
+01:09:11.930 --> 01:09:13.799
+but first we're gonna look at the pseudo code for this,
+
+2030
+01:09:13.810 --> 01:09:14.089
+so.
+
+2031
+01:09:15.259 --> 01:09:18.040
+Basically what I just did there was we split the list
+
+2032
+01:09:18.339 --> 01:09:20.100
+that we're working with into two halves,
+
+2033
+01:09:20.580 --> 01:09:21.839
+sorted the left half using
+
+2034
+01:09:22.100 --> 01:09:22.740
+merge sort,
+
+2035
+01:09:23.020 --> 01:09:24.279
+so that's a recursive call,
+
+2036
+01:09:24.859 --> 01:09:26.319
+sort the right half using merge sort,
+
+2037
+01:09:26.379 --> 01:09:28.160
+which is another recursive call,
+
+2038
+01:09:28.740 --> 01:09:29.479
+and then
+
+2039
+01:09:30.500 --> 01:09:33.540
+merge the two halves into a single sorted list,
+
+2040
+01:09:33.819 --> 01:09:37.279
+taking the smaller first element from either half.
+
+2041
+01:09:37.839 --> 01:09:40.479
+So if we think about the runtime of mergesort,
+
+2042
+01:09:40.680 --> 01:09:42.640
+we have 0 of n logn.
+
+2043
+01:09:42.959 --> 01:09:45.680
+So we can think about this as I need to do as many
+
+2044
+01:09:45.680 --> 01:09:50.839
+as n logn steps to find my solution when I use mergesort.
+
+2045
+01:09:51.310 --> 01:09:54.279
+And one way you can think about how n logn is calculated
+
+2046
+01:09:54.479 --> 01:09:56.529
+is when we perform merge sort
+
+2047
+01:09:57.040 --> 01:09:58.939
+we're splitting the list
+
+2048
+01:09:59.160 --> 01:10:00.399
+into two lists
+
+2049
+01:10:00.640 --> 01:10:03.439
+and we're doing that until we get lists of size 1.
+
+2050
+01:10:03.819 --> 01:10:06.040
+And so the amount of splits we have to do
+
+2051
+01:10:06.220 --> 01:10:07.259
+is log n.
+
+2052
+01:10:07.459 --> 01:10:08.879
+So if we look at this example here,
+
+2053
+01:10:09.220 --> 01:10:11.040
+we have a list of size 8,
+
+2054
+01:10:11.299 --> 01:10:13.100
+and we're performing logn,
+
+2055
+01:10:13.169 --> 01:10:14.279
+which is 3
+
+2056
+01:10:14.899 --> 01:10:15.759
+splits,
+
+2057
+01:10:16.100 --> 01:10:17.379
+and each time you do a split,
+
+2058
+01:10:17.419 --> 01:10:21.189
+you also have to do the merging back together.
+
+2059
+01:10:21.220 --> 01:10:22.109
+And so that.
+
+2060
+01:10:22.669 --> 01:10:24.870
+The amount of work is about 0 of n.
+
+2061
+01:10:25.029 --> 01:10:26.850
+You're iterating across the list
+
+2062
+01:10:27.109 --> 01:10:29.290
+to be able to put it back in the correct
+
+2063
+01:10:29.709 --> 01:10:30.180
+order.
+
+2064
+01:10:31.060 --> 01:10:31.479
+So
+
+2065
+01:10:31.740 --> 01:10:35.979
+that comes out to an upper bound of N log N
+
+2066
+01:10:36.580 --> 01:10:37.339
+of runtime.
+
+2067
+01:10:38.140 --> 01:10:40.600
+So this is a chart of our
+
+2068
+01:10:40.819 --> 01:10:42.000
+runtime for each
+
+2069
+01:10:42.540 --> 01:10:43.259
+algorithm.
+
+2070
+01:10:44.259 --> 01:10:47.759
+And that will probably come in handy if you're doing sort after this,
+
+2071
+01:10:48.189 --> 01:10:48.379
+um,
+
+2072
+01:10:48.390 --> 01:10:50.020
+and this also addresses the,
+
+2073
+01:10:50.029 --> 01:10:52.609
+the question we had in the chat what if merge sort is already sorted?
+
+2074
+01:10:53.069 --> 01:10:54.810
+That's our omega here
+
+2075
+01:10:55.680 --> 01:10:57.189
+so we can see for merge sort if
+
+2076
+01:10:57.589 --> 01:10:58.160
+the
+
+2077
+01:10:58.709 --> 01:10:59.509
+list is already sorted,
+
+2078
+01:10:59.569 --> 01:11:00.959
+the run time is still the same,
+
+2079
+01:11:01.029 --> 01:11:01.149
+right?
+
+2080
+01:11:01.189 --> 01:11:03.330
+We're still gonna do those same steps
+
+2081
+01:11:03.669 --> 01:11:04.470
+each time.
+
+2082
+01:11:05.100 --> 01:11:08.200
+And so the run time is also no different.
+
+2083
+01:11:09.600 --> 01:11:10.129
+OK.
+
+2084
+01:11:11.799 --> 01:11:12.870
+I'll pause here for any
+
+2085
+01:11:13.279 --> 01:11:15.129
+other questions about sorting
+
+2086
+01:11:15.640 --> 01:11:18.379
+run time of these 3 algorithms.
+
+2087
+01:11:28.390 --> 01:11:29.000
+OK.
+
+2088
+01:11:30.250 --> 01:11:30.529
+Alright,
+
+2089
+01:11:30.649 --> 01:11:34.169
+well thank you everyone for your participation in the chat.
+
+2090
+01:11:34.729 --> 01:11:37.470
+This was CS 50 week 3 algorithms,
+
+2091
+01:11:37.729 --> 01:11:39.589
+and I hope to see you next week.

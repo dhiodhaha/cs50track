@@ -1,0 +1,1361 @@
+WEBVTT
+
+0
+00:00:05.489 --> 00:00:08.560
+If you watched our internet primer video, I left a bit of a cliffhanger,
+
+1
+00:00:08.569 --> 00:00:11.960
+right by talking about the internet and how it's a system of protocols.
+
+2
+00:00:12.079 --> 00:00:12.250
+Well,
+
+3
+00:00:12.260 --> 00:00:13.550
+let's talk about the first of those
+
+4
+00:00:13.560 --> 00:00:15.590
+protocols that actually comprises the internet.
+
+5
+00:00:15.600 --> 00:00:18.379
+And interestingly enough, it's called the internet protocol,
+
+6
+00:00:18.389 --> 00:00:20.260
+which we usually refer to as IP.
+
+7
+00:00:20.770 --> 00:00:24.590
+So the internet, as I said is an interconnected network and internet,
+
+8
+00:00:24.600 --> 00:00:27.549
+which is really just several networks woven together
+
+9
+00:00:27.559 --> 00:00:30.290
+and agreeing somehow to communicate with one another.
+
+10
+00:00:31.260 --> 00:00:34.619
+What is this somehow I'm talking about? Well, this is the internet protocol.
+
+11
+00:00:34.630 --> 00:00:35.360
+This dictates
+
+12
+00:00:35.490 --> 00:00:36.759
+how information
+
+13
+00:00:36.889 --> 00:00:41.000
+is transmitted from point A to point B and this is sort of a condition of joining
+
+14
+00:00:41.200 --> 00:00:42.740
+the network of the internet
+
+15
+00:00:42.970 --> 00:00:45.680
+uh is agreeing to follow this protocol when information needs
+
+16
+00:00:45.689 --> 00:00:48.849
+to be moved from point A to point B.
+
+17
+00:00:49.169 --> 00:00:51.669
+So at the very end of that internet primer video,
+
+18
+00:00:51.680 --> 00:00:55.220
+I showed this image of what the internet was.
+
+19
+00:00:55.240 --> 00:00:58.720
+And on a small scale, this is actually probably pretty accurate,
+
+20
+00:00:58.729 --> 00:01:00.790
+this might be how three networks actually talk to each other.
+
+21
+00:01:01.049 --> 00:01:03.869
+But it's a bit misleading. And the reason it's a bit misleading
+
+22
+00:01:04.000 --> 00:01:05.388
+is because if I just number,
+
+23
+00:01:05.400 --> 00:01:07.650
+the networks for the sake of convenience here and we get
+
+24
+00:01:07.660 --> 00:01:09.879
+rid of everything else and just focus on the networks.
+
+25
+00:01:10.160 --> 00:01:12.550
+It's a bit misleading because it implies that all
+
+26
+00:01:12.559 --> 00:01:15.089
+three networks have a connection to one another.
+
+27
+00:01:15.099 --> 00:01:18.779
+One is connected to 22, is connected to three and three is connected to one.
+
+28
+00:01:18.879 --> 00:01:20.199
+And when I talk about a connection here,
+
+29
+00:01:20.209 --> 00:01:23.150
+I'm talking about a physical wired connection.
+
+30
+00:01:23.720 --> 00:01:25.059
+We do have wireless,
+
+31
+00:01:25.069 --> 00:01:26.779
+but it's really impractical for data to
+
+32
+00:01:26.790 --> 00:01:29.339
+be transmitted wirelessly over a large scale.
+
+33
+00:01:29.349 --> 00:01:33.739
+And so at some point, we really do rely on wired technology,
+
+34
+00:01:34.160 --> 00:01:36.209
+telephone wires, fiber optic wires,
+
+35
+00:01:36.220 --> 00:01:40.870
+various technologies that are physically connecting point A to
+
+36
+00:01:40.879 --> 00:01:42.709
+point B and on a small scale like this,
+
+37
+00:01:42.720 --> 00:01:43.919
+this might be accurate.
+
+38
+00:01:43.930 --> 00:01:46.050
+But as this, as the image gets a little bigger,
+
+39
+00:01:46.059 --> 00:01:48.910
+let's now imagine we have six different networks.
+
+40
+00:01:49.160 --> 00:01:50.010
+If that's true.
+
+41
+00:01:50.019 --> 00:01:52.269
+Now we have something like this for every
+
+42
+00:01:52.279 --> 00:01:55.010
+network to be connected to every other network.
+
+43
+00:01:55.019 --> 00:01:58.470
+And if you look, every, every network has five arrows connected to it.
+
+44
+00:01:58.480 --> 00:02:00.709
+So everything is connected to every other network.
+
+45
+00:02:01.269 --> 00:02:05.300
+But we only have six networks here and already look at how much wiring
+
+46
+00:02:05.629 --> 00:02:07.699
+we have to employ,
+
+47
+00:02:08.000 --> 00:02:12.309
+right? And the internet consists of a lot more than six networks.
+
+48
+00:02:12.559 --> 00:02:17.160
+We can't afford to wire each network to each other network,
+
+49
+00:02:17.169 --> 00:02:20.229
+especially considering some of these networks span oceans,
+
+50
+00:02:20.490 --> 00:02:20.759
+right?
+
+51
+00:02:20.770 --> 00:02:23.580
+If we're trying to connect to a network in Asia or in Europe,
+
+52
+00:02:23.639 --> 00:02:25.500
+we're gonna have to span an entire ocean
+
+53
+00:02:26.210 --> 00:02:27.259
+if we need to.
+
+54
+00:02:27.270 --> 00:02:29.360
+We, we're gonna need to use wires at some point,
+
+55
+00:02:29.369 --> 00:02:33.149
+but we wanna minimize the number of wires we actually
+
+56
+00:02:33.380 --> 00:02:33.789
+use.
+
+57
+00:02:33.800 --> 00:02:36.610
+We don't wanna send a million wires across the ocean
+
+58
+00:02:36.619 --> 00:02:40.089
+because they cost millions of dollars a piece to lie down
+
+59
+00:02:40.559 --> 00:02:41.350
+and so
+
+60
+00:02:41.929 --> 00:02:44.250
+rapidly, we wouldn't be able to afford the internet anymore.
+
+61
+00:02:44.259 --> 00:02:49.000
+So we have to have another way for every network to talk to every other network.
+
+62
+00:02:49.160 --> 00:02:50.889
+Or else we have pieces that are of the internet
+
+63
+00:02:50.899 --> 00:02:53.130
+that are disconnected from other pieces of the internet.
+
+64
+00:02:53.139 --> 00:02:54.820
+And that's, that's not what we want,
+
+65
+00:02:55.000 --> 00:02:57.509
+but we don't want to have them all wired together.
+
+66
+00:02:57.679 --> 00:03:00.130
+And this is where routers come back into play.
+
+67
+00:03:00.610 --> 00:03:02.789
+We can use routers in the following way.
+
+68
+00:03:02.800 --> 00:03:04.429
+What if instead of every network being
+
+69
+00:03:04.440 --> 00:03:06.750
+physically connected to every other network,
+
+70
+00:03:07.300 --> 00:03:09.720
+we had these intermediary pieces where the
+
+71
+00:03:09.729 --> 00:03:11.940
+networks were connected to these intermediaries,
+
+72
+00:03:12.080 --> 00:03:13.919
+which were connected to a few networks.
+
+73
+00:03:14.690 --> 00:03:18.559
+So instead of having one connect to 2345 and six,
+
+74
+00:03:18.570 --> 00:03:23.240
+maybe one connects to a router which maybe connects to one or two of those networks,
+
+75
+00:03:23.380 --> 00:03:25.130
+but also maybe connects to other routers,
+
+76
+00:03:25.139 --> 00:03:28.050
+which also will connect to those other networks.
+
+77
+00:03:28.380 --> 00:03:32.550
+And the with the router's job is it contains information called a routing table
+
+78
+00:03:33.160 --> 00:03:36.880
+that dictates. Where do I go? If I see a particular IP address?
+
+79
+00:03:37.050 --> 00:03:40.500
+If I see an IP address starting with four, I'm gonna go this way
+
+80
+00:03:40.729 --> 00:03:43.500
+if I see an IP address starting with a 12, I'm gonna go.
+
+81
+00:03:43.820 --> 00:03:44.339
+That way,
+
+82
+00:03:45.080 --> 00:03:47.449
+we don't need to be connected physically to
+
+83
+00:03:47.839 --> 00:03:51.220
+network number four or network number 12. In this example,
+
+84
+00:03:51.800 --> 00:03:54.720
+we just know generally where we wanna go. And if you think about it,
+
+85
+00:03:54.850 --> 00:03:58.110
+this is sort of similar to the concept of recursion that we talked about.
+
+86
+00:03:58.259 --> 00:04:00.050
+Uh when we were talking about it in C
+
+87
+00:04:00.350 --> 00:04:01.940
+I'm not gonna connect you
+
+88
+00:04:02.149 --> 00:04:06.270
+to exactly where you wanna go. I'm just gonna move you one step closer
+
+89
+00:04:06.410 --> 00:04:07.500
+to where you wanna go.
+
+90
+00:04:07.929 --> 00:04:11.759
+And I'll let somebody else deal with solving the rest of the problem.
+
+91
+00:04:11.770 --> 00:04:13.639
+I'll just solve this little piece of the problem
+
+92
+00:04:13.649 --> 00:04:15.419
+and defer the rest of it to somebody else.
+
+93
+00:04:15.740 --> 00:04:18.589
+So routing information is actually kind of similar to
+
+94
+00:04:18.600 --> 00:04:20.670
+recursion if that's a concept that you understand,
+
+95
+00:04:20.678 --> 00:04:22.859
+well, maybe that analogy would help.
+
+96
+00:04:23.839 --> 00:04:28.149
+So let's take a look, look at this networking example again and assume that
+
+97
+00:04:28.429 --> 00:04:31.160
+um again, we're gonna use those same six networks one through six.
+
+98
+00:04:31.170 --> 00:04:36.100
+So let's just say that every IP address on network one starts with one dot something.
+
+99
+00:04:36.109 --> 00:04:37.660
+And we'll say that there's, you know, some,
+
+100
+00:04:37.899 --> 00:04:39.940
+some other thing that deals with how to all
+
+101
+00:04:39.950 --> 00:04:41.980
+the systems that are connected to network one,
+
+102
+00:04:41.989 --> 00:04:45.720
+we just care about connecting all of those networks together in an internet.
+
+103
+00:04:45.829 --> 00:04:46.660
+So every
+
+104
+00:04:46.779 --> 00:04:50.070
+device that is connected to network one has an IP address
+
+105
+00:04:50.079 --> 00:04:53.019
+that starts with one dot And then three other numbers.
+
+106
+00:04:53.239 --> 00:04:56.579
+This is a generalization of the way things actually work. Um It's
+
+107
+00:04:56.929 --> 00:04:58.399
+quite a bit more precise than this,
+
+108
+00:04:58.410 --> 00:04:59.890
+but this should give you a general idea
+
+109
+00:04:59.899 --> 00:05:02.059
+of what the internet protocol is actually doing.
+
+110
+00:05:02.570 --> 00:05:06.279
+So this was the diagram we had before, this was the system that was not sustainable.
+
+111
+00:05:06.290 --> 00:05:07.660
+Even six, this might be OK.
+
+112
+00:05:07.670 --> 00:05:10.950
+But if we get to 10 or 20 or 50 we're gonna be lying a
+
+113
+00:05:10.959 --> 00:05:14.540
+lot of wires and 50 is still also not even the tip of the iceberg
+
+114
+00:05:14.799 --> 00:05:16.619
+uh as to the number of networks we have.
+
+115
+00:05:16.630 --> 00:05:19.869
+So this, this model is unsustainable, we can't stick with this.
+
+116
+00:05:20.420 --> 00:05:21.540
+So let's instead
+
+117
+00:05:21.779 --> 00:05:24.910
+adopt this model where we get rid of all the wires between the networks
+
+118
+00:05:25.179 --> 00:05:26.140
+and we add
+
+119
+00:05:26.470 --> 00:05:27.350
+routers.
+
+120
+00:05:27.859 --> 00:05:30.260
+So these yellow boxes represent routers and
+
+121
+00:05:30.269 --> 00:05:33.160
+their job is to move information generally closer
+
+122
+00:05:33.609 --> 00:05:34.959
+to where it's supposed to go.
+
+123
+00:05:35.869 --> 00:05:40.339
+And maybe these are the connections that these networks have and
+
+124
+00:05:40.350 --> 00:05:43.489
+maybe these are the tables that are built into the router.
+
+125
+00:05:43.500 --> 00:05:45.269
+So if we just start by looking at
+
+126
+00:05:45.609 --> 00:05:47.440
+network one, for example,
+
+127
+00:05:47.589 --> 00:05:51.640
+basically what it says is if I ever see an address that doesn't start with a one,
+
+128
+00:05:51.809 --> 00:05:55.369
+that's what the exclamation 0.1 or the bang one there, not one,
+
+129
+00:05:56.070 --> 00:05:57.450
+I'm going to pass it off to a router
+
+130
+00:05:58.380 --> 00:06:00.329
+and from there, the router can make a decision.
+
+131
+00:06:00.519 --> 00:06:03.880
+The router says, if I see a one, I'm gonna move to network number one,
+
+132
+00:06:04.390 --> 00:06:07.369
+that's the green arrow heading to the left out of that top left box.
+
+133
+00:06:07.380 --> 00:06:08.579
+If I see a two,
+
+134
+00:06:08.589 --> 00:06:12.000
+that's the arrow sort of heading to the top right towards the purple network.
+
+135
+00:06:12.010 --> 00:06:14.040
+If I see an IP address starting with a two,
+
+136
+00:06:14.739 --> 00:06:16.369
+I'm gonna go towards the two network.
+
+137
+00:06:16.700 --> 00:06:19.070
+If I see a three, a four, a five or six,
+
+138
+00:06:19.079 --> 00:06:22.920
+that's that red arrow coming out of the top left router.
+
+139
+00:06:23.769 --> 00:06:25.690
+I'm not connected to 345 or six,
+
+140
+00:06:25.700 --> 00:06:29.250
+but I know somebody who is or who's a little bit closer to there.
+
+141
+00:06:29.329 --> 00:06:33.369
+So I'm just gonna say every time I see an IP address starting with 345 or six,
+
+142
+00:06:33.380 --> 00:06:35.559
+I'm just gonna send it to that router, so I'll move it,
+
+143
+00:06:35.570 --> 00:06:37.010
+I'll move it a little closer to where it's supposed
+
+144
+00:06:37.019 --> 00:06:39.390
+to go and let that router deal with the problem.
+
+145
+00:06:39.589 --> 00:06:40.630
+And as you can see
+
+146
+00:06:41.230 --> 00:06:45.549
+if you wanted to pause here and trace, you can get to every other point in the network.
+
+147
+00:06:45.779 --> 00:06:47.420
+Um, from wherever you are,
+
+148
+00:06:47.429 --> 00:06:50.100
+all six networks can still connect to every other network,
+
+149
+00:06:50.109 --> 00:06:52.029
+but they're not physically connected anymore.
+
+150
+00:06:52.059 --> 00:06:53.730
+There are now these intermediate steps.
+
+151
+00:06:54.140 --> 00:06:56.059
+Now, of course, there's a trade off of speed, right?
+
+152
+00:06:56.070 --> 00:06:57.859
+If one was directly connected to six,
+
+153
+00:06:57.869 --> 00:07:00.250
+we wouldn't have to go through two routers along the way.
+
+154
+00:07:00.260 --> 00:07:03.269
+So we'll be able to get the connection a little bit faster,
+
+155
+00:07:03.440 --> 00:07:05.049
+but maybe that trade off is worth it, right.
+
+156
+00:07:05.059 --> 00:07:08.570
+If it's gonna be so expensive in terms of actual cost
+
+157
+00:07:09.049 --> 00:07:10.920
+dollars and cents to
+
+158
+00:07:11.049 --> 00:07:12.929
+physically wire all these networks together,
+
+159
+00:07:12.940 --> 00:07:16.880
+maybe a little bit of slow down and speed is OK, we can tolerate that.
+
+160
+00:07:18.369 --> 00:07:19.480
+So again, in that example,
+
+161
+00:07:19.489 --> 00:07:21.649
+we were just talking about on none of the networks
+
+162
+00:07:21.660 --> 00:07:23.989
+were directly directly connected to each other at all.
+
+163
+00:07:24.190 --> 00:07:25.869
+There could have been maybe in that example,
+
+164
+00:07:25.880 --> 00:07:28.119
+we could have made it so that maybe network one
+
+165
+00:07:28.130 --> 00:07:30.230
+and two were directly connected and that would be OK.
+
+166
+00:07:30.239 --> 00:07:32.730
+Some networks are physically connected to other networks,
+
+167
+00:07:32.940 --> 00:07:34.790
+but they're not all connected to each other.
+
+168
+00:07:34.799 --> 00:07:37.230
+They rely on the routers in this particular example,
+
+169
+00:07:37.239 --> 00:07:40.269
+to distribute the communication from point A to point B
+
+170
+00:07:41.049 --> 00:07:42.019
+on a small scale.
+
+171
+00:07:42.029 --> 00:07:43.100
+Like what we're talking about here,
+
+172
+00:07:43.109 --> 00:07:44.959
+this configuration actually might be more
+
+173
+00:07:44.970 --> 00:07:47.149
+inefficient than just having direct connections.
+
+174
+00:07:47.299 --> 00:07:48.850
+But on a large scale, we can,
+
+175
+00:07:49.179 --> 00:07:51.920
+we can scale the system a lot better.
+
+176
+00:07:51.970 --> 00:07:53.859
+Um It's really gonna reduce our cost
+
+177
+00:07:53.869 --> 00:07:56.850
+of network infrastructure to have intermediary routers.
+
+178
+00:07:56.989 --> 00:07:59.070
+Uh whose job it is to move traffic from the
+
+179
+00:07:59.079 --> 00:08:01.200
+center to the receiver from point A to point B
+
+180
+00:08:01.529 --> 00:08:03.910
+um as opposed to wiring everybody together.
+
+181
+00:08:05.149 --> 00:08:06.470
+So let's take a look at an example
+
+182
+00:08:06.480 --> 00:08:09.029
+of information traveling using this internet protocol.
+
+183
+00:08:09.040 --> 00:08:10.350
+Let's say that I am
+
+184
+00:08:10.670 --> 00:08:15.160
+um I am physically located at IP 1.208 0.12 0.37.
+
+185
+00:08:15.170 --> 00:08:17.149
+So I exist somewhere on the one network
+
+186
+00:08:17.359 --> 00:08:23.290
+and I want to send a message to you and you're on the five network at 5.1 88.109 0.14
+
+187
+00:08:23.579 --> 00:08:25.040
+your IP address specifically doesn't matter.
+
+188
+00:08:25.049 --> 00:08:27.899
+But in this particular example, we're talking about this generalization
+
+189
+00:08:28.059 --> 00:08:30.160
+of what the internet protocol is all about.
+
+190
+00:08:30.250 --> 00:08:32.619
+You're on the five network and I'm on the one network.
+
+191
+00:08:32.630 --> 00:08:35.239
+And as you can see, we're not connected to each other at all.
+
+192
+00:08:36.039 --> 00:08:37.159
+So I start out
+
+193
+00:08:37.359 --> 00:08:38.619
+and I wanna send you a message.
+
+194
+00:08:38.630 --> 00:08:41.419
+And so somehow I communicate that message to the router.
+
+195
+00:08:41.429 --> 00:08:43.619
+The router is the one that actually has the IP address.
+
+196
+00:08:43.979 --> 00:08:47.809
+And it's looking at where it's supposed to go. We're going to five dot something.
+
+197
+00:08:47.869 --> 00:08:49.900
+So now I'm gonna start using my or the router rather,
+
+198
+00:08:49.909 --> 00:08:53.130
+it's gonna start using its router table to pass information along.
+
+199
+00:08:53.200 --> 00:08:57.380
+It sees that five is not one. So it's because I'm gonna pass it to this guy.
+
+200
+00:08:59.280 --> 00:09:02.289
+Then this guy has to make a decision. Where am I gonna go? Well, it's not a one.
+
+201
+00:09:02.299 --> 00:09:04.599
+So I'm not gonna move to the one network and it's not a two.
+
+202
+00:09:04.609 --> 00:09:06.820
+I'm not gonna move to the two network. It starts with a five.
+
+203
+00:09:07.169 --> 00:09:11.570
+I'm not connected to five, this router says, and so I'm just gonna pass it off to,
+
+204
+00:09:11.580 --> 00:09:12.659
+I'm gonna go down this path.
+
+205
+00:09:12.770 --> 00:09:15.239
+This is where threes and fours and fives and sixes go
+
+206
+00:09:15.539 --> 00:09:16.820
+and I'll let that guy deal with it.
+
+207
+00:09:16.830 --> 00:09:18.590
+I'll get it a little closer to where it's supposed to go.
+
+208
+00:09:18.599 --> 00:09:20.380
+I know, it's supposed to go in that general direction,
+
+209
+00:09:21.159 --> 00:09:22.479
+but maybe that guy can deal with it.
+
+210
+00:09:22.929 --> 00:09:23.419
+Ok.
+
+211
+00:09:23.669 --> 00:09:26.909
+So that guy looks, he says, ok, this IP address starts with a five.
+
+212
+00:09:27.390 --> 00:09:29.809
+Well, I'm connected to three and to six.
+
+213
+00:09:29.820 --> 00:09:32.549
+So I can't get the message directly where it needs to go.
+
+214
+00:09:32.640 --> 00:09:36.799
+But that other router over there, I know if I send it fours and fives,
+
+215
+00:09:36.809 --> 00:09:38.090
+it can handle those.
+
+216
+00:09:38.200 --> 00:09:40.049
+So it passes it along down the path.
+
+217
+00:09:41.250 --> 00:09:44.229
+And then this router says, well, I'm connected to networks four and five.
+
+218
+00:09:44.239 --> 00:09:46.799
+So yes, I can help you. I'll take the IP address.
+
+219
+00:09:46.900 --> 00:09:49.150
+Also the five, I'll give it to the five network.
+
+220
+00:09:49.280 --> 00:09:53.080
+The five network will do some work on its end and give the message to you.
+
+221
+00:09:53.090 --> 00:09:56.190
+And now we've successfully transmitted a message from me
+
+222
+00:09:56.390 --> 00:10:00.150
+to you using the internet protocol again, very generalized
+
+223
+00:10:00.604 --> 00:10:02.775
+for purposes of illustration as to what's happening.
+
+224
+00:10:02.934 --> 00:10:05.724
+But that's pretty much how the internet protocol works.
+
+225
+00:10:05.734 --> 00:10:07.804
+The routers know generally where to send it
+
+226
+00:10:07.924 --> 00:10:09.905
+and will send it one step along the way,
+
+227
+00:10:09.914 --> 00:10:12.094
+getting it closer and closer to its destination
+
+228
+00:10:12.234 --> 00:10:17.195
+until one router is physically connected to the network or the address or whatever,
+
+229
+00:10:17.205 --> 00:10:17.784
+whatever
+
+230
+00:10:17.885 --> 00:10:19.825
+in question and gives it there.
+
+231
+00:10:21.349 --> 00:10:22.020
+Now
+
+232
+00:10:22.489 --> 00:10:26.750
+in general, except for really, really small small messages.
+
+233
+00:10:26.919 --> 00:10:27.609
+Um
+
+234
+00:10:27.929 --> 00:10:31.469
+If it's not gonna send it as one big chunk of data, right?
+
+235
+00:10:31.580 --> 00:10:34.789
+If I'm sending you an email, a very long email,
+
+236
+00:10:34.799 --> 00:10:38.289
+say it's not gonna take that entire email, bundle it up in,
+
+237
+00:10:38.440 --> 00:10:40.169
+you know, a ball or a package or whatever
+
+238
+00:10:40.469 --> 00:10:43.289
+and send that entire thing down the network.
+
+239
+00:10:43.299 --> 00:10:47.330
+First of all, sending information along the network is expensive. It does add up
+
+240
+00:10:47.500 --> 00:10:51.450
+and the larger the chunk, the more costly it is to move every step of the way.
+
+241
+00:10:52.460 --> 00:10:56.789
+Um And if it, if there's somehow a slowdown and there's this giant,
+
+242
+00:10:56.799 --> 00:10:57.659
+sort of like if you're driving on the
+
+243
+00:10:57.669 --> 00:10:59.799
+highway and there's this giant truck kind of blocking
+
+244
+00:10:59.809 --> 00:11:03.090
+the way and you can't get around it on either lane because it's kind of spread out.
+
+245
+00:11:03.229 --> 00:11:05.280
+It slows everybody else down behind it.
+
+246
+00:11:05.289 --> 00:11:07.849
+But small cars, if they were all small cars, they might be able to
+
+247
+00:11:08.039 --> 00:11:10.640
+move around. That analogy sort of helps a little bit.
+
+248
+00:11:11.369 --> 00:11:16.619
+So one big block in the system can really slow everybody else down.
+
+249
+00:11:17.109 --> 00:11:21.950
+And so what IP is going to do is split this data into packets. It's gonna take this big
+
+250
+00:11:22.599 --> 00:11:27.869
+email or FTP transfer or file transfer or maybe I'm making a request
+
+251
+00:11:27.880 --> 00:11:29.750
+to a web browser because I want a picture of a cat.
+
+252
+00:11:30.080 --> 00:11:33.659
+Um And it's gonna take that request or that email or that file and
+
+253
+00:11:33.669 --> 00:11:37.659
+break it up into many pieces and send all of the pieces separately.
+
+254
+00:11:37.669 --> 00:11:41.500
+So, in fact, I'm filling the highway with a lot of small cars which can all move
+
+255
+00:11:41.679 --> 00:11:45.340
+instead of a big truck that might, if something goes wrong,
+
+256
+00:11:45.640 --> 00:11:46.219
+um,
+
+257
+00:11:47.059 --> 00:11:49.130
+throttle the traffic for everybody else,
+
+258
+00:11:49.690 --> 00:11:53.559
+another side effect of this is if there's some sort of catastrophic failure
+
+259
+00:11:54.270 --> 00:11:58.590
+and a piece and, um, and, you know, something goes wrong and the packet gets dropped,
+
+260
+00:11:58.669 --> 00:12:02.450
+something is failed and the message can't be communicated the net with the router.
+
+261
+00:12:02.460 --> 00:12:05.229
+Maybe had too much stuff going in. It couldn't juggle everything.
+
+262
+00:12:05.239 --> 00:12:07.770
+And so it just literally dropped it. That's sort of the analogy. Right.
+
+263
+00:12:07.780 --> 00:12:10.859
+It has to, it's got a lot of things going on. It's passing information from
+
+264
+00:12:11.000 --> 00:12:13.909
+point A to point B. We're not the only two people on the internet.
+
+265
+00:12:13.919 --> 00:12:15.929
+So it's has to process a lot of traffic
+
+266
+00:12:16.210 --> 00:12:19.020
+and if it doesn't have enough hands and it can't figure out what it's doing,
+
+267
+00:12:19.250 --> 00:12:20.940
+it might just drop something
+
+268
+00:12:21.190 --> 00:12:24.619
+so it can do something else. It's got too much going on
+
+269
+00:12:25.150 --> 00:12:29.159
+if we had our messages one huge block and that was what got dropped.
+
+270
+00:12:29.289 --> 00:12:31.219
+Now, we have to send the message again
+
+271
+00:12:31.590 --> 00:12:34.679
+and we are now possibly causing traffic again and we were
+
+272
+00:12:34.690 --> 00:12:36.900
+on the risk of that huge block being dropped again.
+
+273
+00:12:37.500 --> 00:12:40.849
+But if the data has been broken up into packets and we drop one of those,
+
+274
+00:12:40.859 --> 00:12:44.320
+it's a lot less costly to send that packet one more
+
+275
+00:12:44.330 --> 00:12:47.159
+time as opposed to the entire thing one more time.
+
+276
+00:12:47.169 --> 00:12:48.869
+So IP is responsible for
+
+277
+00:12:49.330 --> 00:12:51.309
+getting information from point A to point B
+
+278
+00:12:51.549 --> 00:12:54.320
+and also breaking the information into small pieces
+
+279
+00:12:54.330 --> 00:12:56.559
+so that the network isn't overly taxed.
+
+280
+00:12:57.690 --> 00:13:00.570
+IP is also known as a connection, less protocol,
+
+281
+00:13:00.590 --> 00:13:03.679
+there is not necessarily a defined path from
+
+282
+00:13:03.690 --> 00:13:05.609
+the sender to the receiver or vice versa.
+
+283
+00:13:05.619 --> 00:13:06.559
+Now, in this example,
+
+284
+00:13:06.570 --> 00:13:10.049
+we've talked about there actually is only one way to get to every network.
+
+285
+00:13:10.440 --> 00:13:12.559
+Um So in this particular illustration,
+
+286
+00:13:12.570 --> 00:13:15.359
+there actually is a defined path from point A to point B.
+
+287
+00:13:15.369 --> 00:13:18.690
+But we can change that by just making one modification to the two
+
+288
+00:13:18.700 --> 00:13:22.030
+routers on the left by adding this condition to the router tables.
+
+289
+00:13:22.440 --> 00:13:24.719
+Now notice that from the top left router,
+
+290
+00:13:24.780 --> 00:13:29.150
+there are actually two ways to deal with a four or a five IP address.
+
+291
+00:13:29.159 --> 00:13:31.359
+It can go down to the lower left router
+
+292
+00:13:31.539 --> 00:13:35.419
+or it can go to the right to the right router. It has multiple options
+
+293
+00:13:35.700 --> 00:13:37.099
+and this is actually kind of a good thing, right?
+
+294
+00:13:37.109 --> 00:13:41.760
+Because it makes our network more responsive if for example, it's sort of like a gps
+
+295
+00:13:42.330 --> 00:13:44.460
+if you've ever been driving on the highway
+
+296
+00:13:44.570 --> 00:13:48.219
+and suddenly your gps warns you that traffic is ahead,
+
+297
+00:13:49.130 --> 00:13:53.330
+that's you, you want to avoid it if you can. And so you can recalculate your route
+
+298
+00:13:53.619 --> 00:13:54.270
+and
+
+299
+00:13:54.489 --> 00:13:55.890
+the, the router tables.
+
+300
+00:13:55.900 --> 00:13:58.820
+In addition to uh having information or the router network rather,
+
+301
+00:13:58.830 --> 00:14:00.809
+in addition to having information about
+
+302
+00:14:01.070 --> 00:14:02.030
+uh where
+
+303
+00:14:02.359 --> 00:14:04.739
+packets should go or where data should go.
+
+304
+00:14:04.940 --> 00:14:07.710
+There's also sort of this general pulse on the state of
+
+305
+00:14:07.719 --> 00:14:10.650
+its local network where what's gonna happen if I send it
+
+306
+00:14:10.969 --> 00:14:13.549
+uh down this path versus this path.
+
+307
+00:14:13.830 --> 00:14:14.900
+And so
+
+308
+00:14:15.000 --> 00:14:15.039
+in,
+
+309
+00:14:15.210 --> 00:14:16.320
+in light of
+
+310
+00:14:16.469 --> 00:14:18.739
+heavy traffic situations on the network,
+
+311
+00:14:19.159 --> 00:14:21.320
+maybe things will get routed a more inefficient
+
+312
+00:14:21.330 --> 00:14:23.500
+way or a more generally inefficient way.
+
+313
+00:14:23.729 --> 00:14:26.380
+Because if we go the regular way, there's gonna be a lot of traffic,
+
+314
+00:14:26.390 --> 00:14:28.020
+the highway is completely jammed.
+
+315
+00:14:28.309 --> 00:14:30.190
+So maybe what we'll do is instead take side
+
+316
+00:14:30.200 --> 00:14:32.400
+roads which ordinarily would take a lot more time,
+
+317
+00:14:32.409 --> 00:14:34.219
+but no one's really using those side roads.
+
+318
+00:14:34.229 --> 00:14:36.140
+And so we can route our packets that way.
+
+319
+00:14:37.140 --> 00:14:40.419
+So not every packet of a big chunk of data might
+
+320
+00:14:40.429 --> 00:14:42.599
+take the same path from the beginning to the end.
+
+321
+00:14:42.739 --> 00:14:44.830
+And our network becomes a lot more responsive.
+
+322
+00:14:44.840 --> 00:14:48.200
+If our router tables allow for there to be multiple options
+
+323
+00:14:48.409 --> 00:14:49.640
+um for where to go.
+
+324
+00:14:49.650 --> 00:14:49.919
+We don't,
+
+325
+00:14:49.929 --> 00:14:53.679
+we're not depending on that one truck moving out of the way we can
+
+326
+00:14:53.690 --> 00:14:55.919
+get off the highway at the next exit and take a different path.
+
+327
+00:14:55.929 --> 00:14:56.549
+And so
+
+328
+00:14:56.669 --> 00:14:59.559
+the internet protocol sort of does a little bit of that
+
+329
+00:14:59.669 --> 00:15:00.119
+too.
+
+330
+00:15:01.059 --> 00:15:03.530
+So that's the basics of the internet protocol.
+
+331
+00:15:03.650 --> 00:15:04.440
+Um
+
+332
+00:15:04.890 --> 00:15:10.400
+But there's one more issue to deal with, which is what happens if we do drop a packet,
+
+333
+00:15:10.599 --> 00:15:13.520
+how do we know we're gonna send that packet again?
+
+334
+00:15:14.280 --> 00:15:14.760
+Right.
+
+335
+00:15:15.549 --> 00:15:18.489
+Well, internet protocol doesn't guarantee delivery.
+
+336
+00:15:18.559 --> 00:15:20.570
+We're gonna be depending on another protocol to
+
+337
+00:15:20.580 --> 00:15:24.599
+deal with that called transmission control protocol TCP.
+
+338
+00:15:25.030 --> 00:15:28.440
+Um And we're gonna talk about transmission control protocol in the next video,
+
+339
+00:15:29.270 --> 00:15:31.450
+I'm Doug Lloyd. This is CS 50

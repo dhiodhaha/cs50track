@@ -1,0 +1,761 @@
+{
+ "UuIEbpQms8o": [
+  {
+   "start": 0,
+   "title": "Introduction"
+  },
+  {
+   "start": 123,
+   "title": "This is CS50"
+  },
+  {
+   "start": 144,
+   "title": "Artificial Intelligence"
+  },
+  {
+   "start": 852,
+   "title": "Computer Science"
+  },
+  {
+   "start": 936,
+   "title": "Unary"
+  },
+  {
+   "start": 966,
+   "title": "Binary"
+  },
+  {
+   "start": 1786,
+   "title": "ASCII"
+  },
+  {
+   "start": 2452,
+   "title": "Unicode"
+  },
+  {
+   "start": 2697,
+   "title": "Color"
+  },
+  {
+   "start": 3017,
+   "title": "Representation"
+  },
+  {
+   "start": 3323,
+   "title": "Algorithms"
+  },
+  {
+   "start": 3885,
+   "title": "Pseudocode"
+  },
+  {
+   "start": 4449,
+   "title": "Scratch"
+  },
+  {
+   "start": 4695,
+   "title": "Hello, World"
+  },
+  {
+   "start": 4881,
+   "title": "Hello, You"
+  },
+  {
+   "start": 5420,
+   "title": "Meow"
+  },
+  {
+   "start": 5631,
+   "title": "Abstractions"
+  },
+  {
+   "start": 5875,
+   "title": "Conditionals"
+  },
+  {
+   "start": 6005,
+   "title": "Oscartime"
+  },
+  {
+   "start": 6719,
+   "title": "Ivy’s Hardest Game"
+  }
+ ],
+ "SlqjA04_dpk": [
+  {
+   "start": 0,
+   "title": "Introduction"
+  },
+  {
+   "start": 43,
+   "title": "Source Code"
+  },
+  {
+   "start": 301,
+   "title": "Visual Studio Code for CS50"
+  },
+  {
+   "start": 540,
+   "title": "Hello, World"
+  },
+  {
+   "start": 873,
+   "title": "From Scratch to C"
+  },
+  {
+   "start": 1450,
+   "title": "Header Files"
+  },
+  {
+   "start": 1630,
+   "title": "CS50 Manual Pages"
+  },
+  {
+   "start": 1861,
+   "title": "Hello, You"
+  },
+  {
+   "start": 2643,
+   "title": "Terminal Commands"
+  },
+  {
+   "start": 3349,
+   "title": "Conditionals"
+  },
+  {
+   "start": 3775,
+   "title": "Types"
+  },
+  {
+   "start": 4142,
+   "title": "compare.c"
+  },
+  {
+   "start": 4653,
+   "title": "agree.c"
+  },
+  {
+   "start": 4944,
+   "title": "Loops"
+  },
+  {
+   "start": 5169,
+   "title": "cat.c"
+  },
+  {
+   "start": 6286,
+   "title": "– Functions"
+  },
+  {
+   "start": 6981,
+   "title": "– Correctness, Design, Style"
+  },
+  {
+   "start": 7368,
+   "title": "– Mario"
+  },
+  {
+   "start": 7973,
+   "title": "– calculator.c"
+  },
+  {
+   "start": 8312,
+   "title": "– Integer Overflow"
+  },
+  {
+   "start": 8531,
+   "title": "– Boeing"
+  },
+  {
+   "start": 8674,
+   "title": "– Pacman"
+  },
+  {
+   "start": 8754,
+   "title": "– Truncation"
+  },
+  {
+   "start": 8792,
+   "title": "– Type Casting"
+  },
+  {
+   "start": 8807,
+   "title": "– Floating-Point Imprecision"
+  }
+ ],
+ "8N5ZpIh9gzM": [],
+ "Fc9htmvVZ9U": [],
+ "f1xZf4iJDWE": [],
+ "1wsaV5nVC7g": [],
+ "WgX8e_O7eG8": [],
+ "BnJ013X02b8": [],
+ "vK_naJkrtjc": [],
+ "h5Gc1n8ZuU8": [
+  {
+   "start": 0,
+   "title": "Introduction"
+  },
+  {
+   "start": 43,
+   "title": "– Reading Levels"
+  },
+  {
+   "start": 349,
+   "title": "– Debugging"
+  },
+  {
+   "start": 1569,
+   "title": "– debug50"
+  },
+  {
+   "start": 2376,
+   "title": "– Compiling"
+  },
+  {
+   "start": 3707,
+   "title": "– Types"
+  },
+  {
+   "start": 3936,
+   "title": "– scores.c"
+  },
+  {
+   "start": 4360,
+   "title": "– Arrays"
+  },
+  {
+   "start": 5396,
+   "title": "– Strings"
+  },
+  {
+   "start": 6477,
+   "title": "– String Length"
+  },
+  {
+   "start": 7185,
+   "title": "– uppercase.c"
+  },
+  {
+   "start": 7615,
+   "title": "– Command Line Arguments"
+  },
+  {
+   "start": 8083,
+   "title": "– Exit Status"
+  },
+  {
+   "start": 8335,
+   "title": "– Cowsay"
+  },
+  {
+   "start": 8422,
+   "title": "– Cryptography"
+  }
+ ],
+ "ZlJuiMNrzBQ": [],
+ "n1glFqt3g38": [],
+ "GiFbdVGjF9I": [],
+ "---HbbANxDQ": [],
+ "tk3cl8hyfqM": [],
+ "K1yC1xshF40": [],
+ "AI6Ccfno6Pk": [],
+ "6Svu_ae5ebk": [
+  {
+   "start": 0,
+   "title": "Introduction"
+  },
+  {
+   "start": 43,
+   "title": "– Overview"
+  },
+  {
+   "start": 715,
+   "title": "– Searching"
+  },
+  {
+   "start": 867,
+   "title": "– Linear Search"
+  },
+  {
+   "start": 1060,
+   "title": "– Binary Search"
+  },
+  {
+   "start": 1621,
+   "title": "– Running Time"
+  },
+  {
+   "start": 2334,
+   "title": "– search.c"
+  },
+  {
+   "start": 3012,
+   "title": "– phonebook.c"
+  },
+  {
+   "start": 3369,
+   "title": "– Structs"
+  },
+  {
+   "start": 3733,
+   "title": "– Sorting"
+  },
+  {
+   "start": 4340,
+   "title": "– Selection Sort"
+  },
+  {
+   "start": 4812,
+   "title": "– Bubble Sort"
+  },
+  {
+   "start": 5351,
+   "title": "– Recursion"
+  },
+  {
+   "start": 5762,
+   "title": "– iteration.c"
+  },
+  {
+   "start": 5984,
+   "title": "– recursion.c"
+  },
+  {
+   "start": 6346,
+   "title": "– Merge Sort"
+  },
+  {
+   "start": 7043,
+   "title": "– Sort Race"
+  }
+ ],
+ "r383B4M1EgE": [],
+ "TwsgCHYmbbA": [],
+ "T98PIp4omUA": [],
+ "RT-hUXUWQ2I": [],
+ "3hH8kTHFw2A": [],
+ "aCPkszeKRa4": [],
+ "mz6tAJMVmfM": [],
+ "Ns7tGNbtvV4": [],
+ "db0H0U13YsA": [
+  {
+   "start": 0,
+   "title": "Introduction"
+  },
+  {
+   "start": 43,
+   "title": "– Pixel Art"
+  },
+  {
+   "start": 277,
+   "title": "– Hexadecimal"
+  },
+  {
+   "start": 704,
+   "title": "– Memory"
+  },
+  {
+   "start": 1085,
+   "title": "– Pointers"
+  },
+  {
+   "start": 1888,
+   "title": "Strings"
+  },
+  {
+   "start": 2614,
+   "title": "– Pointer Arithmetic"
+  },
+  {
+   "start": 2862,
+   "title": "– String Comparison"
+  },
+  {
+   "start": 3431,
+   "title": "– Copying and malloc"
+  },
+  {
+   "start": 4397,
+   "title": "– Valgrind"
+  },
+  {
+   "start": 4991,
+   "title": "– Garbage Values"
+  },
+  {
+   "start": 5125,
+   "title": "– Pointer Fun with Blinky"
+  },
+  {
+   "start": 5608,
+   "title": "– Swapping"
+  },
+  {
+   "start": 6494,
+   "title": "– Overflow"
+  },
+  {
+   "start": 6624,
+   "title": "– scanf"
+  },
+  {
+   "start": 7340,
+   "title": "– File I/O"
+  }
+ ],
+ "Gjf0L3mkVtY": [],
+ "u_atXp-NF6w": [],
+ "XISnO2YhnsY": [],
+ "96M4q0OnMfY": [],
+ "xa4ugmMDhiE": [],
+ "bOF-SpEAYgk": [],
+ "PmAI76OGE_E": [
+  {
+   "start": 0,
+   "title": "Introduction"
+  },
+  {
+   "start": 43,
+   "title": "– Jack Learns the Facts"
+  },
+  {
+   "start": 215,
+   "title": "– Stacks and Queues"
+  },
+  {
+   "start": 644,
+   "title": "– Dictionaries"
+  },
+  {
+   "start": 746,
+   "title": "– Resizing Arrays"
+  },
+  {
+   "start": 1636,
+   "title": "– realloc"
+  },
+  {
+   "start": 1983,
+   "title": "– Linked Lists"
+  },
+  {
+   "start": 4924,
+   "title": "– Trees"
+  },
+  {
+   "start": 5807,
+   "title": "– Hashing and Hash Tables"
+  },
+  {
+   "start": 6831,
+   "title": "– Tries"
+  }
+ ],
+ "sLrnELP1nT0": [],
+ "E4lb2gkyXr8": [],
+ "zQI3FyWm144": [],
+ "FHMPswJDCvU": [],
+ "hVsNqhEthOk": [],
+ "3TmUv1uS92s": [],
+ "nvzVHwrrub0": [],
+ "MC-iQHFdEDI": [],
+ "3uGchQbk7g8": [],
+ "Rl0ludWTLxs": [
+  {
+   "start": 0,
+   "title": "Introduction"
+  },
+  {
+   "start": 43,
+   "title": "– Python"
+  },
+  {
+   "start": 373,
+   "title": "– Speller"
+  },
+  {
+   "start": 767,
+   "title": "– Filter"
+  },
+  {
+   "start": 1011,
+   "title": "– Functions"
+  },
+  {
+   "start": 2296,
+   "title": "– Data Types"
+  },
+  {
+   "start": 2400,
+   "title": "– Calculator"
+  },
+  {
+   "start": 2930,
+   "title": "– Conditionals"
+  },
+  {
+   "start": 3131,
+   "title": "– Compare"
+  },
+  {
+   "start": 3775,
+   "title": "– Object-Oriented Programming"
+  },
+  {
+   "start": 3906,
+   "title": "– copy.py"
+  },
+  {
+   "start": 4313,
+   "title": "– Loops"
+  },
+  {
+   "start": 4368,
+   "title": "– Meow"
+  },
+  {
+   "start": 5259,
+   "title": "– Truncation"
+  },
+  {
+   "start": 5578,
+   "title": "– Exceptions"
+  },
+  {
+   "start": 6111,
+   "title": "– Mario"
+  },
+  {
+   "start": 6620,
+   "title": "– Lists"
+  },
+  {
+   "start": 6848,
+   "title": "– Dictionaries"
+  },
+  {
+   "start": 7715,
+   "title": "– sys"
+  },
+  {
+   "start": 8042,
+   "title": "– csv"
+  },
+  {
+   "start": 8524,
+   "title": "– pip"
+  }
+ ],
+ "SHbahshnkAs": [],
+ "mgBpcQRDtl0": [],
+ "oqRU2So6Z2Y": [
+  {
+   "start": 0,
+   "title": "Introduction"
+  },
+  {
+   "start": 43,
+   "title": "– Flat-file Databases"
+  },
+  {
+   "start": 1450,
+   "title": "– Relational Databases"
+  },
+  {
+   "start": 3204,
+   "title": "– Shows"
+  },
+  {
+   "start": 3585,
+   "title": "– Schema"
+  },
+  {
+   "start": 3856,
+   "title": "– Data Types and Constraints"
+  },
+  {
+   "start": 3965,
+   "title": "– Primary and Foreign Keys"
+  },
+  {
+   "start": 4018,
+   "title": "– Querying"
+  },
+  {
+   "start": 6047,
+   "title": "– Indexes"
+  },
+  {
+   "start": 6356,
+   "title": "– Python and SQL"
+  },
+  {
+   "start": 7066,
+   "title": "– SQL injection attacks"
+  },
+  {
+   "start": 7575,
+   "title": "– Race Conditions"
+  }
+ ],
+ "g1gKEPqikOE": [],
+ "AywtnUjQ6X4": [],
+ "yYst7puZXjw": [
+  {
+   "start": 0,
+   "title": "Introduction"
+  },
+  {
+   "start": 43,
+   "title": "– TCP/IP"
+  },
+  {
+   "start": 690,
+   "title": "– Ports"
+  },
+  {
+   "start": 997,
+   "title": "– DNS"
+  },
+  {
+   "start": 1222,
+   "title": "– DHCP"
+  },
+  {
+   "start": 1312,
+   "title": "– HTTP"
+  },
+  {
+   "start": 1825,
+   "title": "– Status Codes"
+  },
+  {
+   "start": 2130,
+   "title": "– Inspect"
+  },
+  {
+   "start": 2540,
+   "title": "– HTML"
+  },
+  {
+   "start": 4940,
+   "title": "– Regular Expressions"
+  },
+  {
+   "start": 5374,
+   "title": "– CSS"
+  },
+  {
+   "start": 6226,
+   "title": "– Bootstrap"
+  },
+  {
+   "start": 6663,
+   "title": "– JavaScript"
+  },
+  {
+   "start": 7720,
+   "title": "– Background"
+  },
+  {
+   "start": 7900,
+   "title": "– Blink"
+  },
+  {
+   "start": 8058,
+   "title": "– Autocomplete"
+  }
+ ],
+ "coRcSVIx5hc": [],
+ "04GztBlVo_s": [],
+ "A1g9SokDJSU": [],
+ "GP7uvI_6uas": [],
+ "4axL8Gfw2nI": [],
+ "YK78KhMf7bs": [],
+ "Ub3FKU21ubk": [],
+ "Z93IaNfavZw": [],
+ "LKWJpgvfH3U": [],
+ "am7POvSZ4GE": [
+  {
+   "start": 0,
+   "title": "Introduction"
+  },
+  {
+   "start": 43,
+   "title": "– Flask"
+  },
+  {
+   "start": 1721,
+   "title": "– Forms"
+  },
+  {
+   "start": 2011,
+   "title": "– Jinja"
+  },
+  {
+   "start": 2232,
+   "title": "– Templates"
+  },
+  {
+   "start": 2890,
+   "title": "– Request Methods"
+  },
+  {
+   "start": 3262,
+   "title": "– Frosh IMs"
+  },
+  {
+   "start": 5470,
+   "title": "– SQLite and Python"
+  },
+  {
+   "start": 7025,
+   "title": "– Cookies and Sessions"
+  },
+  {
+   "start": 7367,
+   "title": "– Shopping Cart"
+  },
+  {
+   "start": 8155,
+   "title": "– Shows"
+  },
+  {
+   "start": 8429,
+   "title": "– APIs"
+  }
+ ],
+ "xbguARtzOeI": [],
+ "X0dwkDh8kwA": [],
+ "dQcBs4S-wEQ": [],
+ "ApQTgFkf8TU": [
+  {
+   "start": 0,
+   "title": "Introduction"
+  },
+  {
+   "start": 43,
+   "title": "– Welcome"
+  },
+  {
+   "start": 197,
+   "title": "– Computational Thinking"
+  },
+  {
+   "start": 974,
+   "title": "– Recap"
+  },
+  {
+   "start": 1416,
+   "title": "– Charades"
+  },
+  {
+   "start": 1813,
+   "title": "– Looking Ahead"
+  },
+  {
+   "start": 2388,
+   "title": "– Quiz Show"
+  }
+ ]
+}

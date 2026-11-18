@@ -1,0 +1,6177 @@
+WEBVTT
+
+0
+00:00:02.019 --> 00:00:07.349
+Welcome everyone to CS 50 week 7 on SQL or SQL.
+
+1
+00:00:07.409 --> 00:00:09.489
+This week we're learning a new language and gonna
+
+2
+00:00:09.489 --> 00:00:14.159
+be diving into relational databases and working with databases
+
+3
+00:00:14.529 --> 00:00:15.880
+uh and building your own.
+
+4
+00:00:17.420 --> 00:00:18.200
+So I'm Kelly,
+
+5
+00:00:18.239 --> 00:00:19.270
+if you're new here,
+
+6
+00:00:19.440 --> 00:00:21.170
+I'm the preceptor here at Harvard,
+
+7
+00:00:21.479 --> 00:00:22.690
+and that's my email.
+
+8
+00:00:24.409 --> 00:00:26.209
+And to begin with today,
+
+9
+00:00:26.379 --> 00:00:27.989
+first want to go into
+
+10
+00:00:28.260 --> 00:00:30.250
+just some of the principles of
+
+11
+00:00:30.459 --> 00:00:31.500
+SQL
+
+12
+00:00:31.819 --> 00:00:36.459
+and what it means to create a database before we get into the syntax
+
+13
+00:00:36.779 --> 00:00:37.200
+of
+
+14
+00:00:37.340 --> 00:00:38.849
+how you actually write one.
+
+15
+00:00:40.009 --> 00:00:40.659
+And so,
+
+16
+00:00:41.139 --> 00:00:44.369
+SQL is a really good example of how
+
+17
+00:00:45.099 --> 00:00:46.970
+computer science is all about people,
+
+18
+00:00:47.139 --> 00:00:47.299
+right?
+
+19
+00:00:47.540 --> 00:00:48.090
+We're
+
+20
+00:00:48.419 --> 00:00:51.340
+going to be storing a lot of information about people,
+
+21
+00:00:51.580 --> 00:00:52.310
+places,
+
+22
+00:00:52.500 --> 00:00:53.340
+events,
+
+23
+00:00:53.700 --> 00:00:53.939
+um,
+
+24
+00:00:54.009 --> 00:00:55.650
+things like that and so.
+
+25
+00:00:56.189 --> 00:00:57.340
+How we manage this data,
+
+26
+00:00:57.400 --> 00:00:58.340
+how we store it,
+
+27
+00:00:58.669 --> 00:00:58.959
+um,
+
+28
+00:00:58.970 --> 00:01:00.490
+is a decision that
+
+29
+00:01:00.669 --> 00:01:02.619
+us computer scientists have to make,
+
+30
+00:01:02.770 --> 00:01:05.029
+and that's gonna make a big difference
+
+31
+00:01:05.309 --> 00:01:07.330
+of how people use your data,
+
+32
+00:01:07.470 --> 00:01:09.639
+how they collect and store
+
+33
+00:01:09.870 --> 00:01:10.459
+that data,
+
+34
+00:01:10.470 --> 00:01:12.190
+and so these are all things that you can
+
+35
+00:01:12.190 --> 00:01:14.419
+keep in mind while you're working with databases,
+
+36
+00:01:14.680 --> 00:01:14.860
+um,
+
+37
+00:01:14.870 --> 00:01:15.980
+and it's a very real
+
+38
+00:01:16.110 --> 00:01:16.739
+world
+
+39
+00:01:17.150 --> 00:01:17.529
+um
+
+40
+00:01:17.910 --> 00:01:18.940
+thing that you'll see
+
+41
+00:01:19.190 --> 00:01:20.069
+in everyday life,
+
+42
+00:01:20.190 --> 00:01:20.589
+so.
+
+43
+00:01:22.300 --> 00:01:24.540
+Typically with databases
+
+44
+00:01:24.860 --> 00:01:27.930
+you can think of this as like the timeline of how data
+
+45
+00:01:28.139 --> 00:01:29.470
+is used and so
+
+46
+00:01:30.110 --> 00:01:31.300
+when it comes to collection,
+
+47
+00:01:31.339 --> 00:01:32.349
+you can think about
+
+48
+00:01:32.620 --> 00:01:34.569
+who are we getting data from
+
+49
+00:01:34.980 --> 00:01:36.949
+and how are we getting that data
+
+50
+00:01:37.139 --> 00:01:39.010
+and then how are we storing it
+
+51
+00:01:39.260 --> 00:01:39.790
+in.
+
+52
+00:01:39.849 --> 00:01:41.709
+A database like in SQL
+
+53
+00:01:42.239 --> 00:01:44.510
+and then how are people going to be using it
+
+54
+00:01:44.760 --> 00:01:46.110
+and so all of these things
+
+55
+00:01:46.400 --> 00:01:50.629
+are good things to keep in mind while you're creating a database because
+
+56
+00:01:51.239 --> 00:01:54.470
+the decisions that you make are going to influence how
+
+57
+00:01:54.639 --> 00:01:57.430
+you collect and how people use your data.
+
+58
+00:01:58.750 --> 00:02:01.180
+So as maybe a prompting question,
+
+59
+00:02:01.559 --> 00:02:05.699
+I invite you to think about how can database design choices
+
+60
+00:02:05.879 --> 00:02:07.750
+actually impact the people
+
+61
+00:02:08.119 --> 00:02:09.538
+that are behind the data,
+
+62
+00:02:09.639 --> 00:02:10.770
+we are using the data
+
+63
+00:02:11.080 --> 00:02:12.429
+or who we're collecting
+
+64
+00:02:12.839 --> 00:02:13.830
+data from.
+
+65
+00:02:14.500 --> 00:02:17.149
+Feel free to put your thoughts in the chat.
+
+66
+00:02:18.160 --> 00:02:20.619
+And I'd love to hear some of your thoughts on this.
+
+67
+00:02:49.860 --> 00:02:52.110
+So initial things that come to mind,
+
+68
+00:02:52.169 --> 00:02:53.429
+at least for me,
+
+69
+00:02:53.440 --> 00:02:54.220
+I think,
+
+70
+00:02:54.710 --> 00:02:55.500
+um,
+
+71
+00:02:55.509 --> 00:02:56.259
+it's
+
+72
+00:02:56.869 --> 00:02:58.070
+with collection,
+
+73
+00:02:58.470 --> 00:03:00.220
+who are we getting data from,
+
+74
+00:03:00.309 --> 00:03:02.380
+how are we representing that data,
+
+75
+00:03:02.869 --> 00:03:03.509
+um.
+
+76
+00:03:06.960 --> 00:03:07.500
+Yeah,
+
+77
+00:03:07.639 --> 00:03:08.710
+we think about.
+
+78
+00:03:09.710 --> 00:03:10.210
+Like
+
+79
+00:03:11.259 --> 00:03:14.559
+In what ways are the ways that we're representing data,
+
+80
+00:03:14.899 --> 00:03:17.839
+how might we be excluding certain people?
+
+81
+00:03:18.449 --> 00:03:20.240
+I think choices like that
+
+82
+00:03:20.449 --> 00:03:22.289
+are very real and very
+
+83
+00:03:22.889 --> 00:03:23.960
+important to think about.
+
+84
+00:03:25.960 --> 00:03:26.309
+OK,
+
+85
+00:03:26.369 --> 00:03:26.509
+well,
+
+86
+00:03:26.550 --> 00:03:28.919
+feel free to put any thoughts if you have them,
+
+87
+00:03:29.550 --> 00:03:30.520
+but we'll move on for now.
+
+88
+00:03:30.630 --> 00:03:30.949
+So
+
+89
+00:03:31.309 --> 00:03:31.669
+some
+
+90
+00:03:31.990 --> 00:03:35.380
+quick design principles when you're actually creating a table
+
+91
+00:03:35.910 --> 00:03:37.259
+that we want to build off of
+
+92
+00:03:37.880 --> 00:03:38.110
+our,
+
+93
+00:03:38.470 --> 00:03:40.190
+the first thing we should know is each table
+
+94
+00:03:40.190 --> 00:03:42.860
+should be a collection of a single entity.
+
+95
+00:03:43.509 --> 00:03:43.940
+For example,
+
+96
+00:03:44.029 --> 00:03:49.270
+we should have a different table for each employees and employee relationships.
+
+97
+00:03:50.160 --> 00:03:51.460
+So in this example,
+
+98
+00:03:52.009 --> 00:03:52.919
+employees
+
+99
+00:03:53.210 --> 00:03:54.520
+should be a table
+
+100
+00:03:55.050 --> 00:03:55.839
+of its own,
+
+101
+00:03:55.960 --> 00:03:59.619
+and that should be separate from employee relationships,
+
+102
+00:04:00.089 --> 00:04:03.320
+which we can call or think of as a separate entity.
+
+103
+00:04:05.070 --> 00:04:06.279
+So if we imagine this,
+
+104
+00:04:06.559 --> 00:04:08.550
+maybe I have a database of
+
+105
+00:04:08.919 --> 00:04:11.339
+uh the staff who are working with me
+
+106
+00:04:11.720 --> 00:04:15.029
+and we have a table called employees that contains
+
+107
+00:04:15.600 --> 00:04:17.548
+everyone's name and their role
+
+108
+00:04:18.119 --> 00:04:19.589
+and then maybe we have a
+
+109
+00:04:20.000 --> 00:04:21.589
+employee relationships table
+
+110
+00:04:21.760 --> 00:04:25.230
+that keeps track of the relationships between employees.
+
+111
+00:04:25.600 --> 00:04:29.350
+So in this case we have Laura is a manager of
+
+112
+00:04:29.880 --> 00:04:30.470
+Alice,
+
+113
+00:04:30.600 --> 00:04:31.570
+who's an employee.
+
+114
+00:04:34.320 --> 00:04:37.470
+Another thing that we should keep in mind is that each piece of data
+
+115
+00:04:37.760 --> 00:04:40.290
+should be stored in a single location
+
+116
+00:04:40.640 --> 00:04:43.269
+and thereafter referred to via its ID,
+
+117
+00:04:43.440 --> 00:04:44.929
+AKA primary key.
+
+118
+00:04:45.730 --> 00:04:46.720
+So in this situation,
+
+119
+00:04:46.769 --> 00:04:49.670
+we should ensure that every employee has an ID
+
+120
+00:04:50.089 --> 00:04:54.000
+and then use those IDs in the employee relationships table.
+
+121
+00:04:55.059 --> 00:04:55.750
+So
+
+122
+00:04:56.519 --> 00:04:58.109
+in this previous example,
+
+123
+00:04:58.640 --> 00:04:59.079
+it's,
+
+124
+00:04:59.160 --> 00:05:02.910
+it could be possible that multiple employees have the name Alice
+
+125
+00:05:03.200 --> 00:05:04.350
+or Laura,
+
+126
+00:05:04.839 --> 00:05:05.100
+um,
+
+127
+00:05:05.109 --> 00:05:06.000
+and so
+
+128
+00:05:06.359 --> 00:05:11.540
+it's important to actually give IDs to each of these pieces of information
+
+129
+00:05:12.079 --> 00:05:12.799
+so that
+
+130
+00:05:13.160 --> 00:05:16.010
+Alice can thereafter be referred to
+
+131
+00:05:16.359 --> 00:05:18.230
+as the employee with ID one,
+
+132
+00:05:18.399 --> 00:05:19.910
+which is separate from
+
+133
+00:05:20.239 --> 00:05:22.269
+perhaps another person named Alice
+
+134
+00:05:22.720 --> 00:05:24.549
+um will have a different ID.
+
+135
+00:05:25.290 --> 00:05:26.119
+And so this
+
+136
+00:05:26.399 --> 00:05:28.390
+makes it a little bit more accurate
+
+137
+00:05:28.760 --> 00:05:32.019
+when we're trying to represent things like employee relationships.
+
+138
+00:05:32.369 --> 00:05:33.179
+So here
+
+139
+00:05:33.640 --> 00:05:37.709
+we can actually use that ID which we're also calling a primary key
+
+140
+00:05:38.279 --> 00:05:38.859
+in
+
+141
+00:05:39.519 --> 00:05:42.510
+manager ID and employee ID to represent
+
+142
+00:05:42.880 --> 00:05:44.269
+which employees
+
+143
+00:05:44.600 --> 00:05:45.510
+have this
+
+144
+00:05:45.799 --> 00:05:47.470
+relationship with each other.
+
+145
+00:05:49.799 --> 00:05:52.200
+Any initial questions on
+
+146
+00:05:52.760 --> 00:05:55.720
+creating a database and these principles
+
+147
+00:05:56.000 --> 00:05:58.690
+that we should think about when designing a database?
+
+148
+00:06:11.619 --> 00:06:11.959
+All right,
+
+149
+00:06:12.100 --> 00:06:12.470
+OK.
+
+150
+00:06:14.179 --> 00:06:14.869
+So let's get
+
+151
+00:06:15.709 --> 00:06:19.359
+started with actually designing a database of our own.
+
+152
+00:06:20.350 --> 00:06:21.290
+So let's
+
+153
+00:06:22.190 --> 00:06:23.579
+go with an example here.
+
+154
+00:06:23.869 --> 00:06:25.339
+We're going to make
+
+155
+00:06:25.549 --> 00:06:28.750
+a database called Friends.DB and
+
+156
+00:06:29.029 --> 00:06:32.540
+I'm going to hopefully keep track of some of the friends I have,
+
+157
+00:06:32.730 --> 00:06:34.470
+some information about them.
+
+158
+00:06:34.989 --> 00:06:39.250
+So I'm actually gonna head over here to CS50.dv,
+
+159
+00:06:40.000 --> 00:06:41.630
+gonna full screen my terminal,
+
+160
+00:06:42.350 --> 00:06:43.709
+and we use the command.
+
+161
+00:06:44.489 --> 00:06:46.000
+SQLite 3,
+
+162
+00:06:46.130 --> 00:06:50.279
+which is a lighter version of the language SQL that we're gonna be using,
+
+163
+00:06:50.690 --> 00:06:54.359
+and then just the name of the database that I want to create.
+
+164
+00:06:54.649 --> 00:06:55.609
+So friends.
+
+165
+00:06:56.890 --> 00:06:58.839
+BB it's gonna ask me if I want to.
+
+166
+00:06:59.209 --> 00:07:00.640
+I'm gonna say yes.
+
+167
+00:07:01.250 --> 00:07:05.399
+And now I'm inside of my database as you can tell by
+
+168
+00:07:05.589 --> 00:07:06.579
+the SQL light
+
+169
+00:07:07.250 --> 00:07:08.359
+prompt before
+
+170
+00:07:08.769 --> 00:07:09.440
+my
+
+171
+00:07:09.709 --> 00:07:10.959
+typing window,
+
+172
+00:07:11.010 --> 00:07:11.369
+so.
+
+173
+00:07:11.989 --> 00:07:14.660
+If I do schema right now,
+
+174
+00:07:14.709 --> 00:07:17.239
+if you recall schema
+
+175
+00:07:17.630 --> 00:07:18.489
+means
+
+176
+00:07:19.109 --> 00:07:21.950
+pull up the schema of my database,
+
+177
+00:07:21.989 --> 00:07:24.480
+which just means which tables are in it,
+
+178
+00:07:24.709 --> 00:07:27.070
+what are the values in those tables,
+
+179
+00:07:27.230 --> 00:07:27.549
+etc.
+
+180
+00:07:27.790 --> 00:07:29.179
+So since I just created this,
+
+181
+00:07:29.500 --> 00:07:30.790
+it doesn't return anything
+
+182
+00:07:31.160 --> 00:07:33.470
+since my database is right now empty.
+
+183
+00:07:36.549 --> 00:07:39.950
+So how do we actually add a table to my database?
+
+184
+00:07:40.640 --> 00:07:43.790
+So this is the syntax for creating a new table.
+
+185
+00:07:44.279 --> 00:07:46.519
+We have the keyword create table,
+
+186
+00:07:47.200 --> 00:07:49.989
+and then we have the table name that we want to give it.
+
+187
+00:07:50.890 --> 00:07:51.929
+Within that,
+
+188
+00:07:52.250 --> 00:07:56.559
+we also will specify the different columns that we want within our table
+
+189
+00:07:57.290 --> 00:07:59.720
+so you start with the column's name
+
+190
+00:08:00.049 --> 00:08:01.359
+and then it's type
+
+191
+00:08:01.890 --> 00:08:04.769
+and then any special specifiers you want with it.
+
+192
+00:08:04.890 --> 00:08:06.820
+So we'll show a few examples
+
+193
+00:08:07.049 --> 00:08:08.010
+of that.
+
+194
+00:08:09.850 --> 00:08:14.390
+So let's say in my case I want to use Create table to make a table
+
+195
+00:08:14.709 --> 00:08:15.929
+named Friend
+
+196
+00:08:16.299 --> 00:08:17.820
+with at least 2 columns,
+
+197
+00:08:17.899 --> 00:08:19.220
+ID and name.
+
+198
+00:08:19.989 --> 00:08:20.750
+And then
+
+199
+00:08:20.959 --> 00:08:22.989
+one additional attribute.
+
+200
+00:08:23.559 --> 00:08:24.390
+So,
+
+201
+00:08:25.079 --> 00:08:26.950
+I'm gonna go back over here.
+
+202
+00:08:28.350 --> 00:08:30.130
+And we're going to do
+
+203
+00:08:30.410 --> 00:08:30.940
+create.
+
+204
+00:08:32.150 --> 00:08:32.770
+Table
+
+205
+00:08:34.700 --> 00:08:36.510
+And I'm gonna call it friend.
+
+206
+00:08:39.270 --> 00:08:39.289
+And then
+
+207
+00:08:41.179 --> 00:08:41.849
+within that,
+
+208
+00:08:41.859 --> 00:08:42.830
+I want
+
+209
+00:08:43.260 --> 00:08:46.150
+um ID to be my first column.
+
+210
+00:08:47.510 --> 00:08:50.880
+And the type of ID is going to be an integer.
+
+211
+00:08:52.700 --> 00:08:54.630
+And then a specifier,
+
+212
+00:08:54.799 --> 00:08:56.250
+one example could be
+
+213
+00:08:56.760 --> 00:08:57.489
+not
+
+214
+00:08:58.030 --> 00:08:58.200
+know.
+
+215
+00:08:59.500 --> 00:09:01.150
+So this just means that
+
+216
+00:09:01.359 --> 00:09:03.119
+within my table friend.
+
+217
+00:09:03.969 --> 00:09:07.859
+I'm not allowing there to be any columns that don't have an ID.
+
+218
+00:09:10.469 --> 00:09:10.960
+OK.
+
+219
+00:09:11.799 --> 00:09:12.950
+Then I also want
+
+220
+00:09:13.119 --> 00:09:14.679
+to store the name.
+
+221
+00:09:16.409 --> 00:09:17.830
+So I'm gonna have that be
+
+222
+00:09:18.090 --> 00:09:18.760
+text,
+
+223
+00:09:19.250 --> 00:09:22.070
+and I'm also gonna say it cannot be null.
+
+224
+00:09:23.390 --> 00:09:24.719
+For a 3rd 1,
+
+225
+00:09:24.909 --> 00:09:28.880
+maybe I'll do the age of my friend,
+
+226
+00:09:29.390 --> 00:09:31.619
+and we can have that also be an integer.
+
+227
+00:09:32.789 --> 00:09:33.929
+And say not
+
+228
+00:09:34.059 --> 00:09:34.809
+no.
+
+229
+00:09:37.849 --> 00:09:41.700
+And then as we talked about with these primary keys,
+
+230
+00:09:42.309 --> 00:09:47.710
+I would like each of my friends to be referred to by the ID or
+
+231
+00:09:48.000 --> 00:09:51.140
+if I have friends with multiple of the same names,
+
+232
+00:09:51.200 --> 00:09:57.479
+then at least the ID is unique and so I'm going to specify here that my primary key.
+
+233
+00:09:59.239 --> 00:10:00.229
+Should be
+
+234
+00:10:00.520 --> 00:10:01.390
+ID.
+
+235
+00:10:03.830 --> 00:10:04.210
+OK,
+
+236
+00:10:04.359 --> 00:10:06.609
+and then I'll close my parenthesis.
+
+237
+00:10:07.729 --> 00:10:08.820
+Do a semicolon
+
+238
+00:10:10.020 --> 00:10:11.510
+And then hopefully now,
+
+239
+00:10:11.679 --> 00:10:12.469
+if I do,
+
+240
+00:10:12.719 --> 00:10:14.320
+dot schema again.
+
+241
+00:10:15.539 --> 00:10:18.650
+We'll see that my table now exists.
+
+242
+00:10:19.340 --> 00:10:19.700
+It's
+
+243
+00:10:20.140 --> 00:10:23.049
+called friend with the column's ID name
+
+244
+00:10:23.340 --> 00:10:24.270
+and age.
+
+245
+00:10:27.280 --> 00:10:27.789
+OK.
+
+246
+00:10:29.789 --> 00:10:30.859
+So as you can see here,
+
+247
+00:10:31.020 --> 00:10:32.500
+we have these 3
+
+248
+00:10:32.830 --> 00:10:34.099
+column names
+
+249
+00:10:34.469 --> 00:10:36.929
+and then each of these have a certain type
+
+250
+00:10:37.109 --> 00:10:37.580
+to it.
+
+251
+00:10:37.789 --> 00:10:38.429
+We have integer,
+
+252
+00:10:38.510 --> 00:10:39.150
+text integer,
+
+253
+00:10:39.190 --> 00:10:42.630
+you could also do float or a boolean.
+
+254
+00:10:43.400 --> 00:10:44.710
+And then you have
+
+255
+00:10:45.000 --> 00:10:48.229
+not null which were the specifiers in this case.
+
+256
+00:10:51.929 --> 00:10:52.289
+Next,
+
+257
+00:10:52.489 --> 00:10:55.559
+if we want to actually add some values into our table,
+
+258
+00:10:56.130 --> 00:10:58.000
+we can use insert into,
+
+259
+00:10:58.929 --> 00:10:59.479
+which
+
+260
+00:10:59.809 --> 00:11:03.039
+will insert something into the table name that you specify.
+
+261
+00:11:04.530 --> 00:11:05.349
+And then
+
+262
+00:11:06.840 --> 00:11:10.479
+You specify which columns you would like to give the values for.
+
+263
+00:11:11.309 --> 00:11:13.770
+And then the values that you want to insert.
+
+264
+00:11:16.880 --> 00:11:18.940
+So if we go back here.
+
+265
+00:11:20.250 --> 00:11:22.700
+And let's say I insert.
+
+266
+00:11:24.150 --> 00:11:25.780
+Into my table friend.
+
+267
+00:11:27.330 --> 00:11:31.450
+And I am just gonna specify name and age.
+
+268
+00:11:31.940 --> 00:11:34.049
+Something nice about a primary key
+
+269
+00:11:34.260 --> 00:11:38.190
+is that you don't actually have to specify this primary key and it can
+
+270
+00:11:38.530 --> 00:11:41.169
+count for you just like the first person will be
+
+271
+00:11:41.460 --> 00:11:42.409
+primary key,
+
+272
+00:11:42.419 --> 00:11:43.450
+ID of 1,
+
+273
+00:11:43.700 --> 00:11:45.500
+then ID of 23,
+
+274
+00:11:45.580 --> 00:11:46.460
+and so on.
+
+275
+00:11:48.150 --> 00:11:49.700
+So I'm gonna insert into.
+
+276
+00:11:50.880 --> 00:11:52.169
+The table front
+
+277
+00:11:53.010 --> 00:11:54.559
+with the column's name,
+
+278
+00:11:54.650 --> 00:11:55.340
+age.
+
+279
+00:11:56.289 --> 00:11:57.260
+Values,
+
+280
+00:11:57.530 --> 00:11:59.840
+maybe I have a friend named Alice.
+
+281
+00:12:01.190 --> 00:12:03.539
+And Alice is 25.
+
+282
+00:12:05.190 --> 00:12:05.630
+OK,
+
+283
+00:12:05.830 --> 00:12:07.369
+seems to have worked.
+
+284
+00:12:07.789 --> 00:12:09.539
+I'm going to.
+
+285
+00:12:10.659 --> 00:12:11.539
+Do this again,
+
+286
+00:12:11.770 --> 00:12:13.250
+add two more friends,
+
+287
+00:12:13.380 --> 00:12:14.159
+maybe Bob,
+
+288
+00:12:14.219 --> 00:12:16.210
+who's 32,
+
+289
+00:12:16.900 --> 00:12:17.820
+and
+
+290
+00:12:18.619 --> 00:12:19.299
+Charlie.
+
+291
+00:12:21.179 --> 00:12:22.229
+He was maybe
+
+292
+00:12:22.820 --> 00:12:23.809
+42.
+
+293
+00:12:25.440 --> 00:12:26.150
+All right.
+
+294
+00:12:27.010 --> 00:12:27.969
+So now I have
+
+295
+00:12:28.380 --> 00:12:30.489
+3 entries within my
+
+296
+00:12:31.380 --> 00:12:32.010
+table here.
+
+297
+00:12:35.010 --> 00:12:36.369
+I'll pause here for
+
+298
+00:12:36.609 --> 00:12:38.090
+I can see a few questions in the chat.
+
+299
+00:12:38.919 --> 00:12:41.390
+Can we change the name of the table without affecting anything?
+
+300
+00:12:41.799 --> 00:12:42.349
+Yes.
+
+301
+00:12:43.890 --> 00:12:44.419
+Um,
+
+302
+00:12:44.469 --> 00:12:45.820
+there is specific,
+
+303
+00:12:46.070 --> 00:12:47.780
+like a keyword that you can use,
+
+304
+00:12:48.070 --> 00:12:48.349
+um,
+
+305
+00:12:48.390 --> 00:12:49.909
+but we can follow up with that after.
+
+306
+00:12:50.989 --> 00:12:51.030
+Right
+
+307
+00:12:55.119 --> 00:12:59.849
+Is there a way to set a type of pattern for the ID such as let's start with 00 X.
+
+308
+00:13:00.099 --> 00:13:01.250
+That's a great question,
+
+309
+00:13:01.380 --> 00:13:03.010
+and I'm sure that there
+
+310
+00:13:03.539 --> 00:13:05.020
+is some way to do that.
+
+311
+00:13:05.969 --> 00:13:07.510
+I don't know off the top of my head,
+
+312
+00:13:07.719 --> 00:13:08.159
+but
+
+313
+00:13:08.520 --> 00:13:09.750
+um there are certain
+
+314
+00:13:10.080 --> 00:13:10.989
+ways that you can
+
+315
+00:13:11.200 --> 00:13:11.840
+at least.
+
+316
+00:13:12.590 --> 00:13:13.419
+Um,
+
+317
+00:13:13.710 --> 00:13:14.690
+ask for certain
+
+318
+00:13:14.869 --> 00:13:16.340
+kinds of information.
+
+319
+00:13:18.380 --> 00:13:21.099
+Can primary key be a foreign key for another table?
+
+320
+00:13:21.140 --> 00:13:21.809
+Yes,
+
+321
+00:13:22.140 --> 00:13:22.260
+yeah,
+
+322
+00:13:22.419 --> 00:13:24.419
+so a primary key for one table,
+
+323
+00:13:24.429 --> 00:13:25.690
+maybe my friend's table,
+
+324
+00:13:26.380 --> 00:13:28.080
+can act as a foreign key
+
+325
+00:13:28.380 --> 00:13:29.330
+when I'm using
+
+326
+00:13:29.580 --> 00:13:30.159
+that
+
+327
+00:13:30.700 --> 00:13:32.900
+and relating it to a different table,
+
+328
+00:13:32.940 --> 00:13:33.809
+which we'll see
+
+329
+00:13:34.460 --> 00:13:34.940
+soon.
+
+330
+00:13:36.820 --> 00:13:36.830
+OK,
+
+331
+00:13:37.390 --> 00:13:37.690
+awesome.
+
+332
+00:13:37.729 --> 00:13:38.799
+Thank you for the questions.
+
+333
+00:13:40.010 --> 00:13:44.000
+So I've inserted 3 friends now into my table.
+
+334
+00:13:45.369 --> 00:13:46.140
+I have Alice,
+
+335
+00:13:46.250 --> 00:13:47.000
+for example.
+
+336
+00:13:47.530 --> 00:13:49.130
+So we have the table friend,
+
+337
+00:13:49.330 --> 00:13:50.549
+the column specified,
+
+338
+00:13:50.570 --> 00:13:51.710
+and then the values
+
+339
+00:13:51.969 --> 00:13:53.200
+in that same order
+
+340
+00:13:53.580 --> 00:13:55.799
+to insert a new value into my table.
+
+341
+00:13:58.140 --> 00:14:01.250
+Let's say I inserted something but now I want to update it.
+
+342
+00:14:01.780 --> 00:14:02.729
+The update
+
+343
+00:14:03.000 --> 00:14:04.849
+uh statement looks a bit like this,
+
+344
+00:14:04.859 --> 00:14:06.729
+where we have the keyword update,
+
+345
+00:14:07.020 --> 00:14:08.280
+then the table name
+
+346
+00:14:09.099 --> 00:14:09.729
+set.
+
+347
+00:14:10.349 --> 00:14:14.080
+And then we specify which value we want to change.
+
+348
+00:14:14.409 --> 00:14:15.200
+We have
+
+349
+00:14:15.489 --> 00:14:17.280
+the name of the column that you want to change,
+
+350
+00:14:17.489 --> 00:14:19.450
+and then it's new value.
+
+351
+00:14:20.200 --> 00:14:20.919
+And then
+
+352
+00:14:21.289 --> 00:14:23.559
+where specifies which.
+
+353
+00:14:24.809 --> 00:14:27.559
+Which rows exactly do you want to change?
+
+354
+00:14:28.130 --> 00:14:30.280
+So if I didn't specify a wear condition,
+
+355
+00:14:30.520 --> 00:14:31.679
+it would just update
+
+356
+00:14:31.969 --> 00:14:34.309
+that column for every entry
+
+357
+00:14:34.530 --> 00:14:35.270
+in my database,
+
+358
+00:14:35.289 --> 00:14:38.119
+which usually is not very helpful unless that's
+
+359
+00:14:38.409 --> 00:14:39.000
+your
+
+360
+00:14:39.489 --> 00:14:40.150
+target,
+
+361
+00:14:40.799 --> 00:14:40.880
+uh,
+
+362
+00:14:40.890 --> 00:14:41.409
+outcome.
+
+363
+00:14:44.080 --> 00:14:48.409
+So let's suppose my friend Alice has turned 26
+
+364
+00:14:48.940 --> 00:14:49.919
+instead of 25.
+
+365
+00:14:50.299 --> 00:14:51.739
+So I want to update
+
+366
+00:14:52.099 --> 00:14:53.409
+to change her age
+
+367
+00:14:53.859 --> 00:14:55.049
+to 26.
+
+368
+00:14:57.520 --> 00:14:58.669
+So here I might do.
+
+369
+00:14:59.700 --> 00:15:00.320
+Update
+
+370
+00:15:00.460 --> 00:15:02.090
+my table named friend.
+
+371
+00:15:03.419 --> 00:15:04.859
+And then I'm going to set.
+
+372
+00:15:06.229 --> 00:15:07.010
+Age
+
+373
+00:15:07.710 --> 00:15:08.469
+equal
+
+374
+00:15:08.789 --> 00:15:11.299
+to 26 now instead of 25.
+
+375
+00:15:12.309 --> 00:15:16.760
+And then I know that I specifically only want to change it for my friend
+
+376
+00:15:17.210 --> 00:15:17.919
+Alice.
+
+377
+00:15:19.289 --> 00:15:20.869
+So I should probably do
+
+378
+00:15:21.270 --> 00:15:22.419
+where
+
+379
+00:15:22.830 --> 00:15:23.539
+name
+
+380
+00:15:24.109 --> 00:15:25.150
+equals.
+
+381
+00:15:26.099 --> 00:15:26.750
+Alice.
+
+382
+00:15:29.260 --> 00:15:30.080
+So
+
+383
+00:15:30.460 --> 00:15:31.539
+once I do that.
+
+384
+00:15:32.219 --> 00:15:32.950
+I can
+
+385
+00:15:33.059 --> 00:15:34.229
+actually do
+
+386
+00:15:34.440 --> 00:15:35.679
+a select query,
+
+387
+00:15:35.690 --> 00:15:37.520
+which we'll talk about in a second.
+
+388
+00:15:38.429 --> 00:15:41.349
+If I just do select star from Friend.
+
+389
+00:15:42.340 --> 00:15:43.630
+Then we'll see.
+
+390
+00:15:43.969 --> 00:15:45.909
+Alice is now
+
+391
+00:15:46.299 --> 00:15:49.049
+her age is set to 26 instead of 25.
+
+392
+00:15:53.330 --> 00:15:53.679
+OK,
+
+393
+00:15:53.880 --> 00:15:54.789
+so again,
+
+394
+00:15:54.960 --> 00:15:56.729
+we have update and then the table name,
+
+395
+00:15:57.239 --> 00:16:00.349
+set certain column to a new value and then
+
+396
+00:16:00.679 --> 00:16:03.229
+specify where you want that condition.
+
+397
+00:16:04.159 --> 00:16:04.570
+What
+
+398
+00:16:04.799 --> 00:16:07.669
+rows do you specifically want to change?
+
+399
+00:16:11.099 --> 00:16:11.659
+OK,
+
+400
+00:16:12.059 --> 00:16:14.929
+and of course you also want to delete things sometimes
+
+401
+00:16:15.739 --> 00:16:17.820
+again this can be a destructive command,
+
+402
+00:16:17.979 --> 00:16:21.090
+so you should be careful when you're working with databases,
+
+403
+00:16:21.619 --> 00:16:23.799
+especially these like delete commands
+
+404
+00:16:24.219 --> 00:16:24.849
+since
+
+405
+00:16:25.260 --> 00:16:25.770
+it's
+
+406
+00:16:26.059 --> 00:16:27.299
+always a good idea to back up your data,
+
+407
+00:16:27.340 --> 00:16:28.450
+but if you didn't,
+
+408
+00:16:28.700 --> 00:16:30.809
+then that would be gone forever.
+
+409
+00:16:31.380 --> 00:16:31.849
+So
+
+410
+00:16:32.179 --> 00:16:33.090
+let's say.
+
+411
+00:16:33.530 --> 00:16:36.349
+I'm no longer friends with maybe Bob.
+
+412
+00:16:36.669 --> 00:16:42.059
+Me and Bob had a falling out and so I want to delete Bob from my friend table.
+
+413
+00:16:42.789 --> 00:16:43.940
+How might I do that?
+
+414
+00:16:44.830 --> 00:16:46.900
+I'm gonna use the delete keyword here.
+
+415
+00:16:48.070 --> 00:16:48.450
+Um,
+
+416
+00:16:48.530 --> 00:16:49.729
+let me actually.
+
+417
+00:16:52.080 --> 00:16:55.510
+Clear my terminal just so that we have some more space here.
+
+418
+00:16:57.440 --> 00:16:58.010
+Oops,
+
+419
+00:16:58.159 --> 00:16:58.599
+um.
+
+420
+00:17:00.020 --> 00:17:03.479
+Friend.db.
+
+421
+00:17:03.640 --> 00:17:04.219
+OK.
+
+422
+00:17:04.598 --> 00:17:05.189
+Um,
+
+423
+00:17:05.640 --> 00:17:06.800
+so I'm gonna delete.
+
+424
+00:17:07.608 --> 00:17:07.618
+From
+
+425
+00:17:08.598 --> 00:17:09.770
+my table friend.
+
+426
+00:17:11.489 --> 00:17:12.739
+Where,
+
+427
+00:17:13.088 --> 00:17:16.598
+so this is where I specify which row do I actually want to delete.
+
+428
+00:17:16.779 --> 00:17:19.078
+I want to delete the row where
+
+429
+00:17:19.288 --> 00:17:20.838
+the name equals
+
+430
+00:17:21.208 --> 00:17:21.838
+Bob.
+
+431
+00:17:24.199 --> 00:17:25.270
+So now if I run,
+
+432
+00:17:25.400 --> 00:17:26.040
+select.
+
+433
+00:17:27.219 --> 00:17:28.020
+From friend,
+
+434
+00:17:28.180 --> 00:17:30.810
+so I'm just printing out everything in the friend table.
+
+435
+00:17:31.060 --> 00:17:34.569
+We'll see that Bob is no longer in my friend table.
+
+436
+00:17:38.339 --> 00:17:39.170
+All right.
+
+437
+00:17:41.180 --> 00:17:41.579
+So again,
+
+438
+00:17:41.660 --> 00:17:43.920
+we have the table name and then the condition.
+
+439
+00:17:45.920 --> 00:17:46.430
+OK,
+
+440
+00:17:46.640 --> 00:17:48.319
+any questions about?
+
+441
+00:17:49.359 --> 00:17:50.099
+Create,
+
+442
+00:17:50.239 --> 00:17:51.160
+insert,
+
+443
+00:17:51.800 --> 00:17:52.040
+update,
+
+444
+00:17:52.119 --> 00:17:52.829
+delete.
+
+445
+00:17:54.569 --> 00:17:55.410
+So these
+
+446
+00:17:55.689 --> 00:17:56.430
+4
+
+447
+00:17:56.939 --> 00:17:59.089
+kinds of commands are all just to
+
+448
+00:17:59.410 --> 00:18:00.810
+create your database
+
+449
+00:18:01.099 --> 00:18:03.439
+and actually insert values,
+
+450
+00:18:03.449 --> 00:18:03.819
+update,
+
+451
+00:18:03.849 --> 00:18:05.579
+and delete those values.
+
+452
+00:18:14.979 --> 00:18:17.380
+What about updating the ID after deleting like Bob?
+
+453
+00:18:17.420 --> 00:18:17.579
+Yeah,
+
+454
+00:18:17.739 --> 00:18:20.560
+so if you notice here when I deleted Bob,
+
+455
+00:18:20.979 --> 00:18:22.969
+Bob was had the ID of 2,
+
+456
+00:18:23.140 --> 00:18:25.619
+which meant his row was gone,
+
+457
+00:18:25.859 --> 00:18:26.489
+including
+
+458
+00:18:26.859 --> 00:18:29.819
+his ID and so you could just go in and say
+
+459
+00:18:30.300 --> 00:18:32.130
+now that Bob is gone I should update,
+
+460
+00:18:32.500 --> 00:18:32.829
+um,
+
+461
+00:18:33.020 --> 00:18:33.459
+say.
+
+462
+00:18:35.359 --> 00:18:36.640
+My table friend
+
+463
+00:18:37.119 --> 00:18:38.390
+and set ID.
+
+464
+00:18:39.280 --> 00:18:41.589
+Equal to 2 for my friend,
+
+465
+00:18:42.160 --> 00:18:42.719
+uh,
+
+466
+00:18:43.040 --> 00:18:44.239
+whose name is Charlie.
+
+467
+00:18:45.969 --> 00:18:47.589
+And then if I do select
+
+468
+00:18:47.880 --> 00:18:49.520
+from friend again,
+
+469
+00:18:49.560 --> 00:18:50.229
+we'll see
+
+470
+00:18:50.479 --> 00:18:52.439
+that Charlie's ID is now updated.
+
+471
+00:18:52.520 --> 00:18:55.750
+So you can do the same update command also for ID.
+
+472
+00:19:00.010 --> 00:19:00.020
+OK,
+
+473
+00:19:01.040 --> 00:19:03.349
+so now we'll move to select queries,
+
+474
+00:19:03.560 --> 00:19:07.869
+and we're gonna be using a lot of select queries in this week's problem set,
+
+475
+00:19:08.239 --> 00:19:11.229
+but this is very powerful for actually
+
+476
+00:19:11.479 --> 00:19:16.109
+receiving and filtering through all the data that you might have in your databases,
+
+477
+00:19:16.400 --> 00:19:18.589
+especially when you have a very large database.
+
+478
+00:19:18.760 --> 00:19:19.510
+It can be
+
+479
+00:19:20.069 --> 00:19:22.910
+interesting and you can get certain insights from that
+
+480
+00:19:23.199 --> 00:19:23.719
+data.
+
+481
+00:19:24.949 --> 00:19:25.229
+So,
+
+482
+00:19:25.349 --> 00:19:29.020
+the very most basic select query that I've been running,
+
+483
+00:19:29.469 --> 00:19:31.939
+we have select star from table name,
+
+484
+00:19:32.310 --> 00:19:34.040
+and this just selects
+
+485
+00:19:34.589 --> 00:19:35.060
+everything.
+
+486
+00:19:35.390 --> 00:19:36.650
+So all the columns,
+
+487
+00:19:36.829 --> 00:19:37.739
+all the rows
+
+488
+00:19:38.040 --> 00:19:38.579
+from
+
+489
+00:19:38.790 --> 00:19:40.619
+the table that I specify.
+
+490
+00:19:43.589 --> 00:19:45.540
+If I wanted to get more specific,
+
+491
+00:19:45.949 --> 00:19:50.150
+then I can also select certain columns so maybe I only want to
+
+492
+00:19:50.150 --> 00:19:53.800
+see the names or I only want to see the ages of my friends
+
+493
+00:19:54.349 --> 00:19:55.619
+from a certain table name
+
+494
+00:19:55.869 --> 00:19:59.040
+and you can also have a wear condition
+
+495
+00:19:59.349 --> 00:20:01.589
+to specify maybe I only want to see
+
+496
+00:20:01.910 --> 00:20:06.660
+people above a certain age or you want to filter it by some
+
+497
+00:20:07.030 --> 00:20:09.949
+condition you can do so with this syntax.
+
+498
+00:20:11.900 --> 00:20:12.180
+OK,
+
+499
+00:20:12.300 --> 00:20:12.859
+so with that,
+
+500
+00:20:12.900 --> 00:20:14.020
+we're going to
+
+501
+00:20:14.540 --> 00:20:16.609
+put Friends.db away
+
+502
+00:20:16.819 --> 00:20:20.729
+and actually start working on the first part of the problem set for this week,
+
+503
+00:20:20.979 --> 00:20:22.619
+which was songs.
+
+504
+00:20:24.209 --> 00:20:26.640
+So if you follow the
+
+505
+00:20:27.589 --> 00:20:29.579
+Instructions on the PSE page,
+
+506
+00:20:29.709 --> 00:20:31.900
+you can download the the distribution code.
+
+507
+00:20:32.530 --> 00:20:34.459
+And so I went ahead.
+
+508
+00:20:36.069 --> 00:20:37.020
+And
+
+509
+00:20:37.670 --> 00:20:38.719
+downloaded that on
+
+510
+00:20:38.989 --> 00:20:40.489
+my code space already,
+
+511
+00:20:41.069 --> 00:20:43.180
+so I'm gonna CD in songs.
+
+512
+00:20:45.130 --> 00:20:45.800
+And
+
+513
+00:20:46.170 --> 00:20:49.010
+but then songs I have 8 different
+
+514
+00:20:49.130 --> 00:20:49.849
+SQL
+
+515
+00:20:50.449 --> 00:20:55.439
+files where I'm gonna write 8 different select prompts to get certain
+
+516
+00:20:55.630 --> 00:20:57.060
+lists of songs,
+
+517
+00:20:57.209 --> 00:20:58.920
+certain pieces of information
+
+518
+00:20:59.209 --> 00:21:00.339
+from my database.
+
+519
+00:21:03.079 --> 00:21:07.790
+So songs.db visually is going to look a little bit like this.
+
+520
+00:21:08.280 --> 00:21:11.589
+I definitely will have a table called songs,
+
+521
+00:21:11.959 --> 00:21:14.219
+and within that we have columns,
+
+522
+00:21:14.239 --> 00:21:15.069
+ID
+
+523
+00:21:15.650 --> 00:21:16.239
+name,
+
+524
+00:21:16.760 --> 00:21:17.430
+tempo,
+
+525
+00:21:17.560 --> 00:21:18.619
+duration,
+
+526
+00:21:19.079 --> 00:21:21.719
+and we can see artistscore ID.
+
+527
+00:21:22.969 --> 00:21:23.719
+And
+
+528
+00:21:23.939 --> 00:21:26.810
+what my artistscore ID be referring to,
+
+529
+00:21:27.140 --> 00:21:28.849
+that is the ID
+
+530
+00:21:29.260 --> 00:21:31.530
+in the artist's table.
+
+531
+00:21:31.819 --> 00:21:34.699
+And so my artist's table is going to store
+
+532
+00:21:35.099 --> 00:21:38.530
+for each row a different artist with their name,
+
+533
+00:21:38.619 --> 00:21:39.609
+their birth year
+
+534
+00:21:39.859 --> 00:21:41.010
+and what label
+
+535
+00:21:41.260 --> 00:21:42.579
+they're assigned to.
+
+536
+00:21:44.800 --> 00:21:45.719
+And so,
+
+537
+00:21:46.170 --> 00:21:49.390
+artist ID is a way of relating songs
+
+538
+00:21:49.770 --> 00:21:51.880
+to particular artists.
+
+539
+00:21:52.750 --> 00:21:53.300
+Something
+
+540
+00:21:53.750 --> 00:21:55.550
+David also talked about in the lecture
+
+541
+00:21:55.869 --> 00:21:56.859
+was this
+
+542
+00:21:57.310 --> 00:22:00.910
+kind of a 1 to 11 to many or many to many relationships.
+
+543
+00:22:01.599 --> 00:22:03.979
+And so we can think in this scenario,
+
+544
+00:22:04.630 --> 00:22:05.800
+one song,
+
+545
+00:22:06.510 --> 00:22:09.180
+it seems in the way that we're storing it can only have
+
+546
+00:22:09.550 --> 00:22:12.579
+one artist ID associated with it.
+
+547
+00:22:13.510 --> 00:22:14.339
+But
+
+548
+00:22:14.689 --> 00:22:15.650
+artists,
+
+549
+00:22:16.010 --> 00:22:19.869
+there could be many songs written by the same artists,
+
+550
+00:22:20.170 --> 00:22:20.959
+and so
+
+551
+00:22:21.859 --> 00:22:24.199
+that might be what we call a one to many
+
+552
+00:22:24.839 --> 00:22:25.560
+relationship.
+
+553
+00:22:28.040 --> 00:22:28.589
+OK.
+
+554
+00:22:29.079 --> 00:22:29.589
+So,
+
+555
+00:22:29.880 --> 00:22:31.439
+here's some things that we're gonna talk about
+
+556
+00:22:31.439 --> 00:22:34.380
+when it comes to crafting select queries.
+
+557
+00:22:34.880 --> 00:22:35.030
+First,
+
+558
+00:22:35.040 --> 00:22:36.349
+we're just gonna talk about
+
+559
+00:22:36.760 --> 00:22:37.550
+selecting.
+
+560
+00:22:40.040 --> 00:22:40.560
+So,
+
+561
+00:22:40.760 --> 00:22:42.310
+let's say in this scenario,
+
+562
+00:22:42.640 --> 00:22:44.750
+I wanted to get all the names
+
+563
+00:22:45.040 --> 00:22:46.589
+from the song's table
+
+564
+00:22:47.000 --> 00:22:49.229
+where the duration of that song
+
+565
+00:22:49.520 --> 00:22:51.880
+is less than 240.
+
+566
+00:22:53.449 --> 00:22:53.760
+Um,
+
+567
+00:22:53.770 --> 00:22:55.020
+it's probably seconds,
+
+568
+00:22:55.650 --> 00:22:56.439
+and so
+
+569
+00:22:56.890 --> 00:23:00.650
+this would then print out all of the names of those songs that fit that.
+
+570
+00:23:01.469 --> 00:23:02.099
+Condition
+
+571
+00:23:04.479 --> 00:23:07.040
+So like one by one through the song's table,
+
+572
+00:23:07.410 --> 00:23:08.030
+I'm looking,
+
+573
+00:23:08.130 --> 00:23:11.209
+does this have a duration of less than 240?
+
+574
+00:23:11.250 --> 00:23:11.920
+If it does,
+
+575
+00:23:12.130 --> 00:23:13.680
+then that will be added
+
+576
+00:23:13.969 --> 00:23:15.849
+to the table that I end up printing out.
+
+577
+00:23:18.369 --> 00:23:19.880
+We also have like,
+
+578
+00:23:20.209 --> 00:23:23.560
+which is a helpful keyword for filtering by certain
+
+579
+00:23:23.890 --> 00:23:25.689
+uh titles that are
+
+580
+00:23:25.930 --> 00:23:27.239
+like a certain thing.
+
+581
+00:23:27.569 --> 00:23:28.209
+And so
+
+582
+00:23:28.369 --> 00:23:29.160
+in this case,
+
+583
+00:23:29.369 --> 00:23:32.040
+let's say I wanted to see,
+
+584
+00:23:32.369 --> 00:23:33.839
+I only want names
+
+585
+00:23:34.209 --> 00:23:34.880
+where
+
+586
+00:23:35.410 --> 00:23:38.839
+there's the word love in the song's title
+
+587
+00:23:39.569 --> 00:23:43.489
+and so there are a few ways you can do this by using this percent.
+
+588
+00:23:44.079 --> 00:23:44.640
+Um,
+
+589
+00:23:44.650 --> 00:23:46.630
+symbol and this indicates
+
+590
+00:23:46.920 --> 00:23:47.500
+wild,
+
+591
+00:23:48.040 --> 00:23:49.300
+wildcard characters
+
+592
+00:23:49.599 --> 00:23:51.699
+in the relative location of the string.
+
+593
+00:23:51.839 --> 00:23:52.750
+So what that means
+
+594
+00:23:53.000 --> 00:23:54.229
+is that it could match
+
+595
+00:23:54.760 --> 00:23:55.270
+anything
+
+596
+00:23:56.000 --> 00:23:58.079
+where that percent sign is.
+
+597
+00:23:59.010 --> 00:23:59.920
+So this first
+
+598
+00:24:00.089 --> 00:24:02.800
+row in this table we have where name
+
+599
+00:24:03.089 --> 00:24:03.599
+like
+
+600
+00:24:03.969 --> 00:24:04.989
+percent love,
+
+601
+00:24:05.130 --> 00:24:08.319
+which means that there could be anything before love,
+
+602
+00:24:08.609 --> 00:24:12.319
+but I want my string to end with the word love.
+
+603
+00:24:12.810 --> 00:24:14.020
+So this would match
+
+604
+00:24:14.369 --> 00:24:14.920
+with
+
+605
+00:24:15.449 --> 00:24:17.250
+a song called Somebody to Love,
+
+606
+00:24:17.329 --> 00:24:17.959
+for example.
+
+607
+00:24:18.829 --> 00:24:20.290
+And then the second example,
+
+608
+00:24:20.849 --> 00:24:21.640
+we have
+
+609
+00:24:22.609 --> 00:24:23.930
+love and then the percent sign,
+
+610
+00:24:24.010 --> 00:24:24.949
+so this would be
+
+611
+00:24:25.410 --> 00:24:28.719
+names that have love at the beginning of the title.
+
+612
+00:24:29.729 --> 00:24:30.160
+Finally,
+
+613
+00:24:30.199 --> 00:24:30.910
+if I did
+
+614
+00:24:31.160 --> 00:24:32.949
+a percentile on both sides,
+
+615
+00:24:33.160 --> 00:24:33.829
+that means
+
+616
+00:24:34.040 --> 00:24:36.030
+I'm gonna match with any
+
+617
+00:24:36.560 --> 00:24:39.390
+name that has love anywhere in the title.
+
+618
+00:24:41.619 --> 00:24:42.209
+So for example,
+
+619
+00:24:42.300 --> 00:24:43.770
+I love rock and roll would fit.
+
+620
+00:24:44.900 --> 00:24:49.050
+Since I can have any characters before and any characters after love.
+
+621
+00:24:50.260 --> 00:24:53.500
+So this can be helpful if you want to find specific
+
+622
+00:24:53.790 --> 00:24:56.180
+and match certain parts of strings,
+
+623
+00:24:56.670 --> 00:24:58.589
+so within names of songs,
+
+624
+00:24:58.750 --> 00:24:59.910
+maybe names of movies.
+
+625
+00:25:00.739 --> 00:25:01.180
+Etc.
+
+626
+00:25:03.810 --> 00:25:04.380
+OK,
+
+627
+00:25:04.729 --> 00:25:06.839
+so let's get some practice here.
+
+628
+00:25:07.170 --> 00:25:09.239
+So in my first
+
+629
+00:25:09.890 --> 00:25:10.890
+songs.
+
+630
+00:25:11.989 --> 00:25:13.349
+Sequel query.
+
+631
+00:25:13.359 --> 00:25:16.020
+I want to list all the names of the songs
+
+632
+00:25:16.349 --> 00:25:17.540
+in the database.
+
+633
+00:25:18.229 --> 00:25:19.209
+So pretty simple.
+
+634
+00:25:19.849 --> 00:25:20.030
+Um,
+
+635
+00:25:20.109 --> 00:25:22.880
+I'm gonna first open up one.sequel.
+
+636
+00:25:23.939 --> 00:25:26.270
+I'm gonna write my query here.
+
+637
+00:25:27.989 --> 00:25:30.699
+So I know that I want to get all the names from the songs.
+
+638
+00:25:34.109 --> 00:25:34.420
+So,
+
+639
+00:25:34.500 --> 00:25:35.819
+this is gonna be a select query.
+
+640
+00:25:37.310 --> 00:25:37.319
+What
+
+641
+00:25:38.339 --> 00:25:41.130
+column should I be selecting for?
+
+642
+00:25:50.910 --> 00:25:51.000
+Yeah,
+
+643
+00:25:51.150 --> 00:25:52.660
+so I want the names.
+
+644
+00:25:54.800 --> 00:25:57.209
+From the database songs
+
+645
+00:25:57.500 --> 00:25:59.500
+or the the table songs.
+
+646
+00:26:02.400 --> 00:26:03.640
+And that should be
+
+647
+00:26:04.209 --> 00:26:04.660
+good.
+
+648
+00:26:05.660 --> 00:26:06.910
+So if I run.
+
+649
+00:26:08.599 --> 00:26:09.359
+So oops
+
+650
+00:26:12.290 --> 00:26:12.459
+She can
+
+651
+00:26:14.869 --> 00:26:14.880
+Ah,
+
+652
+00:26:15.459 --> 00:26:15.849
+OK.
+
+653
+00:26:17.760 --> 00:26:19.579
+So I'm gonna open up my songs.
+
+654
+00:26:19.709 --> 00:26:22.069
+DB database that has already been created,
+
+655
+00:26:22.609 --> 00:26:24.839
+and let me just run this query.
+
+656
+00:26:24.880 --> 00:26:26.469
+So this is going to get the name
+
+657
+00:26:26.880 --> 00:26:29.109
+of all of the songs.
+
+658
+00:26:31.869 --> 00:26:32.859
+So you can see we have,
+
+659
+00:26:33.469 --> 00:26:38.060
+I think this is the top 100 songs in 2018 we have.
+
+660
+00:26:39.060 --> 00:26:40.119
+So it looks like that worked.
+
+661
+00:26:40.170 --> 00:26:41.489
+We printed out all the names.
+
+662
+00:26:42.579 --> 00:26:43.290
+So that's great.
+
+663
+00:26:45.219 --> 00:26:45.819
+All right.
+
+664
+00:26:46.260 --> 00:26:47.329
+Next we have ordering.
+
+665
+00:26:47.540 --> 00:26:47.939
+So
+
+666
+00:26:48.260 --> 00:26:50.599
+we can print out and select
+
+667
+00:26:50.819 --> 00:26:51.859
+a chunk
+
+668
+00:26:52.219 --> 00:26:54.250
+of entries like a
+
+669
+00:26:54.420 --> 00:26:55.500
+number of rows,
+
+670
+00:26:55.619 --> 00:26:58.689
+but perhaps we want that to be ordered in a certain way
+
+671
+00:26:59.020 --> 00:27:00.290
+by some certain.
+
+672
+00:27:01.459 --> 00:27:03.030
+A column or
+
+673
+00:27:03.810 --> 00:27:04.420
+Metric.
+
+674
+00:27:05.369 --> 00:27:06.319
+So one example
+
+675
+00:27:06.489 --> 00:27:07.199
+of this could be,
+
+676
+00:27:07.209 --> 00:27:07.719
+we have
+
+677
+00:27:07.890 --> 00:27:08.849
+select star,
+
+678
+00:27:08.890 --> 00:27:10.959
+which means just all of the columns
+
+679
+00:27:11.449 --> 00:27:12.790
+from songs
+
+680
+00:27:13.170 --> 00:27:16.130
+where the tempo is greater than 100.
+
+681
+00:27:16.900 --> 00:27:20.239
+And then we're also applying this order by keyword.
+
+682
+00:27:20.689 --> 00:27:21.829
+So order by
+
+683
+00:27:22.209 --> 00:27:24.410
+will then have a column specified.
+
+684
+00:27:24.489 --> 00:27:26.939
+So which column do you want to order this by?
+
+685
+00:27:27.290 --> 00:27:28.640
+And then you can also
+
+686
+00:27:29.089 --> 00:27:32.199
+specify if you want it to be ordered descending
+
+687
+00:27:32.410 --> 00:27:33.880
+or ascending.
+
+688
+00:27:34.410 --> 00:27:35.380
+So in this case,
+
+689
+00:27:35.729 --> 00:27:37.319
+what I'm actually doing here is
+
+690
+00:27:37.569 --> 00:27:39.199
+I'm getting all of the songs
+
+691
+00:27:39.650 --> 00:27:41.510
+from the table songs
+
+692
+00:27:41.890 --> 00:27:44.290
+where the tempo is greater than 100.
+
+693
+00:27:44.810 --> 00:27:47.920
+And it's going to give me all of those songs
+
+694
+00:27:48.260 --> 00:27:48.959
+from
+
+695
+00:27:49.609 --> 00:27:50.250
+highest
+
+696
+00:27:50.489 --> 00:27:52.369
+tempo to the lowest tempo.
+
+697
+00:27:55.479 --> 00:27:56.819
+If I didn't include
+
+698
+00:27:57.089 --> 00:27:58.800
+descending that keyword,
+
+699
+00:27:58.969 --> 00:28:01.079
+it would be ascending by default.
+
+700
+00:28:01.130 --> 00:28:03.599
+So I could also specify ASC
+
+701
+00:28:03.890 --> 00:28:04.839
+to specify
+
+702
+00:28:05.130 --> 00:28:08.650
+that I want the tempo to be ordered in ascending order,
+
+703
+00:28:08.770 --> 00:28:10.239
+so from the lowest to highest,
+
+704
+00:28:10.810 --> 00:28:12.520
+but if you don't include that keyword,
+
+705
+00:28:12.709 --> 00:28:14.599
+it does that by default,
+
+706
+00:28:14.689 --> 00:28:16.170
+so no need to include it.
+
+707
+00:28:18.790 --> 00:28:19.130
+OK,
+
+708
+00:28:19.250 --> 00:28:20.199
+so based on that,
+
+709
+00:28:20.449 --> 00:28:23.099
+let's do something pretty similar here
+
+710
+00:28:23.449 --> 00:28:27.890
+and list the names of all the songs and increasing order of tempo.
+
+711
+00:28:31.540 --> 00:28:31.920
+OK,
+
+712
+00:28:32.079 --> 00:28:33.550
+so I'm gonna open up.
+
+713
+00:28:35.040 --> 00:28:36.310
+To that sequel here.
+
+714
+00:28:37.430 --> 00:28:39.130
+And here we're gonna do
+
+715
+00:28:39.640 --> 00:28:40.520
+select the name.
+
+716
+00:28:41.680 --> 00:28:43.040
+From songs.
+
+717
+00:28:45.410 --> 00:28:48.599
+And we want this to be in increasing order by tempo.
+
+718
+00:28:48.709 --> 00:28:49.390
+So how
+
+719
+00:28:49.910 --> 00:28:51.349
+would I do that?
+
+720
+00:28:59.329 --> 00:29:01.250
+Feel free to write that last part in the chat.
+
+721
+00:29:01.359 --> 00:29:01.400
+Yeah,
+
+722
+00:29:01.520 --> 00:29:02.410
+so I have order by,
+
+723
+00:29:02.599 --> 00:29:03.030
+great.
+
+724
+00:29:03.910 --> 00:29:05.010
+And then after order by,
+
+725
+00:29:05.020 --> 00:29:06.459
+I want to specify
+
+726
+00:29:06.810 --> 00:29:09.079
+the column that I want to order
+
+727
+00:29:09.810 --> 00:29:10.329
+my
+
+728
+00:29:10.810 --> 00:29:11.599
+results by.
+
+729
+00:29:13.810 --> 00:29:15.579
+So which column
+
+730
+00:29:16.300 --> 00:29:16.660
+tempo,
+
+731
+00:29:16.780 --> 00:29:16.979
+yeah,
+
+732
+00:29:17.260 --> 00:29:17.890
+exactly.
+
+733
+00:29:18.260 --> 00:29:19.609
+So I'm gonna order this by tempo,
+
+734
+00:29:20.219 --> 00:29:23.119
+and since I want this in increasing order of tempo,
+
+735
+00:29:23.500 --> 00:29:25.849
+I could include ascending here.
+
+736
+00:29:26.219 --> 00:29:29.660
+I also don't have to since it's ascending by default.
+
+737
+00:29:30.479 --> 00:29:33.099
+So now if I run this in.
+
+738
+00:29:34.989 --> 00:29:36.260
+My database
+
+739
+00:29:36.430 --> 00:29:37.880
+we see we have.
+
+740
+00:29:39.959 --> 00:29:41.339
+My songs.
+
+741
+00:29:42.680 --> 00:29:43.560
+Same number of songs,
+
+742
+00:29:43.599 --> 00:29:45.119
+but now it's ordered by tempo.
+
+743
+00:29:45.199 --> 00:29:47.150
+If I wanted to actually see the tempo,
+
+744
+00:29:47.479 --> 00:29:50.150
+I could add name comma tempo here
+
+745
+00:29:50.319 --> 00:29:52.000
+so that I can see multiple columns.
+
+746
+00:29:53.420 --> 00:29:54.640
+And if I run that,
+
+747
+00:29:54.719 --> 00:29:55.750
+we can see here.
+
+748
+00:29:57.880 --> 00:30:00.349
+We go from the slowest or
+
+749
+00:30:00.680 --> 00:30:01.630
+lowest tempo
+
+750
+00:30:02.160 --> 00:30:03.079
+up to
+
+751
+00:30:03.800 --> 00:30:04.959
+the highest tempo.
+
+752
+00:30:08.310 --> 00:30:08.869
+OK,
+
+753
+00:30:09.099 --> 00:30:09.510
+awesome.
+
+754
+00:30:14.520 --> 00:30:15.300
+Um,
+
+755
+00:30:20.189 --> 00:30:20.349
+OK,
+
+756
+00:30:20.430 --> 00:30:21.869
+next we're gonna talk about limiting,
+
+757
+00:30:22.030 --> 00:30:25.140
+which is another thing we can do with our select queries.
+
+758
+00:30:25.349 --> 00:30:27.089
+If I only want certain
+
+759
+00:30:27.709 --> 00:30:30.189
+uh a certain number of rows to show up.
+
+760
+00:30:31.119 --> 00:30:33.660
+I can use this limit keyword
+
+761
+00:30:34.390 --> 00:30:38.660
+to say I only want the first one within this list
+
+762
+00:30:38.989 --> 00:30:40.180
+or the 1st 5
+
+763
+00:30:40.670 --> 00:30:41.949
+or however you want it so
+
+764
+00:30:42.270 --> 00:30:42.979
+this is
+
+765
+00:30:43.180 --> 00:30:47.900
+the query we saw earlier where we're getting all of the songs where the tempo
+
+766
+00:30:48.510 --> 00:30:50.150
+is greater than 100.
+
+767
+00:30:50.459 --> 00:30:52.420
+And then we're ordering it by tempo.
+
+768
+00:30:52.640 --> 00:30:53.829
+So without the limit,
+
+769
+00:30:54.040 --> 00:30:56.989
+this would just print all of the songs that have
+
+770
+00:30:57.319 --> 00:30:58.890
+tempo greater than 100,
+
+771
+00:30:59.000 --> 00:31:00.630
+but starting from
+
+772
+00:31:00.910 --> 00:31:04.270
+the slowest tempo to the highest or fastest.
+
+773
+00:31:05.260 --> 00:31:06.930
+If I did limit one,
+
+774
+00:31:07.400 --> 00:31:10.800
+then that means it would only print out that first row.
+
+775
+00:31:11.900 --> 00:31:13.310
+So the slowest
+
+776
+00:31:14.020 --> 00:31:15.780
+song that is greater,
+
+777
+00:31:16.099 --> 00:31:18.189
+that has a tempo greater than 100.
+
+778
+00:31:20.939 --> 00:31:20.949
+OK.
+
+779
+00:31:22.130 --> 00:31:23.369
+So those are a lot of keywords,
+
+780
+00:31:23.410 --> 00:31:25.199
+but we'll just review them
+
+781
+00:31:26.010 --> 00:31:26.880
+over here.
+
+782
+00:31:27.020 --> 00:31:27.680
+So we had
+
+783
+00:31:27.849 --> 00:31:28.719
+the star,
+
+784
+00:31:28.890 --> 00:31:30.489
+which selects all columns.
+
+785
+00:31:31.760 --> 00:31:32.359
+For example,
+
+786
+00:31:32.420 --> 00:31:35.469
+if we were looking at a database of courses,
+
+787
+00:31:35.800 --> 00:31:37.319
+then you could use,
+
+788
+00:31:37.329 --> 00:31:41.250
+select Stararm courses to return every column and every row.
+
+789
+00:31:43.130 --> 00:31:45.069
+Like checks of the value is
+
+790
+00:31:45.489 --> 00:31:48.000
+sort of like a provided string,
+
+791
+00:31:48.329 --> 00:31:51.250
+and you can use that percentage sign to serve as a placeholder.
+
+792
+00:31:52.130 --> 00:31:52.369
+So,
+
+793
+00:31:52.380 --> 00:31:52.819
+for example,
+
+794
+00:31:52.900 --> 00:31:53.180
+here,
+
+795
+00:31:53.300 --> 00:31:55.329
+if I wanted only the course codes
+
+796
+00:31:55.619 --> 00:31:57.609
+that started with CS
+
+797
+00:31:58.060 --> 00:32:01.449
+then I could do select code from courses where code
+
+798
+00:32:01.699 --> 00:32:02.329
+like
+
+799
+00:32:02.859 --> 00:32:03.520
+CS.
+
+800
+00:32:04.319 --> 00:32:05.310
+Percentage sign.
+
+801
+00:32:07.160 --> 00:32:10.489
+Then we can do order by and you specify the column name
+
+802
+00:32:11.199 --> 00:32:13.550
+to order by ascending or descending.
+
+803
+00:32:14.660 --> 00:32:17.020
+This also works for text,
+
+804
+00:32:17.219 --> 00:32:19.689
+so if I had select a name from people
+
+805
+00:32:19.979 --> 00:32:20.930
+order by name,
+
+806
+00:32:21.260 --> 00:32:24.500
+then this is gonna order all of these names in alphabetical order.
+
+807
+00:32:25.989 --> 00:32:26.880
+We also have a limit,
+
+808
+00:32:26.920 --> 00:32:28.680
+which limits the number of results
+
+809
+00:32:29.119 --> 00:32:31.469
+to a certain number that you specify.
+
+810
+00:32:33.479 --> 00:32:37.400
+Any questions here about any of these keywords?
+
+811
+00:32:43.829 --> 00:32:46.819
+And SQL also supports a number of other keywords,
+
+812
+00:32:46.859 --> 00:32:49.140
+but these are the ones that we're gonna,
+
+813
+00:32:49.459 --> 00:32:50.609
+we're going to focus on today.
+
+814
+00:32:54.439 --> 00:32:54.449
+All
+
+815
+00:32:54.829 --> 00:32:55.170
+right.
+
+816
+00:32:56.439 --> 00:32:56.699
+OK,
+
+817
+00:32:56.780 --> 00:32:57.650
+so this next one here,
+
+818
+00:32:57.739 --> 00:32:58.900
+we're gonna list.
+
+819
+00:32:59.930 --> 00:33:02.699
+The names of the top 5 longest songs
+
+820
+00:33:03.199 --> 00:33:05.989
+and decreasing order of length.
+
+821
+00:33:08.810 --> 00:33:10.280
+So I'm gonna open up.
+
+822
+00:33:11.900 --> 00:33:12.689
+3
+
+823
+00:33:17.390 --> 00:33:17.930
+OK,
+
+824
+00:33:18.109 --> 00:33:18.819
+so.
+
+825
+00:33:20.290 --> 00:33:20.689
+As always,
+
+826
+00:33:20.729 --> 00:33:21.479
+I'm gonna select,
+
+827
+00:33:21.650 --> 00:33:24.959
+but then what column should I be selecting for here?
+
+828
+00:33:26.579 --> 00:33:29.180
+If I want the names of the top 5 longest
+
+829
+00:33:29.459 --> 00:33:30.329
+songs.
+
+830
+00:33:38.069 --> 00:33:42.260
+So what comes after the select is the name of the column that I want to
+
+831
+00:33:42.469 --> 00:33:43.060
+end up.
+
+832
+00:33:43.979 --> 00:33:44.719
+Printing
+
+833
+00:33:53.709 --> 00:33:54.079
+Yeah,
+
+834
+00:33:54.209 --> 00:33:54.939
+so name.
+
+835
+00:33:55.939 --> 00:33:57.979
+So I want to select the name column.
+
+836
+00:33:58.939 --> 00:33:58.949
+From
+
+837
+00:34:00.050 --> 00:34:01.449
+the song's database.
+
+838
+00:34:03.800 --> 00:34:05.479
+And then here
+
+839
+00:34:06.010 --> 00:34:07.880
+we know that we want to go.
+
+840
+00:34:08.510 --> 00:34:10.909
+And descending order of length.
+
+841
+00:34:12.540 --> 00:34:14.270
+So what might that look like?
+
+842
+00:34:18.310 --> 00:34:19.770
+I'll definitely have order by,
+
+843
+00:34:20.020 --> 00:34:22.820
+but what column should I order this by?
+
+844
+00:34:23.889 --> 00:34:24.679
+And for this,
+
+845
+00:34:24.739 --> 00:34:26.938
+it might actually be helpful if I
+
+846
+00:34:27.500 --> 00:34:30.570
+do that schema here and I look at
+
+847
+00:34:31.260 --> 00:34:32.489
+my songs table.
+
+848
+00:34:35.810 --> 00:34:37.668
+So I'm looking for the length
+
+849
+00:34:37.978 --> 00:34:39.090
+of my song.
+
+850
+00:34:40.040 --> 00:34:45.860
+And I can see these are the columns that exist within my song's database or table.
+
+851
+00:34:48.668 --> 00:34:50.489
+And so it seems like duration
+
+852
+00:34:50.779 --> 00:34:51.779
+in seconds
+
+853
+00:34:52.178 --> 00:34:53.299
+will give me
+
+854
+00:34:53.739 --> 00:34:54.569
+that length.
+
+855
+00:34:56.250 --> 00:34:56.699
+Great
+
+856
+00:34:56.949 --> 00:34:59.100
+and then I do also want this to be
+
+857
+00:34:59.590 --> 00:35:00.659
+descending,
+
+858
+00:35:01.149 --> 00:35:03.300
+so I wanted to go from the longest
+
+859
+00:35:03.949 --> 00:35:04.939
+to the shortest.
+
+860
+00:35:06.830 --> 00:35:07.219
+OK.
+
+861
+00:35:08.110 --> 00:35:11.959
+And then finally I also only wanted to list the top 5
+
+862
+00:35:12.330 --> 00:35:13.080
+songs,
+
+863
+00:35:13.570 --> 00:35:14.530
+so I can limit.
+
+864
+00:35:16.060 --> 00:35:17.159
+My output to
+
+865
+00:35:17.340 --> 00:35:18.330
+just 5.
+
+866
+00:35:19.729 --> 00:35:19.929
+OK,
+
+867
+00:35:20.050 --> 00:35:21.649
+so let's see how this works.
+
+868
+00:35:23.050 --> 00:35:24.979
+I copy this into.
+
+869
+00:35:26.429 --> 00:35:26.899
+Here
+
+870
+00:35:27.110 --> 00:35:29.820
+it seems like we've got 5 songs
+
+871
+00:35:30.199 --> 00:35:30.860
+and
+
+872
+00:35:31.070 --> 00:35:35.540
+let me maybe add the duration here just to double check that these are indeed
+
+873
+00:35:36.149 --> 00:35:36.699
+the
+
+874
+00:35:37.149 --> 00:35:37.739
+long
+
+875
+00:35:38.070 --> 00:35:38.979
+songs.
+
+876
+00:35:40.340 --> 00:35:40.520
+OK,
+
+877
+00:35:40.620 --> 00:35:42.270
+so that seems pretty long.
+
+878
+00:35:42.520 --> 00:35:45.449
+If I didn't have the limit and I just.
+
+879
+00:35:47.830 --> 00:35:49.080
+Did this,
+
+880
+00:35:49.330 --> 00:35:50.570
+then we can see.
+
+881
+00:35:52.070 --> 00:35:54.629
+Seems like these are the shortest songs here.
+
+882
+00:35:57.060 --> 00:36:01.520
+And it does seem like these 5 that were printed out here are the longest 5 songs.
+
+883
+00:36:02.840 --> 00:36:02.850
+OK.
+
+884
+00:36:06.010 --> 00:36:08.810
+Any questions here about?
+
+885
+00:36:09.649 --> 00:36:10.620
+Selecting,
+
+886
+00:36:11.189 --> 00:36:11.820
+ordering,
+
+887
+00:36:11.949 --> 00:36:12.629
+limiting.
+
+888
+00:36:23.010 --> 00:36:23.919
+All right.
+
+889
+00:36:27.110 --> 00:36:29.909
+Move on to this next one for.SQL.
+
+890
+00:36:29.989 --> 00:36:33.209
+We're gonna list the names of any songs that have
+
+891
+00:36:33.750 --> 00:36:35.419
+the danceability,
+
+892
+00:36:36.030 --> 00:36:36.459
+energy,
+
+893
+00:36:36.550 --> 00:36:37.620
+and valence,
+
+894
+00:36:37.790 --> 00:36:40.629
+all greater than 0.75.
+
+895
+00:36:42.610 --> 00:36:43.820
+So if we look
+
+896
+00:36:43.989 --> 00:36:45.639
+up here with our schema,
+
+897
+00:36:45.669 --> 00:36:46.629
+we can see that.
+
+898
+00:36:48.439 --> 00:36:48.850
+We also,
+
+899
+00:36:49.000 --> 00:36:50.679
+we have some of these columns
+
+900
+00:36:50.959 --> 00:36:52.439
+called Danceability.
+
+901
+00:36:53.250 --> 00:36:54.260
+Energy
+
+902
+00:36:54.760 --> 00:36:56.689
+and valence
+
+903
+00:36:57.429 --> 00:36:59.620
+are all this type real,
+
+904
+00:37:00.419 --> 00:37:02.139
+which is just another kind of number.
+
+905
+00:37:03.449 --> 00:37:04.469
+And so,
+
+906
+00:37:04.790 --> 00:37:05.979
+let's open up
+
+907
+00:37:06.360 --> 00:37:08.760
+code 4.SQL.
+
+908
+00:37:11.149 --> 00:37:12.199
+And
+
+909
+00:37:13.520 --> 00:37:15.459
+We're gonna want to select
+
+910
+00:37:15.989 --> 00:37:17.709
+some names from songs.
+
+911
+00:37:21.679 --> 00:37:23.830
+And then how might we filter.
+
+912
+00:37:24.669 --> 00:37:25.239
+These
+
+913
+00:37:25.729 --> 00:37:28.080
+songs to only show those that have
+
+914
+00:37:28.370 --> 00:37:29.320
+a danceability,
+
+915
+00:37:29.590 --> 00:37:29.810
+energy,
+
+916
+00:37:29.850 --> 00:37:30.840
+and valence.
+
+917
+00:37:32.080 --> 00:37:34.399
+Greater than 0.75.
+
+918
+00:37:49.689 --> 00:37:50.000
+Yeah,
+
+919
+00:37:50.199 --> 00:37:52.110
+so we have this where keyword
+
+920
+00:37:52.760 --> 00:37:53.709
+where we have
+
+921
+00:37:54.360 --> 00:37:56.739
+now specifying some condition
+
+922
+00:37:56.879 --> 00:37:58.520
+that we're gonna filter by.
+
+923
+00:37:59.500 --> 00:38:03.590
+So I know that for the first thing I want the column danceability.
+
+924
+00:38:04.949 --> 00:38:07.860
+To be greater than 0.75.
+
+925
+00:38:08.750 --> 00:38:11.189
+And then I also have two more conditions here,
+
+926
+00:38:11.719 --> 00:38:14.830
+so I can use my and keyword to combine
+
+927
+00:38:15.360 --> 00:38:16.510
+these conditions.
+
+928
+00:38:16.600 --> 00:38:17.909
+So I want to look for
+
+929
+00:38:18.239 --> 00:38:20.149
+this to be true and
+
+930
+00:38:20.919 --> 00:38:21.389
+energy
+
+931
+00:38:22.360 --> 00:38:23.929
+greater than 0.5.
+
+932
+00:38:24.320 --> 00:38:25.709
+This should also be true
+
+933
+00:38:26.419 --> 00:38:27.189
+and
+
+934
+00:38:28.179 --> 00:38:30.189
+Valence should be greater
+
+935
+00:38:30.370 --> 00:38:31.449
+than 0.5.
+
+936
+00:38:34.409 --> 00:38:36.639
+What would happen here if
+
+937
+00:38:37.129 --> 00:38:39.719
+instead of Ans I change this to oars.
+
+938
+00:38:46.729 --> 00:38:48.270
+With this print out more songs,
+
+939
+00:38:48.370 --> 00:38:49.370
+less songs.
+
+940
+00:38:50.790 --> 00:38:52.120
+What would happen
+
+941
+00:38:59.300 --> 00:38:59.610
+Yeah,
+
+942
+00:38:59.729 --> 00:39:02.889
+so this would print out more songs than if I had an and condition,
+
+943
+00:39:03.250 --> 00:39:06.239
+since if only one of these conditions are true,
+
+944
+00:39:07.050 --> 00:39:09.439
+then it will add it to my,
+
+945
+00:39:09.530 --> 00:39:10.889
+the results of my select.
+
+946
+00:39:12.649 --> 00:39:12.659
+Yeah,
+
+947
+00:39:14.159 --> 00:39:15.949
+so if I change this back to and.
+
+948
+00:39:16.760 --> 00:39:18.179
+And I run it here.
+
+949
+00:39:19.110 --> 00:39:20.419
+Seems like we only have
+
+950
+00:39:20.709 --> 00:39:21.659
+5 songs
+
+951
+00:39:21.989 --> 00:39:24.780
+that fulfilled all of these conditions.
+
+952
+00:39:25.189 --> 00:39:26.020
+If I only
+
+953
+00:39:26.429 --> 00:39:27.709
+did art ors.
+
+954
+00:39:28.530 --> 00:39:30.770
+We only have to fulfill one of these conditions.
+
+955
+00:39:33.959 --> 00:39:35.209
+And it seems like
+
+956
+00:39:35.620 --> 00:39:37.570
+we have a lot more songs
+
+957
+00:39:37.820 --> 00:39:39.810
+that fulfill at least one
+
+958
+00:39:40.260 --> 00:39:41.540
+of these conditions.
+
+959
+00:39:42.419 --> 00:39:42.429
+Great.
+
+960
+00:39:45.889 --> 00:39:45.899
+All
+
+961
+00:39:46.360 --> 00:39:47.110
+right,
+
+962
+00:39:47.760 --> 00:39:47.840
+OK,
+
+963
+00:39:47.879 --> 00:39:49.270
+we're going to move on here
+
+964
+00:39:49.560 --> 00:39:50.439
+to a few more things.
+
+965
+00:39:50.560 --> 00:39:52.110
+So we have aggregating.
+
+966
+00:39:52.360 --> 00:39:53.310
+So this is when
+
+967
+00:39:53.639 --> 00:39:56.429
+I want to get a certain piece of information from
+
+968
+00:39:56.800 --> 00:39:58.689
+the output of my select,
+
+969
+00:39:58.840 --> 00:39:59.649
+not just
+
+970
+00:39:59.919 --> 00:40:01.040
+the rows.
+
+971
+00:40:01.199 --> 00:40:04.590
+And so one keyword we can use is count,
+
+972
+00:40:05.120 --> 00:40:07.689
+which rather than printing out all of my
+
+973
+00:40:08.080 --> 00:40:08.560
+entries,
+
+974
+00:40:08.639 --> 00:40:09.330
+all of my rows,
+
+975
+00:40:09.399 --> 00:40:10.850
+it's actually going to just give me
+
+976
+00:40:11.080 --> 00:40:12.600
+the count of how many
+
+977
+00:40:12.919 --> 00:40:14.439
+entries would have been printed.
+
+978
+00:40:15.129 --> 00:40:16.260
+So in this case,
+
+979
+00:40:16.489 --> 00:40:17.939
+select count
+
+980
+00:40:18.489 --> 00:40:19.840
+bracket star.
+
+981
+00:40:20.750 --> 00:40:21.860
+This means
+
+982
+00:40:22.429 --> 00:40:24.379
+for the column's star.
+
+983
+00:40:24.629 --> 00:40:26.909
+So it doesn't really matter which column I put here.
+
+984
+00:40:26.949 --> 00:40:27.850
+I could put name,
+
+985
+00:40:27.909 --> 00:40:29.550
+I could put tempo,
+
+986
+00:40:29.949 --> 00:40:30.340
+but
+
+987
+00:40:30.600 --> 00:40:33.300
+since it doesn't matter what goes into count,
+
+988
+00:40:33.540 --> 00:40:36.020
+it's best practice to use the star here.
+
+989
+00:40:36.790 --> 00:40:37.590
+So we count.
+
+990
+00:40:38.520 --> 00:40:39.639
+The number of
+
+991
+00:40:40.729 --> 00:40:45.540
+Ros that pop out from songs where the tempo is greater than 100.
+
+992
+00:40:45.860 --> 00:40:49.600
+So this would give me the number of songs that have a tempo greater than 100.
+
+993
+00:40:51.800 --> 00:40:52.739
+We also have average,
+
+994
+00:40:52.810 --> 00:40:54.360
+which is another keyword here,
+
+995
+00:40:54.629 --> 00:40:57.120
+where if you pass in a column,
+
+996
+00:40:57.729 --> 00:40:58.760
+hopefully a number,
+
+997
+00:40:59.030 --> 00:41:00.199
+so in this case tempo,
+
+998
+00:41:00.649 --> 00:41:03.120
+it will give me the average
+
+999
+00:41:03.570 --> 00:41:05.320
+value of
+
+1000
+00:41:05.600 --> 00:41:07.209
+the rows that would have been printed.
+
+1001
+00:41:08.000 --> 00:41:09.429
+So I could also
+
+1002
+00:41:09.719 --> 00:41:10.350
+add
+
+1003
+00:41:10.510 --> 00:41:11.629
+a wear condition here,
+
+1004
+00:41:11.679 --> 00:41:13.310
+maybe I only want the tempo
+
+1005
+00:41:13.719 --> 00:41:15.909
+of songs by a certain artist,
+
+1006
+00:41:16.280 --> 00:41:17.909
+I can do that as well,
+
+1007
+00:41:18.360 --> 00:41:19.239
+using average.
+
+1008
+00:41:21.620 --> 00:41:23.840
+A few more of these keywords here we have
+
+1009
+00:41:24.139 --> 00:41:26.439
+um a and count which we just talked about.
+
+1010
+00:41:27.090 --> 00:41:28.360
+We also have distinct
+
+1011
+00:41:28.729 --> 00:41:29.239
+which
+
+1012
+00:41:29.850 --> 00:41:31.879
+if I pass in say name,
+
+1013
+00:41:32.449 --> 00:41:35.729
+it will only return distinct results so it
+
+1014
+00:41:35.729 --> 00:41:38.800
+won't return any duplicates if there are names
+
+1015
+00:41:39.209 --> 00:41:40.919
+of songs that are the same.
+
+1016
+00:41:42.120 --> 00:41:42.870
+We also have
+
+1017
+00:41:43.050 --> 00:41:43.929
+Insect.
+
+1018
+00:41:44.750 --> 00:41:46.860
+Which given two queries,
+
+1019
+00:41:47.070 --> 00:41:51.260
+will only return results that are common to both queries.
+
+1020
+00:41:54.899 --> 00:41:55.439
+OK.
+
+1021
+00:41:58.270 --> 00:41:59.929
+So using these new keywords,
+
+1022
+00:42:00.050 --> 00:42:03.929
+let's find the average energy of all of the songs.
+
+1023
+00:42:06.649 --> 00:42:07.000
+OK,
+
+1024
+00:42:07.129 --> 00:42:09.370
+so I'm gonna open up now 5.
+
+1025
+00:42:12.909 --> 00:42:14.929
+And we want to get the average energy.
+
+1026
+00:42:16.889 --> 00:42:19.340
+So what would I put here after the select?
+
+1027
+00:42:23.860 --> 00:42:24.340
+Mhm,
+
+1028
+00:42:24.459 --> 00:42:24.750
+yes,
+
+1029
+00:42:24.820 --> 00:42:25.810
+average
+
+1030
+00:42:26.540 --> 00:42:26.860
+here,
+
+1031
+00:42:26.979 --> 00:42:27.689
+and then
+
+1032
+00:42:27.899 --> 00:42:29.689
+the column that we're specifying
+
+1033
+00:42:29.979 --> 00:42:30.610
+is
+
+1034
+00:42:31.580 --> 00:42:31.860
+energy,
+
+1035
+00:42:32.020 --> 00:42:34.649
+since that is the column that I want the average of.
+
+1036
+00:42:36.340 --> 00:42:38.459
+From my table songs.
+
+1037
+00:42:39.399 --> 00:42:42.560
+And I'm not gonna add any conditions here.
+
+1038
+00:42:42.639 --> 00:42:43.520
+I just want the
+
+1039
+00:42:43.719 --> 00:42:45.629
+average of all the songs.
+
+1040
+00:42:48.429 --> 00:42:49.100
+OK.
+
+1041
+00:42:50.689 --> 00:42:53.010
+So now we can see it gives me
+
+1042
+00:42:53.270 --> 00:42:53.939
+a table
+
+1043
+00:42:54.070 --> 00:42:56.780
+that specifies the average
+
+1044
+00:42:57.110 --> 00:43:01.790
+of the energy column and the average is 0.65906.
+
+1045
+00:43:03.879 --> 00:43:04.370
+Cool.
+
+1046
+00:43:07.060 --> 00:43:07.699
+OK.
+
+1047
+00:43:09.280 --> 00:43:11.060
+Pause here any questions about
+
+1048
+00:43:12.219 --> 00:43:13.320
+Aggregating
+
+1049
+00:43:13.449 --> 00:43:14.959
+and these keywords.
+
+1050
+00:43:31.949 --> 00:43:32.550
+All right.
+
+1051
+00:43:34.790 --> 00:43:35.050
+OK,
+
+1052
+00:43:35.199 --> 00:43:36.510
+so now we'll move on.
+
+1053
+00:43:36.760 --> 00:43:36.959
+Oh,
+
+1054
+00:43:37.080 --> 00:43:38.360
+can we do this?
+
+1055
+00:43:40.590 --> 00:43:40.949
+on this.
+
+1056
+00:43:44.290 --> 00:43:45.250
+Um,
+
+1057
+00:43:49.520 --> 00:43:49.770
+OK,
+
+1058
+00:43:49.780 --> 00:43:51.330
+I'm not sure what that question means,
+
+1059
+00:43:51.340 --> 00:43:52.010
+but
+
+1060
+00:43:52.500 --> 00:43:55.530
+I'll come back to it at the end here.
+
+1061
+00:43:55.939 --> 00:43:56.340
+OK.
+
+1062
+00:43:58.689 --> 00:44:01.489
+Taking the exercises with that count changes the quantity.
+
+1063
+00:44:02.610 --> 00:44:02.620
+Of
+
+1064
+00:44:03.199 --> 00:44:04.189
+the results.
+
+1065
+00:44:06.300 --> 00:44:07.129
+Uh,
+
+1066
+00:44:07.860 --> 00:44:08.540
+so,
+
+1067
+00:44:08.929 --> 00:44:10.290
+I'm not sure if this is what you're getting at,
+
+1068
+00:44:10.320 --> 00:44:11.860
+but if I did count here.
+
+1069
+00:44:16.810 --> 00:44:18.879
+We can see that oops.
+
+1070
+00:44:22.489 --> 00:44:23.719
+Rather than getting
+
+1071
+00:44:23.929 --> 00:44:28.199
+say 100 songs like written out in 100 rows,
+
+1072
+00:44:28.330 --> 00:44:29.600
+I just get one row
+
+1073
+00:44:30.489 --> 00:44:31.959
+with that number
+
+1074
+00:44:32.649 --> 00:44:33.129
+count.
+
+1075
+00:44:34.770 --> 00:44:39.280
+So using these aggregation keywords will change the number of
+
+1076
+00:44:39.610 --> 00:44:40.959
+results that are given to us.
+
+1077
+00:44:44.090 --> 00:44:44.649
+Yeah.
+
+1078
+00:44:46.340 --> 00:44:46.750
+OK.
+
+1079
+00:44:49.800 --> 00:44:50.020
+OK,
+
+1080
+00:44:50.139 --> 00:44:51.719
+let's move on to
+
+1081
+00:44:52.300 --> 00:44:54.580
+how might we reference data across tables,
+
+1082
+00:44:54.620 --> 00:44:54.790
+right?
+
+1083
+00:44:54.899 --> 00:44:56.209
+So we have
+
+1084
+00:44:56.540 --> 00:44:56.919
+some
+
+1085
+00:44:57.340 --> 00:45:00.250
+interesting helpful things we can do within one table
+
+1086
+00:45:00.760 --> 00:45:01.010
+and
+
+1087
+00:45:02.020 --> 00:45:03.320
+in our case here we had
+
+1088
+00:45:03.780 --> 00:45:04.500
+songs.
+
+1089
+00:45:06.250 --> 00:45:07.530
+But then we also have
+
+1090
+00:45:07.919 --> 00:45:10.870
+some information about these artists
+
+1091
+00:45:11.270 --> 00:45:12.379
+like the names
+
+1092
+00:45:12.709 --> 00:45:16.030
+that we haven't really been able to get with just
+
+1093
+00:45:16.030 --> 00:45:19.300
+the songs table since this only gives us artist ID
+
+1094
+00:45:19.620 --> 00:45:20.000
+which
+
+1095
+00:45:20.310 --> 00:45:22.780
+maybe is not that meaningful to me if I don't know
+
+1096
+00:45:23.110 --> 00:45:25.909
+whose artist ID belongs to who.
+
+1097
+00:45:27.689 --> 00:45:31.209
+So how might we actually use the data across these tables?
+
+1098
+00:45:32.030 --> 00:45:33.699
+There are two ways that
+
+1099
+00:45:33.870 --> 00:45:34.429
+you can do this.
+
+1100
+00:45:34.510 --> 00:45:37.899
+We have selects nested selects to be specific,
+
+1101
+00:45:38.149 --> 00:45:39.459
+and you can join
+
+1102
+00:45:39.709 --> 00:45:40.550
+tables.
+
+1103
+00:45:40.909 --> 00:45:42.260
+So let's first talk about
+
+1104
+00:45:42.449 --> 00:45:44.070
+nested selects here.
+
+1105
+00:45:46.620 --> 00:45:47.969
+So as we remember,
+
+1106
+00:45:48.860 --> 00:45:50.449
+This artist ID column
+
+1107
+00:45:50.979 --> 00:45:53.229
+is the ID of
+
+1108
+00:45:53.540 --> 00:45:55.570
+each artist in the artist's table,
+
+1109
+00:45:55.620 --> 00:45:56.260
+and so
+
+1110
+00:45:56.580 --> 00:45:57.770
+it's referencing
+
+1111
+00:45:58.060 --> 00:45:58.729
+that
+
+1112
+00:45:59.020 --> 00:45:59.810
+value
+
+1113
+00:46:00.060 --> 00:46:02.219
+and so those things are are the same.
+
+1114
+00:46:04.070 --> 00:46:06.360
+So if I wanted to query
+
+1115
+00:46:07.610 --> 00:46:10.560
+for all the songs by the artist named Oh Wonder.
+
+1116
+00:46:12.679 --> 00:46:14.989
+What information would I need here?
+
+1117
+00:46:19.629 --> 00:46:22.000
+I know that I want the songs by Oh Wonder.
+
+1118
+00:46:23.050 --> 00:46:24.320
+Which means that
+
+1119
+00:46:24.649 --> 00:46:26.679
+it's probably good for me to know
+
+1120
+00:46:27.129 --> 00:46:29.919
+what the idea of a wonder is,
+
+1121
+00:46:30.129 --> 00:46:30.570
+yeah.
+
+1122
+00:46:31.360 --> 00:46:33.649
+So once I know that oh wonder,
+
+1123
+00:46:33.899 --> 00:46:34.449
+this
+
+1124
+00:46:34.659 --> 00:46:37.729
+artist has the idea of 45,
+
+1125
+00:46:38.500 --> 00:46:39.020
+then.
+
+1126
+00:46:39.770 --> 00:46:41.070
+I can use that
+
+1127
+00:46:41.280 --> 00:46:42.949
+when querying songs
+
+1128
+00:46:43.439 --> 00:46:47.149
+to only look for the songs that have the artist ID of
+
+1129
+00:46:47.560 --> 00:46:48.469
+45.
+
+1130
+00:46:51.699 --> 00:46:52.729
+So
+
+1131
+00:46:53.060 --> 00:46:54.209
+one way of doing this,
+
+1132
+00:46:54.379 --> 00:46:55.760
+we can see laid out here
+
+1133
+00:46:56.020 --> 00:46:57.489
+is that I first
+
+1134
+00:46:58.239 --> 00:46:59.429
+On this inner
+
+1135
+00:46:59.719 --> 00:47:00.709
+select here,
+
+1136
+00:47:00.959 --> 00:47:05.830
+I'm selecting ID from artists where name equals a wonder.
+
+1137
+00:47:06.649 --> 00:47:08.100
+So that's gonna give me
+
+1138
+00:47:08.389 --> 00:47:09.500
+the ID
+
+1139
+00:47:09.909 --> 00:47:10.459
+of
+
+1140
+00:47:10.590 --> 00:47:12.219
+the artist named No Wonder.
+
+1141
+00:47:12.790 --> 00:47:13.860
+Once I have that,
+
+1142
+00:47:14.159 --> 00:47:16.939
+then it's like I can plug that value,
+
+1143
+00:47:17.389 --> 00:47:18.010
+so this
+
+1144
+00:47:18.389 --> 00:47:20.860
+returns 45 like we saw here.
+
+1145
+00:47:22.000 --> 00:47:25.090
+I can plug that in now into my outer
+
+1146
+00:47:25.310 --> 00:47:25.899
+select.
+
+1147
+00:47:27.280 --> 00:47:30.520
+Which is basically now just gonna be running something like this,
+
+1148
+00:47:31.010 --> 00:47:32.719
+where I have select star,
+
+1149
+00:47:32.889 --> 00:47:34.050
+so all of the songs
+
+1150
+00:47:34.489 --> 00:47:37.669
+where the artist ID equals 45.
+
+1151
+00:47:39.929 --> 00:47:41.600
+So this is good because
+
+1152
+00:47:42.290 --> 00:47:44.600
+when I write it like this nested select,
+
+1153
+00:47:44.610 --> 00:47:46.669
+I don't actually have to worry about
+
+1154
+00:47:47.129 --> 00:47:50.520
+what the ID is of a wonder.
+
+1155
+00:47:51.010 --> 00:47:51.830
+I could
+
+1156
+00:47:52.370 --> 00:47:55.760
+just run that first SQL query and then hard code
+
+1157
+00:47:56.449 --> 00:47:59.909
+say 45 into the outer SQL query.
+
+1158
+00:48:00.409 --> 00:48:01.139
+But
+
+1159
+00:48:01.510 --> 00:48:01.939
+that
+
+1160
+00:48:02.090 --> 00:48:04.270
+adds some extra steps for me,
+
+1161
+00:48:04.310 --> 00:48:05.219
+the programmer,
+
+1162
+00:48:05.429 --> 00:48:06.500
+and it also
+
+1163
+00:48:07.189 --> 00:48:10.750
+adds in that opportunity of maybe typing something wrong
+
+1164
+00:48:11.149 --> 00:48:12.489
+um or just
+
+1165
+00:48:12.750 --> 00:48:14.739
+copying over something wrong,
+
+1166
+00:48:14.790 --> 00:48:15.229
+so
+
+1167
+00:48:15.870 --> 00:48:21.340
+doing it this way allows me to only have to focus on the information I do know,
+
+1168
+00:48:21.469 --> 00:48:21.790
+so
+
+1169
+00:48:21.989 --> 00:48:23.860
+the name being a wonder.
+
+1170
+00:48:24.659 --> 00:48:25.290
+And then
+
+1171
+00:48:25.570 --> 00:48:26.159
+letting
+
+1172
+00:48:26.489 --> 00:48:28.219
+the database do the rest.
+
+1173
+00:48:31.550 --> 00:48:31.989
+OK.
+
+1174
+00:48:33.219 --> 00:48:34.239
+Another example here,
+
+1175
+00:48:34.290 --> 00:48:36.889
+we have query for all of the songs
+
+1176
+00:48:37.209 --> 00:48:39.600
+by artists born after
+
+1177
+00:48:40.010 --> 00:48:41.439
+1980.
+
+1178
+00:48:43.020 --> 00:48:45.790
+So there could very well be more than one artist
+
+1179
+00:48:45.919 --> 00:48:47.600
+that's born after 1980.
+
+1180
+00:48:50.899 --> 00:48:52.389
+So in this case,
+
+1181
+00:48:53.669 --> 00:48:54.629
+What information
+
+1182
+00:48:54.750 --> 00:48:55.429
+do I need?
+
+1183
+00:49:09.620 --> 00:49:09.889
+Yeah,
+
+1184
+00:49:10.050 --> 00:49:12.530
+so I need to know the birth year of my artists.
+
+1185
+00:49:13.229 --> 00:49:17.560
+And once I know which artists are born after 1980,
+
+1186
+00:49:18.129 --> 00:49:22.479
+the ideas of those artists are going to be important for me to know.
+
+1187
+00:49:25.669 --> 00:49:26.800
+So a bit
+
+1188
+00:49:27.590 --> 00:49:30.179
+like what we just saw but slightly different here
+
+1189
+00:49:30.750 --> 00:49:34.310
+that inner select query select ID from artists
+
+1190
+00:49:34.310 --> 00:49:36.659
+where birth year is greater than 1980,
+
+1191
+00:49:37.189 --> 00:49:40.350
+this might actually return to me not just one artist,
+
+1192
+00:49:40.510 --> 00:49:40.899
+but
+
+1193
+00:49:41.310 --> 00:49:43.000
+234
+
+1194
+00:49:43.750 --> 00:49:44.750
+many artists.
+
+1195
+00:49:45.750 --> 00:49:47.699
+And then this outer select.
+
+1196
+00:49:48.840 --> 00:49:51.899
+Is now doing Select Star from songs where ID
+
+1197
+00:49:52.270 --> 00:49:53.439
+is in
+
+1198
+00:49:53.790 --> 00:49:54.899
+this list.
+
+1199
+00:49:55.939 --> 00:49:57.870
+So in our previous example,
+
+1200
+00:49:58.280 --> 00:50:01.969
+we did ID equals because I was just looking for
+
+1201
+00:50:02.360 --> 00:50:04.830
+the ID of one artist,
+
+1202
+00:50:05.040 --> 00:50:06.469
+and so I wanted the songs
+
+1203
+00:50:06.719 --> 00:50:10.149
+where the artist ID was equal to that artist ID.
+
+1204
+00:50:10.739 --> 00:50:12.879
+In this case it's slightly different because
+
+1205
+00:50:13.169 --> 00:50:14.879
+this inner select query
+
+1206
+00:50:15.429 --> 00:50:18.239
+might actually return to me more than one row,
+
+1207
+00:50:18.530 --> 00:50:19.699
+more than one artist
+
+1208
+00:50:19.969 --> 00:50:21.879
+that is born after 1980.
+
+1209
+00:50:22.250 --> 00:50:22.719
+So
+
+1210
+00:50:22.969 --> 00:50:26.959
+we're actually going to want to check if the ID is in this list,
+
+1211
+00:50:27.139 --> 00:50:29.919
+not just equal to the first one in the list.
+
+1212
+00:50:31.229 --> 00:50:33.350
+So if I run that inner query.
+
+1213
+00:50:35.169 --> 00:50:37.620
+I can see that both of these artists here
+
+1214
+00:50:37.830 --> 00:50:39.669
+are born after 1980.
+
+1215
+00:50:41.250 --> 00:50:42.370
+And so
+
+1216
+00:50:42.860 --> 00:50:43.449
+we would
+
+1217
+00:50:43.699 --> 00:50:45.810
+sort of get a list like so.
+
+1218
+00:50:46.100 --> 00:50:50.129
+And then we're just looking to see whether a song's ID
+
+1219
+00:50:50.459 --> 00:50:52.010
+or artist ID I should say,
+
+1220
+00:50:52.139 --> 00:50:54.620
+is in this list of artist IDs.
+
+1221
+00:50:58.879 --> 00:50:59.479
+OK,
+
+1222
+00:50:59.719 --> 00:51:01.719
+and then it would give us these two songs.
+
+1223
+00:51:04.870 --> 00:51:06.270
+So just to recap here,
+
+1224
+00:51:06.800 --> 00:51:11.669
+we use in instead of the equal sign when you're checking if something is in a list
+
+1225
+00:51:12.070 --> 00:51:14.590
+rather than just equal to a single value.
+
+1226
+00:51:17.739 --> 00:51:18.050
+OK,
+
+1227
+00:51:18.270 --> 00:51:22.030
+another way of doing this here is using joins.
+
+1228
+00:51:23.050 --> 00:51:27.340
+But I'll pause to see if anyone has any questions about nested selects.
+
+1229
+00:51:28.389 --> 00:51:29.560
+As I know that can be
+
+1230
+00:51:30.790 --> 00:51:32.580
+Confusing to learn at first.
+
+1231
+00:51:48.510 --> 00:51:49.149
+All right,
+
+1232
+00:51:49.270 --> 00:51:49.820
+OK.
+
+1233
+00:51:50.189 --> 00:51:52.060
+So let's talk about joints.
+
+1234
+00:51:53.870 --> 00:51:55.469
+So as we know,
+
+1235
+00:51:55.800 --> 00:51:57.310
+artist ID and ID
+
+1236
+00:51:57.959 --> 00:52:00.189
+line up those two pieces of information,
+
+1237
+00:52:00.239 --> 00:52:01.909
+if I see 23 in
+
+1238
+00:52:02.520 --> 00:52:05.110
+songs is gonna line up with the artist
+
+1239
+00:52:05.360 --> 00:52:07.030
+who with the ID of 23.
+
+1240
+00:52:07.280 --> 00:52:09.750
+And so what I could actually do here
+
+1241
+00:52:10.159 --> 00:52:10.750
+is.
+
+1242
+00:52:11.830 --> 00:52:13.139
+Physically line these
+
+1243
+00:52:13.350 --> 00:52:14.409
+entries up
+
+1244
+00:52:14.790 --> 00:52:15.739
+like so.
+
+1245
+00:52:16.629 --> 00:52:20.439
+And now I have this big mega table that includes
+
+1246
+00:52:21.040 --> 00:52:22.110
+not only the songs,
+
+1247
+00:52:22.120 --> 00:52:24.239
+but also the artists
+
+1248
+00:52:24.520 --> 00:52:26.159
+of each of those songs.
+
+1249
+00:52:30.030 --> 00:52:31.750
+So what does this actually look like
+
+1250
+00:52:32.040 --> 00:52:32.760
+in sequel?
+
+1251
+00:52:32.820 --> 00:52:36.350
+We would write a statement a bit like this where we have
+
+1252
+00:52:36.639 --> 00:52:38.030
+select star,
+
+1253
+00:52:38.270 --> 00:52:39.870
+so all of the columns
+
+1254
+00:52:40.250 --> 00:52:41.370
+from songs,
+
+1255
+00:52:41.860 --> 00:52:42.629
+and then
+
+1256
+00:52:43.120 --> 00:52:47.550
+that songs table we want to join it with the artist's table.
+
+1257
+00:52:49.100 --> 00:52:51.199
+And then this on keyword tells us
+
+1258
+00:52:51.550 --> 00:52:52.120
+which
+
+1259
+00:52:52.389 --> 00:52:54.899
+IDs across these two tables
+
+1260
+00:52:55.229 --> 00:52:56.379
+are we joining on,
+
+1261
+00:52:56.429 --> 00:52:58.100
+which of them are the same.
+
+1262
+00:52:58.929 --> 00:53:00.100
+So in this case we have
+
+1263
+00:53:00.510 --> 00:53:01.239
+songs.
+
+1264
+00:53:01.510 --> 00:53:02.350
+Artist ID.
+
+1265
+00:53:02.469 --> 00:53:04.209
+So this is just a way of saying
+
+1266
+00:53:04.590 --> 00:53:05.979
+from the songs table,
+
+1267
+00:53:06.550 --> 00:53:08.860
+the artist ID is equal.
+
+1268
+00:53:09.709 --> 00:53:10.489
+To
+
+1269
+00:53:10.679 --> 00:53:12.350
+in the artist's table,
+
+1270
+00:53:13.120 --> 00:53:14.310
+the ID column.
+
+1271
+00:53:15.760 --> 00:53:18.750
+So we just have this syntax where we're specifying
+
+1272
+00:53:18.929 --> 00:53:19.629
+the table,
+
+1273
+00:53:19.840 --> 00:53:20.370
+dot,
+
+1274
+00:53:20.959 --> 00:53:21.879
+and then the column name.
+
+1275
+00:53:25.439 --> 00:53:26.750
+So once we do that,
+
+1276
+00:53:27.379 --> 00:53:29.409
+we have our big table.
+
+1277
+00:53:30.360 --> 00:53:31.580
+And then we can run
+
+1278
+00:53:31.909 --> 00:53:33.040
+a condition
+
+1279
+00:53:33.310 --> 00:53:34.500
+just like so
+
+1280
+00:53:34.790 --> 00:53:35.739
+where we have
+
+1281
+00:53:36.229 --> 00:53:37.260
+where
+
+1282
+00:53:37.550 --> 00:53:38.379
+artist's
+
+1283
+00:53:38.739 --> 00:53:39.379
+name
+
+1284
+00:53:40.030 --> 00:53:41.679
+equals a wonder.
+
+1285
+00:53:42.500 --> 00:53:46.429
+So we do have to specify now when we use a column like name,
+
+1286
+00:53:46.760 --> 00:53:49.350
+we can't just use name itself as
+
+1287
+00:53:49.639 --> 00:53:52.330
+there is also name in songs,
+
+1288
+00:53:52.360 --> 00:53:55.350
+so we have to specify from the artist's table.
+
+1289
+00:53:56.260 --> 00:53:57.409
+Look for the name
+
+1290
+00:53:57.620 --> 00:53:58.260
+equal
+
+1291
+00:53:58.540 --> 00:53:59.489
+to a wonder.
+
+1292
+00:54:01.979 --> 00:54:02.600
+OK
+
+1293
+00:54:04.199 --> 00:54:06.080
+Any questions about joins?
+
+1294
+00:54:15.530 --> 00:54:16.159
+OK.
+
+1295
+00:54:16.629 --> 00:54:19.780
+I will note that joins are typically going to be
+
+1296
+00:54:20.120 --> 00:54:21.270
+a bit slower
+
+1297
+00:54:21.600 --> 00:54:22.270
+than
+
+1298
+00:54:22.840 --> 00:54:24.120
+nested selects,
+
+1299
+00:54:24.239 --> 00:54:27.040
+but it does depend on the situation that you're using it in.
+
+1300
+00:54:28.100 --> 00:54:29.439
+So for some of the
+
+1301
+00:54:29.840 --> 00:54:31.439
+earlier examples we did were,
+
+1302
+00:54:32.040 --> 00:54:34.100
+let's say I only wanted the artist's names,
+
+1303
+00:54:34.219 --> 00:54:34.989
+I wonder.
+
+1304
+00:54:36.330 --> 00:54:39.510
+It might be faster if I just use a nested
+
+1305
+00:54:39.510 --> 00:54:43.260
+select since that is just querying for that artist's ID
+
+1306
+00:54:43.669 --> 00:54:45.879
+and getting those songs associated.
+
+1307
+00:54:49.310 --> 00:54:49.629
+Join,
+
+1308
+00:54:49.689 --> 00:54:53.659
+on the other hand is gonna actually take those two tables together and.
+
+1309
+00:54:54.840 --> 00:54:55.649
+Join up
+
+1310
+00:54:55.760 --> 00:54:56.790
+every single
+
+1311
+00:54:57.520 --> 00:55:00.159
+row with each other and so that's gonna take a lot more time
+
+1312
+00:55:00.520 --> 00:55:04.000
+and it's not necessarily gonna be as useful if you don't need
+
+1313
+00:55:04.280 --> 00:55:05.669
+all of that information.
+
+1314
+00:55:07.080 --> 00:55:08.600
+The joint gives us duplicates,
+
+1315
+00:55:08.719 --> 00:55:08.989
+yeah,
+
+1316
+00:55:09.159 --> 00:55:09.520
+so.
+
+1317
+00:55:10.550 --> 00:55:11.300
+To join
+
+1318
+00:55:12.439 --> 00:55:14.169
+If I went here,
+
+1319
+00:55:14.620 --> 00:55:15.850
+you could imagine if
+
+1320
+00:55:15.979 --> 00:55:17.090
+uh say
+
+1321
+00:55:17.540 --> 00:55:19.290
+I had multiple songs
+
+1322
+00:55:19.659 --> 00:55:20.770
+by O Wonder,
+
+1323
+00:55:21.620 --> 00:55:22.050
+then
+
+1324
+00:55:22.219 --> 00:55:24.959
+I could have another song's row here
+
+1325
+00:55:25.219 --> 00:55:26.689
+and it would have the same.
+
+1326
+00:55:27.830 --> 00:55:30.040
+Information from the artist's table
+
+1327
+00:55:30.770 --> 00:55:31.879
+with a wonder,
+
+1328
+00:55:32.050 --> 00:55:34.520
+their birth year and what label they're signed to.
+
+1329
+00:55:38.790 --> 00:55:39.199
+OK,
+
+1330
+00:55:39.370 --> 00:55:42.489
+and you are able to join 3 tables together.
+
+1331
+00:55:42.530 --> 00:55:43.320
+It would look
+
+1332
+00:55:43.689 --> 00:55:46.669
+a bit similar here where you have after
+
+1333
+00:55:47.209 --> 00:55:48.649
+you've joined on.
+
+1334
+00:55:49.439 --> 00:55:51.100
+This value you can join
+
+1335
+00:55:51.459 --> 00:55:52.050
+on
+
+1336
+00:55:52.379 --> 00:55:53.169
+another
+
+1337
+00:55:53.699 --> 00:55:54.219
+table.
+
+1338
+00:55:57.699 --> 00:55:58.199
+OK
+
+1339
+00:56:00.620 --> 00:56:01.020
+Yes,
+
+1340
+00:56:01.139 --> 00:56:02.739
+and this is the only way of using joining.
+
+1341
+00:56:02.780 --> 00:56:04.780
+There aren't different types.
+
+1342
+00:56:07.010 --> 00:56:07.739
+OK,
+
+1343
+00:56:08.510 --> 00:56:12.550
+so let's get some practice here with nested selects and joints.
+
+1344
+00:56:13.889 --> 00:56:15.129
+So for 6.
+
+1345
+00:56:15.590 --> 00:56:19.239
+SQL we want to list the names of the songs that are by Post Malone.
+
+1346
+00:56:19.770 --> 00:56:21.320
+So Post Malone is some artist.
+
+1347
+00:56:22.080 --> 00:56:23.479
+I'm going to
+
+1348
+00:56:23.719 --> 00:56:24.830
+go to 6.
+
+1349
+00:56:27.600 --> 00:56:30.860
+And so I know that I want the names of these songs.
+
+1350
+00:56:32.669 --> 00:56:34.679
+So I'm gonna select name from songs.
+
+1351
+00:56:36.120 --> 00:56:39.669
+But then I know that I want only songs that are by
+
+1352
+00:56:40.320 --> 00:56:41.320
+this artist.
+
+1353
+00:56:42.580 --> 00:56:43.500
+And so
+
+1354
+00:56:43.830 --> 00:56:44.669
+what
+
+1355
+00:56:45.070 --> 00:56:47.500
+column might I be looking for
+
+1356
+00:56:47.790 --> 00:56:49.780
+uh to filter by?
+
+1357
+00:56:50.979 --> 00:56:52.020
+And songs.
+
+1358
+00:56:59.969 --> 00:57:00.260
+Yeah,
+
+1359
+00:57:00.469 --> 00:57:01.100
+so I'm
+
+1360
+00:57:01.350 --> 00:57:03.419
+gonna be paying attention to this artist ID.
+
+1361
+00:57:04.560 --> 00:57:07.169
+I only want songs where the artist ID
+
+1362
+00:57:07.739 --> 00:57:09.010
+is equal
+
+1363
+00:57:09.500 --> 00:57:10.300
+to.
+
+1364
+00:57:11.629 --> 00:57:13.469
+The idea of whatever Post Malone is,
+
+1365
+00:57:13.550 --> 00:57:13.669
+right?
+
+1366
+00:57:13.750 --> 00:57:16.340
+So I don't know that information right now,
+
+1367
+00:57:16.909 --> 00:57:19.169
+but I can do a nested select here
+
+1368
+00:57:19.669 --> 00:57:21.540
+to get that information for me.
+
+1369
+00:57:22.860 --> 00:57:26.169
+So how do I get the idea of Post Malone?
+
+1370
+00:57:27.989 --> 00:57:29.320
+Do you select ID?
+
+1371
+00:57:30.679 --> 00:57:31.959
+This time from
+
+1372
+00:57:32.209 --> 00:57:33.090
+artists,
+
+1373
+00:57:33.290 --> 00:57:34.520
+so the artist's table.
+
+1374
+00:57:35.800 --> 00:57:37.409
+And then what is my
+
+1375
+00:57:37.540 --> 00:57:38.969
+wear condition here?
+
+1376
+00:57:43.290 --> 00:57:43.449
+Yeah,
+
+1377
+00:57:43.610 --> 00:57:44.040
+name?
+
+1378
+00:57:46.229 --> 00:57:48.459
+Equals and then the name of my artist.
+
+1379
+00:57:52.860 --> 00:57:53.439
+OK,
+
+1380
+00:57:53.699 --> 00:57:54.449
+and then my
+
+1381
+00:57:54.560 --> 00:57:56.810
+semicolon goes at the end of my statement here.
+
+1382
+00:57:59.000 --> 00:57:59.590
+So,
+
+1383
+00:57:59.760 --> 00:58:01.070
+let me also include.
+
+1384
+00:58:02.159 --> 00:58:03.409
+Or actually I just named.
+
+1385
+00:58:05.239 --> 00:58:07.310
+If I run this query here,
+
+1386
+00:58:07.320 --> 00:58:08.270
+we'll see
+
+1387
+00:58:08.879 --> 00:58:09.840
+6 songs
+
+1388
+00:58:10.120 --> 00:58:12.120
+that are all by Post Malone.
+
+1389
+00:58:15.939 --> 00:58:18.100
+We can also pretty easily do this
+
+1390
+00:58:18.419 --> 00:58:19.560
+uh by joining,
+
+1391
+00:58:19.659 --> 00:58:20.270
+but again,
+
+1392
+00:58:20.419 --> 00:58:22.090
+I think that at least in this case,
+
+1393
+00:58:22.270 --> 00:58:24.370
+nested selects are gonna be
+
+1394
+00:58:24.820 --> 00:58:25.659
+more efficient.
+
+1395
+00:58:28.399 --> 00:58:28.620
+OK,
+
+1396
+00:58:28.699 --> 00:58:29.489
+this next one here,
+
+1397
+00:58:29.540 --> 00:58:31.489
+we're finding the average energy of songs
+
+1398
+00:58:31.780 --> 00:58:32.649
+that are by
+
+1399
+00:58:33.020 --> 00:58:33.629
+Drake.
+
+1400
+00:58:34.639 --> 00:58:35.649
+So do 7
+
+1401
+00:58:38.360 --> 00:58:41.820
+And so how would I go about getting the average energy?
+
+1402
+00:58:42.959 --> 00:58:43.540
+Here.
+
+1403
+00:58:51.689 --> 00:58:51.889
+Yeah,
+
+1404
+00:58:52.040 --> 00:58:53.949
+so I'm gonna use my keyword average here,
+
+1405
+00:58:54.040 --> 00:58:55.020
+ABG,
+
+1406
+00:58:55.280 --> 00:58:57.389
+and then the column that I want,
+
+1407
+00:58:57.560 --> 00:58:58.439
+so energy.
+
+1408
+00:58:59.709 --> 00:59:00.790
+From songs.
+
+1409
+00:59:02.020 --> 00:59:05.149
+And then I only want songs that are by
+
+1410
+00:59:05.520 --> 00:59:06.080
+Drake.
+
+1411
+00:59:07.719 --> 00:59:10.820
+So sort of like what we just did here with Post Malone,
+
+1412
+00:59:11.179 --> 00:59:12.969
+I'm gonna do where artist
+
+1413
+00:59:13.219 --> 00:59:14.610
+ID is
+
+1414
+00:59:15.100 --> 00:59:20.129
+equal to and then I want this to be whatever Drake's artist ID is.
+
+1415
+00:59:20.790 --> 00:59:20.800
+Right,
+
+1416
+00:59:21.659 --> 00:59:22.100
+so.
+
+1417
+00:59:22.879 --> 00:59:25.139
+I'll do something similar where I'm going to select.
+
+1418
+00:59:26.120 --> 00:59:26.909
+ID
+
+1419
+00:59:27.280 --> 00:59:28.389
+from artists.
+
+1420
+00:59:29.409 --> 00:59:30.399
+Where
+
+1421
+00:59:30.689 --> 00:59:32.719
+the name of the artist equals
+
+1422
+00:59:33.090 --> 00:59:33.610
+Drake.
+
+1423
+00:59:36.090 --> 00:59:36.100
+OK,
+
+1424
+00:59:36.639 --> 00:59:38.209
+so then hopefully that should give me
+
+1425
+00:59:38.520 --> 00:59:41.070
+the average energy
+
+1426
+00:59:41.639 --> 00:59:44.979
+of all the songs where the artist ID
+
+1427
+00:59:45.320 --> 00:59:45.989
+is equal
+
+1428
+00:59:46.159 --> 00:59:47.590
+to Drake's artist ID.
+
+1429
+00:59:50.179 --> 00:59:50.189
+OK.
+
+1430
+00:59:52.280 --> 00:59:54.610
+And then it seems like we got 0.599.
+
+1431
+00:59:56.080 --> 00:59:56.090
+Great.
+
+1432
+00:59:58.770 --> 00:59:59.110
+OK,
+
+1433
+00:59:59.310 --> 00:59:59.979
+last one,
+
+1434
+01:00:00.149 --> 01:00:03.169
+we have list the names of the songs
+
+1435
+01:00:03.389 --> 01:00:05.830
+that feature other artists.
+
+1436
+01:00:06.229 --> 01:00:08.699
+So for this we can make the assumption that
+
+1437
+01:00:08.909 --> 01:00:09.429
+any
+
+1438
+01:00:09.870 --> 01:00:12.780
+song that features another artist is gonna include
+
+1439
+01:00:13.270 --> 01:00:14.909
+that feat keyword.
+
+1440
+01:00:16.050 --> 01:00:16.550
+So,
+
+1441
+01:00:16.570 --> 01:00:18.040
+let me open up.
+
+1442
+01:00:18.850 --> 01:00:19.479
+8
+
+1443
+01:00:23.300 --> 01:00:25.830
+And so I'm just going to make the assumption that
+
+1444
+01:00:26.229 --> 01:00:28.040
+the song is going to include
+
+1445
+01:00:28.469 --> 01:00:29.709
+here feet,
+
+1446
+01:00:29.989 --> 01:00:31.540
+and that's how I'm gonna know
+
+1447
+01:00:31.949 --> 01:00:33.780
+if it features someone else.
+
+1448
+01:00:35.120 --> 01:00:36.649
+So what column
+
+1449
+01:00:36.860 --> 01:00:38.770
+should I be selecting for?
+
+1450
+01:00:43.649 --> 01:00:43.810
+Yeah,
+
+1451
+01:00:43.969 --> 01:00:44.479
+name,
+
+1452
+01:00:44.689 --> 01:00:45.959
+the name of the songs
+
+1453
+01:00:46.610 --> 01:00:47.840
+from songs
+
+1454
+01:00:48.449 --> 01:00:50.560
+and then how am I gonna
+
+1455
+01:00:51.129 --> 01:00:52.770
+build this conditional.
+
+1456
+01:00:56.979 --> 01:00:59.770
+Where I want the title or the name of the song
+
+1457
+01:01:00.179 --> 01:01:01.169
+to include
+
+1458
+01:01:01.379 --> 01:01:02.050
+this.
+
+1459
+01:01:03.989 --> 01:01:04.219
+Yeah,
+
+1460
+01:01:04.340 --> 01:01:06.090
+so I can use the like keyword here.
+
+1461
+01:01:08.919 --> 01:01:11.189
+And then here I want to build this
+
+1462
+01:01:11.669 --> 01:01:13.469
+string that's going to match.
+
+1463
+01:01:14.929 --> 01:01:15.679
+A name
+
+1464
+01:01:15.889 --> 01:01:17.360
+that has feet in it,
+
+1465
+01:01:17.489 --> 01:01:17.810
+so yeah,
+
+1466
+01:01:17.889 --> 01:01:18.780
+you can use.
+
+1467
+01:01:20.360 --> 01:01:20.790
+This
+
+1468
+01:01:20.959 --> 01:01:21.949
+percentage sign.
+
+1469
+01:01:23.979 --> 01:01:24.800
+And we can do
+
+1470
+01:01:25.830 --> 01:01:25.840
+E
+
+1471
+01:01:27.600 --> 01:01:29.270
+And then another percentage sign.
+
+1472
+01:01:31.479 --> 01:01:34.250
+If I only had 1% sign like this,
+
+1473
+01:01:34.719 --> 01:01:36.090
+what would happen?
+
+1474
+01:01:38.989 --> 01:01:41.239
+What would this query print out?
+
+1475
+01:01:49.709 --> 01:01:50.020
+Yeah,
+
+1476
+01:01:50.139 --> 01:01:53.530
+so this would give me only songs that began with
+
+1477
+01:01:54.379 --> 01:01:55.300
+beat Dot.
+
+1478
+01:01:56.629 --> 01:01:57.479
+But
+
+1479
+01:01:57.889 --> 01:02:00.870
+it's probably likely that not a lot of them start with that.
+
+1480
+01:02:01.250 --> 01:02:01.600
+So,
+
+1481
+01:02:01.889 --> 01:02:03.439
+including this at the beginning,
+
+1482
+01:02:03.770 --> 01:02:06.590
+then matches for anything that comes before
+
+1483
+01:02:07.010 --> 01:02:07.969
+the featuring.
+
+1484
+01:02:10.399 --> 01:02:11.429
+So if I run this,
+
+1485
+01:02:12.939 --> 01:02:13.949
+Um,
+
+1486
+01:02:14.280 --> 01:02:15.229
+what do we have here?
+
+1487
+01:02:17.389 --> 01:02:17.590
+Uh,
+
+1488
+01:02:17.629 --> 01:02:19.739
+I think we should use single quotes here.
+
+1489
+01:02:24.260 --> 01:02:25.060
+OK.
+
+1490
+01:02:25.600 --> 01:02:26.000
+Oh.
+
+1491
+01:02:27.469 --> 01:02:27.939
+Oh,
+
+1492
+01:02:28.060 --> 01:02:28.649
+I see.
+
+1493
+01:02:28.860 --> 01:02:30.010
+What did I do wrong here?
+
+1494
+01:02:39.649 --> 01:02:41.129
+Someone says equals,
+
+1495
+01:02:41.610 --> 01:02:42.360
+not quite.
+
+1496
+01:02:43.520 --> 01:02:43.709
+Yeah,
+
+1497
+01:02:43.870 --> 01:02:47.939
+missing field and where I forgot to specify that I actually want
+
+1498
+01:02:48.270 --> 01:02:50.300
+the name to be like feet.
+
+1499
+01:02:50.350 --> 01:02:53.500
+Otherwise it doesn't know which column I'm trying to match it up with.
+
+1500
+01:02:55.030 --> 01:02:55.800
+Awesome.
+
+1501
+01:02:56.060 --> 01:02:57.030
+So now that if I
+
+1502
+01:02:57.350 --> 01:02:58.100
+put that in.
+
+1503
+01:02:59.510 --> 01:03:02.340
+It seems indeed we do have all of the songs here
+
+1504
+01:03:02.590 --> 01:03:04.739
+that are featuring another artist.
+
+1505
+01:03:06.270 --> 01:03:06.729
+OK,
+
+1506
+01:03:06.889 --> 01:03:07.300
+awesome.
+
+1507
+01:03:09.070 --> 01:03:10.959
+Any questions about
+
+1508
+01:03:11.389 --> 01:03:15.260
+these last 3 exercises we did or about joining
+
+1509
+01:03:15.669 --> 01:03:17.790
+and nested selects?
+
+1510
+01:03:34.840 --> 01:03:36.169
+Someone's asking why
+
+1511
+01:03:36.389 --> 01:03:37.219
+you would use all,
+
+1512
+01:03:37.300 --> 01:03:38.020
+oh,
+
+1513
+01:03:38.030 --> 01:03:38.649
+I see,
+
+1514
+01:03:38.860 --> 01:03:39.379
+um.
+
+1515
+01:03:40.340 --> 01:03:40.469
+Yeah,
+
+1516
+01:03:40.540 --> 01:03:41.149
+it's a good question.
+
+1517
+01:03:41.189 --> 01:03:43.340
+So the single quote versus the double quotes,
+
+1518
+01:03:43.510 --> 01:03:45.659
+it's really just a styling thing,
+
+1519
+01:03:46.120 --> 01:03:46.129
+um,
+
+1520
+01:03:46.229 --> 01:03:47.780
+so it depends on the standards that
+
+1521
+01:03:48.030 --> 01:03:48.510
+you're
+
+1522
+01:03:48.750 --> 01:03:49.260
+using,
+
+1523
+01:03:49.469 --> 01:03:52.100
+but as long as it's consistent within your code,
+
+1524
+01:03:52.310 --> 01:03:53.300
+so you're not using
+
+1525
+01:03:53.709 --> 01:03:56.340
+single quotes here and double quotes in another place,
+
+1526
+01:03:57.429 --> 01:03:57.949
+then
+
+1527
+01:03:58.389 --> 01:03:58.879
+that's OK,
+
+1528
+01:03:58.989 --> 01:03:59.199
+but yeah,
+
+1529
+01:03:59.270 --> 01:04:00.979
+it's a style convention.
+
+1530
+01:04:02.330 --> 01:04:03.189
+Good question.
+
+1531
+01:04:07.489 --> 01:04:09.229
+So if I change this back to double quotes,
+
+1532
+01:04:09.270 --> 01:04:10.699
+I think it should still
+
+1533
+01:04:11.149 --> 01:04:12.659
+work as expected
+
+1534
+01:04:12.830 --> 01:04:13.419
+here,
+
+1535
+01:04:13.709 --> 01:04:14.060
+yeah.
+
+1536
+01:04:18.719 --> 01:04:19.280
+OK.
+
+1537
+01:04:20.320 --> 01:04:21.790
+And then with that,
+
+1538
+01:04:22.330 --> 01:04:24.790
+that is the end of sequel
+
+1539
+01:04:25.050 --> 01:04:26.989
+week section 7.
+
+1540
+01:04:27.610 --> 01:04:29.040
+I hope you join us next week,
+
+1541
+01:04:29.209 --> 01:04:30.000
+same time.
+
+1542
+01:04:30.699 --> 01:04:32.189
+And until then,
+
+1543
+01:04:32.760 --> 01:04:33.689
+I hope you have a good day.

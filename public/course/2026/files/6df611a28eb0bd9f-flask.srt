@@ -1,0 +1,1694 @@
+1
+00:00:00,000 --> 00:00:03,337
+DOUG LLOYD: In a different video, we
+introduced you to Python and its syntax
+
+2
+00:00:03,337 --> 00:00:05,920
+and we talked all about how it
+can be used at the command line
+
+3
+00:00:05,920 --> 00:00:09,097
+to write programs that you
+would run from your terminal.
+
+4
+00:00:09,097 --> 00:00:10,930
+There's a lot more to
+Python than just that.
+
+5
+00:00:10,930 --> 00:00:14,650
+We can also use it to
+write web applications.
+
+6
+00:00:14,650 --> 00:00:17,040
+It is a really common use
+case to have website back
+
+7
+00:00:17,040 --> 00:00:19,450
+ends that are written in
+Python because Python contains
+
+8
+00:00:19,450 --> 00:00:23,920
+a lot more native functionality
+to support things like networking,
+
+9
+00:00:23,920 --> 00:00:26,770
+opening socket connections,
+maintaining connections between two
+
+10
+00:00:26,770 --> 00:00:29,600
+different locations on the internet.
+
+11
+00:00:29,600 --> 00:00:34,400
+And C can do these things too, but
+in C, it's really, really difficult
+
+12
+00:00:34,400 --> 00:00:36,160
+and really a lot of code.
+
+13
+00:00:36,160 --> 00:00:39,220
+In Python, because it is a more
+modern language that abstracts away
+
+14
+00:00:39,220 --> 00:00:43,450
+some of these kind of
+boring, tedious details of C,
+
+15
+00:00:43,450 --> 00:00:45,280
+it thus becomes a lot
+more straightforward
+
+16
+00:00:45,280 --> 00:00:49,720
+and a lot more tenable to write
+more complex web apps in Python
+
+17
+00:00:49,720 --> 00:00:51,940
+instead of using C.
+
+18
+00:00:51,940 --> 00:00:55,330
+In addition, there are a lot of
+what are called web frameworks that
+
+19
+00:00:55,330 --> 00:00:58,870
+make this even easier because they
+take some of the Python things
+
+20
+00:00:58,870 --> 00:01:01,346
+that we would have to do
+and abstract those away.
+
+21
+00:01:01,346 --> 00:01:03,220
+So basically you can
+think of a web framework
+
+22
+00:01:03,220 --> 00:01:06,160
+sort of like a library
+that's written in Python,
+
+23
+00:01:06,160 --> 00:01:08,590
+that is specialized in
+taking advantage and doing
+
+24
+00:01:08,590 --> 00:01:12,130
+some of the things in Python
+for you that you would otherwise
+
+25
+00:01:12,130 --> 00:01:13,420
+have to do yourself.
+
+26
+00:01:13,420 --> 00:01:17,200
+Creating a web server in Python
+is not all that many lines of code
+
+27
+00:01:17,200 --> 00:01:19,420
+to do it in just raw Python.
+
+28
+00:01:19,420 --> 00:01:20,590
+But it's a little tedious.
+
+29
+00:01:20,590 --> 00:01:25,420
+Not nearly as tedious as C. But using
+one of these different web frameworks.
+
+30
+00:01:25,420 --> 00:01:29,980
+For example, Django, Pyramid, or
+what we use in CS50, which is Flask,
+
+31
+00:01:29,980 --> 00:01:31,420
+makes it a lot easier.
+
+32
+00:01:31,420 --> 00:01:33,730
+Now, those frameworks are all great.
+
+33
+00:01:33,730 --> 00:01:35,950
+We're talking about Flask
+in CS50 specifically
+
+34
+00:01:35,950 --> 00:01:39,490
+because it is very lightweight
+and still quite feature-rich,
+
+35
+00:01:39,490 --> 00:01:42,670
+which means that it will
+work well on CS50 IDE
+
+36
+00:01:42,670 --> 00:01:45,440
+where you are using a
+cloud-based infrastructure,
+
+37
+00:01:45,440 --> 00:01:50,980
+and the amount of space and memory
+you have is limited by design.
+
+38
+00:01:50,980 --> 00:01:55,940
+Using the lightest weight web framework
+possible was really important.
+
+39
+00:01:55,940 --> 00:01:58,720
+So we've talked about HTML
+in the past and we know
+
+40
+00:01:58,720 --> 00:02:01,330
+that we can use HTML to build websites.
+
+41
+00:02:01,330 --> 00:02:05,200
+But there is one major limitation
+that HTML websites suffer from
+
+42
+00:02:05,200 --> 00:02:07,360
+and that is that they are static.
+
+43
+00:02:07,360 --> 00:02:09,669
+So imagine we want to create
+a website, for example,
+
+44
+00:02:09,669 --> 00:02:14,340
+that displays the current time,
+just the time in Cambridge, Mass,
+
+45
+00:02:14,340 --> 00:02:17,110
+displaying it to the
+latest minute, let's say.
+
+46
+00:02:17,110 --> 00:02:20,270
+This is some HTML that
+would do exactly that.
+
+47
+00:02:20,270 --> 00:02:23,500
+So the current time
+in Cambridge is 14:08.
+
+48
+00:02:23,500 --> 00:02:25,330
+So 2:08 PM.
+
+49
+00:02:25,330 --> 00:02:28,850
+This is great for a minute.
+
+50
+00:02:28,850 --> 00:02:32,570
+But at 2:09, it becomes
+not accurate anymore.
+
+51
+00:02:32,570 --> 00:02:36,370
+So if you're the webmaster and you have
+a page that's written entirely in HTML
+
+52
+00:02:36,370 --> 00:02:40,660
+and your job is to present
+an accurate website that
+
+53
+00:02:40,660 --> 00:02:43,690
+reflects the current time
+in Cambridge, every minute
+
+54
+00:02:43,690 --> 00:02:47,560
+you have to go through and update
+this page so that it is always
+
+55
+00:02:47,560 --> 00:02:49,930
+consistent and so that whenever
+a user visits the site,
+
+56
+00:02:49,930 --> 00:02:52,600
+they're getting the actual correct time.
+
+57
+00:02:52,600 --> 00:02:54,410
+This is awful.
+
+58
+00:02:54,410 --> 00:02:55,660
+You would not want to do this.
+
+59
+00:02:55,660 --> 00:02:57,460
+And if you were actually a
+webmaster and this was your job,
+
+60
+00:02:57,460 --> 00:02:59,794
+you probably wouldn't last
+too long because you'd
+
+61
+00:02:59,794 --> 00:03:01,210
+be literally just changing things.
+
+62
+00:03:01,210 --> 00:03:03,918
+And imagine if we were going to
+the nearest second or the nearest
+
+63
+00:03:03,918 --> 00:03:07,240
+millisecond, you wouldn't be
+able to actually even do it.
+
+64
+00:03:07,240 --> 00:03:09,460
+The only way to update
+our source in HTML
+
+65
+00:03:09,460 --> 00:03:12,550
+is to literally go in and edit our HTML.
+
+66
+00:03:12,550 --> 00:03:16,930
+If we incorporate Python into our code,
+though, we can be a lot more flexible
+
+67
+00:03:16,930 --> 00:03:20,440
+and we can allow our
+pages to become dynamic
+
+68
+00:03:20,440 --> 00:03:22,500
+without requiring any
+human intervention.
+
+69
+00:03:22,500 --> 00:03:26,620
+And that's ultimately our goal here,
+is to automate these processes for us
+
+70
+00:03:26,620 --> 00:03:29,260
+so that we don't have
+to think about them day
+
+71
+00:03:29,260 --> 00:03:32,860
+to day, getting buried in that minutia.
+
+72
+00:03:32,860 --> 00:03:35,200
+So we're going to do this
+specifically in Flask.
+
+73
+00:03:35,200 --> 00:03:38,680
+And here's an example of
+a web application in Flask
+
+74
+00:03:38,680 --> 00:03:41,830
+that would display the current
+not only time in Cambridge
+
+75
+00:03:41,830 --> 00:03:45,280
+but it would also display the
+current date, day of the week, year,
+
+76
+00:03:45,280 --> 00:03:49,150
+and it would display that time to the
+nearest ten thousandth of a second.
+
+77
+00:03:49,150 --> 00:03:51,862
+Just a couple of lines
+of code from Flask.
+
+78
+00:03:51,862 --> 00:03:54,070
+Import Flask, we'll talk
+about that in just a second.
+
+79
+00:03:54,070 --> 00:03:56,500
+Here, I'm just importing
+a couple of modules
+
+80
+00:03:56,500 --> 00:03:58,350
+that are also available in Python.
+
+81
+00:03:58,350 --> 00:04:00,550
+So Flask is one module
+available in Python.
+
+82
+00:04:00,550 --> 00:04:05,920
+Here, I'm importing the datetime
+module and specifically I'm
+
+83
+00:04:05,920 --> 00:04:09,390
+pulling one function from
+it, also called datetime.
+
+84
+00:04:09,390 --> 00:04:13,390
+And from the pytz or
+py timezone module, I'm
+
+85
+00:04:13,390 --> 00:04:15,820
+pulling one function called time zone.
+
+86
+00:04:15,820 --> 00:04:18,670
+Then I'm initiating
+my Flask application.
+
+87
+00:04:18,670 --> 00:04:23,940
+And then I'm basically using the
+datetime and timezone functions
+
+88
+00:04:23,940 --> 00:04:28,080
+from those two modules that I imported
+to figure out what the current time is
+
+89
+00:04:28,080 --> 00:04:30,094
+in the time zone America/New York.
+
+90
+00:04:30,094 --> 00:04:32,010
+New York is in the same
+time zone as Cambridge
+
+91
+00:04:32,010 --> 00:04:36,070
+and that's the standard time zone name.
+
+92
+00:04:36,070 --> 00:04:38,110
+So I'm just going to use that one.
+
+93
+00:04:38,110 --> 00:04:41,030
+So I'm figuring out exactly what
+the current date and time is
+
+94
+00:04:41,030 --> 00:04:44,220
+and assigning that to a
+variable in Python called now.
+
+95
+00:04:44,220 --> 00:04:49,170
+And then I'm returning some string
+where I'm plugging in whatever now is.
+
+96
+00:04:49,170 --> 00:04:51,750
+And apparently I'm doing
+that to app.route/.
+
+97
+00:04:51,750 --> 00:04:53,400
+We'll talk about all that in a second.
+
+98
+00:04:53,400 --> 00:04:59,370
+But basically I wrote this on a
+web page in Python in something
+
+99
+00:04:59,370 --> 00:05:01,470
+called application.py, specifically.
+
+100
+00:05:01,470 --> 00:05:04,572
+And then I ran this
+application and visited
+
+101
+00:05:04,572 --> 00:05:06,780
+the page that was generated
+from it, it would tell me
+
+102
+00:05:06,780 --> 00:05:09,814
+the current date and time to the
+nearest ten thousandth of a second.
+
+103
+00:05:09,814 --> 00:05:11,730
+If I refreshed, it would
+update it every time.
+
+104
+00:05:11,730 --> 00:05:13,690
+It wouldn't be static,
+it would become dynamic
+
+105
+00:05:13,690 --> 00:05:15,690
+and I wouldn't have to
+do any more intervention.
+
+106
+00:05:15,690 --> 00:05:18,240
+This would work for as
+long as my computer worked,
+
+107
+00:05:18,240 --> 00:05:20,370
+as long as the web
+server was running worked
+
+108
+00:05:20,370 --> 00:05:21,990
+to give me the current date and time.
+
+109
+00:05:21,990 --> 00:05:26,220
+And I, as the webmaster, can focus on
+much more fulfilling and fun things
+
+110
+00:05:26,220 --> 00:05:31,150
+than updating my HTML
+source every 60 seconds.
+
+111
+00:05:31,150 --> 00:05:34,520
+So getting started using Flask
+is really easy within CS50 IDE.
+
+112
+00:05:34,520 --> 00:05:37,290
+We first open up a Python
+file and in general, we're
+
+113
+00:05:37,290 --> 00:05:39,004
+going to call it application.py.
+
+114
+00:05:39,004 --> 00:05:41,670
+But you can call it whatever you
+want but in all these examples,
+
+115
+00:05:41,670 --> 00:05:44,640
+we're going to be referring
+to it as application.py.
+
+116
+00:05:44,640 --> 00:05:47,760
+The very first line of application.py
+is going to be the following.
+
+117
+00:05:47,760 --> 00:05:50,580
+From Flask, import capital F, Flask.
+
+118
+00:05:50,580 --> 00:05:54,060
+So flask with a lowercase
+f is the name of a module.
+
+119
+00:05:54,060 --> 00:05:58,084
+Capital F Flask is going to be the
+name of a function within that module.
+
+120
+00:05:58,084 --> 00:05:59,750
+In particular, it's going to be a class.
+
+121
+00:05:59,750 --> 00:06:02,910
+Generally, you may recall from
+our video on Python syntax,
+
+122
+00:06:02,910 --> 00:06:05,700
+that we indicate classes
+with a capital letter.
+
+123
+00:06:05,700 --> 00:06:09,420
+That's what we're doing here,
+we're importing the Flask class.
+
+124
+00:06:09,420 --> 00:06:12,780
+After we import it, we then need
+to initialize a Flask application.
+
+125
+00:06:12,780 --> 00:06:16,150
+You saw that on the previous
+code example as well.
+
+126
+00:06:16,150 --> 00:06:20,257
+App equals flask parentheses underscore
+underscore name underscore underscore.
+
+127
+00:06:20,257 --> 00:06:22,590
+Underscore underscore name
+underscore underscore is just
+
+128
+00:06:22,590 --> 00:06:24,340
+the name of the file.
+
+129
+00:06:24,340 --> 00:06:26,700
+So basically this is
+creating a flask application
+
+130
+00:06:26,700 --> 00:06:30,450
+based on whatever file this
+line of code appears in.
+
+131
+00:06:30,450 --> 00:06:33,060
+Which, again, is always going
+to be generally application.py.
+
+132
+00:06:33,060 --> 00:06:36,090
+So it's basically creating
+an app, a Flask application
+
+133
+00:06:36,090 --> 00:06:39,830
+from the application.py file.
+
+134
+00:06:39,830 --> 00:06:41,770
+And then from there,
+we just have to write
+
+135
+00:06:41,770 --> 00:06:44,200
+functions, which we're
+familiar with doing in Python,
+
+136
+00:06:44,200 --> 00:06:46,250
+to define the behavior
+of our application
+
+137
+00:06:46,250 --> 00:06:47,780
+when we do different things.
+
+138
+00:06:47,780 --> 00:06:51,310
+So here, for example, are two
+functions that I might write.
+
+139
+00:06:51,310 --> 00:06:54,020
+And you'll notice that this is not new.
+
+140
+00:06:54,020 --> 00:06:55,450
+This is just writing in Python.
+
+141
+00:06:55,450 --> 00:06:57,910
+We're not writing in
+anything special here.
+
+142
+00:06:57,910 --> 00:07:00,250
+I'm defining a function called
+index, whose sole purpose
+
+143
+00:07:00,250 --> 00:07:03,040
+is to return you are at the index page.
+
+144
+00:07:03,040 --> 00:07:05,830
+And I'm defining another
+function called sample,
+
+145
+00:07:05,830 --> 00:07:09,580
+whose sole purpose is to return the
+string you are on the sample page.
+
+146
+00:07:09,580 --> 00:07:13,375
+Now, how do I associate
+these functions with my site?
+
+147
+00:07:13,375 --> 00:07:15,520
+Well, what I can do is
+something like this.
+
+148
+00:07:15,520 --> 00:07:19,380
+This is called applying a decorator, and
+I'll talk about this in just a second.
+
+149
+00:07:19,380 --> 00:07:23,680
+But basically what it means here is
+if I go to my web applications home
+
+150
+00:07:23,680 --> 00:07:27,157
+page, which you may recall from
+our video on HTTP, is just slash.
+
+151
+00:07:27,157 --> 00:07:28,990
+So if I don't type
+anything else, it's going
+
+152
+00:07:28,990 --> 00:07:32,180
+to default to index.HTML or nothing.
+
+153
+00:07:32,180 --> 00:07:34,720
+It will show me you
+are at the index page.
+
+154
+00:07:34,720 --> 00:07:40,137
+If, however, I go to whatever my web
+applications address is slash sample,
+
+155
+00:07:40,137 --> 00:07:42,970
+it will not show me the index page,
+it will show me the sample page.
+
+156
+00:07:42,970 --> 00:07:45,730
+So basically what I'm doing here
+is I'm defining the behavior
+
+157
+00:07:45,730 --> 00:07:51,040
+that I want to appear on different
+pages within my flask application.
+
+158
+00:07:51,040 --> 00:07:53,130
+So again, these are called decorators.
+
+159
+00:07:53,130 --> 00:07:57,610
+And in Flask context, we're basically
+just associating a particular function
+
+160
+00:07:57,610 --> 00:08:01,495
+with executing when you
+visit a particular URL.
+
+161
+00:08:01,495 --> 00:08:04,120
+Decorators are actually not
+something that are native to Flask,
+
+162
+00:08:04,120 --> 00:08:05,500
+they're native to Python more generally.
+
+163
+00:08:05,500 --> 00:08:08,080
+But that goes beyond the scope
+of what we cover in the class.
+
+164
+00:08:08,080 --> 00:08:11,320
+But generally they are used to
+modify the behavior of a function
+
+165
+00:08:11,320 --> 00:08:14,020
+or associate a function with something.
+
+166
+00:08:14,020 --> 00:08:17,080
+But in Flask, we're going to use it
+specifically to associate functions
+
+167
+00:08:17,080 --> 00:08:19,430
+with visiting certain domains.
+
+168
+00:08:19,430 --> 00:08:21,700
+OK?
+
+169
+00:08:21,700 --> 00:08:22,780
+We also then need to--
+
+170
+00:08:22,780 --> 00:08:26,020
+So we've now written some code,
+the index and sample functions.
+
+171
+00:08:26,020 --> 00:08:29,470
+Now we want to run
+our Flask application.
+
+172
+00:08:29,470 --> 00:08:34,210
+We do that in three steps, the first
+two of which you only have to run once.
+
+173
+00:08:34,210 --> 00:08:36,700
+First thing you have to do
+is export the Flask app.
+
+174
+00:08:36,700 --> 00:08:39,789
+Flask app is a system
+variable and it's going
+
+175
+00:08:39,789 --> 00:08:44,320
+to become stored in the memory
+of your IDE specifically,
+
+176
+00:08:44,320 --> 00:08:46,870
+so that if you ever run
+an application again,
+
+177
+00:08:46,870 --> 00:08:49,480
+it knows exactly which
+application to run.
+
+178
+00:08:49,480 --> 00:08:53,800
+So we're basically just saving
+in memory somewhere the location
+
+179
+00:08:53,800 --> 00:08:55,060
+of our Flask application.
+
+180
+00:08:55,060 --> 00:08:57,610
+It's being stored in a system variable.
+
+181
+00:08:57,610 --> 00:08:59,900
+So export flask app
+equals application.py,
+
+182
+00:08:59,900 --> 00:09:01,400
+because that's the name of our file.
+
+183
+00:09:01,400 --> 00:09:04,690
+The second line is technically optional
+but it's recommended particularly
+
+184
+00:09:04,690 --> 00:09:05,680
+as you get started.
+
+185
+00:09:05,680 --> 00:09:07,580
+Export flask debug equals 1.
+
+186
+00:09:07,580 --> 00:09:09,360
+1 here just basically means true.
+
+187
+00:09:09,360 --> 00:09:11,110
+So basically you're
+going to be running it
+
+188
+00:09:11,110 --> 00:09:14,620
+so that when you run your
+flask application in your IDE,
+
+189
+00:09:14,620 --> 00:09:18,205
+you are seeing all of the things
+that it's doing in debug mode.
+
+190
+00:09:18,205 --> 00:09:21,080
+So if something goes wrong, it will
+get printed out to your terminal,
+
+191
+00:09:21,080 --> 00:09:21,640
+you'll see it.
+
+192
+00:09:21,640 --> 00:09:24,400
+It's not like your site will just
+crash and you won't know what happened.
+
+193
+00:09:24,400 --> 00:09:27,233
+And then after executing those two
+lines of code, again, in our IDE,
+
+194
+00:09:27,233 --> 00:09:30,880
+just executing those two commands,
+rather, in our IDE, flask run.
+
+195
+00:09:30,880 --> 00:09:33,070
+And then what will happen
+specifically in your IDE,
+
+196
+00:09:33,070 --> 00:09:35,655
+is it will take about
+a second to spin up
+
+197
+00:09:35,655 --> 00:09:37,780
+and then it'll give you a
+URL that you can click on
+
+198
+00:09:37,780 --> 00:09:41,230
+and visit, which will be the
+home page of your application.
+
+199
+00:09:41,230 --> 00:09:43,521
+Again, after the first
+time you get configured
+
+200
+00:09:43,521 --> 00:09:45,520
+with the particular
+application you want to run,
+
+201
+00:09:45,520 --> 00:09:48,270
+you can leave these two blue lines
+out, you won't need them again.
+
+202
+00:09:48,270 --> 00:09:51,070
+You can just continue
+to type flask run and it
+
+203
+00:09:51,070 --> 00:09:53,560
+will continue to run that
+same application over and over
+
+204
+00:09:53,560 --> 00:09:55,090
+until you no longer want to run it.
+
+205
+00:09:55,090 --> 00:09:58,214
+And then you would export a different
+application, export a different debug
+
+206
+00:09:58,214 --> 00:10:00,530
+mode, and so on.
+
+207
+00:10:00,530 --> 00:10:04,210
+So in addition to just
+running code as we
+
+208
+00:10:04,210 --> 00:10:07,669
+did before, just having it
+print out you are at the index
+
+209
+00:10:07,669 --> 00:10:09,460
+and you are at the
+sample page, we can also
+
+210
+00:10:09,460 --> 00:10:12,730
+pass data in to our Flask applications.
+
+211
+00:10:12,730 --> 00:10:17,077
+We can do this using HTTP get, you may
+recall, by passing in data via URL.
+
+212
+00:10:17,077 --> 00:10:19,910
+So I might write a function that
+looks a little something like this.
+
+213
+00:10:19,910 --> 00:10:23,320
+It's a function called
+show and instead of taking
+
+214
+00:10:23,320 --> 00:10:26,290
+no parameters like index
+and sample did earlier,
+
+215
+00:10:26,290 --> 00:10:29,200
+I'm accepting a parameter
+here called number.
+
+216
+00:10:29,200 --> 00:10:32,560
+And I'm returning you
+passed in, and then I'm
+
+217
+00:10:32,560 --> 00:10:36,730
+apparently going interpolate
+or stick in some number.
+
+218
+00:10:36,730 --> 00:10:38,240
+Where does that number come from?
+
+219
+00:10:38,240 --> 00:10:39,700
+Well, look at my decorator here.
+
+220
+00:10:39,700 --> 00:10:43,600
+@app.route slash show slash.
+
+221
+00:10:43,600 --> 00:10:46,450
+And those angle brackets
+are actually important,
+
+222
+00:10:46,450 --> 00:10:49,450
+we actually have to
+leave those in, number.
+
+223
+00:10:49,450 --> 00:10:54,670
+So that if I visited my
+application slash show slash 10,
+
+224
+00:10:54,670 --> 00:10:56,950
+the page would show you passed in 10.
+
+225
+00:10:56,950 --> 00:11:00,730
+If I went to slash show slash 50,
+it would say you passed in 50.
+
+226
+00:11:00,730 --> 00:11:05,170
+So it allows me to collect
+information using HTTP get
+
+227
+00:11:05,170 --> 00:11:09,150
+by having the user supply it via a URL.
+
+228
+00:11:09,150 --> 00:11:13,680
+We can also pass in data via HTML
+forms, which are transmitted not by get
+
+229
+00:11:13,680 --> 00:11:15,540
+but by something called post.
+
+230
+00:11:15,540 --> 00:11:18,090
+Now, by default, Flask is
+configured to only accept
+
+231
+00:11:18,090 --> 00:11:21,180
+HTTP get requests or
+information via the URL
+
+232
+00:11:21,180 --> 00:11:24,720
+so we have to modify a couple of things
+to make sure that Flask will also
+
+233
+00:11:24,720 --> 00:11:27,720
+respond to HTTP post
+requests, for example,
+
+234
+00:11:27,720 --> 00:11:30,750
+when data is submitted via a form.
+
+235
+00:11:30,750 --> 00:11:36,242
+So if you get to problem set 7
+in CS50, which is CS50 finance,
+
+236
+00:11:36,242 --> 00:11:37,950
+you'll see that in
+our distribution code,
+
+237
+00:11:37,950 --> 00:11:40,050
+we have something that looks
+a little similar to this.
+
+238
+00:11:40,050 --> 00:11:41,920
+So this is where this is coming
+from if you want to take a look.
+
+239
+00:11:41,920 --> 00:11:44,460
+I've taken out a couple of
+things just to fit this four
+
+240
+00:11:44,460 --> 00:11:47,160
+lines of code on the slide here.
+
+241
+00:11:47,160 --> 00:11:49,380
+But this is some of the
+sample code that we give you
+
+242
+00:11:49,380 --> 00:11:53,970
+that is checking to see
+whether the user has provided
+
+243
+00:11:53,970 --> 00:11:57,190
+a user name in a particular field.
+
+244
+00:11:57,190 --> 00:12:01,847
+So notice that in addition in
+my decorator to saying where
+
+245
+00:12:01,847 --> 00:12:04,680
+the function should be associated,
+so in this case with slash login,
+
+246
+00:12:04,680 --> 00:12:06,730
+I'm also saying not only
+that, but you should
+
+247
+00:12:06,730 --> 00:12:10,110
+be accepting data via the get
+method or via the post method.
+
+248
+00:12:10,110 --> 00:12:12,200
+So that's how I explicitly call it out.
+
+249
+00:12:12,200 --> 00:12:14,190
+Then I'm defining my login function.
+
+250
+00:12:14,190 --> 00:12:20,730
+And I'm saying if not
+request.form.get username.
+
+251
+00:12:20,730 --> 00:12:25,860
+Using get here is unfortunately
+a side effect of Python.
+
+252
+00:12:25,860 --> 00:12:28,590
+That does not mean we're
+using the get method here.
+
+253
+00:12:28,590 --> 00:12:31,690
+Basically what I'm asking
+for is go and retrieve,
+
+254
+00:12:31,690 --> 00:12:33,500
+literally using get in that context.
+
+255
+00:12:33,500 --> 00:12:38,670
+Go and retrieve from the form
+the field called username.
+
+256
+00:12:38,670 --> 00:12:42,107
+And here I'm saying if it doesn't
+exist, apologize to the user.
+
+257
+00:12:42,107 --> 00:12:43,440
+Say they need supply a username.
+
+258
+00:12:43,440 --> 00:12:46,050
+So basically this is asking
+the question is the user name
+
+259
+00:12:46,050 --> 00:12:52,217
+field of whatever form the user
+submitted to get here, is that blank?
+
+260
+00:12:52,217 --> 00:12:55,300
+If it is, we need to apologize to the
+user and have them return something.
+
+261
+00:12:55,300 --> 00:12:57,800
+If not, we'll go to some
+more lines of code down below
+
+262
+00:12:57,800 --> 00:12:59,591
+and you're going to
+see those lines of code
+
+263
+00:12:59,591 --> 00:13:03,310
+in the distribution code for PSet
+7, if you want to take a look.
+
+264
+00:13:03,310 --> 00:13:05,440
+Now, we can also vary the
+behavior of a function
+
+265
+00:13:05,440 --> 00:13:08,590
+depending on which type
+of HTTP request we got.
+
+266
+00:13:08,590 --> 00:13:10,990
+We can do one thing if
+we got a get request
+
+267
+00:13:10,990 --> 00:13:13,060
+and we can do one thing
+if we got a post request.
+
+268
+00:13:13,060 --> 00:13:17,354
+For example, if we got a get
+request, we might show them the form.
+
+269
+00:13:17,354 --> 00:13:19,270
+But if we got a post
+request, then we're going
+
+270
+00:13:19,270 --> 00:13:22,930
+to be expecting that they have
+provided some data via the forms.
+
+271
+00:13:22,930 --> 00:13:25,780
+We can use one URL to
+do two different things
+
+272
+00:13:25,780 --> 00:13:27,347
+depending on how the data came to us.
+
+273
+00:13:27,347 --> 00:13:29,680
+And that actually is what we
+do, that some of the code I
+
+274
+00:13:29,680 --> 00:13:31,750
+took out on the previous page.
+
+275
+00:13:31,750 --> 00:13:36,340
+But this code also appears in
+the login function for PSet 7.
+
+276
+00:13:36,340 --> 00:13:38,740
+If the request method
+was post, that was then
+
+277
+00:13:38,740 --> 00:13:41,710
+where I was checking to see whether
+the fields were all filled in.
+
+278
+00:13:41,710 --> 00:13:44,374
+Otherwise, what I actually
+do here, which an else here
+
+279
+00:13:44,374 --> 00:13:46,540
+implies if the request
+method is get, because I only
+
+280
+00:13:46,540 --> 00:13:49,810
+have two methods this function
+accepts, get and post.
+
+281
+00:13:49,810 --> 00:13:51,910
+Otherwise, what I'm doing
+is actually displaying
+
+282
+00:13:51,910 --> 00:13:55,106
+the form in the first place, the
+form that I expect them to type into.
+
+283
+00:13:55,106 --> 00:13:56,980
+Which submits to this
+page again in the hopes
+
+284
+00:13:56,980 --> 00:13:59,530
+that they will have submitted
+data that I could use.
+
+285
+00:13:59,530 --> 00:14:02,950
+And I would process in the post
+part of this function as opposed
+
+286
+00:14:02,950 --> 00:14:06,100
+to in the get part of this function.
+
+287
+00:14:06,100 --> 00:14:11,250
+So if request.method basically is
+allowing me to check how I got data.
+
+288
+00:14:11,250 --> 00:14:13,530
+Request is something
+that is part of Flask
+
+289
+00:14:13,530 --> 00:14:16,350
+and it will let me see whether
+I got data via get or via post
+
+290
+00:14:16,350 --> 00:14:20,040
+and allow me to do different
+things depending on which it was.
+
+291
+00:14:20,040 --> 00:14:22,350
+There are a lot of functions
+within the Flask module
+
+292
+00:14:22,350 --> 00:14:25,210
+that will be useful for you as you
+continue to develop applications.
+
+293
+00:14:25,210 --> 00:14:27,300
+So in addition to
+saying from Flask import
+
+294
+00:14:27,300 --> 00:14:29,310
+Flask at the beginning
+of your files, you
+
+295
+00:14:29,310 --> 00:14:33,290
+might say from Flask import
+Flask comma any of these.
+
+296
+00:14:33,290 --> 00:14:35,970
+And you'll leave out the parentheses
+when you're doing that part
+
+297
+00:14:35,970 --> 00:14:38,678
+but you'll use the parentheses
+when you're calling the functions.
+
+298
+00:14:38,678 --> 00:14:40,680
+URL underscore for.
+
+299
+00:14:40,680 --> 00:14:42,780
+So this allows me to
+define a function and have
+
+300
+00:14:42,780 --> 00:14:44,190
+a decorator associated with it.
+
+301
+00:14:44,190 --> 00:14:46,530
+And maybe that decorator
+specifies that the URL here
+
+302
+00:14:46,530 --> 00:14:51,170
+is really long or, for whatever
+reason, not that helpful.
+
+303
+00:14:51,170 --> 00:14:54,660
+What I can do here is
+instead of specifying
+
+304
+00:14:54,660 --> 00:14:58,050
+the exact URL I want to
+go to, I can say what
+
+305
+00:14:58,050 --> 00:15:01,770
+I want you to do here is go to the
+URL for whatever function it is.
+
+306
+00:15:01,770 --> 00:15:04,230
+So say my login function was
+associated with some URL that
+
+307
+00:15:04,230 --> 00:15:05,759
+was like 50 characters long.
+
+308
+00:15:05,759 --> 00:15:07,800
+Here, I could just pass
+in, instead of typing out
+
+309
+00:15:07,800 --> 00:15:10,530
+that 50 character long URL
+where I wanted to use it,
+
+310
+00:15:10,530 --> 00:15:13,620
+I could just say URL
+underscore for login.
+
+311
+00:15:13,620 --> 00:15:15,780
+And because I associate
+it with a decorator,
+
+312
+00:15:15,780 --> 00:15:17,280
+it'll just plug it in there instead.
+
+313
+00:15:17,280 --> 00:15:20,780
+So it's a way to kind of
+shorthand a couple of things.
+
+314
+00:15:20,780 --> 00:15:23,900
+Redirect, as you might
+expect, is Flask's function
+
+315
+00:15:23,900 --> 00:15:26,900
+that redirects you from
+one page to another.
+
+316
+00:15:26,900 --> 00:15:29,722
+Session is useful for HTTP session data.
+
+317
+00:15:29,722 --> 00:15:32,930
+As we've talked about get and post, you
+may recall that there's also a third.
+
+318
+00:15:32,930 --> 00:15:35,540
+And there are a few others
+but there's another thing
+
+319
+00:15:35,540 --> 00:15:37,460
+we would use called a session variable.
+
+320
+00:15:37,460 --> 00:15:40,501
+It's not necessarily an HTTP thing
+but it's usually stored in the headers
+
+321
+00:15:40,501 --> 00:15:41,640
+there as well.
+
+322
+00:15:41,640 --> 00:15:44,690
+And we can use that, for example,
+to track that a user is logged in.
+
+323
+00:15:44,690 --> 00:15:46,523
+And constantly check
+that they are logged in
+
+324
+00:15:46,523 --> 00:15:49,310
+even if they're going to
+different pages on our site.
+
+325
+00:15:49,310 --> 00:15:51,950
+So a session is used sort
+of like a global variable.
+
+326
+00:15:51,950 --> 00:15:54,020
+It's accessible by all pages.
+
+327
+00:15:54,020 --> 00:15:57,200
+If you establish a session, you can
+store data in the session for the user
+
+328
+00:15:57,200 --> 00:15:58,560
+as well.
+
+329
+00:15:58,560 --> 00:16:03,470
+Render template is used to
+create pages on your site that
+
+330
+00:16:03,470 --> 00:16:07,690
+mix HTML and Python together.
+
+331
+00:16:07,690 --> 00:16:09,440
+So I might render a
+template, for example,
+
+332
+00:16:09,440 --> 00:16:11,270
+where that template is
+the form that I want
+
+333
+00:16:11,270 --> 00:16:14,300
+to show to the user, the form I was
+talking about on an earlier slide.
+
+334
+00:16:14,300 --> 00:16:18,920
+I might have an HTML template where
+I've written the general form there.
+
+335
+00:16:18,920 --> 00:16:22,580
+And I might render a template
+and reference in the parentheses
+
+336
+00:16:22,580 --> 00:16:26,422
+there the HTML for the form
+that I was just talking about.
+
+337
+00:16:26,422 --> 00:16:28,130
+And you can do some
+other cool things too
+
+338
+00:16:28,130 --> 00:16:30,976
+where you mix HTML and
+Python together using
+
+339
+00:16:30,976 --> 00:16:32,850
+a language called Jinja,
+which is going to be
+
+340
+00:16:32,850 --> 00:16:34,640
+beyond the scope of
+this particular video.
+
+341
+00:16:34,640 --> 00:16:36,080
+But if you want to get
+more information about what
+
+342
+00:16:36,080 --> 00:16:39,329
+you can do in the Flask quickstart guide
+and you really can get started pretty
+
+343
+00:16:39,329 --> 00:16:40,907
+quickly with it, the URL is there.
+
+344
+00:16:40,907 --> 00:16:42,740
+And if you want to learn
+about Jinja and how
+
+345
+00:16:42,740 --> 00:16:48,332
+you can mix HTML and Python together
+to create basic templates where
+
+346
+00:16:48,332 --> 00:16:50,540
+you can maybe substitute a
+couple of different things
+
+347
+00:16:50,540 --> 00:16:54,050
+in depending on what the user has
+submitted via a get or post request.
+
+348
+00:16:54,050 --> 00:16:55,940
+You can get some
+information on Jinja there.
+
+349
+00:16:55,940 --> 00:16:58,590
+Jinja is Python-inspired syntax.
+
+350
+00:16:58,590 --> 00:17:01,490
+So some of the things that you'll
+be familiar with from Python syntax
+
+351
+00:17:01,490 --> 00:17:02,780
+will be relevant there.
+
+352
+00:17:02,780 --> 00:17:05,510
+But there are a couple
+of little twists as well.
+
+353
+00:17:05,510 --> 00:17:09,040
+And you can learn more about
+Jinja at that URL there as well.
+
+354
+00:17:09,040 --> 00:17:10,210
+I'm Doug Lloyd.
+
+355
+00:17:10,210 --> 00:17:12,010
+This is CS50.
+
+356
+00:17:12,010 --> 00:17:13,820

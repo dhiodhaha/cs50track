@@ -1,0 +1,2965 @@
+{
+ "version": 1,
+ "edition": 2026,
+ "units": {
+  "week-0": {
+   "lecture": {
+    "title": "Week 0 · Scratch",
+    "notesDocumentId": "cs50-034481dd07891058",
+    "notesSourceUrl": "https://cs50.harvard.edu/x/2026/notes/0/",
+    "chapters": [
+     {
+      "start": 0,
+      "title": "Introduction"
+     },
+     {
+      "start": 123,
+      "title": "This is CS50"
+     },
+     {
+      "start": 144,
+      "title": "Artificial Intelligence"
+     },
+     {
+      "start": 852,
+      "title": "Computer Science"
+     },
+     {
+      "start": 936,
+      "title": "Unary"
+     },
+     {
+      "start": 966,
+      "title": "Binary"
+     },
+     {
+      "start": 1786,
+      "title": "ASCII"
+     },
+     {
+      "start": 2452,
+      "title": "Unicode"
+     },
+     {
+      "start": 2697,
+      "title": "Color"
+     },
+     {
+      "start": 3017,
+      "title": "Representation"
+     },
+     {
+      "start": 3323,
+      "title": "Algorithms"
+     },
+     {
+      "start": 3885,
+      "title": "Pseudocode"
+     },
+     {
+      "start": 4449,
+      "title": "Scratch"
+     },
+     {
+      "start": 4695,
+      "title": "Hello, World"
+     },
+     {
+      "start": 4881,
+      "title": "Hello, You"
+     },
+     {
+      "start": 5420,
+      "title": "Meow"
+     },
+     {
+      "start": 5631,
+      "title": "Abstractions"
+     },
+     {
+      "start": 5875,
+      "title": "Conditionals"
+     },
+     {
+      "start": 6005,
+      "title": "Oscartime"
+     },
+     {
+      "start": 6719,
+      "title": "Ivy’s Hardest Game"
+     }
+    ],
+    "youtubeId": "UuIEbpQms8o",
+    "mp4": "https://cdn.cs50.net/2025/fall/lectures/0/lecture0-720p.mp4",
+    "captions": "/course/2026/files/c1bcf5658a2b2310-lecture0.vtt",
+    "durationSeconds": 7220,
+    "parts": [
+     {
+      "id": "week-0-lecture-p1",
+      "title": "Visual Studio Code and chat.py, Computer Science and Problem Solving",
+      "start": 0,
+      "end": 1786,
+      "headings": [
+       {
+        "id": "welcome",
+        "title": "Welcome!",
+        "words": 94,
+        "start": 0,
+        "exact": true
+       },
+       {
+        "id": "visual-studio-code-and-chatpy",
+        "title": "Visual Studio Code and chat.py",
+        "words": 286,
+        "start": 360,
+        "exact": false
+       },
+       {
+        "id": "computer-science-and-problem-solving",
+        "title": "Computer Science and Problem Solving",
+        "words": 439,
+        "start": 852,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-0-lecture-p2",
+      "title": "ASCII, Unicode",
+      "start": 1786,
+      "end": 3885,
+      "headings": [
+       {
+        "id": "ascii",
+        "title": "ASCII",
+        "words": 437,
+        "start": 1786,
+        "exact": true
+       },
+       {
+        "id": "unicode",
+        "title": "Unicode",
+        "words": 178,
+        "start": 2452,
+        "exact": true
+       },
+       {
+        "id": "rgb",
+        "title": "RGB",
+        "words": 138,
+        "start": 2850,
+        "exact": false
+       },
+       {
+        "id": "algorithms",
+        "title": "Algorithms",
+        "words": 250,
+        "start": 3323,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-0-lecture-p3",
+      "title": "Pseudocode, What’s Ahead",
+      "start": 3885,
+      "end": 5631,
+      "headings": [
+       {
+        "id": "pseudocode",
+        "title": "Pseudocode",
+        "words": 296,
+        "start": 3885,
+        "exact": true
+       },
+       {
+        "id": "whats-ahead",
+        "title": "What’s Ahead",
+        "words": 107,
+        "start": 4380,
+        "exact": false
+       },
+       {
+        "id": "scratch",
+        "title": "Scratch",
+        "words": 166,
+        "start": 4449,
+        "exact": true
+       },
+       {
+        "id": "hello-world",
+        "title": "Hello World",
+        "words": 94,
+        "start": 4695,
+        "exact": true
+       },
+       {
+        "id": "hello-you",
+        "title": "Hello, You",
+        "words": 226,
+        "start": 4881,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-0-lecture-p4",
+      "title": "Meow, Loops, and Abstraction, Conditionals",
+      "start": 5631,
+      "end": 7220,
+      "headings": [
+       {
+        "id": "meow-loops-and-abstraction",
+        "title": "Meow, Loops, and Abstraction",
+        "words": 397,
+        "start": 5631,
+        "exact": true
+       },
+       {
+        "id": "conditionals",
+        "title": "Conditionals",
+        "words": 152,
+        "start": 5875,
+        "exact": true
+       },
+       {
+        "id": "oscartime",
+        "title": "Oscartime",
+        "words": 301,
+        "start": 6005,
+        "exact": true
+       },
+       {
+        "id": "ivys-hardest-game",
+        "title": "Ivy’s Hardest Game",
+        "words": 415,
+        "start": 6719,
+        "exact": true
+       },
+       {
+        "id": "summing-up",
+        "title": "Summing Up",
+        "words": 132,
+        "start": 6810,
+        "exact": false
+       }
+      ]
+     }
+    ]
+   },
+   "section": null,
+   "shorts": []
+  },
+  "week-1": {
+   "lecture": {
+    "title": "Week 1 · C",
+    "notesDocumentId": "cs50-185ca7ff7016b329",
+    "notesSourceUrl": "https://cs50.harvard.edu/x/2026/notes/1/",
+    "chapters": [
+     {
+      "start": 0,
+      "title": "Introduction"
+     },
+     {
+      "start": 43,
+      "title": "Source Code"
+     },
+     {
+      "start": 301,
+      "title": "Visual Studio Code for CS50"
+     },
+     {
+      "start": 540,
+      "title": "Hello, World"
+     },
+     {
+      "start": 873,
+      "title": "From Scratch to C"
+     },
+     {
+      "start": 1450,
+      "title": "Header Files"
+     },
+     {
+      "start": 1630,
+      "title": "CS50 Manual Pages"
+     },
+     {
+      "start": 1861,
+      "title": "Hello, You"
+     },
+     {
+      "start": 2643,
+      "title": "Terminal Commands"
+     },
+     {
+      "start": 3349,
+      "title": "Conditionals"
+     },
+     {
+      "start": 3775,
+      "title": "Types"
+     },
+     {
+      "start": 4142,
+      "title": "compare.c"
+     },
+     {
+      "start": 4653,
+      "title": "agree.c"
+     },
+     {
+      "start": 4944,
+      "title": "Loops"
+     },
+     {
+      "start": 5169,
+      "title": "cat.c"
+     },
+     {
+      "start": 6286,
+      "title": "– Functions"
+     },
+     {
+      "start": 6981,
+      "title": "– Correctness, Design, Style"
+     },
+     {
+      "start": 7368,
+      "title": "– Mario"
+     },
+     {
+      "start": 7973,
+      "title": "– calculator.c"
+     },
+     {
+      "start": 8312,
+      "title": "– Integer Overflow"
+     },
+     {
+      "start": 8531,
+      "title": "– Boeing"
+     },
+     {
+      "start": 8674,
+      "title": "– Pacman"
+     },
+     {
+      "start": 8754,
+      "title": "– Truncation"
+     },
+     {
+      "start": 8792,
+      "title": "– Type Casting"
+     },
+     {
+      "start": 8807,
+      "title": "– Floating-Point Imprecision"
+     }
+    ],
+    "youtubeId": "SlqjA04_dpk",
+    "mp4": "https://cdn.cs50.net/2025/fall/lectures/1/lecture1-720p.mp4",
+    "captions": "/course/2026/files/08ba17be51750960-lecture1.vtt",
+    "durationSeconds": 8982,
+    "parts": [
+     {
+      "id": "week-1-lecture-p1",
+      "title": "Source Code, Visual Studio Code for CS50",
+      "start": 0,
+      "end": 1450,
+      "headings": [
+       {
+        "id": "welcome",
+        "title": "Welcome!",
+        "words": 98,
+        "start": 0,
+        "exact": true
+       },
+       {
+        "id": "source-code",
+        "title": "Source Code",
+        "words": 125,
+        "start": 43,
+        "exact": true
+       },
+       {
+        "id": "visual-studio-code-for-cs50",
+        "title": "Visual Studio Code for CS50",
+        "words": 221,
+        "start": 301,
+        "exact": true
+       },
+       {
+        "id": "hello-world",
+        "title": "Hello World",
+        "words": 303,
+        "start": 540,
+        "exact": true
+       },
+       {
+        "id": "from-scratch-to-c",
+        "title": "From Scratch to C",
+        "words": 223,
+        "start": 873,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-1-lecture-p2",
+      "title": "Header Files and CS50 Manual Pages, Hello, You",
+      "start": 1450,
+      "end": 3775,
+      "headings": [
+       {
+        "id": "header-files-and-cs50-manual-pages",
+        "title": "Header Files and CS50 Manual Pages",
+        "words": 212,
+        "start": 1450,
+        "exact": true
+       },
+       {
+        "id": "hello-you",
+        "title": "Hello, You",
+        "words": 295,
+        "start": 1861,
+        "exact": true
+       },
+       {
+        "id": "linux",
+        "title": "Linux",
+        "words": 122,
+        "start": 2670,
+        "exact": false
+       },
+       {
+        "id": "conditionals",
+        "title": "Conditionals",
+        "words": 223,
+        "start": 3349,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-1-lecture-p3",
+      "title": "Types, Format Codes",
+      "start": 3775,
+      "end": 4944,
+      "headings": [
+       {
+        "id": "types",
+        "title": "Types",
+        "words": 18,
+        "start": 3775,
+        "exact": true
+       },
+       {
+        "id": "format-codes",
+        "title": "Format Codes",
+        "words": 107,
+        "start": 3810,
+        "exact": false
+       },
+       {
+        "id": "variables",
+        "title": "Variables",
+        "words": 108,
+        "start": 3930,
+        "exact": false
+       },
+       {
+        "id": "comparec",
+        "title": "compare.c",
+        "words": 247,
+        "start": 4142,
+        "exact": true
+       },
+       {
+        "id": "agreec",
+        "title": "agree.c",
+        "words": 279,
+        "start": 4653,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-1-lecture-p4",
+      "title": "Loops and meow.c, Functions",
+      "start": 4944,
+      "end": 7368,
+      "headings": [
+       {
+        "id": "loops-and-meowc",
+        "title": "Loops and meow.c",
+        "words": 794,
+        "start": 4944,
+        "exact": true
+       },
+       {
+        "id": "functions",
+        "title": "Functions",
+        "words": 520,
+        "start": 6286,
+        "exact": true
+       },
+       {
+        "id": "correctness-design-style",
+        "title": "Correctness, Design, Style",
+        "words": 72,
+        "start": 6981,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-1-lecture-p5",
+      "title": "Mario, Operators",
+      "start": 7368,
+      "end": 8982,
+      "headings": [
+       {
+        "id": "mario",
+        "title": "Mario",
+        "words": 476,
+        "start": 7368,
+        "exact": true
+       },
+       {
+        "id": "operators",
+        "title": "Operators",
+        "words": 920,
+        "start": 8730,
+        "exact": false
+       },
+       {
+        "id": "summing-up",
+        "title": "Summing Up",
+        "words": 100,
+        "start": 8820,
+        "exact": false
+       }
+      ]
+     }
+    ]
+   },
+   "section": {
+    "id": "week-1-section",
+    "title": "C section",
+    "sourceUrl": "https://cs50.harvard.edu/x/2026/sections/1/",
+    "documentId": "cs50-8eb5bd7723289536",
+    "chapters": [],
+    "youtubeId": "8N5ZpIh9gzM",
+    "mp4": "https://cdn.cs50.net/2025/fall/sections/1/section1-720p.mp4",
+    "captions": "/course/2026/files/e7a21be16c4a1396-section1.vtt",
+    "durationSeconds": 3204
+   },
+   "shorts": [
+    {
+     "id": "week-1-short-data-types",
+     "title": "Data Types",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/data_types/",
+     "documentId": "cs50-6647d3a20445e139",
+     "chapters": [],
+     "youtubeId": "Fc9htmvVZ9U",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/data_types/data_types-720p.mp4",
+     "captions": "/course/2026/files/522a1cd5b5b86de4-data_types.vtt",
+     "durationSeconds": 848
+    },
+    {
+     "id": "week-1-short-operators",
+     "title": "Operators",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/operators/",
+     "documentId": "cs50-2163ac45a4eb76e2",
+     "chapters": [],
+     "youtubeId": "f1xZf4iJDWE",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/operators/operators-720p.mp4",
+     "captions": "/course/2026/files/86f4066f65088e6c-operators.vtt",
+     "durationSeconds": 738
+    },
+    {
+     "id": "week-1-short-conditional-statements",
+     "title": "Conditional Statements",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/conditional_statements/",
+     "documentId": "cs50-ec5bd26539852eed",
+     "chapters": [],
+     "youtubeId": "1wsaV5nVC7g",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/conditional_statements/conditional_statements-720p.mp4",
+     "captions": "/course/2026/files/29d862454605e7f7-conditional_statements.vtt",
+     "durationSeconds": 551
+    },
+    {
+     "id": "week-1-short-loops",
+     "title": "Loops",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/loops/",
+     "documentId": "cs50-777c1b665c8682b4",
+     "chapters": [],
+     "youtubeId": "WgX8e_O7eG8",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/loops/loops-720p.mp4",
+     "captions": "/course/2026/files/4ce06899490ac1fc-loops.vtt",
+     "durationSeconds": 561
+    },
+    {
+     "id": "week-1-short-command-line",
+     "title": "Command Line",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/command_line/",
+     "documentId": "cs50-1564bda6d8bb7e57",
+     "chapters": [],
+     "youtubeId": "BnJ013X02b8",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/command_line/command_line-720p.mp4",
+     "captions": "/course/2026/files/16a1b116934a744b-command_line.vtt",
+     "durationSeconds": 1069
+    },
+    {
+     "id": "week-1-short-magic-numbers",
+     "title": "Magic Numbers",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/magic_numbers/",
+     "documentId": "cs50-4af55a109f2325e8",
+     "chapters": [],
+     "youtubeId": "vK_naJkrtjc",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/magic_numbers/magic_numbers-720p.mp4",
+     "captions": "/course/2026/files/f9cf04ffc7cae82e-magic_numbers.vtt",
+     "durationSeconds": 445
+    }
+   ]
+  },
+  "week-2": {
+   "lecture": {
+    "title": "Week 2 · Arrays",
+    "notesDocumentId": "cs50-078813ebe48519ee",
+    "notesSourceUrl": "https://cs50.harvard.edu/x/2026/notes/2/",
+    "chapters": [
+     {
+      "start": 0,
+      "title": "Introduction"
+     },
+     {
+      "start": 43,
+      "title": "– Reading Levels"
+     },
+     {
+      "start": 349,
+      "title": "– Debugging"
+     },
+     {
+      "start": 1569,
+      "title": "– debug50"
+     },
+     {
+      "start": 2376,
+      "title": "– Compiling"
+     },
+     {
+      "start": 3707,
+      "title": "– Types"
+     },
+     {
+      "start": 3936,
+      "title": "– scores.c"
+     },
+     {
+      "start": 4360,
+      "title": "– Arrays"
+     },
+     {
+      "start": 5396,
+      "title": "– Strings"
+     },
+     {
+      "start": 6477,
+      "title": "– String Length"
+     },
+     {
+      "start": 7185,
+      "title": "– uppercase.c"
+     },
+     {
+      "start": 7615,
+      "title": "– Command Line Arguments"
+     },
+     {
+      "start": 8083,
+      "title": "– Exit Status"
+     },
+     {
+      "start": 8335,
+      "title": "– Cowsay"
+     },
+     {
+      "start": 8422,
+      "title": "– Cryptography"
+     }
+    ],
+    "youtubeId": "h5Gc1n8ZuU8",
+    "mp4": "https://cdn.cs50.net/2025/fall/lectures/2/lecture2-720p.mp4",
+    "captions": "/course/2026/files/73c8ca339d4c556b-lecture2.vtt",
+    "durationSeconds": 8699,
+    "parts": [
+     {
+      "id": "week-2-lecture-p1",
+      "title": "Reading Levels",
+      "start": 0,
+      "end": 349,
+      "headings": [
+       {
+        "id": "welcome",
+        "title": "Welcome!",
+        "words": 104,
+        "start": 0,
+        "exact": true
+       },
+       {
+        "id": "reading-levels",
+        "title": "Reading Levels",
+        "words": 47,
+        "start": 43,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-2-lecture-p2",
+      "title": "Debugging, Compiling",
+      "start": 349,
+      "end": 4360,
+      "headings": [
+       {
+        "id": "debugging",
+        "title": "Debugging",
+        "words": 909,
+        "start": 349,
+        "exact": true
+       },
+       {
+        "id": "compiling",
+        "title": "Compiling",
+        "words": 585,
+        "start": 2376,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-2-lecture-p3",
+      "title": "Arrays",
+      "start": 4360,
+      "end": 5396,
+      "headings": [
+       {
+        "id": "arrays",
+        "title": "Arrays",
+        "words": 592,
+        "start": 4360,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-2-lecture-p4",
+      "title": "Strings",
+      "start": 5396,
+      "end": 6477,
+      "headings": [
+       {
+        "id": "strings",
+        "title": "Strings",
+        "words": 457,
+        "start": 5396,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-2-lecture-p5",
+      "title": "String Length, Command-Line Arguments",
+      "start": 6477,
+      "end": 8699,
+      "headings": [
+       {
+        "id": "string-length",
+        "title": "String Length",
+        "words": 936,
+        "start": 6477,
+        "exact": true
+       },
+       {
+        "id": "command-line-arguments",
+        "title": "Command-Line Arguments",
+        "words": 253,
+        "start": 7615,
+        "exact": true
+       },
+       {
+        "id": "exit-status",
+        "title": "Exit Status",
+        "words": 177,
+        "start": 8083,
+        "exact": true
+       },
+       {
+        "id": "summing-up",
+        "title": "Summing Up",
+        "words": 79,
+        "start": 8190,
+        "exact": false
+       }
+      ]
+     }
+    ]
+   },
+   "section": {
+    "id": "week-2-section",
+    "title": "Arrays section",
+    "sourceUrl": "https://cs50.harvard.edu/x/2026/sections/2/",
+    "documentId": "cs50-a48dd80adf3cd0c2",
+    "chapters": [],
+    "youtubeId": "ZlJuiMNrzBQ",
+    "mp4": "https://cdn.cs50.net/2025/fall/sections/2/section2-720p.mp4",
+    "captions": "/course/2026/files/36be343f635b9a70-section2.vtt",
+    "durationSeconds": 3080
+   },
+   "shorts": [
+    {
+     "id": "week-2-short-functions",
+     "title": "Functions",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/functions/",
+     "documentId": "cs50-57bd0d59ac23352a",
+     "chapters": [],
+     "youtubeId": "n1glFqt3g38",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/functions/functions-720p.mp4",
+     "captions": "/course/2026/files/b7813ba960efc24a-functions.vtt",
+     "durationSeconds": 1222
+    },
+    {
+     "id": "week-2-short-variables-and-scope",
+     "title": "Variables and Scope",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/variables_and_scope/",
+     "documentId": "cs50-253b66cd7f4a8ab3",
+     "chapters": [],
+     "youtubeId": "GiFbdVGjF9I",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/variables_and_scope/variables_and_scope-720p.mp4",
+     "captions": "/course/2026/files/2f2d465d5c4e48b7-variables_and_scope.vtt",
+     "durationSeconds": 459
+    },
+    {
+     "id": "week-2-short-debugging-step-through",
+     "title": "Debugging (Step through)",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/debugging_step_through/",
+     "documentId": "cs50-40ff2ecdaf07ed66",
+     "chapters": [],
+     "youtubeId": "---HbbANxDQ",
+     "mp4": "https://cdn.cs50.net/2021/fall/shorts/guess/guess-720p.mp4",
+     "captions": "/course/2026/files/1dc1835852bffd92-guess.vtt",
+     "durationSeconds": 178
+    },
+    {
+     "id": "week-2-short-debugging-step-into",
+     "title": "Debugging (Step into)",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/debugging_step_into/",
+     "documentId": "cs50-f4885f7618d4a1c1",
+     "chapters": [],
+     "youtubeId": "tk3cl8hyfqM",
+     "mp4": "https://cdn.cs50.net/2021/fall/shorts/secret/secret-720p.mp4",
+     "captions": "/course/2026/files/caa5e88865082ddd-secret.vtt",
+     "durationSeconds": 229
+    },
+    {
+     "id": "week-2-short-arrays",
+     "title": "Arrays",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/arrays/",
+     "documentId": "cs50-3a034e45232e0865",
+     "chapters": [],
+     "youtubeId": "K1yC1xshF40",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/arrays/arrays-720p.mp4",
+     "captions": "/course/2026/files/f92bc4e7d786c586-arrays.vtt",
+     "durationSeconds": 839
+    },
+    {
+     "id": "week-2-short-command-line-arguments",
+     "title": "Command Line Arguments",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/command_line_arguments/",
+     "documentId": "cs50-a2a677e6d9990a6a",
+     "chapters": [],
+     "youtubeId": "AI6Ccfno6Pk",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/command_line_arguments/command_line_arguments-720p.mp4",
+     "captions": "/course/2026/files/e959e450dc9df902-command_line_arguments.vtt",
+     "durationSeconds": 470
+    }
+   ]
+  },
+  "week-3": {
+   "lecture": {
+    "title": "Week 3 · Algorithms",
+    "notesDocumentId": "cs50-f9ec8686827cb06b",
+    "notesSourceUrl": "https://cs50.harvard.edu/x/2026/notes/3/",
+    "chapters": [
+     {
+      "start": 0,
+      "title": "Introduction"
+     },
+     {
+      "start": 43,
+      "title": "– Overview"
+     },
+     {
+      "start": 715,
+      "title": "– Searching"
+     },
+     {
+      "start": 867,
+      "title": "– Linear Search"
+     },
+     {
+      "start": 1060,
+      "title": "– Binary Search"
+     },
+     {
+      "start": 1621,
+      "title": "– Running Time"
+     },
+     {
+      "start": 2334,
+      "title": "– search.c"
+     },
+     {
+      "start": 3012,
+      "title": "– phonebook.c"
+     },
+     {
+      "start": 3369,
+      "title": "– Structs"
+     },
+     {
+      "start": 3733,
+      "title": "– Sorting"
+     },
+     {
+      "start": 4340,
+      "title": "– Selection Sort"
+     },
+     {
+      "start": 4812,
+      "title": "– Bubble Sort"
+     },
+     {
+      "start": 5351,
+      "title": "– Recursion"
+     },
+     {
+      "start": 5762,
+      "title": "– iteration.c"
+     },
+     {
+      "start": 5984,
+      "title": "– recursion.c"
+     },
+     {
+      "start": 6346,
+      "title": "– Merge Sort"
+     },
+     {
+      "start": 7043,
+      "title": "– Sort Race"
+     }
+    ],
+    "youtubeId": "6Svu_ae5ebk",
+    "mp4": "https://cdn.cs50.net/2025/fall/lectures/3/lecture3-720p.mp4",
+    "captions": "/course/2026/files/afe11c84c14c8f19-lecture3.vtt",
+    "durationSeconds": 7140,
+    "parts": [
+     {
+      "id": "week-3-lecture-p1",
+      "title": "Linear Search, Binary Search",
+      "start": 0,
+      "end": 1621,
+      "headings": [
+       {
+        "id": "welcome",
+        "title": "Welcome!",
+        "words": 167,
+        "start": 0,
+        "exact": true
+       },
+       {
+        "id": "linear-search",
+        "title": "Linear Search",
+        "words": 259,
+        "start": 867,
+        "exact": true
+       },
+       {
+        "id": "binary-search",
+        "title": "Binary Search",
+        "words": 145,
+        "start": 1060,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-3-lecture-p2",
+      "title": "Running Time, search.c",
+      "start": 1621,
+      "end": 3369,
+      "headings": [
+       {
+        "id": "running-time",
+        "title": "Running Time",
+        "words": 290,
+        "start": 1621,
+        "exact": true
+       },
+       {
+        "id": "searchc",
+        "title": "search.c",
+        "words": 353,
+        "start": 2334,
+        "exact": true
+       },
+       {
+        "id": "phonebookc",
+        "title": "phonebook.c",
+        "words": 184,
+        "start": 3012,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-3-lecture-p3",
+      "title": "Structs, Sorting and Selection Sort",
+      "start": 3369,
+      "end": 5351,
+      "headings": [
+       {
+        "id": "structs",
+        "title": "Structs",
+        "words": 262,
+        "start": 3369,
+        "exact": true
+       },
+       {
+        "id": "sorting-and-selection-sort",
+        "title": "Sorting and Selection Sort",
+        "words": 205,
+        "start": 4340,
+        "exact": true
+       },
+       {
+        "id": "bubble-sort",
+        "title": "Bubble Sort",
+        "words": 148,
+        "start": 4812,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-3-lecture-p4",
+      "title": "Recursion, Merge Sort",
+      "start": 5351,
+      "end": 7140,
+      "headings": [
+       {
+        "id": "recursion",
+        "title": "Recursion",
+        "words": 533,
+        "start": 5351,
+        "exact": true
+       },
+       {
+        "id": "merge-sort",
+        "title": "Merge Sort",
+        "words": 339,
+        "start": 6346,
+        "exact": true
+       },
+       {
+        "id": "summing-up",
+        "title": "Summing Up",
+        "words": 44,
+        "start": 6960,
+        "exact": false
+       }
+      ]
+     }
+    ]
+   },
+   "section": {
+    "id": "week-3-section",
+    "title": "Algorithms section",
+    "sourceUrl": "https://cs50.harvard.edu/x/2026/sections/3/",
+    "documentId": "cs50-698bbe616fb228f6",
+    "chapters": [],
+    "youtubeId": "r383B4M1EgE",
+    "mp4": "https://cdn.cs50.net/2025/fall/sections/3/section3-720p.mp4",
+    "captions": "/course/2026/files/8c4b906e408de030-section3.vtt",
+    "durationSeconds": 4299
+   },
+   "shorts": [
+    {
+     "id": "week-3-short-linear-search",
+     "title": "Linear Search",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/linear_search/",
+     "documentId": "cs50-d6be72ead608ff70",
+     "chapters": [],
+     "youtubeId": "TwsgCHYmbbA",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/linear_search/linear_search-720p.mp4",
+     "captions": "/course/2026/files/7bc75c06ab7e1b91-linear_search.vtt",
+     "durationSeconds": 168
+    },
+    {
+     "id": "week-3-short-binary-search",
+     "title": "Binary Search",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/binary_search/",
+     "documentId": "cs50-af120a0eaad786dd",
+     "chapters": [],
+     "youtubeId": "T98PIp4omUA",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/binary_search/binary_search-720p.mp4",
+     "captions": "/course/2026/files/e84d9c364c6d30f8-binary_search.vtt",
+     "durationSeconds": 569
+    },
+    {
+     "id": "week-3-short-bubble-sort",
+     "title": "Bubble Sort",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/bubble_sort/",
+     "documentId": "cs50-4c653df80ce60fb9",
+     "chapters": [],
+     "youtubeId": "RT-hUXUWQ2I",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/bubble_sort/bubble_sort-720p.mp4",
+     "captions": "/course/2026/files/50d9a2126edea182-bubble_sort.vtt",
+     "durationSeconds": 352
+    },
+    {
+     "id": "week-3-short-selection-sort",
+     "title": "Selection Sort",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/selection_sort/",
+     "documentId": "cs50-70159eafffefbef5",
+     "chapters": [],
+     "youtubeId": "3hH8kTHFw2A",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/selection_sort/selection_sort-720p.mp4",
+     "captions": "/course/2026/files/3817c4ca6c4b6cbf-selection_sort.vtt",
+     "durationSeconds": 238
+    },
+    {
+     "id": "week-3-short-call-stacks",
+     "title": "Call Stacks",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/call_stacks/",
+     "documentId": "cs50-b126455cd4eaefb0",
+     "chapters": [],
+     "youtubeId": "aCPkszeKRa4",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/call_stacks/call_stacks-720p.mp4",
+     "captions": "/course/2026/files/c4b2e936f5412f86-call_stacks.vtt",
+     "durationSeconds": 457
+    },
+    {
+     "id": "week-3-short-recursion",
+     "title": "Recursion",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/recursion/",
+     "documentId": "cs50-7300093cf1563af2",
+     "chapters": [],
+     "youtubeId": "mz6tAJMVmfM",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/recursion/recursion-720p.mp4",
+     "captions": "/course/2026/files/9e9acd6a63ad4986-recursion.vtt",
+     "durationSeconds": 828
+    },
+    {
+     "id": "week-3-short-merge-sort",
+     "title": "Merge Sort",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/merge_sort/",
+     "documentId": "cs50-6a207eaebf774e62",
+     "chapters": [],
+     "youtubeId": "Ns7tGNbtvV4",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/merge_sort/merge_sort-720p.mp4",
+     "captions": "/course/2026/files/134d87dac2d8a704-merge_sort.vtt",
+     "durationSeconds": 625
+    }
+   ]
+  },
+  "week-4": {
+   "lecture": {
+    "title": "Week 4 · Memory",
+    "notesDocumentId": "cs50-4942741b94bab3e0",
+    "notesSourceUrl": "https://cs50.harvard.edu/x/2026/notes/4/",
+    "chapters": [
+     {
+      "start": 0,
+      "title": "Introduction"
+     },
+     {
+      "start": 43,
+      "title": "– Pixel Art"
+     },
+     {
+      "start": 277,
+      "title": "– Hexadecimal"
+     },
+     {
+      "start": 704,
+      "title": "– Memory"
+     },
+     {
+      "start": 1085,
+      "title": "– Pointers"
+     },
+     {
+      "start": 1888,
+      "title": "Strings"
+     },
+     {
+      "start": 2614,
+      "title": "– Pointer Arithmetic"
+     },
+     {
+      "start": 2862,
+      "title": "– String Comparison"
+     },
+     {
+      "start": 3431,
+      "title": "– Copying and malloc"
+     },
+     {
+      "start": 4397,
+      "title": "– Valgrind"
+     },
+     {
+      "start": 4991,
+      "title": "– Garbage Values"
+     },
+     {
+      "start": 5125,
+      "title": "– Pointer Fun with Blinky"
+     },
+     {
+      "start": 5608,
+      "title": "– Swapping"
+     },
+     {
+      "start": 6494,
+      "title": "– Overflow"
+     },
+     {
+      "start": 6624,
+      "title": "– scanf"
+     },
+     {
+      "start": 7340,
+      "title": "– File I/O"
+     }
+    ],
+    "youtubeId": "db0H0U13YsA",
+    "mp4": "https://cdn.cs50.net/2025/fall/lectures/4/lecture4-720p.mp4",
+    "captions": "/course/2026/files/22e69505dec00e51-lecture4.vtt",
+    "durationSeconds": 8361,
+    "parts": [
+     {
+      "id": "week-4-lecture-p1",
+      "title": "Pixel Art, Hexadecimal",
+      "start": 0,
+      "end": 1085,
+      "headings": [
+       {
+        "id": "welcome",
+        "title": "Welcome!",
+        "words": 105,
+        "start": 0,
+        "exact": true
+       },
+       {
+        "id": "pixel-art",
+        "title": "Pixel Art",
+        "words": 35,
+        "start": 43,
+        "exact": true
+       },
+       {
+        "id": "hexadecimal",
+        "title": "Hexadecimal",
+        "words": 230,
+        "start": 277,
+        "exact": true
+       },
+       {
+        "id": "memory",
+        "title": "Memory",
+        "words": 121,
+        "start": 704,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-4-lecture-p2",
+      "title": "Pointers, Strings",
+      "start": 1085,
+      "end": 2862,
+      "headings": [
+       {
+        "id": "pointers",
+        "title": "Pointers",
+        "words": 321,
+        "start": 1085,
+        "exact": true
+       },
+       {
+        "id": "strings",
+        "title": "Strings",
+        "words": 424,
+        "start": 1888,
+        "exact": true
+       },
+       {
+        "id": "pointer-arithmetic",
+        "title": "Pointer Arithmetic",
+        "words": 188,
+        "start": 2614,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-4-lecture-p3",
+      "title": "String Comparison, Copying and malloc",
+      "start": 2862,
+      "end": 4991,
+      "headings": [
+       {
+        "id": "string-comparison",
+        "title": "String Comparison",
+        "words": 466,
+        "start": 2862,
+        "exact": true
+       },
+       {
+        "id": "copying-and-malloc",
+        "title": "Copying and malloc",
+        "words": 936,
+        "start": 3431,
+        "exact": true
+       },
+       {
+        "id": "valgrind",
+        "title": "Valgrind",
+        "words": 231,
+        "start": 4397,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-4-lecture-p4",
+      "title": "Garbage Values, Pointer Fun with Binky",
+      "start": 4991,
+      "end": 6494,
+      "headings": [
+       {
+        "id": "garbage-values",
+        "title": "Garbage Values",
+        "words": 153,
+        "start": 4991,
+        "exact": true
+       },
+       {
+        "id": "pointer-fun-with-binky",
+        "title": "Pointer Fun with Binky",
+        "words": 18,
+        "start": 5130,
+        "exact": false
+       },
+       {
+        "id": "swapping",
+        "title": "Swapping",
+        "words": 390,
+        "start": 5608,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-4-lecture-p5",
+      "title": "Overflow, scanf",
+      "start": 6494,
+      "end": 8361,
+      "headings": [
+       {
+        "id": "overflow",
+        "title": "Overflow",
+        "words": 42,
+        "start": 6494,
+        "exact": true
+       },
+       {
+        "id": "scanf",
+        "title": "scanf",
+        "words": 361,
+        "start": 6624,
+        "exact": true
+       },
+       {
+        "id": "file-io",
+        "title": "File I/O",
+        "words": 366,
+        "start": 7340,
+        "exact": true
+       },
+       {
+        "id": "summing-up",
+        "title": "Summing Up",
+        "words": 53,
+        "start": 7740,
+        "exact": false
+       }
+      ]
+     }
+    ]
+   },
+   "section": {
+    "id": "week-4-section",
+    "title": "Memory section",
+    "sourceUrl": "https://cs50.harvard.edu/x/2026/sections/4/",
+    "documentId": "cs50-98fd4ed15342b45b",
+    "chapters": [],
+    "youtubeId": "Gjf0L3mkVtY",
+    "mp4": "https://cdn.cs50.net/2025/fall/sections/4/section4-720p.mp4",
+    "captions": "/course/2026/files/82e8a6823a49d9b4-section4.vtt",
+    "durationSeconds": 4052
+   },
+   "shorts": [
+    {
+     "id": "week-4-short-magic-numbers",
+     "title": "Magic Numbers",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/magic_numbers/",
+     "documentId": "cs50-4af55a109f2325e8",
+     "chapters": [],
+     "youtubeId": "vK_naJkrtjc",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/magic_numbers/magic_numbers-720p.mp4",
+     "captions": "/course/2026/files/f9cf04ffc7cae82e-magic_numbers.vtt",
+     "durationSeconds": 445
+    },
+    {
+     "id": "week-4-short-call-stacks",
+     "title": "Call Stacks",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/call_stacks/",
+     "documentId": "cs50-b126455cd4eaefb0",
+     "chapters": [],
+     "youtubeId": "aCPkszeKRa4",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/call_stacks/call_stacks-720p.mp4",
+     "captions": "/course/2026/files/c4b2e936f5412f86-call_stacks.vtt",
+     "durationSeconds": 457
+    },
+    {
+     "id": "week-4-short-hexadecimal",
+     "title": "Hexadecimal",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/hexadecimal/",
+     "documentId": "cs50-50da97bab14a30b1",
+     "chapters": [],
+     "youtubeId": "u_atXp-NF6w",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/hexadecimal/hexadecimal-720p.mp4",
+     "captions": "/course/2026/files/3910d5da89fe9cd1-hexadecimal.vtt",
+     "durationSeconds": 566
+    },
+    {
+     "id": "week-4-short-pointers",
+     "title": "Pointers",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/pointers/",
+     "documentId": "cs50-4c76251037ad1a36",
+     "chapters": [],
+     "youtubeId": "XISnO2YhnsY",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/pointers/pointers-720p.mp4",
+     "captions": "/course/2026/files/833d4b66c5aea9ba-pointers.vtt",
+     "durationSeconds": 1755
+    },
+    {
+     "id": "week-4-short-defining-custom-types",
+     "title": "Defining Custom Types",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/defining_custom_types/",
+     "documentId": "cs50-80472ef1eaee0070",
+     "chapters": [],
+     "youtubeId": "96M4q0OnMfY",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/custom_types/custom_types-720p.mp4",
+     "captions": "/course/2026/files/cfb8423c62ddbf5b-custom_types.vtt",
+     "durationSeconds": 213
+    },
+    {
+     "id": "week-4-short-dynamic-memory-allocation",
+     "title": "Dynamic Memory Allocation",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/dynamic_memory_allocation/",
+     "documentId": "cs50-781d3b30c3b5c81a",
+     "chapters": [],
+     "youtubeId": "xa4ugmMDhiE",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/dynamic_memory_allocation/dynamic_memory_allocation-720p.mp4",
+     "captions": "/course/2026/files/c2f5dbff69c52702-dynamic_memory_allocation.vtt",
+     "durationSeconds": 849
+    },
+    {
+     "id": "week-4-short-file-pointers",
+     "title": "File Pointers",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/file_pointers/",
+     "documentId": "cs50-1ceb57bad40d3ad3",
+     "chapters": [],
+     "youtubeId": "bOF-SpEAYgk",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/file_pointers/file_pointers-720p.mp4",
+     "captions": "/course/2026/files/b32adcd72b4d7e2f-file_pointers.vtt",
+     "durationSeconds": 1099
+    }
+   ]
+  },
+  "week-5": {
+   "lecture": {
+    "title": "Week 5 · Data structures",
+    "notesDocumentId": "cs50-2d2d47eacb2c064c",
+    "notesSourceUrl": "https://cs50.harvard.edu/x/2026/notes/5/",
+    "chapters": [
+     {
+      "start": 0,
+      "title": "Introduction"
+     },
+     {
+      "start": 43,
+      "title": "– Jack Learns the Facts"
+     },
+     {
+      "start": 215,
+      "title": "– Stacks and Queues"
+     },
+     {
+      "start": 644,
+      "title": "– Dictionaries"
+     },
+     {
+      "start": 746,
+      "title": "– Resizing Arrays"
+     },
+     {
+      "start": 1636,
+      "title": "– realloc"
+     },
+     {
+      "start": 1983,
+      "title": "– Linked Lists"
+     },
+     {
+      "start": 4924,
+      "title": "– Trees"
+     },
+     {
+      "start": 5807,
+      "title": "– Hashing and Hash Tables"
+     },
+     {
+      "start": 6831,
+      "title": "– Tries"
+     }
+    ],
+    "youtubeId": "PmAI76OGE_E",
+    "mp4": "https://cdn.cs50.net/2025/fall/lectures/5/lecture5-720p.mp4",
+    "captions": "/course/2026/files/eb5911b5c913892c-lecture5.fixed.vtt",
+    "durationSeconds": 7396,
+    "parts": [
+     {
+      "id": "week-5-lecture-p1",
+      "title": "Jack Learns the Facts, Data Structures",
+      "start": 0,
+      "end": 1983,
+      "headings": [
+       {
+        "id": "welcome",
+        "title": "Welcome!",
+        "words": 97,
+        "start": 0,
+        "exact": true
+       },
+       {
+        "id": "jack-learns-the-facts",
+        "title": "Jack Learns the Facts",
+        "words": 20,
+        "start": 43,
+        "exact": true
+       },
+       {
+        "id": "data-structures",
+        "title": "Data Structures",
+        "words": 61,
+        "start": 210,
+        "exact": false
+       },
+       {
+        "id": "queues",
+        "title": "Queues",
+        "words": 160,
+        "start": 215,
+        "exact": true
+       },
+       {
+        "id": "stacks",
+        "title": "Stacks",
+        "words": 214,
+        "start": 215,
+        "exact": true
+       },
+       {
+        "id": "arrays",
+        "title": "Arrays",
+        "words": 863,
+        "start": 746,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-5-lecture-p2",
+      "title": "Linked Lists",
+      "start": 1983,
+      "end": 4924,
+      "headings": [
+       {
+        "id": "linked-lists",
+        "title": "Linked Lists",
+        "words": 1858,
+        "start": 1983,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-5-lecture-p3",
+      "title": "Trees",
+      "start": 4924,
+      "end": 5807,
+      "headings": [
+       {
+        "id": "trees",
+        "title": "Trees",
+        "words": 260,
+        "start": 4924,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-5-lecture-p4",
+      "title": "Hashing and Hash Tables, Tries",
+      "start": 5807,
+      "end": 7396,
+      "headings": [
+       {
+        "id": "hashing-and-hash-tables",
+        "title": "Hashing and Hash Tables",
+        "words": 377,
+        "start": 5807,
+        "exact": true
+       },
+       {
+        "id": "tries",
+        "title": "Tries",
+        "words": 85,
+        "start": 6831,
+        "exact": true
+       },
+       {
+        "id": "summing-up",
+        "title": "Summing Up",
+        "words": 35,
+        "start": 7110,
+        "exact": false
+       }
+      ]
+     }
+    ]
+   },
+   "section": {
+    "id": "week-5-section",
+    "title": "Data structures section",
+    "sourceUrl": "https://cs50.harvard.edu/x/2026/sections/5/",
+    "documentId": "cs50-c751cc0b261f21fb",
+    "chapters": [],
+    "youtubeId": "sLrnELP1nT0",
+    "mp4": "https://cdn.cs50.net/2025/fall/sections/5/section5-720p.mp4",
+    "captions": "/course/2026/files/88655bf160c2da17-section5.vtt",
+    "durationSeconds": 3420
+   },
+   "shorts": [
+    {
+     "id": "week-5-short-structures",
+     "title": "Structures",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/structures/",
+     "documentId": "cs50-fed0ca81a40a0b29",
+     "chapters": [],
+     "youtubeId": "E4lb2gkyXr8",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/structures/structures-720p.mp4",
+     "captions": "/course/2026/files/edac00d9a9d035d9-structures.vtt",
+     "durationSeconds": 480
+    },
+    {
+     "id": "week-5-short-singly-linked-lists",
+     "title": "Singly-Linked Lists",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/singly_linked_lists/",
+     "documentId": "cs50-3c62aba724d5766b",
+     "chapters": [],
+     "youtubeId": "zQI3FyWm144",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/singly_linked_lists/singly_linked_lists-720p.mp4",
+     "captions": "/course/2026/files/a92616918c9cf5a7-singly_linked_lists.vtt",
+     "durationSeconds": 1400
+    },
+    {
+     "id": "week-5-short-doubly-linked-lists",
+     "title": "Doubly-Linked Lists",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/doubly_linked_lists/",
+     "documentId": "cs50-a72c6da889381b47",
+     "chapters": [],
+     "youtubeId": "FHMPswJDCvU",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/doubly_linked_lists/doubly_linked_lists-720p.mp4",
+     "captions": "/course/2026/files/12ef9fe8ab9c5171-doubly_linked_lists.vtt",
+     "durationSeconds": 589
+    },
+    {
+     "id": "week-5-short-stacks",
+     "title": "Stacks",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/stacks/",
+     "documentId": "cs50-8d0bf21e1360feef",
+     "chapters": [],
+     "youtubeId": "hVsNqhEthOk",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/stacks/stacks-720p.mp4",
+     "captions": "/course/2026/files/57d0ec3149ae7365-stacks.vtt",
+     "durationSeconds": 857
+    },
+    {
+     "id": "week-5-short-queues",
+     "title": "Queues",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/queues/",
+     "documentId": "cs50-88a77db7140f4ef6",
+     "chapters": [],
+     "youtubeId": "3TmUv1uS92s",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/queues/queues-720p.mp4",
+     "captions": "/course/2026/files/596f4c5fed476101-queues.vtt",
+     "durationSeconds": 949
+    },
+    {
+     "id": "week-5-short-hash-tables",
+     "title": "Hash Tables",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/hash_tables/",
+     "documentId": "cs50-7ed98f35d4148e95",
+     "chapters": [],
+     "youtubeId": "nvzVHwrrub0",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/hash_tables/hash_tables-720p.mp4",
+     "captions": "/course/2026/files/43ad5fddb677e371-hash_tables.vtt",
+     "durationSeconds": 1124
+    },
+    {
+     "id": "week-5-short-tries",
+     "title": "Tries",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/tries/",
+     "documentId": "cs50-509848e9b46691ea",
+     "chapters": [],
+     "youtubeId": "MC-iQHFdEDI",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/tries/tries-720p.mp4",
+     "captions": "/course/2026/files/d2f4f3899d43fb22-tries.vtt",
+     "durationSeconds": 981
+    },
+    {
+     "id": "week-5-short-data-structures",
+     "title": "Data Structures",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/data_structures/",
+     "documentId": "cs50-85241248a36bb611",
+     "chapters": [],
+     "youtubeId": "3uGchQbk7g8",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/data_structures/data_structures-720p.mp4",
+     "captions": "/course/2026/files/f3d7a7fb1c529b29-data_structures.vtt",
+     "durationSeconds": 530
+    }
+   ]
+  },
+  "week-6": {
+   "lecture": {
+    "title": "Week 6 · Python",
+    "notesDocumentId": "cs50-3ea804bff2d8dd40",
+    "notesSourceUrl": "https://cs50.harvard.edu/x/2026/notes/6/",
+    "chapters": [
+     {
+      "start": 0,
+      "title": "Introduction"
+     },
+     {
+      "start": 43,
+      "title": "– Python"
+     },
+     {
+      "start": 373,
+      "title": "– Speller"
+     },
+     {
+      "start": 767,
+      "title": "– Filter"
+     },
+     {
+      "start": 1011,
+      "title": "– Functions"
+     },
+     {
+      "start": 2296,
+      "title": "– Data Types"
+     },
+     {
+      "start": 2400,
+      "title": "– Calculator"
+     },
+     {
+      "start": 2930,
+      "title": "– Conditionals"
+     },
+     {
+      "start": 3131,
+      "title": "– Compare"
+     },
+     {
+      "start": 3775,
+      "title": "– Object-Oriented Programming"
+     },
+     {
+      "start": 3906,
+      "title": "– copy.py"
+     },
+     {
+      "start": 4313,
+      "title": "– Loops"
+     },
+     {
+      "start": 4368,
+      "title": "– Meow"
+     },
+     {
+      "start": 5259,
+      "title": "– Truncation"
+     },
+     {
+      "start": 5578,
+      "title": "– Exceptions"
+     },
+     {
+      "start": 6111,
+      "title": "– Mario"
+     },
+     {
+      "start": 6620,
+      "title": "– Lists"
+     },
+     {
+      "start": 6848,
+      "title": "– Dictionaries"
+     },
+     {
+      "start": 7715,
+      "title": "– sys"
+     },
+     {
+      "start": 8042,
+      "title": "– csv"
+     },
+     {
+      "start": 8524,
+      "title": "– pip"
+     }
+    ],
+    "youtubeId": "Rl0ludWTLxs",
+    "mp4": "https://cdn.cs50.net/2025/fall/lectures/6/lecture6-720p.mp4",
+    "captions": "/course/2026/files/0b0f7db0a8f03022-lecture6.vtt",
+    "durationSeconds": 8935,
+    "parts": [
+     {
+      "id": "week-6-lecture-p1",
+      "title": "Hello Python!, Speller",
+      "start": 0,
+      "end": 1980,
+      "headings": [
+       {
+        "id": "welcome",
+        "title": "Welcome!",
+        "words": 62,
+        "start": 0,
+        "exact": true
+       },
+       {
+        "id": "hello-python",
+        "title": "Hello Python!",
+        "words": 243,
+        "start": 43,
+        "exact": true
+       },
+       {
+        "id": "speller",
+        "title": "Speller",
+        "words": 266,
+        "start": 373,
+        "exact": true
+       },
+       {
+        "id": "filter",
+        "title": "Filter",
+        "words": 186,
+        "start": 767,
+        "exact": true
+       },
+       {
+        "id": "functions",
+        "title": "Functions",
+        "words": 22,
+        "start": 1011,
+        "exact": true
+       },
+       {
+        "id": "libraries-modules-and-packages",
+        "title": "Libraries, Modules, and Packages",
+        "words": 58,
+        "start": 1020,
+        "exact": false
+       },
+       {
+        "id": "strings",
+        "title": "Strings",
+        "words": 220,
+        "start": 1080,
+        "exact": false
+       }
+      ]
+     },
+     {
+      "id": "week-6-lecture-p2",
+      "title": "Positional Parameters and Named Parameters, Variables",
+      "start": 1980,
+      "end": 2930,
+      "headings": [
+       {
+        "id": "positional-parameters-and-named-parameters",
+        "title": "Positional Parameters and Named Parameters",
+        "words": 125,
+        "start": 1980,
+        "exact": false
+       },
+       {
+        "id": "variables",
+        "title": "Variables",
+        "words": 52,
+        "start": 2190,
+        "exact": false
+       },
+       {
+        "id": "types",
+        "title": "Types",
+        "words": 121,
+        "start": 2296,
+        "exact": true
+       },
+       {
+        "id": "calculator",
+        "title": "Calculator",
+        "words": 334,
+        "start": 2400,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-6-lecture-p3",
+      "title": "Conditionals, Object-Oriented Programming",
+      "start": 2930,
+      "end": 5259,
+      "headings": [
+       {
+        "id": "conditionals",
+        "title": "Conditionals",
+        "words": 408,
+        "start": 2930,
+        "exact": true
+       },
+       {
+        "id": "object-oriented-programming",
+        "title": "Object-Oriented Programming",
+        "words": 356,
+        "start": 3775,
+        "exact": true
+       },
+       {
+        "id": "loops",
+        "title": "Loops",
+        "words": 232,
+        "start": 4313,
+        "exact": true
+       },
+       {
+        "id": "abstraction",
+        "title": "Abstraction",
+        "words": 211,
+        "start": 4950,
+        "exact": false
+       }
+      ]
+     },
+     {
+      "id": "week-6-lecture-p4",
+      "title": "Truncation and Floating Point Imprecision, Exceptions",
+      "start": 5259,
+      "end": 6848,
+      "headings": [
+       {
+        "id": "truncation-and-floating-point-imprecision",
+        "title": "Truncation and Floating Point Imprecision",
+        "words": 181,
+        "start": 5259,
+        "exact": true
+       },
+       {
+        "id": "exceptions",
+        "title": "Exceptions",
+        "words": 109,
+        "start": 5578,
+        "exact": true
+       },
+       {
+        "id": "mario",
+        "title": "Mario",
+        "words": 343,
+        "start": 6111,
+        "exact": true
+       },
+       {
+        "id": "lists",
+        "title": "Lists",
+        "words": 155,
+        "start": 6620,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-6-lecture-p5",
+      "title": "Searching and Dictionaries, Command-Line Arguments",
+      "start": 6848,
+      "end": 8935,
+      "headings": [
+       {
+        "id": "searching-and-dictionaries",
+        "title": "Searching and Dictionaries",
+        "words": 466,
+        "start": 6848,
+        "exact": true
+       },
+       {
+        "id": "command-line-arguments",
+        "title": "Command-Line Arguments",
+        "words": 69,
+        "start": 7650,
+        "exact": false
+       },
+       {
+        "id": "exit-status",
+        "title": "Exit Status",
+        "words": 60,
+        "start": 7860,
+        "exact": false
+       },
+       {
+        "id": "csv-files",
+        "title": "CSV Files",
+        "words": 189,
+        "start": 8042,
+        "exact": true
+       },
+       {
+        "id": "third-party-libraries",
+        "title": "Third-Party Libraries",
+        "words": 51,
+        "start": 8490,
+        "exact": false
+       },
+       {
+        "id": "summing-up",
+        "title": "Summing Up",
+        "words": 118,
+        "start": 8520,
+        "exact": false
+       }
+      ]
+     }
+    ]
+   },
+   "section": {
+    "id": "week-6-section",
+    "title": "Python section",
+    "sourceUrl": "https://cs50.harvard.edu/x/2026/sections/6/",
+    "documentId": "cs50-455fb0ac8c2435f3",
+    "chapters": [],
+    "youtubeId": "SHbahshnkAs",
+    "mp4": "https://cdn.cs50.net/2025/fall/sections/6/section6-720p.mp4",
+    "captions": "/course/2026/files/a7e164d323d326ad-section6.vtt",
+    "durationSeconds": 3549
+   },
+   "shorts": [
+    {
+     "id": "week-6-short-python",
+     "title": "Python",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/python/",
+     "documentId": "cs50-121305d1621e11d3",
+     "chapters": [],
+     "youtubeId": "mgBpcQRDtl0",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/python/python-720p.mp4",
+     "captions": "/course/2026/files/37227531257e4e26-python.vtt",
+     "durationSeconds": 2333
+    }
+   ]
+  },
+  "week-7": {
+   "lecture": {
+    "title": "Week 7 · SQL",
+    "notesDocumentId": "cs50-245226d3f318ab0e",
+    "notesSourceUrl": "https://cs50.harvard.edu/x/2026/notes/7/",
+    "chapters": [
+     {
+      "start": 0,
+      "title": "Introduction"
+     },
+     {
+      "start": 43,
+      "title": "– Flat-file Databases"
+     },
+     {
+      "start": 1450,
+      "title": "– Relational Databases"
+     },
+     {
+      "start": 3204,
+      "title": "– Shows"
+     },
+     {
+      "start": 3585,
+      "title": "– Schema"
+     },
+     {
+      "start": 3856,
+      "title": "– Data Types and Constraints"
+     },
+     {
+      "start": 3965,
+      "title": "– Primary and Foreign Keys"
+     },
+     {
+      "start": 4018,
+      "title": "– Querying"
+     },
+     {
+      "start": 6047,
+      "title": "– Indexes"
+     },
+     {
+      "start": 6356,
+      "title": "– Python and SQL"
+     },
+     {
+      "start": 7066,
+      "title": "– SQL injection attacks"
+     },
+     {
+      "start": 7575,
+      "title": "– Race Conditions"
+     }
+    ],
+    "youtubeId": "oqRU2So6Z2Y",
+    "mp4": "https://cdn.cs50.net/2025/fall/lectures/7/lecture7-720p.mp4",
+    "captions": "/course/2026/files/eefe5c8b92f5e9e5-lecture7.vtt",
+    "durationSeconds": 8098,
+    "parts": [
+     {
+      "id": "week-7-lecture-p1",
+      "title": "Flat-File Database",
+      "start": 0,
+      "end": 1450,
+      "headings": [
+       {
+        "id": "welcome",
+        "title": "Welcome!",
+        "words": 126,
+        "start": 0,
+        "exact": true
+       },
+       {
+        "id": "flat-file-database",
+        "title": "Flat-File Database",
+        "words": 1079,
+        "start": 43,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-7-lecture-p2",
+      "title": "Relational Databases, SELECT",
+      "start": 1450,
+      "end": 3856,
+      "headings": [
+       {
+        "id": "relational-databases",
+        "title": "Relational Databases",
+        "words": 329,
+        "start": 1450,
+        "exact": true
+       },
+       {
+        "id": "select",
+        "title": "SELECT",
+        "words": 250,
+        "start": 2130,
+        "exact": false
+       },
+       {
+        "id": "insert",
+        "title": "INSERT",
+        "words": 43,
+        "start": 2730,
+        "exact": false
+       },
+       {
+        "id": "delete",
+        "title": "DELETE",
+        "words": 30,
+        "start": 2760,
+        "exact": false
+       },
+       {
+        "id": "update",
+        "title": "UPDATE",
+        "words": 62,
+        "start": 2940,
+        "exact": false
+       }
+      ]
+     },
+     {
+      "id": "week-7-lecture-p3",
+      "title": "IMDb, JOINs",
+      "start": 3856,
+      "end": 6047,
+      "headings": [
+       {
+        "id": "imdb",
+        "title": "IMDb",
+        "words": 568,
+        "start": 3856,
+        "exact": false
+       },
+       {
+        "id": "joins",
+        "title": "JOINs",
+        "words": 451,
+        "start": 5700,
+        "exact": false
+       }
+      ]
+     },
+     {
+      "id": "week-7-lecture-p4",
+      "title": "Indexes, Using SQL in Python",
+      "start": 6047,
+      "end": 8098,
+      "headings": [
+       {
+        "id": "indexes",
+        "title": "Indexes",
+        "words": 221,
+        "start": 6047,
+        "exact": true
+       },
+       {
+        "id": "using-sql-in-python",
+        "title": "Using SQL in Python",
+        "words": 222,
+        "start": 6356,
+        "exact": true
+       },
+       {
+        "id": "race-conditions",
+        "title": "Race Conditions",
+        "words": 71,
+        "start": 7575,
+        "exact": true
+       },
+       {
+        "id": "sql-injection-attacks",
+        "title": "SQL Injection Attacks",
+        "words": 138,
+        "start": 7066,
+        "exact": true
+       },
+       {
+        "id": "summing-up",
+        "title": "Summing Up",
+        "words": 71,
+        "start": 7500,
+        "exact": false
+       }
+      ]
+     }
+    ]
+   },
+   "section": {
+    "id": "week-7-section",
+    "title": "SQL section",
+    "sourceUrl": "https://cs50.harvard.edu/x/2026/sections/7/",
+    "documentId": "cs50-0a33cf08ac093e5b",
+    "chapters": [],
+    "youtubeId": "g1gKEPqikOE",
+    "mp4": "https://cdn.cs50.net/2025/fall/sections/7/section7-720p.mp4",
+    "captions": "/course/2026/files/cc1fe92dab591fb6-section7.vtt",
+    "durationSeconds": 3873
+   },
+   "shorts": [
+    {
+     "id": "week-7-short-sql",
+     "title": "SQL",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/sql/",
+     "documentId": "cs50-7afc694dff01ede0",
+     "chapters": [],
+     "youtubeId": "AywtnUjQ6X4",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/sql/sql-720p.mp4",
+     "captions": "/course/2026/files/258ad594eac03285-sql.vtt",
+     "durationSeconds": 1400
+    }
+   ]
+  },
+  "week-8": {
+   "lecture": {
+    "title": "Week 8 · HTML, CSS, JavaScript",
+    "notesDocumentId": "cs50-d639a4b8977ca0c4",
+    "notesSourceUrl": "https://cs50.harvard.edu/x/2026/notes/8/",
+    "chapters": [
+     {
+      "start": 0,
+      "title": "Introduction"
+     },
+     {
+      "start": 43,
+      "title": "– TCP/IP"
+     },
+     {
+      "start": 690,
+      "title": "– Ports"
+     },
+     {
+      "start": 997,
+      "title": "– DNS"
+     },
+     {
+      "start": 1222,
+      "title": "– DHCP"
+     },
+     {
+      "start": 1312,
+      "title": "– HTTP"
+     },
+     {
+      "start": 1825,
+      "title": "– Status Codes"
+     },
+     {
+      "start": 2130,
+      "title": "– Inspect"
+     },
+     {
+      "start": 2540,
+      "title": "– HTML"
+     },
+     {
+      "start": 4940,
+      "title": "– Regular Expressions"
+     },
+     {
+      "start": 5374,
+      "title": "– CSS"
+     },
+     {
+      "start": 6226,
+      "title": "– Bootstrap"
+     },
+     {
+      "start": 6663,
+      "title": "– JavaScript"
+     },
+     {
+      "start": 7720,
+      "title": "– Background"
+     },
+     {
+      "start": 7900,
+      "title": "– Blink"
+     },
+     {
+      "start": 8058,
+      "title": "– Autocomplete"
+     }
+    ],
+    "youtubeId": "yYst7puZXjw",
+    "mp4": "https://cdn.cs50.net/2025/fall/lectures/8/lecture8-720p.mp4",
+    "captions": "/course/2026/files/7d338e72e0b88e00-lecture8.vtt",
+    "durationSeconds": 8496,
+    "parts": [
+     {
+      "id": "week-8-lecture-p1",
+      "title": "The Internet, Routers",
+      "start": 0,
+      "end": 1312,
+      "headings": [
+       {
+        "id": "welcome",
+        "title": "Welcome!",
+        "words": 36,
+        "start": 0,
+        "exact": true
+       },
+       {
+        "id": "the-internet",
+        "title": "The Internet",
+        "words": 51,
+        "start": 60,
+        "exact": false
+       },
+       {
+        "id": "routers",
+        "title": "Routers",
+        "words": 396,
+        "start": 540,
+        "exact": false
+       },
+       {
+        "id": "dns",
+        "title": "DNS",
+        "words": 63,
+        "start": 997,
+        "exact": true
+       },
+       {
+        "id": "dhcp",
+        "title": "DHCP",
+        "words": 39,
+        "start": 1222,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-8-lecture-p2",
+      "title": "HTTPS",
+      "start": 1312,
+      "end": 4080,
+      "headings": [
+       {
+        "id": "https",
+        "title": "HTTPS",
+        "words": 494,
+        "start": 1312,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-8-lecture-p3",
+      "title": "HTML",
+      "start": 4080,
+      "end": 4940,
+      "headings": [
+       {
+        "id": "html",
+        "title": "HTML",
+        "words": 1703,
+        "start": 4080,
+        "exact": false
+       }
+      ]
+     },
+     {
+      "id": "week-8-lecture-p4",
+      "title": "Regular Expressions, CSS",
+      "start": 4940,
+      "end": 6663,
+      "headings": [
+       {
+        "id": "regular-expressions",
+        "title": "Regular Expressions",
+        "words": 195,
+        "start": 4940,
+        "exact": true
+       },
+       {
+        "id": "css",
+        "title": "CSS",
+        "words": 507,
+        "start": 5374,
+        "exact": true
+       },
+       {
+        "id": "frameworks",
+        "title": "Frameworks",
+        "words": 216,
+        "start": 6240,
+        "exact": false
+       }
+      ]
+     },
+     {
+      "id": "week-8-lecture-p5",
+      "title": "JavaScript",
+      "start": 6663,
+      "end": 8496,
+      "headings": [
+       {
+        "id": "javascript",
+        "title": "JavaScript",
+        "words": 646,
+        "start": 6663,
+        "exact": true
+       },
+       {
+        "id": "summing-up",
+        "title": "Summing Up",
+        "words": 40,
+        "start": 7650,
+        "exact": false
+       }
+      ]
+     }
+    ]
+   },
+   "section": {
+    "id": "week-8-section",
+    "title": "HTML, CSS, JavaScript section",
+    "sourceUrl": "https://cs50.harvard.edu/x/2026/sections/8/",
+    "documentId": "cs50-25fa6cf4145ac441",
+    "chapters": [],
+    "youtubeId": "coRcSVIx5hc",
+    "mp4": "https://cdn.cs50.net/2025/fall/sections/8/section8-720p.mp4",
+    "captions": "/course/2026/files/c3ee596da12d5b99-section8.vtt",
+    "durationSeconds": 2142
+   },
+   "shorts": [
+    {
+     "id": "week-8-short-internet-primer",
+     "title": "Internet Primer",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/internet_primer/",
+     "documentId": "cs50-8ebfa73847913580",
+     "chapters": [],
+     "youtubeId": "04GztBlVo_s",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/internet_primer/internet_primer-720p.mp4",
+     "captions": "/course/2026/files/6901f1ca2ecdc57b-internet_primer.vtt",
+     "durationSeconds": 1185
+    },
+    {
+     "id": "week-8-short-ip",
+     "title": "IP",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/ip/",
+     "documentId": "cs50-f289ae46f9aecd5c",
+     "chapters": [],
+     "youtubeId": "A1g9SokDJSU",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/ip/ip-720p.mp4",
+     "captions": "/course/2026/files/73132f7da5fcc95a-ip.vtt",
+     "durationSeconds": 931
+    },
+    {
+     "id": "week-8-short-tcp",
+     "title": "TCP",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/tcp/",
+     "documentId": "cs50-22fe3ec55f98f55e",
+     "chapters": [],
+     "youtubeId": "GP7uvI_6uas",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/tcp/tcp-720p.mp4",
+     "captions": "/course/2026/files/e6a4fb2c9e1d3d61-tcp.vtt",
+     "durationSeconds": 568
+    },
+    {
+     "id": "week-8-short-http",
+     "title": "HTTP",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/http/",
+     "documentId": "cs50-69a52c12e3f64694",
+     "chapters": [],
+     "youtubeId": "4axL8Gfw2nI",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/http/http-720p.mp4",
+     "captions": "/course/2026/files/06a9ef5d3663ca3f-http.vtt",
+     "durationSeconds": 901
+    },
+    {
+     "id": "week-8-short-html",
+     "title": "HTML",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/html/",
+     "documentId": "cs50-f8105823d8e50e5b",
+     "chapters": [],
+     "youtubeId": "YK78KhMf7bs",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/html/html-720p.mp4",
+     "captions": "/course/2026/files/96ec647e08b83408-html.vtt",
+     "durationSeconds": 1293
+    },
+    {
+     "id": "week-8-short-css",
+     "title": "CSS",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/css/",
+     "documentId": "cs50-e393cbabf006d1fc",
+     "chapters": [],
+     "youtubeId": "Ub3FKU21ubk",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/css/css-720p.mp4",
+     "captions": "/course/2026/files/26dfc399db3a941b-css.vtt",
+     "durationSeconds": 817
+    },
+    {
+     "id": "week-8-short-javascript",
+     "title": "JavaScript",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/javascript/",
+     "documentId": "cs50-1446a413fd5c7492",
+     "chapters": [],
+     "youtubeId": "Z93IaNfavZw",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/javascript/javascript-720p.mp4",
+     "captions": "/course/2026/files/2110dcb66e9349c6-javascript.vtt",
+     "durationSeconds": 1084
+    },
+    {
+     "id": "week-8-short-dom",
+     "title": "DOM",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/dom/",
+     "documentId": "cs50-0ddc62acd6d3cb07",
+     "chapters": [],
+     "youtubeId": "LKWJpgvfH3U",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/dom/dom-720p.mp4",
+     "captions": "/course/2026/files/f02fb76cf716afd1-dom.vtt",
+     "durationSeconds": 1233
+    }
+   ]
+  },
+  "week-9": {
+   "lecture": {
+    "title": "Week 9 · Flask",
+    "notesDocumentId": "cs50-1364cfbe0e80e1ac",
+    "notesSourceUrl": "https://cs50.harvard.edu/x/2026/notes/9/",
+    "chapters": [
+     {
+      "start": 0,
+      "title": "Introduction"
+     },
+     {
+      "start": 43,
+      "title": "– Flask"
+     },
+     {
+      "start": 1721,
+      "title": "– Forms"
+     },
+     {
+      "start": 2011,
+      "title": "– Jinja"
+     },
+     {
+      "start": 2232,
+      "title": "– Templates"
+     },
+     {
+      "start": 2890,
+      "title": "– Request Methods"
+     },
+     {
+      "start": 3262,
+      "title": "– Frosh IMs"
+     },
+     {
+      "start": 5470,
+      "title": "– SQLite and Python"
+     },
+     {
+      "start": 7025,
+      "title": "– Cookies and Sessions"
+     },
+     {
+      "start": 7367,
+      "title": "– Shopping Cart"
+     },
+     {
+      "start": 8155,
+      "title": "– Shows"
+     },
+     {
+      "start": 8429,
+      "title": "– APIs"
+     }
+    ],
+    "youtubeId": "am7POvSZ4GE",
+    "mp4": "https://cdn.cs50.net/2025/fall/lectures/9/lecture9-720p.mp4",
+    "captions": "/course/2026/files/3d7735be40b24367-lecture9.vtt",
+    "durationSeconds": 8760,
+    "parts": [
+     {
+      "id": "week-9-lecture-p1",
+      "title": "http-server, Flask",
+      "start": 0,
+      "end": 1721,
+      "headings": [
+       {
+        "id": "welcome",
+        "title": "Welcome!",
+        "words": 97,
+        "start": 0,
+        "exact": true
+       },
+       {
+        "id": "http-server",
+        "title": "http-server",
+        "words": 154,
+        "start": 60,
+        "exact": false
+       },
+       {
+        "id": "flask",
+        "title": "Flask",
+        "words": 448,
+        "start": 43,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-9-lecture-p2",
+      "title": "Forms, Templates",
+      "start": 1721,
+      "end": 3262,
+      "headings": [
+       {
+        "id": "forms",
+        "title": "Forms",
+        "words": 206,
+        "start": 1721,
+        "exact": true
+       },
+       {
+        "id": "templates",
+        "title": "Templates",
+        "words": 176,
+        "start": 2232,
+        "exact": true
+       },
+       {
+        "id": "request-methods",
+        "title": "Request Methods",
+        "words": 363,
+        "start": 2890,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-9-lecture-p3",
+      "title": "Frosh IMs",
+      "start": 3262,
+      "end": 4710,
+      "headings": [
+       {
+        "id": "frosh-ims",
+        "title": "Frosh IMs",
+        "words": 745,
+        "start": 3262,
+        "exact": true
+       }
+      ]
+     },
+     {
+      "id": "week-9-lecture-p4",
+      "title": "Flask and SQL",
+      "start": 4710,
+      "end": 7025,
+      "headings": [
+       {
+        "id": "flask-and-sql",
+        "title": "Flask and SQL",
+        "words": 528,
+        "start": 4710,
+        "exact": false
+       }
+      ]
+     },
+     {
+      "id": "week-9-lecture-p5",
+      "title": "Cookies and Session, Shopping Cart",
+      "start": 7025,
+      "end": 8760,
+      "headings": [
+       {
+        "id": "cookies-and-session",
+        "title": "Cookies and Session",
+        "words": 613,
+        "start": 7025,
+        "exact": true
+       },
+       {
+        "id": "shopping-cart",
+        "title": "Shopping Cart",
+        "words": 273,
+        "start": 7367,
+        "exact": true
+       },
+       {
+        "id": "shows",
+        "title": "Shows",
+        "words": 129,
+        "start": 8155,
+        "exact": true
+       },
+       {
+        "id": "apis",
+        "title": "APIs",
+        "words": 267,
+        "start": 8429,
+        "exact": true
+       },
+       {
+        "id": "json",
+        "title": "JSON",
+        "words": 272,
+        "start": 8460,
+        "exact": false
+       },
+       {
+        "id": "summing-up",
+        "title": "Summing Up",
+        "words": 34,
+        "start": 8580,
+        "exact": false
+       }
+      ]
+     }
+    ]
+   },
+   "section": {
+    "id": "week-9-section",
+    "title": "Flask section",
+    "sourceUrl": "https://cs50.harvard.edu/x/2026/sections/9/",
+    "documentId": "cs50-66e5deac6fd60962",
+    "chapters": [],
+    "youtubeId": "xbguARtzOeI",
+    "mp4": "https://cdn.cs50.net/2025/fall/sections/9/section9-720p.mp4",
+    "captions": "/course/2026/files/159fbb2227a0a6ed-section9.vtt",
+    "durationSeconds": 3385
+   },
+   "shorts": [
+    {
+     "id": "week-9-short-flask",
+     "title": "Flask",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/flask/",
+     "documentId": "cs50-b44158a7ce54d738",
+     "chapters": [],
+     "youtubeId": "X0dwkDh8kwA",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/flask/flask-720p.mp4",
+     "captions": "/course/2026/files/6df611a28eb0bd9f-flask.vtt",
+     "durationSeconds": 1032
+    },
+    {
+     "id": "week-9-short-ajax",
+     "title": "AJAX",
+     "sourceUrl": "https://cs50.harvard.edu/x/2026/shorts/ajax/",
+     "documentId": "cs50-259ecdfafa110a31",
+     "chapters": [],
+     "youtubeId": "dQcBs4S-wEQ",
+     "mp4": "https://cdn.cs50.net/2017/fall/shorts/ajax/ajax-720p.mp4",
+     "captions": "/course/2026/files/0629e1ef3c178746-ajax.vtt",
+     "durationSeconds": 810
+    }
+   ]
+  },
+  "week-10": {
+   "lecture": {
+    "title": "Week 10 · The End",
+    "notesDocumentId": "cs50-4c72bc711a3c8aef",
+    "notesSourceUrl": "https://cs50.harvard.edu/x/2026/notes/10/",
+    "chapters": [
+     {
+      "start": 0,
+      "title": "Introduction"
+     },
+     {
+      "start": 43,
+      "title": "– Welcome"
+     },
+     {
+      "start": 197,
+      "title": "– Computational Thinking"
+     },
+     {
+      "start": 974,
+      "title": "– Recap"
+     },
+     {
+      "start": 1416,
+      "title": "– Charades"
+     },
+     {
+      "start": 1813,
+      "title": "– Looking Ahead"
+     },
+     {
+      "start": 2388,
+      "title": "– Quiz Show"
+     }
+    ],
+    "youtubeId": "ApQTgFkf8TU",
+    "mp4": "https://cdn.cs50.net/2025/fall/lectures/10/lecture10-720p.mp4",
+    "captions": "/course/2026/files/4d3f86acb689660e-lecture10.vtt",
+    "durationSeconds": 3088,
+    "parts": [
+     {
+      "id": "week-10-lecture-p1",
+      "title": "Recap, Final Project",
+      "start": 0,
+      "end": 1813,
+      "headings": [
+       {
+        "id": "recap",
+        "title": "Recap",
+        "words": 228,
+        "start": 0,
+        "exact": true
+       },
+       {
+        "id": "final-project",
+        "title": "Final Project",
+        "words": 89,
+        "start": 1050,
+        "exact": false
+       }
+      ]
+     },
+     {
+      "id": "week-10-lecture-p2",
+      "title": "Looking Ahead, Thank You!",
+      "start": 1813,
+      "end": 3088,
+      "headings": [
+       {
+        "id": "looking-ahead",
+        "title": "Looking Ahead",
+        "words": 126,
+        "start": 1813,
+        "exact": true
+       },
+       {
+        "id": "thank-you",
+        "title": "Thank You!",
+        "words": 28,
+        "start": 2190,
+        "exact": false
+       },
+       {
+        "id": "summing-up",
+        "title": "Summing Up",
+        "words": 57,
+        "start": 2250,
+        "exact": false
+       }
+      ]
+     }
+    ]
+   },
+   "section": null,
+   "shorts": []
+  }
+ }
+}

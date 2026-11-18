@@ -1,0 +1,58 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cs50track",
+  "main": "src/server/worker.ts",
+  "compatibility_date": "2026-11-16",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cs50track",
+      "database_id": "local-cs50track",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "send_email": [
+    {
+      "name": "EMAIL",
+    },
+  ],
+  "vars": {
+    "APP_ORIGIN": "https://cs50track.dhaf.in",
+    "AUTH_MODE": "production",
+  },
+  "env": {
+    "production": {
+      "routes": [
+        {
+          "pattern": "cs50track.dhaf.in",
+          "custom_domain": true,
+        },
+      ],
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "cs50track",
+          "database_id": "90e11873-1618-4289-9076-95be94be44ce",
+          "migrations_dir": "migrations",
+        },
+      ],
+      "send_email": [
+        {
+          "name": "EMAIL",
+        },
+      ],
+      "vars": {
+        "APP_ORIGIN": "https://cs50track.dhaf.in",
+        "AUTH_MODE": "production",
+        "OWNER_EMAIL": "dhiodhaha@gmail.com",
+        "EMAIL_FROM": "login@cs50track.dhaf.in",
+      },
+      "workers_dev": false,
+      "preview_urls": false,
+    },
+  },
+}
